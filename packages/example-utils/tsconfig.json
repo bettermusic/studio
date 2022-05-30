@@ -1,5 +1,5 @@
 {
-  "extends": "@praisecharts/tsconfig/react-library.json",
+  "extends": "@example/tsconfig/react-library.json",
   "include": ["."],
   "exclude": ["dist", "build", "node_modules"]
 }
