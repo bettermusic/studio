@@ -1,3 +1,4 @@
 [submodule "packages/chordcharts-core"]
 	path = packages/chordcharts-core
 	url = git@github.com:PraiseCharts/ChordSheetJS.git
+	branch = turborepo
