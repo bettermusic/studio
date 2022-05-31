@@ -1,4 +1,4 @@
-[submodule "packages/chordsheetjs"]
-	path = packages/chordsheetjs
+[submodule "packages/ChordSheetJS"]
+	path = packages/ChordSheetJS
 	url = git@github.com:PraiseCharts/ChordSheetJS.git
 	branch = turborepo
