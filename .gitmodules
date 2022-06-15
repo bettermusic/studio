@@ -1,3 +1,4 @@
 [submodule "packages/chordsheetjs"]
 	path = packages/chordsheetjs
 	url = https://github.com/martijnversluis/ChordSheetJS.git
+	branch = master
