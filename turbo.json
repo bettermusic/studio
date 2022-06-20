@@ -18,7 +18,7 @@
     "lint": {
       "outputs": []
     },
-    "@praisecharts/chordchartjs#build": {
+    "chordsheetjs#build": {
       "outputs": [
         "lib/**"
       ],
@@ -27,7 +27,7 @@
       ]
     },
     "dev": {
-      "dependsOn": ["@praisecharts/chordchartjs#build"],
+      "dependsOn": ["chordsheetjs#build"],
       "cache": false
     },
     "clean": {
