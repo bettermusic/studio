@@ -14,10 +14,10 @@ module.exports = {
       resolve: {
         alias: [
           {
-            find: "@praisecharts/core",
+            find: "@example/core",
             replacement: path.resolve(
               __dirname,
-              "../../../packages/praisecharts-core/"
+              "../../../packages/example-core/"
             ),
           },
         ],

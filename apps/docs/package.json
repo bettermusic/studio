@@ -15,6 +15,7 @@
   },
   "devDependencies": {
     "@example/tsconfig": "*",
+    "@example/core": "*",
     "@storybook/addon-actions": "^6.4.18",
     "@storybook/addon-docs": "^6.4.22",
     "@storybook/addon-essentials": "^6.4.18",
