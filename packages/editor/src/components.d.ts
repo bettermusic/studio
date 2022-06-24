@@ -6,56 +6,65 @@
  */
 import { HTMLStencilElement, JSXBase } from "@stencil/core/internal";
 export namespace Components {
-    interface MyComponent {
-        /**
-          * The first name
-         */
-        "first": string;
-        /**
-          * The last name
-         */
-        "last": string;
-        /**
-          * The middle name
-         */
-        "middle": string;
+    interface PcsEditor {
+        "initialValue": string;
+    }
+    interface PcsRenderer {
+        "html": string;
+        "mode": string;
+    }
+    interface PcsStudio {
     }
 }
 declare global {
-    interface HTMLMyComponentElement extends Components.MyComponent, HTMLStencilElement {
+    interface HTMLPcsEditorElement extends Components.PcsEditor, HTMLStencilElement {
     }
-    var HTMLMyComponentElement: {
-        prototype: HTMLMyComponentElement;
-        new (): HTMLMyComponentElement;
+    var HTMLPcsEditorElement: {
+        prototype: HTMLPcsEditorElement;
+        new (): HTMLPcsEditorElement;
+    };
+    interface HTMLPcsRendererElement extends Components.PcsRenderer, HTMLStencilElement {
+    }
+    var HTMLPcsRendererElement: {
+        prototype: HTMLPcsRendererElement;
+        new (): HTMLPcsRendererElement;
+    };
+    interface HTMLPcsStudioElement extends Components.PcsStudio, HTMLStencilElement {
+    }
+    var HTMLPcsStudioElement: {
+        prototype: HTMLPcsStudioElement;
+        new (): HTMLPcsStudioElement;
     };
     interface HTMLElementTagNameMap {
-        "my-component": HTMLMyComponentElement;
+        "pcs-editor": HTMLPcsEditorElement;
+        "pcs-renderer": HTMLPcsRendererElement;
+        "pcs-studio": HTMLPcsStudioElement;
     }
 }
 declare namespace LocalJSX {
-    interface MyComponent {
-        /**
-          * The first name
-         */
-        "first"?: string;
-        /**
-          * The last name
-         */
-        "last"?: string;
-        /**
-          * The middle name
-         */
-        "middle"?: string;
+    interface PcsEditor {
+        "initialValue"?: string;
+        "onChordProUpdated"?: (event: CustomEvent<string>) => void;
+    }
+    interface PcsRenderer {
+        "html"?: string;
+        "mode"?: string;
+    }
+    interface PcsStudio {
     }
     interface IntrinsicElements {
-        "my-component": MyComponent;
+        "pcs-editor": PcsEditor;
+        "pcs-renderer": PcsRenderer;
+        "pcs-studio": PcsStudio;
     }
 }
 export { LocalJSX as JSX };
 declare module "@stencil/core" {
     export namespace JSX {
         interface IntrinsicElements {
-            "my-component": LocalJSX.MyComponent & JSXBase.HTMLAttributes<HTMLMyComponentElement>;
+            "pcs-editor": LocalJSX.PcsEditor & JSXBase.HTMLAttributes<HTMLPcsEditorElement>;
+            "pcs-renderer": LocalJSX.PcsRenderer & JSXBase.HTMLAttributes<HTMLPcsRendererElement>;
+            "pcs-studio": LocalJSX.PcsStudio & JSXBase.HTMLAttributes<HTMLPcsStudioElement>;
         }
     }
 }

@@ -1,9 +1,9 @@
 const path = require("path");
 
 module.exports = {
-  stories: ["../stories/**/*.stories.mdx", "../stories/**/*.stories.tsx"],
-  addons: ["@storybook/addon-links", "@storybook/addon-essentials"],
-  framework: "@storybook/react",
+  stories: ["../stories/**/*.stories.mdx", "../*.stories.@(js|jsx|ts|tsx)", "../../**/**/*.stories.@(js|jsx|ts|tsx)"],
+  addons: ["@storybook/addon-links", "@storybook/addon-essentials", "@storybook/addon-notes/register"],
+  framework: "@storybook/html",
   core: {
     builder: "@storybook/builder-vite",
   },
@@ -18,6 +18,13 @@ module.exports = {
             replacement: path.resolve(
               __dirname,
               "../../../packages/example-core/"
+            ),
+          },
+          {
+            find: "@praisecharts/editor",
+            replacement: path.resolve(
+              __dirname,
+              "../../../packages/editor/"
             ),
           },
         ],

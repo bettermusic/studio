@@ -1,0 +1,15 @@
+:host {
+    display: flex;
+    overflow: auto;
+    padding: 0 40px;
+    margin: 20px 20px;
+    border: 1px solid #111;
+    background-color: #fff;
+}
+  
+.comment {
+    font-weight: bold;
+    padding-top: 12px;
+    padding-bottom: 6px;
+    font-size: 20px;
+}

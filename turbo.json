@@ -18,16 +18,46 @@
     "lint": {
       "outputs": []
     },
+    "@codemirror/lang-chordpro#prepare": {
+      "outputs": [
+        "dist/**"
+      ],
+      "dependsOn": [
+        "^build"
+      ],
+      "cache": false
+    },
     "chordsheetjs#build": {
       "outputs": [
         "lib/**"
       ],
       "dependsOn": [
         "^build"
-      ]
+      ],
+      "cache": false
+    },
+    "chordsheetjs#build:code-generate": {
+      "inputs": ["src/normalize_mappings/*.ts"]
+    },
+    "chordsheetjs#dev": {
+      "inputs": ["src/index.ts"],
+      "outputs": ["lib/**"],
+      "dependsOn": [
+        "chordsheetjs#build:code-generate"
+      ],
+      "cache": false
+    },
+    "@praisecharts/editor#dev": {
+      "inputs": [
+        "../../chordsheetjs/src/**.ts",
+        "../../chordsheetjs/src/chord_sheet/**.ts"
+      ],
+      "dependsOn": [
+        "@codemirror/lang-chordpro#prepare"
+      ],
+      "cache": false
     },
     "dev": {
-      "dependsOn": ["chordsheetjs#build"],
       "cache": false
     },
     "clean": {
