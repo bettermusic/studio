@@ -8,29 +8,17 @@
     "preview-storybook": "serve storybook-static",
     "clean": "rm -rf .turbo && rm -rf node_modules"
   },
-  "dependencies": {
-    "@example/core": "*",
-    "react": "^18.0.0",
-    "react-dom": "^18.0.0"
-  },
+  "dependencies": {},
   "devDependencies": {
-    "@example/core": "*",
     "@example/tsconfig": "*",
     "@praisecharts/editor": "*",
-    "@storybook/addon-actions": "^6.4.18",
-    "@storybook/addon-docs": "^6.4.22",
-    "@storybook/addon-essentials": "^6.4.18",
-    "@storybook/addon-links": "^6.4.18",
-    "@storybook/addon-notes": "^5.3.21",
-    "@storybook/addons": "^6.5.6",
-    "@storybook/builder-vite": "^0.1.33",
-    "@storybook/html": "^6.5.9",
-    "@storybook/react": "^6.4.18",
-    "@storybook/theming": "^6.5.6",
-    "@vitejs/plugin-react": "^1.3.2",
+    "@storybook/addon-essentials": "^6.4.20",
+    "@storybook/addon-links": "^6.4.20",
+    "@storybook/addons": "^6.5.9",
+    "@storybook/html": "^6.4.20",
+    "@storybook/theming": "^6.5.9",
     "eslint-config-example": "*",
     "serve": "^13.0.2",
-    "typescript": "^4.5.4",
-    "vite": "^2.9.9"
+    "typescript": "^4.5.4"
   }
 }
