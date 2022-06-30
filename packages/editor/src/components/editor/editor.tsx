@@ -62,9 +62,9 @@ export class Editor {
   language = new Compartment 
 
   myHighlightStyle = HighlightStyle.define([
-    {tag: customTags.chord, color: "#5B84B0"},
+    {tag: customTags.chord, color: "#0481aa"},
     {tag: tags.bracket, color: "#fc6"},
-    {tag: tags.meta, color: "#D0575B"},
+    {tag: tags.meta, color: "#fa7c6c"},
     {tag: tags.comment, color: "#5d6063"}
   ])
 
