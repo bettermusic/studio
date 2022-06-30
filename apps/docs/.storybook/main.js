@@ -14,17 +14,17 @@ module.exports = {
       resolve: {
         alias: [
           {
-            find: "@example/core",
-            replacement: path.resolve(
-              __dirname,
-              "../../../packages/example-core/"
-            ),
-          },
-          {
             find: "@praisecharts/editor",
             replacement: path.resolve(
               __dirname,
               "../../../packages/editor/"
+            ),
+          },
+          {
+            find: "@praisecharts/editor-loader",
+            replacement: path.resolve(
+              __dirname,
+              "../../../packages/editor/loader"
             ),
           },
         ],
