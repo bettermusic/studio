@@ -1,27 +1,24 @@
 import {parser} from "./syntax.grammar"
 import {LRLanguage, LanguageSupport, indentNodeProp, foldNodeProp, foldInside, delimitedIndent} from "@codemirror/language"
-import {styleTags, tags as t} from "@lezer/highlight"
+import {styleTags, Tag, tags as t} from "@lezer/highlight"
+
+export const customTags = {
+  chord: Tag.define(), // define custom tag, that can be picked up by the style configuration
+}
 
 export const ChordProLanguage = LRLanguage.define({
   parser: parser.configure({
     props: [
-      indentNodeProp.add({
-        Application: delimitedIndent({closing: ")", align: false})
-      }),
-      foldNodeProp.add({
-        Application: foldInside
-      }),
       styleTags({
-        Identifier: t.variableName,
-        Boolean: t.bool,
-        String: t.string,
-        LineComment: t.lineComment,
-        "( )": t.paren
+        Chord: customTags.chord,
+        MetaData: t.meta,
+        Comment: t.comment,
+        Bracket: t.squareBracket
       })
     ]
   }),
   languageData: {
-    commentTokens: {line: ";"}
+    commentTokens: {line: "//"}
   }
 })
 

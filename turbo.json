@@ -19,6 +19,10 @@
       "outputs": []
     },
     "@codemirror/lang-chordpro#prepare": {
+      "inputs": [
+        "src/index.ts",
+        "src/syntax.grammar"
+      ],
       "outputs": [
         "dist/**"
       ],

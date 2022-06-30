@@ -2,7 +2,9 @@ import { Component, h, Element, Host, Prop, State, EventEmitter, Event } from '@
 import {EditorState, Compartment} from "@codemirror/state"
 import {EditorView, gutter, highlightActiveLine, keymap, lineNumbers} from "@codemirror/view"
 import {defaultKeymap, history} from "@codemirror/commands"
-import {ChordPro} from "@codemirror/lang-chordpro"
+import {syntaxHighlighting} from "@codemirror/language"
+import {ChordPro, customTags} from "@codemirror/lang-chordpro"
+
 import {tags} from "@lezer/highlight"
 import {HighlightStyle} from "@codemirror/language"
 
@@ -60,13 +62,15 @@ export class Editor {
   language = new Compartment 
 
   myHighlightStyle = HighlightStyle.define([
-    {tag: tags.keyword, color: "#fc6"},
-    {tag: tags.string, color: "#e6b25e"},
-    {tag: tags.lineComment, color: "#829413", fontStyle: "italic"}
+    {tag: customTags.chord, color: "#5B84B0"},
+    {tag: tags.bracket, color: "#fc6"},
+    {tag: tags.meta, color: "#D0575B"},
+    {tag: tags.comment, color: "#5d6063"}
   ])
 
   extensions = [
-    this.language.of(ChordPro({HighlightStyle: this.myHighlightStyle})),
+    this.language.of(ChordPro()),
+    syntaxHighlighting(this.myHighlightStyle, {fallback: true}),
     keymap.of(defaultKeymap), 
     lineNumbers(), 
     highlightActiveLine(),
@@ -77,19 +81,17 @@ export class Editor {
   ]
 
   constructor() {
-
-    this.editor = new EditorView({
-      state: EditorState.create({
-        doc: this.initialValue,
-        extensions: this.extensions
-      
-      }),
-      parent:  this.host.shadowRoot,
-    })
   }
 
   componentWillLoad() {
     this.renderChordpro(this.initialValue);
+    this.editor = new EditorView({
+      state: EditorState.create({
+        doc: this.initialValue,
+        extensions: this.extensions
+      }),
+      parent:  this.host.shadowRoot,
+    })
   }
 
   renderChordpro(chordpro) {
