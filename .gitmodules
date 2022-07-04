@@ -1,0 +1,3 @@
+[submodule "packages/chordsheetjs"]
+	path = packages/chordsheetjs
+	url = git@github.com:PraiseCharts/ChordSheetJS.git
