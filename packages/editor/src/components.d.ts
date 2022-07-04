@@ -16,6 +16,10 @@ export namespace Components {
     interface PcsStudio {
     }
 }
+export interface PcsEditorCustomEvent<T> extends CustomEvent<T> {
+    detail: T;
+    target: HTMLPcsEditorElement;
+}
 declare global {
     interface HTMLPcsEditorElement extends Components.PcsEditor, HTMLStencilElement {
     }
@@ -44,7 +48,7 @@ declare global {
 declare namespace LocalJSX {
     interface PcsEditor {
         "initialValue"?: string;
-        "onChordProUpdated"?: (event: CustomEvent<string>) => void;
+        "onChordProUpdated"?: (event: PcsEditorCustomEvent<string>) => void;
     }
     interface PcsRenderer {
         "html"?: string;
