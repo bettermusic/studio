@@ -22,7 +22,7 @@ jobs:
           ssh-key: ${{ secrets.SUBMODULE_CHORDSHEETJS_PULL_KEY }}
 
       - name: Setup node
-        uses: actions/setup-node@v2
+        uses: actions/setup-node@v3
         with:
           node-version: ${{ matrix.node }}
 

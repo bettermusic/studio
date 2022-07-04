@@ -31,7 +31,7 @@
       ],
       "cache": false
     },
-    "chordsheetjs#build": {
+    "@praisecharts/chordsheetjs#build": {
       "outputs": [
         "lib/**"
       ],
@@ -40,14 +40,14 @@
       ],
       "cache": false
     },
-    "chordsheetjs#build:code-generate": {
+    "@praisecharts/chordsheetjs#build:code-generate": {
       "inputs": ["src/normalize_mappings/*.ts"]
     },
-    "chordsheetjs#dev": {
+    "@praisecharts/chordsheetjs#dev": {
       "inputs": ["src/index.ts"],
       "outputs": ["lib/**"],
       "dependsOn": [
-        "chordsheetjs#build:code-generate"
+        "@praisecharts/chordsheetjs#build:code-generate"
       ],
       "cache": false
     },
