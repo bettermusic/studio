@@ -13,7 +13,7 @@ jobs:
     runs-on: ubuntu-latest
     strategy:
       matrix:
-        node: [ '14', '16' ]
+        node: [ '18' ]
     name: Node ${{ matrix.node }} sample
     steps:
       - uses: actions/checkout@v2
@@ -21,6 +21,8 @@ jobs:
         uses: actions/setup-node@v2
         with:
           node-version: ${{ matrix.node }}
+      - name: Update Submodule
+        run: git submodule update --init
       - run: yarn install
       - run: yarn lint
       - run: yarn jest
