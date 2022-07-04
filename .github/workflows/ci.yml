@@ -20,10 +20,15 @@ jobs:
         with:
           ssh-key: ${{ secrets.SUBMODULE_CHORDSHEETJS_PULL_KEY }}
           submodules: 'recursive'
+
       - name: Setup node
         uses: actions/setup-node@v2
         with:
           node-version: ${{ matrix.node }}
+
+      - name: Update SubModules
+        run: git submodule update --init
+
       - run: yarn install
       - run: yarn lint
       - run: yarn jest
