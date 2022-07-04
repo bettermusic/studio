@@ -1,4 +1,4 @@
-// import {Studio} from '@praisecharts/editor/components/studio';
+// import {Studio} from '@praisecharts/studio/components/studio';
 
 // eslint-disable-next-line import/no-anonymous-default-export
 export default {

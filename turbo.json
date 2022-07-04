@@ -56,7 +56,7 @@
       ],
       "cache": false
     },
-    "@praisecharts/editor#dev": {
+    "@praisecharts/studio#dev": {
       "inputs": [
         "../../chordsheetjs/src/**.ts",
         "../../chordsheetjs/src/chord_sheet/**.ts"

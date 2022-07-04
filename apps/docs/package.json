@@ -11,7 +11,7 @@
   "dependencies": {},
   "devDependencies": {
     "@example/tsconfig": "*",
-    "@praisecharts/editor": "*",
+    "@praisecharts/studio": "*",
     "@storybook/addon-essentials": "^6.4.20",
     "@storybook/addon-links": "^6.4.20",
     "@storybook/addons": "^6.5.9",

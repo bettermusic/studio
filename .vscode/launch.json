@@ -9,14 +9,14 @@
             "request": "launch",
             "name": "Launch Chrome against localhost",
             "url": "http://localhost:3333",
-            "webRoot": "${workspaceFolder}/packages/editor/www"
+            "webRoot": "${workspaceFolder}/packages/studio/www"
            },
            {
             "type": "node",
             "request": "launch",
             "name": "E2E Test Current File",
-            "cwd": "${workspaceFolder}/packages/editor",
-            "program": "${workspaceFolder}/packages/editor/node_modules/.bin/stencil",
+            "cwd": "${workspaceFolder}/packages/studio",
+            "program": "${workspaceFolder}/packages/studio/node_modules/.bin/stencil",
             "args": ["test", "--e2e", "${relativeFile}"],
             "console": "integratedTerminal",
             "internalConsoleOptions": "neverOpen",
@@ -26,8 +26,8 @@
             "type": "node",
             "request": "launch",
             "name": "Spec Test Current File",
-            "cwd": "${workspaceFolder}/packages/editor",
-            "program": "${workspaceFolder}/packages/editor/node_modules/.bin/stencil",
+            "cwd": "${workspaceFolder}/packages/studio",
+            "program": "${workspaceFolder}/packages/studio/node_modules/.bin/stencil",
             "args": ["test", "--spec", "${relativeFile}"],
             "console": "integratedTerminal",
             "internalConsoleOptions": "neverOpen",
