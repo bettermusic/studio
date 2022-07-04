@@ -24,8 +24,6 @@ jobs:
         uses: actions/setup-node@v2
         with:
           node-version: ${{ matrix.node }}
-      - name: Update Submodules
-        run: git submodule update --init
       - run: yarn install
       - run: yarn lint
       - run: yarn jest
