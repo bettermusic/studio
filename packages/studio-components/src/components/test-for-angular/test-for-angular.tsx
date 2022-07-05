@@ -9,7 +9,7 @@ export class TestForAngular {
   render() {
     return (
       <Host>
-        <p>This compoment from stencil works!</p>
+        <p>This compoment from stencil works good!</p>
         <slot></slot>
       </Host>
     );

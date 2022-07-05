@@ -11,7 +11,7 @@ import {HighlightStyle} from "@codemirror/language"
 import { ChordProParser, HtmlTableFormatter } from 'chordsheetjs';
 
 @Component({
-  tag: 'pcs-editor',
+  tag: 'pc-editor',
   styleUrl: 'editor.scss',
   shadow: true,
 })

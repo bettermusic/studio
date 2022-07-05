@@ -1,4 +1,4 @@
-# pcs-renderer
+# pc-renderer
 
 
 
@@ -17,13 +17,13 @@
 
 ### Used by
 
- - [pcs-studio](../studio)
+ - [pc-studio](../studio)
 
 ### Graph
 ```mermaid
 graph TD;
-  pcs-studio --> pcs-renderer
-  style pcs-renderer fill:#f9f,stroke:#333,stroke-width:4px
+  pc-studio --> pc-renderer
+  style pc-renderer fill:#f9f,stroke:#333,stroke-width:4px
 ```
 
 ----------------------------------------------

@@ -1,4 +1,4 @@
-# pcs-studio
+# pc-studio
 
 
 
@@ -9,15 +9,15 @@
 
 ### Depends on
 
-- [pcs-editor](../editor)
-- [pcs-renderer](../renderer)
+- [pc-editor](../editor)
+- [pc-renderer](../renderer)
 
 ### Graph
 ```mermaid
 graph TD;
-  pcs-studio --> pcs-editor
-  pcs-studio --> pcs-renderer
-  style pcs-studio fill:#f9f,stroke:#333,stroke-width:4px
+  pc-studio --> pc-editor
+  pc-studio --> pc-renderer
+  style pc-studio fill:#f9f,stroke:#333,stroke-width:4px
 ```
 
 ----------------------------------------------

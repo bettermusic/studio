@@ -5,7 +5,7 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 
 
-import { StudioComponentsModule } from '@praisecharts/studio-components-angular';
+import { StudioComponentsModule } from '@praisecharts/studio-components-angular/dist';
 
 @NgModule({
   declarations: [

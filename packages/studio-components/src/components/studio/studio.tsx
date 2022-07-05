@@ -3,7 +3,7 @@ import exampleChordPro from '../../utils/example-chordpro'
 import Split from 'split.js'
 
 @Component({
-  tag: 'pcs-studio',
+  tag: 'pc-studio',
   styleUrl: 'studio.scss',
   shadow: true,
 })
@@ -33,8 +33,8 @@ export class Studio {
     return (
       <Host>
         <div id="flex">
-          <pcs-editor ref={el => this.editor = el as HTMLElement} initialValue={this.exampleChordPro}></pcs-editor>
-          <pcs-renderer ref={el => this.view = el as HTMLElement} html={this.chordpro}></pcs-renderer>
+          <pc-editor ref={el => this.editor = el as HTMLElement} initialValue={this.exampleChordPro}></pc-editor>
+          <pc-renderer ref={el => this.view = el as HTMLElement} html={this.chordpro}></pc-renderer>
         </div>
       </Host>
     );

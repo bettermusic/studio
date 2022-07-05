@@ -6,40 +6,40 @@
  */
 import { HTMLStencilElement, JSXBase } from "@stencil/core/internal";
 export namespace Components {
-    interface PcsEditor {
+    interface PcEditor {
         "initialValue": string;
     }
-    interface PcsRenderer {
+    interface PcRenderer {
         "html": string;
         "mode": string;
     }
-    interface PcsStudio {
+    interface PcStudio {
     }
     interface TestForAngular {
     }
 }
-export interface PcsEditorCustomEvent<T> extends CustomEvent<T> {
+export interface PcEditorCustomEvent<T> extends CustomEvent<T> {
     detail: T;
-    target: HTMLPcsEditorElement;
+    target: HTMLPcEditorElement;
 }
 declare global {
-    interface HTMLPcsEditorElement extends Components.PcsEditor, HTMLStencilElement {
+    interface HTMLPcEditorElement extends Components.PcEditor, HTMLStencilElement {
     }
-    var HTMLPcsEditorElement: {
-        prototype: HTMLPcsEditorElement;
-        new (): HTMLPcsEditorElement;
+    var HTMLPcEditorElement: {
+        prototype: HTMLPcEditorElement;
+        new (): HTMLPcEditorElement;
     };
-    interface HTMLPcsRendererElement extends Components.PcsRenderer, HTMLStencilElement {
+    interface HTMLPcRendererElement extends Components.PcRenderer, HTMLStencilElement {
     }
-    var HTMLPcsRendererElement: {
-        prototype: HTMLPcsRendererElement;
-        new (): HTMLPcsRendererElement;
+    var HTMLPcRendererElement: {
+        prototype: HTMLPcRendererElement;
+        new (): HTMLPcRendererElement;
     };
-    interface HTMLPcsStudioElement extends Components.PcsStudio, HTMLStencilElement {
+    interface HTMLPcStudioElement extends Components.PcStudio, HTMLStencilElement {
     }
-    var HTMLPcsStudioElement: {
-        prototype: HTMLPcsStudioElement;
-        new (): HTMLPcsStudioElement;
+    var HTMLPcStudioElement: {
+        prototype: HTMLPcStudioElement;
+        new (): HTMLPcStudioElement;
     };
     interface HTMLTestForAngularElement extends Components.TestForAngular, HTMLStencilElement {
     }
@@ -48,29 +48,29 @@ declare global {
         new (): HTMLTestForAngularElement;
     };
     interface HTMLElementTagNameMap {
-        "pcs-editor": HTMLPcsEditorElement;
-        "pcs-renderer": HTMLPcsRendererElement;
-        "pcs-studio": HTMLPcsStudioElement;
+        "pc-editor": HTMLPcEditorElement;
+        "pc-renderer": HTMLPcRendererElement;
+        "pc-studio": HTMLPcStudioElement;
         "test-for-angular": HTMLTestForAngularElement;
     }
 }
 declare namespace LocalJSX {
-    interface PcsEditor {
+    interface PcEditor {
         "initialValue"?: string;
-        "onChordProUpdated"?: (event: PcsEditorCustomEvent<string>) => void;
+        "onChordProUpdated"?: (event: PcEditorCustomEvent<string>) => void;
     }
-    interface PcsRenderer {
+    interface PcRenderer {
         "html"?: string;
         "mode"?: string;
     }
-    interface PcsStudio {
+    interface PcStudio {
     }
     interface TestForAngular {
     }
     interface IntrinsicElements {
-        "pcs-editor": PcsEditor;
-        "pcs-renderer": PcsRenderer;
-        "pcs-studio": PcsStudio;
+        "pc-editor": PcEditor;
+        "pc-renderer": PcRenderer;
+        "pc-studio": PcStudio;
         "test-for-angular": TestForAngular;
     }
 }
@@ -78,9 +78,9 @@ export { LocalJSX as JSX };
 declare module "@stencil/core" {
     export namespace JSX {
         interface IntrinsicElements {
-            "pcs-editor": LocalJSX.PcsEditor & JSXBase.HTMLAttributes<HTMLPcsEditorElement>;
-            "pcs-renderer": LocalJSX.PcsRenderer & JSXBase.HTMLAttributes<HTMLPcsRendererElement>;
-            "pcs-studio": LocalJSX.PcsStudio & JSXBase.HTMLAttributes<HTMLPcsStudioElement>;
+            "pc-editor": LocalJSX.PcEditor & JSXBase.HTMLAttributes<HTMLPcEditorElement>;
+            "pc-renderer": LocalJSX.PcRenderer & JSXBase.HTMLAttributes<HTMLPcRendererElement>;
+            "pc-studio": LocalJSX.PcStudio & JSXBase.HTMLAttributes<HTMLPcStudioElement>;
             "test-for-angular": LocalJSX.TestForAngular & JSXBase.HTMLAttributes<HTMLTestForAngularElement>;
         }
     }

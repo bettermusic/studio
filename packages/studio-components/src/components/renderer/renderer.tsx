@@ -1,7 +1,7 @@
 import { Component, Host, h, Prop } from '@stencil/core';
 
 @Component({
-  tag: 'pcs-renderer',
+  tag: 'pc-renderer',
   styleUrl: 'renderer.scss',
   shadow: true,
 })

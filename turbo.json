@@ -72,18 +72,35 @@
       ],
       "cache": false
     },
-    "@praisecharts/angular#build": {
+    "@praisecharts/studio-components-angular#build": {
+      "outputs": [
+        "dist/**"
+      ],
       "dependsOn": [
         "@praisecharts/studio-components#build"
       ]
     },
-    "@example/docs#dev": {
+    "@praisecharts/studio-compoents-angular#dev": {
+      "dependsOn": [
+        "@praisecharts/studio-components#dev"
+      ]
+    },
+    "@praisecharts/studio-docs#dev": {
       "dependsOn": [
         "@praisecharts/studio-components#build"
+      ]
+    },
+    "angular-demo#start": {
+      "cache": false,
+      "dependsOn": [
+        "@praisecharts/studio-components-angular#build"
       ]
     },
     "dev": {
-      "cache": false
+      "cache": false,
+      "dependsOn": [
+        "@praisecharts/studio-components#build"
+      ]
     },
     "clean": {
       "cache": false

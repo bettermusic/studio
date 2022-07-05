@@ -33,8 +33,8 @@ export const config: Config = {
     },
     angularOutputTarget({
       componentCorePackage: '@praisecharts/studio-components',
-      directivesProxyFile: '../angular/projects/studio-components-angular/src/lib/stencil-generated/components.ts',
-      directivesArrayFile: '../angular/projects/studio-components-angular/src/lib/stencil-generated/index.ts',
+      directivesProxyFile: '../studio-components-angular/src/lib/stencil-generated/components.ts',
+      directivesArrayFile: '../studio-components-angular/src/lib/stencil-generated/index.ts',
       valueAccessorConfigs: angularValueAccessorBindings,
       excludeComponents: [
         // exclude components

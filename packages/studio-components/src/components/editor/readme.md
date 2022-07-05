@@ -23,13 +23,13 @@
 
 ### Used by
 
- - [pcs-studio](../studio)
+ - [pc-studio](../studio)
 
 ### Graph
 ```mermaid
 graph TD;
-  pcs-studio --> pcs-editor
-  style pcs-editor fill:#f9f,stroke:#333,stroke-width:4px
+  pc-studio --> pc-editor
+  style pc-editor fill:#f9f,stroke:#333,stroke-width:4px
 ```
 
 ----------------------------------------------
