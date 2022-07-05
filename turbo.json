@@ -42,8 +42,7 @@
       ],
       "dependsOn": [
         "^build"
-      ],
-      "cache": false
+      ]
     },
     "@praisecharts/chordsheetjs#build:code-generate": {
       "inputs": ["src/normalize_mappings/*.ts"]
@@ -56,7 +55,7 @@
       ],
       "cache": false
     },
-    "@praisecharts/studio#dev": {
+    "@praisecharts/studio-components#dev": {
       "inputs": [
         "../../chordsheetjs/src/**.ts",
         "../../chordsheetjs/src/chord_sheet/**.ts"
@@ -65,6 +64,11 @@
         "@codemirror/lang-chordpro#prepare"
       ],
       "cache": false
+    },
+    "@praisecharts/angular#build": {
+      "dependsOn": [
+        "@praisecharts/studio-components#build"
+      ]
     },
     "dev": {
       "cache": false

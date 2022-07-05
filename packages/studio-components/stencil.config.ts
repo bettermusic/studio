@@ -1,7 +1,12 @@
 import { Config } from '@stencil/core';
 import nodePolyfills from 'rollup-plugin-node-polyfills';
 import { sass } from '@stencil/sass';
+import {
+  angularOutputTarget,
+  ValueAccessorConfig,
+} from '@stencil/angular-output-target';
 
+const angularValueAccessorBindings: ValueAccessorConfig[] = [];
 
 export const config: Config = {
   namespace: 'studio',
@@ -26,6 +31,15 @@ export const config: Config = {
     {
       type: 'docs-readme',
     },
+    angularOutputTarget({
+      componentCorePackage: '@praisecharts/studio-components',
+      directivesProxyFile: '../angular/projects/studio-components-angular/src/lib/stencil-generated/components.ts',
+      directivesArrayFile: '../angular/projects/studio-components-angular/src/lib/stencil-generated/index.ts',
+      valueAccessorConfigs: angularValueAccessorBindings,
+      excludeComponents: [
+        // exclude components
+      ]
+    }),
   ],
   plugins: [
     sass()

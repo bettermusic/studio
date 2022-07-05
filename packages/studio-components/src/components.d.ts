@@ -15,6 +15,8 @@ export namespace Components {
     }
     interface PcsStudio {
     }
+    interface TestForAngular {
+    }
 }
 export interface PcsEditorCustomEvent<T> extends CustomEvent<T> {
     detail: T;
@@ -39,10 +41,17 @@ declare global {
         prototype: HTMLPcsStudioElement;
         new (): HTMLPcsStudioElement;
     };
+    interface HTMLTestForAngularElement extends Components.TestForAngular, HTMLStencilElement {
+    }
+    var HTMLTestForAngularElement: {
+        prototype: HTMLTestForAngularElement;
+        new (): HTMLTestForAngularElement;
+    };
     interface HTMLElementTagNameMap {
         "pcs-editor": HTMLPcsEditorElement;
         "pcs-renderer": HTMLPcsRendererElement;
         "pcs-studio": HTMLPcsStudioElement;
+        "test-for-angular": HTMLTestForAngularElement;
     }
 }
 declare namespace LocalJSX {
@@ -56,10 +65,13 @@ declare namespace LocalJSX {
     }
     interface PcsStudio {
     }
+    interface TestForAngular {
+    }
     interface IntrinsicElements {
         "pcs-editor": PcsEditor;
         "pcs-renderer": PcsRenderer;
         "pcs-studio": PcsStudio;
+        "test-for-angular": TestForAngular;
     }
 }
 export { LocalJSX as JSX };
@@ -69,6 +81,7 @@ declare module "@stencil/core" {
             "pcs-editor": LocalJSX.PcsEditor & JSXBase.HTMLAttributes<HTMLPcsEditorElement>;
             "pcs-renderer": LocalJSX.PcsRenderer & JSXBase.HTMLAttributes<HTMLPcsRendererElement>;
             "pcs-studio": LocalJSX.PcsStudio & JSXBase.HTMLAttributes<HTMLPcsStudioElement>;
+            "test-for-angular": LocalJSX.TestForAngular & JSXBase.HTMLAttributes<HTMLTestForAngularElement>;
         }
     }
 }

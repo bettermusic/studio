@@ -2,11 +2,12 @@
   "private": true,
   "workspaces": [
     "packages/*",
-    "apps/*"
+    "apps/*",
+    "demos/*"
   ],
   "scripts": {
-    "build": "turbo run build",
-    "dev": "turbo run dev --filter=!./apps/docs --no-cache --continue",
+    "build": "turbo run build --filter=!./demos/*",
+    "dev": "turbo run dev --filter=!./apps/docs --filter=!./demos --no-cache --continue",
     "lint": "turbo run lint",
     "test": "turbo run test",
     "clean": "turbo run clean && rm -rf node_modules",
