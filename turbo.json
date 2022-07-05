@@ -13,7 +13,9 @@
       "outputs": [
         "coverage/**"
       ],
-      "dependsOn": []
+      "dependsOn": [
+
+      ]
     },
     "lint": {
       "outputs": []
@@ -42,6 +44,11 @@
       ],
       "dependsOn": [
         "^build"
+      ]
+    },
+    "@praisecharts/chordsheetjs#test": {
+      "dependsOn": [
+        "@praisecharts/chordsheetjs#build:code-generate"
       ]
     },
     "@praisecharts/chordsheetjs#build:code-generate": {
