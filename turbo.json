@@ -77,6 +77,11 @@
         "@praisecharts/studio-components#build"
       ]
     },
+    "@example/docs#dev": {
+      "dependsOn": [
+        "@praisecharts/studio-components#build"
+      ]
+    },
     "dev": {
       "cache": false
     },

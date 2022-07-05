@@ -8,6 +8,7 @@
   "scripts": {
     "build": "turbo run build --filter=!./demos/*",
     "dev": "turbo run dev --filter=!./apps/docs --filter=!./demos --no-cache --continue",
+    "serve-docs": "turbo run @example/docs#dev",
     "lint": "turbo run lint",
     "test": "turbo run test --filter=./packages/* --filter=./apps/* --filter=!./packages/angular",
     "clean": "turbo run clean && rm -rf node_modules",
