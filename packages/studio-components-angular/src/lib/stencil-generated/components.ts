@@ -36,6 +36,25 @@ export class PcEditor {
 }
 
 
+export declare interface PcEditorSplitView extends Components.PcEditorSplitView {}
+
+@ProxyCmp({
+  defineCustomElementFn: undefined
+})
+@Component({
+  selector: 'pc-editor-split-view',
+  changeDetection: ChangeDetectionStrategy.OnPush,
+  template: '<ng-content></ng-content>'
+})
+export class PcEditorSplitView {
+  protected el: HTMLElement;
+  constructor(c: ChangeDetectorRef, r: ElementRef, protected z: NgZone) {
+    c.detach();
+    this.el = r.nativeElement;
+  }
+}
+
+
 export declare interface PcRenderer extends Components.PcRenderer {}
 
 @ProxyCmp({
@@ -49,25 +68,6 @@ export declare interface PcRenderer extends Components.PcRenderer {}
   inputs: ['html', 'mode']
 })
 export class PcRenderer {
-  protected el: HTMLElement;
-  constructor(c: ChangeDetectorRef, r: ElementRef, protected z: NgZone) {
-    c.detach();
-    this.el = r.nativeElement;
-  }
-}
-
-
-export declare interface PcStudio extends Components.PcStudio {}
-
-@ProxyCmp({
-  defineCustomElementFn: undefined
-})
-@Component({
-  selector: 'pc-studio',
-  changeDetection: ChangeDetectionStrategy.OnPush,
-  template: '<ng-content></ng-content>'
-})
-export class PcStudio {
   protected el: HTMLElement;
   constructor(c: ChangeDetectorRef, r: ElementRef, protected z: NgZone) {
     c.detach();

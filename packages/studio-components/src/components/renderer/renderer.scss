@@ -1,15 +1,56 @@
 :host {
     display: flex;
-    overflow: auto;
     padding: 0 40px;
     margin: 20px 20px;
     border: 1px solid #111;
     background-color: #fff;
+    flex-direction: column;
+    overflow: scroll;
+    flex-wrap: wrap;
+    
 }
-  
+
 .comment {
     font-weight: bold;
     padding-top: 12px;
     padding-bottom: 6px;
     font-size: 20px;
+}
+
+.chord-sheet {
+    display: flex;
+    flex-direction: column;
+    height: 93%;
+    column-gap: 1rem;
+    row-gap: 1rem;
+    flex-wrap: wrap;
+}
+
+.paragraph {
+    display: flex;
+    flex-direction: column;
+    flex: 0 1 auto;
+}
+
+.row {
+    display: flex;
+    flex-direction: row;
+    padding-top: 0.3rem;
+    padding-bottom: 0.3rem;
+}
+
+.column {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    padding-left: 0.3rem;
+    padding-right: 0.3rem;
+}
+
+.lyrics {
+    padding-left: 0.1rem;
+}
+
+.chord {
+    font-weight: bold;
 }

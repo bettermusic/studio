@@ -10,7 +10,7 @@ import {lintGutter} from "@codemirror/lint"
 import {tags} from "@lezer/highlight"
 import {HighlightStyle} from "@codemirror/language"
 
-import { ChordProParser, HtmlTableFormatter } from 'chordsheetjs';
+import { ChordProParser, HtmlDivFormatter } from 'chordsheetjs';
 
 @Component({
   tag: 'pc-editor',
@@ -100,7 +100,7 @@ export class Editor {
   renderChordpro(chordpro) {
     const parser = new ChordProParser();
     const song = parser.parse(chordpro);
-    const formatter = new HtmlTableFormatter();
+    const formatter = new HtmlDivFormatter();
     const disp = formatter.format(song);
     this.chordProUpdated.emit(disp);
   }

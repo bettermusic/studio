@@ -9,13 +9,11 @@ export namespace Components {
     interface PcEditor {
         "initialValue": string;
     }
+    interface PcEditorSplitView {
+    }
     interface PcRenderer {
         "html": string;
         "mode": string;
-    }
-    interface PcStudio {
-    }
-    interface TestForAngular {
     }
 }
 export interface PcEditorCustomEvent<T> extends CustomEvent<T> {
@@ -29,29 +27,22 @@ declare global {
         prototype: HTMLPcEditorElement;
         new (): HTMLPcEditorElement;
     };
+    interface HTMLPcEditorSplitViewElement extends Components.PcEditorSplitView, HTMLStencilElement {
+    }
+    var HTMLPcEditorSplitViewElement: {
+        prototype: HTMLPcEditorSplitViewElement;
+        new (): HTMLPcEditorSplitViewElement;
+    };
     interface HTMLPcRendererElement extends Components.PcRenderer, HTMLStencilElement {
     }
     var HTMLPcRendererElement: {
         prototype: HTMLPcRendererElement;
         new (): HTMLPcRendererElement;
     };
-    interface HTMLPcStudioElement extends Components.PcStudio, HTMLStencilElement {
-    }
-    var HTMLPcStudioElement: {
-        prototype: HTMLPcStudioElement;
-        new (): HTMLPcStudioElement;
-    };
-    interface HTMLTestForAngularElement extends Components.TestForAngular, HTMLStencilElement {
-    }
-    var HTMLTestForAngularElement: {
-        prototype: HTMLTestForAngularElement;
-        new (): HTMLTestForAngularElement;
-    };
     interface HTMLElementTagNameMap {
         "pc-editor": HTMLPcEditorElement;
+        "pc-editor-split-view": HTMLPcEditorSplitViewElement;
         "pc-renderer": HTMLPcRendererElement;
-        "pc-studio": HTMLPcStudioElement;
-        "test-for-angular": HTMLTestForAngularElement;
     }
 }
 declare namespace LocalJSX {
@@ -59,19 +50,16 @@ declare namespace LocalJSX {
         "initialValue"?: string;
         "onChordProUpdated"?: (event: PcEditorCustomEvent<string>) => void;
     }
+    interface PcEditorSplitView {
+    }
     interface PcRenderer {
         "html"?: string;
         "mode"?: string;
     }
-    interface PcStudio {
-    }
-    interface TestForAngular {
-    }
     interface IntrinsicElements {
         "pc-editor": PcEditor;
+        "pc-editor-split-view": PcEditorSplitView;
         "pc-renderer": PcRenderer;
-        "pc-studio": PcStudio;
-        "test-for-angular": TestForAngular;
     }
 }
 export { LocalJSX as JSX };
@@ -79,9 +67,8 @@ declare module "@stencil/core" {
     export namespace JSX {
         interface IntrinsicElements {
             "pc-editor": LocalJSX.PcEditor & JSXBase.HTMLAttributes<HTMLPcEditorElement>;
+            "pc-editor-split-view": LocalJSX.PcEditorSplitView & JSXBase.HTMLAttributes<HTMLPcEditorSplitViewElement>;
             "pc-renderer": LocalJSX.PcRenderer & JSXBase.HTMLAttributes<HTMLPcRendererElement>;
-            "pc-studio": LocalJSX.PcStudio & JSXBase.HTMLAttributes<HTMLPcStudioElement>;
-            "test-for-angular": LocalJSX.TestForAngular & JSXBase.HTMLAttributes<HTMLTestForAngularElement>;
         }
     }
 }

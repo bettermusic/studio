@@ -15,6 +15,6 @@ export default {
   // component: Studio 
 };
 
-const Template = (args) => `<pc-studio></pc-studio>`;
+const Template = (args) => `<pc-split-view></pc-split-view>`;
 
 export const Example = Template.bind({});

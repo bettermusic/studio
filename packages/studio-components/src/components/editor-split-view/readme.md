@@ -15,9 +15,9 @@
 ### Graph
 ```mermaid
 graph TD;
-  pc-studio --> pc-editor
-  pc-studio --> pc-renderer
-  style pc-studio fill:#f9f,stroke:#333,stroke-width:4px
+  pc-editor-split-view --> pc-editor
+  pc-editor-split-view --> pc-renderer
+  style pc-editor-split-view fill:#f9f,stroke:#333,stroke-width:4px
 ```
 
 ----------------------------------------------

@@ -17,12 +17,12 @@
 
 ### Used by
 
- - [pc-studio](../studio)
+ - [pc-editor-split-view](../editor-split-view)
 
 ### Graph
 ```mermaid
 graph TD;
-  pc-studio --> pc-renderer
+  pc-editor-split-view --> pc-renderer
   style pc-renderer fill:#f9f,stroke:#333,stroke-width:4px
 ```
 

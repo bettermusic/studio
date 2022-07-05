@@ -23,12 +23,12 @@
 
 ### Used by
 
- - [pc-studio](../studio)
+ - [pc-editor-split-view](../editor-split-view)
 
 ### Graph
 ```mermaid
 graph TD;
-  pc-studio --> pc-editor
+  pc-editor-split-view --> pc-editor
   style pc-editor fill:#f9f,stroke:#333,stroke-width:4px
 ```
 

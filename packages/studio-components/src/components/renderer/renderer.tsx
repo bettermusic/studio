@@ -1,4 +1,4 @@
-import { Component, Host, h, Prop } from '@stencil/core';
+import { Component, Host, h, Prop, Element } from '@stencil/core';
 
 @Component({
   tag: 'pc-renderer',
@@ -9,14 +9,14 @@ export class Renderer {
 
   @Prop() html: string
 
-  @Prop() mode: string;
+ @Prop() mode: string;
+
+ @Element() host: HTMLElement;
 
   render() {
+    this.host.shadowRoot.innerHTML = this.html
     return (
-      <Host>
-        <div innerHTML={this.html}></div>
-      </Host>
+      <Host></Host>
     );
   }
-
 }

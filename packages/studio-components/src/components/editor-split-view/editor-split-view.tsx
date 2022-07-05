@@ -3,11 +3,11 @@ import exampleChordPro from '../../utils/example-chordpro'
 import Split from 'split.js'
 
 @Component({
-  tag: 'pc-studio',
-  styleUrl: 'studio.scss',
+  tag: 'pc-editor-split-view',
+  styleUrl: 'editor-split-view.scss',
   shadow: true,
 })
-export class Studio {
+export class EditorSplitView {
 
   @State() chordpro: string;
 
@@ -16,7 +16,6 @@ export class Studio {
 
   @Listen('chordProUpdated')
   todoCompletedHandler(event: CustomEvent<string>) {
-    console.log(event.detail);
     this.chordpro = event.detail
   }
 
