@@ -1,0 +1,32 @@
+{
+  "name": "@praisecharts/studio-components-angular",
+  "version": "0.0.1",
+  "peerDependencies": {
+    "@angular/common": "^13.3.0",
+    "@angular/core": "^13.3.0",
+    "@praisecharts/studio-components": "*"
+  },
+  "dependencies": {
+    "tslib": "^2.3.0"
+  },
+  "module": "fesm2015/praisecharts-studio-components-angular.mjs",
+  "es2020": "fesm2020/praisecharts-studio-components-angular.mjs",
+  "esm2020": "esm2020/praisecharts-studio-components-angular.mjs",
+  "fesm2020": "fesm2020/praisecharts-studio-components-angular.mjs",
+  "fesm2015": "fesm2015/praisecharts-studio-components-angular.mjs",
+  "typings": "praisecharts-studio-components-angular.d.ts",
+  "exports": {
+    "./package.json": {
+      "default": "./package.json"
+    },
+    ".": {
+      "types": "./praisecharts-studio-components-angular.d.ts",
+      "esm2020": "./esm2020/praisecharts-studio-components-angular.mjs",
+      "es2020": "./fesm2020/praisecharts-studio-components-angular.mjs",
+      "es2015": "./fesm2015/praisecharts-studio-components-angular.mjs",
+      "node": "./fesm2015/praisecharts-studio-components-angular.mjs",
+      "default": "./fesm2020/praisecharts-studio-components-angular.mjs"
+    }
+  },
+  "sideEffects": false
+}
