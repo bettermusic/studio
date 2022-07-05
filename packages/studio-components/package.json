@@ -30,6 +30,7 @@
     "@codemirror/commands": "^6.0.0",
     "@codemirror/lang-chordpro": "*",
     "@codemirror/lang-javascript": "^6.0.0",
+    "@codemirror/lint": "^6.0.0",
     "@codemirror/state": "^6.0.1",
     "@codemirror/view": "^6.0.1",
     "@stencil/angular-output-target": "^0.4.0",

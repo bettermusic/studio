@@ -1749,7 +1749,7 @@
 
 "@codemirror/lint@^6.0.0":
   version "6.0.0"
-  resolved "https://registry.npmjs.org/@codemirror/lint/-/lint-6.0.0.tgz"
+  resolved "https://registry.yarnpkg.com/@codemirror/lint/-/lint-6.0.0.tgz#a249b021ac9933b94fe312d994d220f0ef11a157"
   integrity sha512-nUUXcJW1Xp54kNs+a1ToPLK8MadO0rMTnJB8Zk4Z8gBdrN0kqV7uvUraU/T2yqg+grDNR38Vmy/MrhQN/RgwiA==
   dependencies:
     "@codemirror/state" "^6.0.0"

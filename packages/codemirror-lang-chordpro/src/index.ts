@@ -13,7 +13,8 @@ export const ChordProLanguage = LRLanguage.define({
         Chord: customTags.chord,
         MetaData: t.meta,
         Comment: t.comment,
-        Bracket: t.squareBracket
+        Bracket: t.squareBracket,
+        String: t.string,
       })
     ]
   }),
@@ -25,3 +26,5 @@ export const ChordProLanguage = LRLanguage.define({
 export function ChordPro() {
   return new LanguageSupport(ChordProLanguage)
 }
+
+export {exampleStringLinter} from "./lint"

@@ -1,9 +1,11 @@
 import { Component, h, Element, Host, Prop, State, EventEmitter, Event } from '@stencil/core';
 import {EditorState, Compartment} from "@codemirror/state"
-import {EditorView, gutter, highlightActiveLine, keymap, lineNumbers} from "@codemirror/view"
+import {EditorView, highlightActiveLine, keymap, lineNumbers} from "@codemirror/view"
 import {defaultKeymap, history} from "@codemirror/commands"
 import {syntaxHighlighting} from "@codemirror/language"
-import {ChordPro, customTags} from "@codemirror/lang-chordpro"
+import {ChordPro, customTags, exampleStringLinter} from "@codemirror/lang-chordpro"
+import {lintGutter} from "@codemirror/lint"
+
 
 import {tags} from "@lezer/highlight"
 import {HighlightStyle} from "@codemirror/language"
@@ -73,9 +75,10 @@ export class Editor {
     syntaxHighlighting(this.myHighlightStyle, {fallback: true}),
     keymap.of(defaultKeymap), 
     lineNumbers(), 
+    exampleStringLinter,
+    lintGutter(),
     highlightActiveLine(),
     history(),
-    gutter({class: "cm-mygutter"}),
     this.updateListener,
     this.myTheme,
   ]

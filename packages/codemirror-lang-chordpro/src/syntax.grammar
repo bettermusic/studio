@@ -6,7 +6,8 @@ expression {
   Chord |
   MetaData | 
   Bracket |
-  Comment 
+  Comment |
+  String
 }
 
 @tokens {
@@ -27,7 +28,8 @@ expression {
 
   MetaData { "{" char* ":" char* "}" }
 
-  string { '"' char* '"' }
+  String { '"' char* '"' }
+  
   char { $[\u{20}\u{21}\u{23}-\u{5b}\u{5d}-\u{10ffff}] | "\\" esc }
   esc  { $["\\\/bfnrt] | "u" hex hex hex hex }
   hex  { $[0-9a-fA-F] }
