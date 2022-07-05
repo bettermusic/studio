@@ -46,7 +46,8 @@
     "jest-cli": "^27.4.5",
     "puppeteer": "^10.0.0",
     "rollup-plugin-node-polyfills": "^0.2.1",
-    "split-me": "^1.3.0"
+    "eslint": "^8.15.0",
+    "eslint-config-praisecharts": "*"
   },
   "license": "MIT"
 }

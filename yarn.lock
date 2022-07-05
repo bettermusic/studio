@@ -11998,11 +11998,6 @@ lodash.startcase@^4.4.0:
   resolved "https://registry.npmjs.org/lodash.startcase/-/lodash.startcase-4.4.0.tgz"
   integrity sha512-+WKqsK294HMSc2jEbNgpHpd0JfIBhp7rEV4aqXWqFr6AlXov+SlcgB1Fv01y2kGe3Gc8nMW7VA0SrGuSkRfIEg==
 
-lodash.throttle@^4.1.1:
-  version "4.1.1"
-  resolved "https://registry.npmjs.org/lodash.throttle/-/lodash.throttle-4.1.1.tgz"
-  integrity sha512-wIkUCfVKpVsWo3JSZlc+8MB5it+2AN5W8J7YVMST30UrvcQNZ1Okbj+rbVniijTWE6FGYy4XJq/rHkas8qJMLQ==
-
 lodash.uniq@4.5.0:
   version "4.5.0"
   resolved "https://registry.npmjs.org/lodash.uniq/-/lodash.uniq-4.5.0.tgz"
@@ -16089,13 +16084,6 @@ spdy@^4.0.2:
     http-deceiver "^1.2.7"
     select-hose "^2.0.0"
     spdy-transport "^3.0.0"
-
-split-me@^1.3.0:
-  version "1.3.0"
-  resolved "https://registry.npmjs.org/split-me/-/split-me-1.3.0.tgz"
-  integrity sha512-+vJLn49NuatkA1fri9RnZm653K+WBzLRK1hTZHIEwnUzdcDC1/k0vbGRcWLCREZpqot1f4sw2SFajPjPxuMomw==
-  dependencies:
-    lodash.throttle "^4.1.1"
 
 split-string@^3.0.1, split-string@^3.0.2:
   version "3.1.0"
