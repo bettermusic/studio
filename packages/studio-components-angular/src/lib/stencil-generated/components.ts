@@ -18,13 +18,14 @@ export declare interface PcEditor extends Components.PcEditor {
 
 @ProxyCmp({
   defineCustomElementFn: undefined,
-  inputs: ['initialValue']
+  inputs: ['capo', 'initialValue'],
+  methods: ['setCapo']
 })
 @Component({
   selector: 'pc-editor',
   changeDetection: ChangeDetectionStrategy.OnPush,
   template: '<ng-content></ng-content>',
-  inputs: ['initialValue']
+  inputs: ['capo', 'initialValue']
 })
 export class PcEditor {
   protected el: HTMLElement;
@@ -68,25 +69,6 @@ export declare interface PcRenderer extends Components.PcRenderer {}
   inputs: ['html', 'mode']
 })
 export class PcRenderer {
-  protected el: HTMLElement;
-  constructor(c: ChangeDetectorRef, r: ElementRef, protected z: NgZone) {
-    c.detach();
-    this.el = r.nativeElement;
-  }
-}
-
-
-export declare interface TestForAngular extends Components.TestForAngular {}
-
-@ProxyCmp({
-  defineCustomElementFn: undefined
-})
-@Component({
-  selector: 'test-for-angular',
-  changeDetection: ChangeDetectionStrategy.OnPush,
-  template: '<ng-content></ng-content>'
-})
-export class TestForAngular {
   protected el: HTMLElement;
   constructor(c: ChangeDetectorRef, r: ElementRef, protected z: NgZone) {
     c.detach();

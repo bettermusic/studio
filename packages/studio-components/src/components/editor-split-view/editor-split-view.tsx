@@ -1,6 +1,7 @@
-import { Component, Host, h, State, Listen } from '@stencil/core';
-import exampleChordPro from '../../utils/example-chordpro'
+import { Component, Host, h } from '@stencil/core';
 import Split from 'split.js'
+import state from "../../utils/store";
+
 
 @Component({
   tag: 'pc-editor-split-view',
@@ -9,40 +10,26 @@ import Split from 'split.js'
 })
 export class EditorSplitView {
 
-  @State() chordpro: string;
-
-  @State() capo: number;
-
   private editor?: HTMLElement
   private view?: HTMLElement
 
-  @Listen('chordProUpdated')
-  todoCompletedHandler(event: CustomEvent<string>) {
-    this.chordpro = event.detail
-  }
-
-  exampleChordPro = exampleChordPro
-
   componentDidLoad() {
+    // this.chordpro = this.html
     Split([this.editor, this.view], {
       sizes: [50, 50],
       minSize: 0,
     })
   }
 
-  private setCapo = () => {
-    this.capo = 5
-  }
-
   render() {
     return (
       <Host>
         <div class="controls">
-          <button onClick={this.setCapo}>Set Capo</button>
+          <button onClick={() => state.capo++}>Set Capo {state.capo + 1}</button>
         </div>
         <div id="flex">
-          <pc-editor ref={el => this.editor = el as HTMLElement} initialValue={this.exampleChordPro} capo={this.capo}></pc-editor>
-          <pc-renderer ref={el => this.view = el as HTMLElement} html={this.chordpro}></pc-renderer>
+          <pc-editor ref={el => this.editor = el as HTMLElement} initialValue={state.chordpro}></pc-editor>
+          <pc-renderer ref={el => this.view = el as HTMLElement} html={state.html}></pc-renderer>
         </div>
       </Host>
     );

@@ -7,7 +7,6 @@
 import { HTMLStencilElement, JSXBase } from "@stencil/core/internal";
 export namespace Components {
     interface PcEditor {
-        "capo": number;
         "initialValue": string;
         "setCapo": (capoPosition: number) => Promise<void>;
     }
@@ -17,10 +16,6 @@ export namespace Components {
         "html": string;
         "mode": string;
     }
-}
-export interface PcEditorCustomEvent<T> extends CustomEvent<T> {
-    detail: T;
-    target: HTMLPcEditorElement;
 }
 declare global {
     interface HTMLPcEditorElement extends Components.PcEditor, HTMLStencilElement {
@@ -49,9 +44,7 @@ declare global {
 }
 declare namespace LocalJSX {
     interface PcEditor {
-        "capo"?: number;
         "initialValue"?: string;
-        "onChordProUpdated"?: (event: PcEditorCustomEvent<string>) => void;
     }
     interface PcEditorSplitView {
     }

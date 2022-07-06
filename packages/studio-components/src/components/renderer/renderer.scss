@@ -1,13 +1,11 @@
 :host {
     display: flex;
+    flex-direction: column;
     padding: 0 40px;
     margin: 20px 20px;
     border: 1px solid #111;
     background-color: #fff;
-    flex-direction: column;
     overflow: scroll;
-    flex-wrap: wrap;
-    
 }
 
 .comment {

@@ -9,6 +9,7 @@
 
 | Property       | Attribute       | Description | Type     | Default     |
 | -------------- | --------------- | ----------- | -------- | ----------- |
+| `capo`         | `capo`          |             | `number` | `0`         |
 | `initialValue` | `initial-value` |             | `string` | `undefined` |
 
 
@@ -17,6 +18,19 @@
 | Event             | Description | Type                  |
 | ----------------- | ----------- | --------------------- |
 | `chordProUpdated` |             | `CustomEvent<string>` |
+
+
+## Methods
+
+### `setCapo(capoPosition: number) => Promise<void>`
+
+
+
+#### Returns
+
+Type: `Promise<void>`
+
+
 
 
 ## Dependencies
