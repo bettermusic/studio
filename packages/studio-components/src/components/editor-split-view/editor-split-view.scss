@@ -1,5 +1,6 @@
 :host {
   display: flex;
+  flex-direction: column;
   background-color: #2b2b2b;
 }
 
@@ -25,4 +26,8 @@
   background-repeat: no-repeat;
   height: 100vh;
   background-position: center;
+}
+
+.controls {
+  padding: 1rem;
 }

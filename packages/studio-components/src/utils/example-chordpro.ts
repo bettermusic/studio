@@ -1,7 +1,6 @@
 export default `
-{t:Kingdom}
+{t: Kingdom}
 {artist: Maverick City Music}
-{capo: 3}
 {key: F}  
 {c:Intro (2x)}
 [Gm][F][/][/][|][C#dim7][Dm][/][/][|]

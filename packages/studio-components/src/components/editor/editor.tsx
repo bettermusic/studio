@@ -1,4 +1,4 @@
-import { Component, h, Element, Host, Prop, State, EventEmitter, Event } from '@stencil/core';
+import { Component, h, Element, Host, Prop, State, EventEmitter, Event, Method, Watch } from '@stencil/core';
 import {EditorState, Compartment} from "@codemirror/state"
 import {EditorView, highlightActiveLine, keymap, lineNumbers} from "@codemirror/view"
 import {defaultKeymap, history} from "@codemirror/commands"
@@ -10,7 +10,7 @@ import {lintGutter} from "@codemirror/lint"
 import {tags} from "@lezer/highlight"
 import {HighlightStyle} from "@codemirror/language"
 
-import { ChordProParser, HtmlDivFormatter } from 'chordsheetjs';
+import { ChordProFormatter, ChordProParser, HtmlDivFormatter, Song } from '@praisecharts/chordsheetjs';
 
 @Component({
   tag: 'pc-editor',
@@ -20,18 +20,23 @@ import { ChordProParser, HtmlDivFormatter } from 'chordsheetjs';
 export class Editor {
   
   @Prop() initialValue: string;
+
+  @Prop() capo: number = 0;
   
   @Element() host: HTMLElement;
 
   @State() editor: EditorView;
 
-  @State() chordpro: string;
+  @State()chordpro: string;
+
+  @State() song: Song;
 
   @Event() chordProUpdated: EventEmitter<string>;
 
   updateListener = EditorView.updateListener.of((v) => {
     if (v.docChanged) {
-      this.renderChordpro(v.state.doc.toString());
+      this.chordpro = v.state.doc.toString();
+      this.renderChordpro();
     }
   });
 
@@ -55,7 +60,7 @@ export class Editor {
         backgroundColor: "#224e7a"
       },
       ".cm-gutters": {
-        backgroundColor: "##3c3f41",
+        backgroundColor: "#2b2b2b",
         color: "#8a8c8d",
         border: "none"
       }
@@ -82,12 +87,29 @@ export class Editor {
     this.updateListener,
     this.myTheme,
   ]
+  
+  @Method()
+  async setCapo(capoPosition: number) {
+    this.song = this.song.setCapo(capoPosition);
+    const formatter = new ChordProFormatter();
+    const disp = formatter.format(this.song);
+    //update this.editor.state.doc to this.chordpro
+    let transaction = this.editor.state.update({changes: {from: 0, insert: disp}})
+    this.editor.dispatch(transaction)
+  }
+
+  @Watch('capo')
+  async capoPropHandler(newValue: number) {
+    return this.setCapo(newValue);
+  }
 
   constructor() {
   }
 
   componentWillLoad() {
-    this.renderChordpro(this.initialValue);
+    this.chordpro = this.initialValue;
+    this.renderChordpro();
+
     this.editor = new EditorView({
       state: EditorState.create({
         doc: this.initialValue,
@@ -97,11 +119,11 @@ export class Editor {
     })
   }
 
-  renderChordpro(chordpro) {
+  renderChordpro() {
     const parser = new ChordProParser();
-    const song = parser.parse(chordpro);
+    this.song = parser.parse(this.chordpro);
     const formatter = new HtmlDivFormatter();
-    const disp = formatter.format(song);
+    const disp = formatter.format(this.song);
     this.chordProUpdated.emit(disp);
   }
 
