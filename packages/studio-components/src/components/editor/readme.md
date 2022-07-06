@@ -9,15 +9,7 @@
 
 | Property       | Attribute       | Description | Type     | Default     |
 | -------------- | --------------- | ----------- | -------- | ----------- |
-| `capo`         | `capo`          |             | `number` | `0`         |
 | `initialValue` | `initial-value` |             | `string` | `undefined` |
-
-
-## Events
-
-| Event             | Description | Type                  |
-| ----------------- | ----------- | --------------------- |
-| `chordProUpdated` |             | `CustomEvent<string>` |
 
 
 ## Methods

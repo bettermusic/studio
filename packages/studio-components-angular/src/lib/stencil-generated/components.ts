@@ -8,31 +8,24 @@ import { Components } from '@praisecharts/studio-components';
 
 
 
-export declare interface PcEditor extends Components.PcEditor {
-  /**
-   *  
-   */
-  chordProUpdated: EventEmitter<CustomEvent<string>>;
-
-}
+export declare interface PcEditor extends Components.PcEditor {}
 
 @ProxyCmp({
   defineCustomElementFn: undefined,
-  inputs: ['capo', 'initialValue'],
+  inputs: ['initialValue'],
   methods: ['setCapo']
 })
 @Component({
   selector: 'pc-editor',
   changeDetection: ChangeDetectionStrategy.OnPush,
   template: '<ng-content></ng-content>',
-  inputs: ['capo', 'initialValue']
+  inputs: ['initialValue']
 })
 export class PcEditor {
   protected el: HTMLElement;
   constructor(c: ChangeDetectorRef, r: ElementRef, protected z: NgZone) {
     c.detach();
     this.el = r.nativeElement;
-    proxyOutputs(this, this.el, ['chordProUpdated']);
   }
 }
 

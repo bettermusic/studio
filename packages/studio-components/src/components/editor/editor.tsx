@@ -20,10 +20,7 @@ export class Editor {
   async setCapo(capoPosition: number) {
     state.capo = capoPosition;
   }
-
-  constructor() {
-  }
-
+  
   connectedCallback() {
     state.editorView = new EditorView({
       state: EditorState.create({
