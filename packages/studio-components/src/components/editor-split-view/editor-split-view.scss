@@ -7,9 +7,10 @@
 #flex {
   display: flex;
   flex-direction: row;
-  height: 100vh;
+  height: calc(100vh - 4rem);
   width: 100%;
   overflow: hidden;
+  background-color: #2b2b2b;
 }
 
 .gutter {
@@ -29,5 +30,19 @@
 }
 
 .controls {
+  --gap: 12px;
+  display: inline-flex;
+  flex-wrap: wrap;
   padding: 1rem;
+  background-color: #2b2b2b;
+  margin: calc(-1 * var(--gap)) 0 0 calc(-1 * var(--gap));
+  width: calc(100% + var(--gap));
+}
+
+.controls > * {
+  margin: var(--gap) 0 0 var(--gap);
+}
+
+pc-dropdown {
+  width: 200px;
 }

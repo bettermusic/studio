@@ -6,18 +6,98 @@
  */
 import { HTMLStencilElement, JSXBase } from "@stencil/core/internal";
 export namespace Components {
+    interface PcDropdown {
+        /**
+          * Where to append element
+         */
+        "appendTo": 'body' | 'current';
+        /**
+          * Should dropdown autoclose on changeValue
+         */
+        "autoClose": boolean;
+        "autoFocus": boolean;
+        "autocomplete": boolean;
+        /**
+          * Filter value
+         */
+        "currentFilter": any;
+        /**
+          * Define object mapping for id/value
+         */
+        "dataId": string;
+        /**
+          * Define object mapping for labels
+         */
+        "dataLabel": string;
+        /**
+          * Change value
+         */
+        "doChange": (val: any, originalEvent?: MouseEvent) => Promise<void>;
+        /**
+          * Close dropdown
+         */
+        "doClose": (isDisconnected?: boolean) => Promise<void>;
+        /**
+          * Open dropdown
+         */
+        "doOpen": () => Promise<void>;
+        /**
+          * Filter criteria
+         */
+        "filter": 'contains' | 'start';
+        "hasFilter": boolean;
+        "maxHeight": number;
+        /**
+          * Placeholder text
+         */
+        "placeholder": string;
+        /**
+          * Define object mapping for id/value
+         */
+        "source": any[];
+        /**
+          * Selected value
+         */
+        "value": any;
+    }
     interface PcEditor {
         "initialValue": string;
         "setCapo": (capoPosition: number) => Promise<void>;
     }
     interface PcEditorSplitView {
     }
+    interface PcList {
+        /**
+          * Define object mapping for labels
+         */
+        "dataLabel": string;
+        "isFocused": boolean;
+        "refresh": (source: any[]) => Promise<void>;
+        /**
+          * Define object mapping for id/value
+         */
+        "sourceItems": any[];
+    }
     interface PcRenderer {
         "html": string;
         "mode": string;
     }
 }
+export interface PcDropdownCustomEvent<T> extends CustomEvent<T> {
+    detail: T;
+    target: HTMLPcDropdownElement;
+}
+export interface PcListCustomEvent<T> extends CustomEvent<T> {
+    detail: T;
+    target: HTMLPcListElement;
+}
 declare global {
+    interface HTMLPcDropdownElement extends Components.PcDropdown, HTMLStencilElement {
+    }
+    var HTMLPcDropdownElement: {
+        prototype: HTMLPcDropdownElement;
+        new (): HTMLPcDropdownElement;
+    };
     interface HTMLPcEditorElement extends Components.PcEditor, HTMLStencilElement {
     }
     var HTMLPcEditorElement: {
@@ -30,6 +110,12 @@ declare global {
         prototype: HTMLPcEditorSplitViewElement;
         new (): HTMLPcEditorSplitViewElement;
     };
+    interface HTMLPcListElement extends Components.PcList, HTMLStencilElement {
+    }
+    var HTMLPcListElement: {
+        prototype: HTMLPcListElement;
+        new (): HTMLPcListElement;
+    };
     interface HTMLPcRendererElement extends Components.PcRenderer, HTMLStencilElement {
     }
     var HTMLPcRendererElement: {
@@ -37,24 +123,94 @@ declare global {
         new (): HTMLPcRendererElement;
     };
     interface HTMLElementTagNameMap {
+        "pc-dropdown": HTMLPcDropdownElement;
         "pc-editor": HTMLPcEditorElement;
         "pc-editor-split-view": HTMLPcEditorSplitViewElement;
+        "pc-list": HTMLPcListElement;
         "pc-renderer": HTMLPcRendererElement;
     }
 }
 declare namespace LocalJSX {
+    interface PcDropdown {
+        /**
+          * Where to append element
+         */
+        "appendTo"?: 'body' | 'current';
+        /**
+          * Should dropdown autoclose on changeValue
+         */
+        "autoClose"?: boolean;
+        "autoFocus"?: boolean;
+        "autocomplete"?: boolean;
+        /**
+          * Filter value
+         */
+        "currentFilter"?: any;
+        /**
+          * Define object mapping for id/value
+         */
+        "dataId"?: string;
+        /**
+          * Define object mapping for labels
+         */
+        "dataLabel"?: string;
+        /**
+          * Filter criteria
+         */
+        "filter"?: 'contains' | 'start';
+        "hasFilter"?: boolean;
+        "maxHeight"?: number;
+        /**
+          * When value changed
+         */
+        "onChanged"?: (event: PcDropdownCustomEvent<{ val: any; originalEvent?: MouseEvent }>) => void;
+        /**
+          * Before element close, can be prevented
+         */
+        "onClose"?: (event: PcDropdownCustomEvent<any>) => void;
+        /**
+          * Before element open, can be prevented
+         */
+        "onOpen"?: (event: PcDropdownCustomEvent<any>) => void;
+        /**
+          * Placeholder text
+         */
+        "placeholder"?: string;
+        /**
+          * Define object mapping for id/value
+         */
+        "source"?: any[];
+        /**
+          * Selected value
+         */
+        "value"?: any;
+    }
     interface PcEditor {
         "initialValue"?: string;
     }
     interface PcEditorSplitView {
+    }
+    interface PcList {
+        /**
+          * Define object mapping for labels
+         */
+        "dataLabel"?: string;
+        "isFocused"?: boolean;
+        "onChanged"?: (event: PcListCustomEvent<{ item: any; e: any }>) => void;
+        /**
+          * Define object mapping for id/value
+         */
+        "sourceItems"?: any[];
     }
     interface PcRenderer {
         "html"?: string;
         "mode"?: string;
     }
     interface IntrinsicElements {
+        "pc-dropdown": PcDropdown;
         "pc-editor": PcEditor;
         "pc-editor-split-view": PcEditorSplitView;
+        "pc-list": PcList;
         "pc-renderer": PcRenderer;
     }
 }
@@ -62,8 +218,10 @@ export { LocalJSX as JSX };
 declare module "@stencil/core" {
     export namespace JSX {
         interface IntrinsicElements {
+            "pc-dropdown": LocalJSX.PcDropdown & JSXBase.HTMLAttributes<HTMLPcDropdownElement>;
             "pc-editor": LocalJSX.PcEditor & JSXBase.HTMLAttributes<HTMLPcEditorElement>;
             "pc-editor-split-view": LocalJSX.PcEditorSplitView & JSXBase.HTMLAttributes<HTMLPcEditorSplitViewElement>;
+            "pc-list": LocalJSX.PcList & JSXBase.HTMLAttributes<HTMLPcListElement>;
             "pc-renderer": LocalJSX.PcRenderer & JSXBase.HTMLAttributes<HTMLPcRendererElement>;
         }
     }

@@ -22,15 +22,18 @@ export class Editor {
   }
   
   connectedCallback() {
-    state.editorView = new EditorView({
-      state: EditorState.create({
-        doc: state.chordpro,
-        extensions: state.editorExtensions
-      }),
-      parent:  this.host.shadowRoot,
-      root: this.host.shadowRoot,
-    })
-  }
+    if (!state.editorView) {
+      
+      state.editorView = new EditorView({
+          state: EditorState.create({
+            doc: state.chordpro,
+            extensions: state.editorExtensions
+          }),
+          parent:  this.host.shadowRoot,
+          root: this.host.shadowRoot,
+        })
+      }
+    }
 
   render() {
     return (

@@ -6,7 +6,6 @@ import state from "../../utils/store";
 @Component({
   tag: 'pc-editor-split-view',
   styleUrl: 'editor-split-view.scss',
-  shadow: true,
 })
 export class EditorSplitView {
 
@@ -25,7 +24,8 @@ export class EditorSplitView {
     return (
       <Host>
         <div class="controls">
-          <button onClick={() => state.capo++}>Set Capo {state.capo + 1}</button>
+          <pc-dropdown dataLabel="name" dataId="name" source={state.keys} placeholder="Keys"></pc-dropdown>
+          <pc-dropdown dataLabel="position" dataId="position" source={state.capos} placeholder="Capo"></pc-dropdown>
         </div>
         <div id="flex">
           <pc-editor ref={el => this.editor = el as HTMLElement} initialValue={state.chordpro}></pc-editor>
