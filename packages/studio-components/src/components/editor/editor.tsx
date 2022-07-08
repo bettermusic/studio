@@ -26,7 +26,7 @@ export class Editor {
       
       state.editorView = new EditorView({
           state: EditorState.create({
-            doc: state.chordpro,
+            doc: state.input,
             extensions: state.editorExtensions
           }),
           parent:  this.host.shadowRoot,

@@ -24,11 +24,11 @@ export class EditorSplitView {
     return (
       <Host>
         <div class="controls">
-          <pc-dropdown dataLabel="name" dataId="name" source={state.keys} placeholder="Keys"></pc-dropdown>
-          <pc-dropdown dataLabel="position" dataId="position" source={state.capos} placeholder="Capo"></pc-dropdown>
+          <pc-editor-key-dropdown></pc-editor-key-dropdown>
+          <pc-editor-capo-dropdown></pc-editor-capo-dropdown>
         </div>
         <div id="flex">
-          <pc-editor ref={el => this.editor = el as HTMLElement} initialValue={state.chordpro}></pc-editor>
+          <pc-editor ref={el => this.editor = el as HTMLElement} initialValue={state.input}></pc-editor>
           <pc-renderer ref={el => this.view = el as HTMLElement} html={state.html}></pc-renderer>
         </div>
       </Host>

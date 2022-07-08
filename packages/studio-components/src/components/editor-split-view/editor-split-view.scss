@@ -7,7 +7,7 @@
 #flex {
   display: flex;
   flex-direction: row;
-  height: calc(100vh - 4rem);
+  height: calc(100vh - 5rem);
   width: 100%;
   overflow: hidden;
   background-color: #2b2b2b;
@@ -30,10 +30,11 @@
 }
 
 .controls {
-  --gap: 12px;
+  --gap: 1rem;
   display: inline-flex;
   flex-wrap: wrap;
   padding: 1rem;
+  height: 4rem;
   background-color: #2b2b2b;
   margin: calc(-1 * var(--gap)) 0 0 calc(-1 * var(--gap));
   width: calc(100% + var(--gap));
