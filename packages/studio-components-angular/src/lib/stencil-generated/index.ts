@@ -2,9 +2,9 @@
 import * as d from './components';
 
 export const DIRECTIVES = [
+  d.PcDropdown,
   d.PcEditor,
   d.PcEditorSplitView,
-  d.PcRenderer,
-  d.PcDropdown,
-  d.PcList
+  d.PcList,
+  d.PcRenderer
 ];

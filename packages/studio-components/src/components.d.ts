@@ -64,6 +64,10 @@ export namespace Components {
         "initialValue": string;
         "setCapo": (capoPosition: number) => Promise<void>;
     }
+    interface PcEditorCapoDropdown {
+    }
+    interface PcEditorKeyDropdown {
+    }
     interface PcEditorSplitView {
     }
     interface PcList {
@@ -104,6 +108,18 @@ declare global {
         prototype: HTMLPcEditorElement;
         new (): HTMLPcEditorElement;
     };
+    interface HTMLPcEditorCapoDropdownElement extends Components.PcEditorCapoDropdown, HTMLStencilElement {
+    }
+    var HTMLPcEditorCapoDropdownElement: {
+        prototype: HTMLPcEditorCapoDropdownElement;
+        new (): HTMLPcEditorCapoDropdownElement;
+    };
+    interface HTMLPcEditorKeyDropdownElement extends Components.PcEditorKeyDropdown, HTMLStencilElement {
+    }
+    var HTMLPcEditorKeyDropdownElement: {
+        prototype: HTMLPcEditorKeyDropdownElement;
+        new (): HTMLPcEditorKeyDropdownElement;
+    };
     interface HTMLPcEditorSplitViewElement extends Components.PcEditorSplitView, HTMLStencilElement {
     }
     var HTMLPcEditorSplitViewElement: {
@@ -125,6 +141,8 @@ declare global {
     interface HTMLElementTagNameMap {
         "pc-dropdown": HTMLPcDropdownElement;
         "pc-editor": HTMLPcEditorElement;
+        "pc-editor-capo-dropdown": HTMLPcEditorCapoDropdownElement;
+        "pc-editor-key-dropdown": HTMLPcEditorKeyDropdownElement;
         "pc-editor-split-view": HTMLPcEditorSplitViewElement;
         "pc-list": HTMLPcListElement;
         "pc-renderer": HTMLPcRendererElement;
@@ -188,6 +206,10 @@ declare namespace LocalJSX {
     interface PcEditor {
         "initialValue"?: string;
     }
+    interface PcEditorCapoDropdown {
+    }
+    interface PcEditorKeyDropdown {
+    }
     interface PcEditorSplitView {
     }
     interface PcList {
@@ -209,6 +231,8 @@ declare namespace LocalJSX {
     interface IntrinsicElements {
         "pc-dropdown": PcDropdown;
         "pc-editor": PcEditor;
+        "pc-editor-capo-dropdown": PcEditorCapoDropdown;
+        "pc-editor-key-dropdown": PcEditorKeyDropdown;
         "pc-editor-split-view": PcEditorSplitView;
         "pc-list": PcList;
         "pc-renderer": PcRenderer;
@@ -220,6 +244,8 @@ declare module "@stencil/core" {
         interface IntrinsicElements {
             "pc-dropdown": LocalJSX.PcDropdown & JSXBase.HTMLAttributes<HTMLPcDropdownElement>;
             "pc-editor": LocalJSX.PcEditor & JSXBase.HTMLAttributes<HTMLPcEditorElement>;
+            "pc-editor-capo-dropdown": LocalJSX.PcEditorCapoDropdown & JSXBase.HTMLAttributes<HTMLPcEditorCapoDropdownElement>;
+            "pc-editor-key-dropdown": LocalJSX.PcEditorKeyDropdown & JSXBase.HTMLAttributes<HTMLPcEditorKeyDropdownElement>;
             "pc-editor-split-view": LocalJSX.PcEditorSplitView & JSXBase.HTMLAttributes<HTMLPcEditorSplitViewElement>;
             "pc-list": LocalJSX.PcList & JSXBase.HTMLAttributes<HTMLPcListElement>;
             "pc-renderer": LocalJSX.PcRenderer & JSXBase.HTMLAttributes<HTMLPcRendererElement>;

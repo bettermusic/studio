@@ -71,7 +71,6 @@ function initialState() {
   // take majorKeys from teh keys config and map each key to an array of objects where there is a name and a value
   let keys = getKeys(true);
   let capos = getAvaliableCaposFromKey(song.key);
-  console.log(capos);
   let html = formatSong(song);
   
   return <IStore> {
