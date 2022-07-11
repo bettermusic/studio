@@ -45,8 +45,6 @@ Using Turborepo simplifes managing your design system monorepo, as you can have 
 This Turborepo includes the following packages and applications:
 
 - `apps/docs`: Component documentation site with Storybook
-- `packages/@example/core`: Core React components
-- `packages/@example/utils`: Shared React utilities
 - `packages/@example/tsconfig`: Shared `tsconfig.json`s used throughout the Turborepo
 - `packages/eslint-preset-example`: ESLint preset
 

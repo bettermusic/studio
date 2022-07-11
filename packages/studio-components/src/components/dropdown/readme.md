@@ -66,6 +66,11 @@ Type: `Promise<void>`
 
 ## Dependencies
 
+### Used by
+
+ - [pc-editor-capo-dropdown](../editor-capo-dropdown)
+ - [pc-editor-key-dropdown](../editor-key-dropdown)
+
 ### Depends on
 
 - [pc-list](../list)
@@ -74,6 +79,8 @@ Type: `Promise<void>`
 ```mermaid
 graph TD;
   pc-dropdown --> pc-list
+  pc-editor-capo-dropdown --> pc-dropdown
+  pc-editor-key-dropdown --> pc-dropdown
   style pc-dropdown fill:#f9f,stroke:#333,stroke-width:4px
 ```
 
