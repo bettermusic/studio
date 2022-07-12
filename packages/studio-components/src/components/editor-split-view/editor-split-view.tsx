@@ -1,6 +1,6 @@
 import { Component, Host, h } from '@stencil/core';
 import Split from 'split.js'
-import state from "../../utils/store";
+import state from "../../stores/editor_store";
 
 
 @Component({

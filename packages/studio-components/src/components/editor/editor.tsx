@@ -1,7 +1,7 @@
 import { Component, h, Element, Host, Prop, State,  Method } from '@stencil/core';
 import {EditorState} from "@codemirror/state"
 import {EditorView} from "@codemirror/view"
-import state from "../../utils/store";
+import state from "../../stores/editor_store";
 
 @Component({
   tag: 'pc-editor',

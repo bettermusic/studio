@@ -1,13 +1,13 @@
 import { createStore } from "@stencil/store";
 import { ChordProFormatter, HtmlDivFormatter, HtmlTableFormatter, Song, ChordProParser, ChordSheetParser, TextFormatter  } from '@praisecharts/chordsheetjs';
-import exampleChordPro from './example-chordpro'
+import exampleChordPro from '../utils/example-chordpro'
 import {EditorView, highlightActiveLine, keymap, lineNumbers} from "@codemirror/view"
 import {defaultKeymap, history} from "@codemirror/commands"
 import {syntaxHighlighting} from "@codemirror/language"
 import {ChordPro, exampleStringLinter} from "@codemirror/lang-chordpro"
 import {lintGutter} from "@codemirror/lint"
-import { formatSong, getAvaliableCaposFromKey, getKeys, parseChordpro, renderChordpro } from "./chordsheetjs.helpers";
-import { language, myHighlightStyle, myTheme } from "./codemirror.utils";
+import { formatSong, getAvaliableCaposFromKey, getKeys, parseChordpro, renderChordpro } from "../utils/chordsheetjs.helpers";
+import { language, myHighlightStyle, myTheme } from "../utils/codemirror.utils";
 interface IStore {
     capo: number;
     html: string;

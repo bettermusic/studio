@@ -1,5 +1,5 @@
 import { Component, Host, h, Listen } from '@stencil/core';
-import state from "../../utils/store";
+import state from "../../stores/editor_store";
 
 @Component({
   tag: 'pc-editor-capo-dropdown',

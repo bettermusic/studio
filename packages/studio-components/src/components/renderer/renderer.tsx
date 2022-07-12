@@ -1,5 +1,5 @@
 import { Component, Host, h, Prop, Element } from '@stencil/core';
-import state from "../../utils/store";
+import state from "../../stores/editor_store";
 
 @Component({
   tag: 'pc-renderer',
