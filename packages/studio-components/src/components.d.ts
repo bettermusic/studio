@@ -80,6 +80,8 @@ export namespace Components {
     }
     interface PcEditorKeyDropdown {
     }
+    interface PcEditorModeDropdown {
+    }
     interface PcEditorSplitView {
     }
     interface PcRenderer {
@@ -126,6 +128,12 @@ declare global {
         prototype: HTMLPcEditorKeyDropdownElement;
         new (): HTMLPcEditorKeyDropdownElement;
     };
+    interface HTMLPcEditorModeDropdownElement extends Components.PcEditorModeDropdown, HTMLStencilElement {
+    }
+    var HTMLPcEditorModeDropdownElement: {
+        prototype: HTMLPcEditorModeDropdownElement;
+        new (): HTMLPcEditorModeDropdownElement;
+    };
     interface HTMLPcEditorSplitViewElement extends Components.PcEditorSplitView, HTMLStencilElement {
     }
     var HTMLPcEditorSplitViewElement: {
@@ -144,6 +152,7 @@ declare global {
         "pc-editor": HTMLPcEditorElement;
         "pc-editor-capo-dropdown": HTMLPcEditorCapoDropdownElement;
         "pc-editor-key-dropdown": HTMLPcEditorKeyDropdownElement;
+        "pc-editor-mode-dropdown": HTMLPcEditorModeDropdownElement;
         "pc-editor-split-view": HTMLPcEditorSplitViewElement;
         "pc-renderer": HTMLPcRendererElement;
     }
@@ -222,6 +231,8 @@ declare namespace LocalJSX {
     }
     interface PcEditorKeyDropdown {
     }
+    interface PcEditorModeDropdown {
+    }
     interface PcEditorSplitView {
     }
     interface PcRenderer {
@@ -234,6 +245,7 @@ declare namespace LocalJSX {
         "pc-editor": PcEditor;
         "pc-editor-capo-dropdown": PcEditorCapoDropdown;
         "pc-editor-key-dropdown": PcEditorKeyDropdown;
+        "pc-editor-mode-dropdown": PcEditorModeDropdown;
         "pc-editor-split-view": PcEditorSplitView;
         "pc-renderer": PcRenderer;
     }
@@ -247,6 +259,7 @@ declare module "@stencil/core" {
             "pc-editor": LocalJSX.PcEditor & JSXBase.HTMLAttributes<HTMLPcEditorElement>;
             "pc-editor-capo-dropdown": LocalJSX.PcEditorCapoDropdown & JSXBase.HTMLAttributes<HTMLPcEditorCapoDropdownElement>;
             "pc-editor-key-dropdown": LocalJSX.PcEditorKeyDropdown & JSXBase.HTMLAttributes<HTMLPcEditorKeyDropdownElement>;
+            "pc-editor-mode-dropdown": LocalJSX.PcEditorModeDropdown & JSXBase.HTMLAttributes<HTMLPcEditorModeDropdownElement>;
             "pc-editor-split-view": LocalJSX.PcEditorSplitView & JSXBase.HTMLAttributes<HTMLPcEditorSplitViewElement>;
             "pc-renderer": LocalJSX.PcRenderer & JSXBase.HTMLAttributes<HTMLPcRendererElement>;
         }

@@ -24,6 +24,7 @@ export class EditorSplitView {
     return (
       <Host>
         <div class="controls">
+          <pc-editor-mode-dropdown></pc-editor-mode-dropdown>
           <pc-editor-key-dropdown></pc-editor-key-dropdown>
           <pc-editor-capo-dropdown></pc-editor-capo-dropdown>
         </div>

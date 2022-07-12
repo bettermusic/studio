@@ -6,7 +6,7 @@ import {defaultKeymap, history} from "@codemirror/commands"
 import {syntaxHighlighting} from "@codemirror/language"
 import {ChordPro, exampleStringLinter} from "@codemirror/lang-chordpro"
 import {lintGutter} from "@codemirror/lint"
-import { formatSong, getAvaliableCaposFromKey, getKeys, parseChordpro, renderChordpro } from "../utils/chordsheetjs.helpers";
+import { formatSong, getAvaliableCaposFromKey, getKeys, parseInput } from "../utils/chordsheetjs.helpers";
 import { language, myHighlightStyle, myTheme } from "../utils/codemirror.utils";
 interface IStore {
     capo: number;
@@ -17,7 +17,8 @@ interface IStore {
     song: Song;
     minor: boolean;
     input: string;
-    editorMode: "chordpro" | "chords_over_words";
+    editorMode: "chordpro" | "cow";
+    editorModes: any;
     parser: ChordProParser | ChordSheetParser;
     formatter: ChordProFormatter | HtmlDivFormatter | HtmlTableFormatter | TextFormatter;
     chordType: 'symbols' | 'numbers' | 'numerals';
@@ -42,28 +43,51 @@ const { state, onChange } = createStore<IStore>({
 });
 
 onChange('input', value => {
-  state.html = renderChordpro(value);
+  let song = parseInput(value, state.parser);
+  state.html = formatSong(song, state.formatter);
+  state.song = song;
 });
 
 onChange('capo', value => {
   const formatter = new ChordProFormatter();
   state.song = state.song.setCapo(value);
-  state.input = formatter.format(state.song);
-  let transaction = state.editorView.state.update({changes: {from: 0, insert: state.input}});
+  let input = formatter.format(state.song);
+  let docLength = state.editorView.state.doc.length;
+  let transaction = state.editorView.state.update({changes: {from: 0, to: docLength, insert: input}});
   state.editorView.dispatch(transaction);
+  state.input = input;
 });
 
 onChange('currentKey', value => {
   const formatter = new ChordProFormatter();
   state.song = state.song.changeKey(value);
   state.capos = getAvaliableCaposFromKey(value);
-  state.input = formatter.format(state.song);
-  let transaction = state.editorView.state.update({changes: {from: 0, insert: state.input}});
+  let input = formatter.format(state.song);
+  let docLength = state.editorView.state.doc.length;
+  let transaction = state.editorView.state.update({changes: {from: 0, to: docLength, insert: input}});
   state.editorView.dispatch(transaction);
+  state.input = input;
+});
+
+onChange('editorMode', value => {
+  let formatter;
+  if (value === "cow") { 
+    formatter = new TextFormatter();
+    state.parser = new ChordSheetParser();
+  } 
+  if (value === "chordpro") {
+    formatter = new ChordProFormatter();
+    state.parser = new ChordProParser();
+  }
+  let input = formatter.format(state.song);
+  let docLength = state.editorView.state.doc.length;
+  let transaction = state.editorView.state.update({changes: {from: 0, to: docLength, insert: input}});
+  state.editorView.dispatch(transaction);
+  state.input = input;
 });
 
 function initialState() {
-  let song = parseChordpro(exampleChordPro)
+  let song = parseInput(exampleChordPro, new ChordProParser())
   let capo = 0;
   let currentKey = {
     name: song.key
@@ -71,7 +95,7 @@ function initialState() {
   // take majorKeys from teh keys config and map each key to an array of objects where there is a name and a value
   let keys = getKeys(true);
   let capos = getAvaliableCaposFromKey(song.key);
-  let html = formatSong(song);
+  let html = formatSong(song, new HtmlDivFormatter());
   
   return <IStore> {
     input: exampleChordPro,
@@ -83,8 +107,18 @@ function initialState() {
     capos: capos,
     minor: false,
     editorMode: "chordpro",
+    editorModes: [
+      {
+        label: 'ChordPro', 
+        mode: 'chordpro',
+      },
+      {
+        label: 'Chords Over Words', 
+        mode: 'cow',
+      }
+    ],
     parser: new ChordProParser(),
-    formatter: new ChordProFormatter(),
+    formatter: new HtmlDivFormatter(),
     rendererMode: "pdf",
     rendererZoom: "100%",
     editorView: null,

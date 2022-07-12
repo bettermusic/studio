@@ -1,24 +1,21 @@
-import { ChordProParser, HtmlDivFormatter } from "@praisecharts/chordsheetjs";
 import keysConfig from './key_config.json';
 
 
-export function parseChordpro(chordpro) {
-  const parser = new ChordProParser();
+export function parseInput(chordpro, parser) {
   return parser.parse(chordpro);
 }
 
-export function formatSong(song) {
-  const formatter = new HtmlDivFormatter();
+export function formatSong(song, formatter) {
   return formatter.format(song);
 }
 
-export function renderChordpro(chordpro) {    
-  const song = parseChordpro(chordpro);
-  return formatSong(song);
+export function renderChordpro(chordpro, parser, formatter) {    
+  const song = parseInput(chordpro, parser);
+  return formatSong(song, formatter);
 }
 
-export function renderChordproFromSong(song) {    
-  return formatSong(song);
+export function renderChordproFromSong(song, formatter) {    
+  return formatSong(song, formatter);
 }
 
 export function getAvaliableCaposFromKey(songKey: any) {

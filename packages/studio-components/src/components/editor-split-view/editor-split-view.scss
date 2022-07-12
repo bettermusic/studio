@@ -32,12 +32,12 @@
 .controls {
   --gap: 1rem;
   display: inline-flex;
-  flex-wrap: wrap;
   padding: 1rem;
   height: 4rem;
   background-color: #2b2b2b;
   margin: calc(-1 * var(--gap)) 0 0 calc(-1 * var(--gap));
   width: calc(100% + var(--gap));
+  overflow-x: scroll;
 }
 
 .controls > * {
@@ -45,5 +45,5 @@
 }
 
 pc-dropdown {
-  width: 200px;
+  width: 160px;
 }
