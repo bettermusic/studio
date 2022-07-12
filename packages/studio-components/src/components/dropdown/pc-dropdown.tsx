@@ -2,7 +2,7 @@ import { Component, Prop, h, VNode, State, Listen, Event, EventEmitter, Method, 
 import '../../utils/closestPolifill';
 import { UUID } from '../../utils/consts';
 import { getItemLabel, getItemValue } from '../../utils/dropdown-list-item.helpers';
-import { DropdownListFilter } from '../list/dropdown-list-filter';
+import { DropdownListFilter } from '../dropdown-list-item/dropdown-list-filter';
 import { ArrowRenderer } from './arrow';
 
 @Component({
