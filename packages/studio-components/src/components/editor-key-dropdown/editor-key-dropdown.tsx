@@ -19,7 +19,7 @@ export class PcKeyDropdown {
   render() {
     return (
       <Host>
-        <pc-dropdown dataLabel="name" dataId="name" source={state.keys} value={state.currentKey} placeholder="Keys" maxHeight={400}></pc-dropdown>
+        <pc-dropdown dataLabel="name" dataId="name" source={state.keys} value={state.currentKey} placeholder="Key" maxHeight={400}></pc-dropdown>
       </Host>
     );
   }

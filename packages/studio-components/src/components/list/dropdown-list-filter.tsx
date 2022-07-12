@@ -1,6 +1,6 @@
 import { h } from '@stencil/core';
 import { JSXBase } from '@stencil/core/internal';
-import { getItemLabel } from '../../utils/item.helpers';
+import { getItemLabel } from '../../utils/dropdown-list-item.helpers';
 
 interface Props extends JSXBase.DOMAttributes<any> {
   value?: string;

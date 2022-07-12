@@ -1,8 +1,8 @@
 import { Component, Prop, h, VNode, State, Listen, Event, EventEmitter, Method, Watch, Host } from '@stencil/core';
 import '../../utils/closestPolifill';
 import { UUID } from '../../utils/consts';
-import { getItemLabel, getItemValue } from '../../utils/item.helpers';
-import { DropdownListFilter } from '../list/pc-list.filter';
+import { getItemLabel, getItemValue } from '../../utils/dropdown-list-item.helpers';
+import { DropdownListFilter } from '../list/dropdown-list-filter';
 import { ArrowRenderer } from './arrow';
 
 @Component({
@@ -15,7 +15,7 @@ export class PcDropdown {
   private dropdownInner: HTMLElement;
   private dropdownInput: HTMLInputElement;
   private autocompleteInput: HTMLInputElement;
-  private pcList: HTMLPcListElement;
+  private pcList: HTMLPcDropdownListItemElement;
   private uuid: string = '';
   private currentSource?: any[];
   private isClosing = false;
@@ -175,7 +175,7 @@ export class PcDropdown {
   }
 
   connectedCallback() {
-    this.uuid = `${this.uuidv4(new Date().getTime())}-rvdropdown`;
+    this.uuid = `${this.uuidv4(new Date().getTime())}-pcdropdown`;
     if (typeof this.value !== 'undefined') {
       this.onValueChanged(this.value);
     }
@@ -221,7 +221,7 @@ export class PcDropdown {
               }}
             />
           ) : undefined}
-          <pc-list
+          <pc-dropdown-list-item
             ref={e => (this.pcList = e)}
             isFocused={true}
             sourceItems={this.currentSource}
@@ -293,7 +293,7 @@ export class PcDropdown {
     return (
       <Host {...props}>
         <label>{this.placeholder}</label>
-        <div class="rv-dr-root">
+        <div class="pc-dr-root">
           {this.autocomplete ? this.renderAutocomplete() : this.renderSelect()}
           <span class="actions"><ArrowRenderer/></span>
           <fieldset>
@@ -408,3 +408,4 @@ export class PcDropdown {
     });
   }
 }
+``

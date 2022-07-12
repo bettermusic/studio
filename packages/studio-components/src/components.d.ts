@@ -60,17 +60,7 @@ export namespace Components {
          */
         "value": any;
     }
-    interface PcEditor {
-        "initialValue": string;
-        "setCapo": (capoPosition: number) => Promise<void>;
-    }
-    interface PcEditorCapoDropdown {
-    }
-    interface PcEditorKeyDropdown {
-    }
-    interface PcEditorSplitView {
-    }
-    interface PcList {
+    interface PcDropdownListItem {
         /**
           * Define object mapping for labels
          */
@@ -82,6 +72,16 @@ export namespace Components {
          */
         "sourceItems": any[];
     }
+    interface PcEditor {
+        "initialValue": string;
+        "setCapo": (capoPosition: number) => Promise<void>;
+    }
+    interface PcEditorCapoDropdown {
+    }
+    interface PcEditorKeyDropdown {
+    }
+    interface PcEditorSplitView {
+    }
     interface PcRenderer {
         "html": string;
         "mode": string;
@@ -91,9 +91,9 @@ export interface PcDropdownCustomEvent<T> extends CustomEvent<T> {
     detail: T;
     target: HTMLPcDropdownElement;
 }
-export interface PcListCustomEvent<T> extends CustomEvent<T> {
+export interface PcDropdownListItemCustomEvent<T> extends CustomEvent<T> {
     detail: T;
-    target: HTMLPcListElement;
+    target: HTMLPcDropdownListItemElement;
 }
 declare global {
     interface HTMLPcDropdownElement extends Components.PcDropdown, HTMLStencilElement {
@@ -101,6 +101,12 @@ declare global {
     var HTMLPcDropdownElement: {
         prototype: HTMLPcDropdownElement;
         new (): HTMLPcDropdownElement;
+    };
+    interface HTMLPcDropdownListItemElement extends Components.PcDropdownListItem, HTMLStencilElement {
+    }
+    var HTMLPcDropdownListItemElement: {
+        prototype: HTMLPcDropdownListItemElement;
+        new (): HTMLPcDropdownListItemElement;
     };
     interface HTMLPcEditorElement extends Components.PcEditor, HTMLStencilElement {
     }
@@ -126,12 +132,6 @@ declare global {
         prototype: HTMLPcEditorSplitViewElement;
         new (): HTMLPcEditorSplitViewElement;
     };
-    interface HTMLPcListElement extends Components.PcList, HTMLStencilElement {
-    }
-    var HTMLPcListElement: {
-        prototype: HTMLPcListElement;
-        new (): HTMLPcListElement;
-    };
     interface HTMLPcRendererElement extends Components.PcRenderer, HTMLStencilElement {
     }
     var HTMLPcRendererElement: {
@@ -140,11 +140,11 @@ declare global {
     };
     interface HTMLElementTagNameMap {
         "pc-dropdown": HTMLPcDropdownElement;
+        "pc-dropdown-list-item": HTMLPcDropdownListItemElement;
         "pc-editor": HTMLPcEditorElement;
         "pc-editor-capo-dropdown": HTMLPcEditorCapoDropdownElement;
         "pc-editor-key-dropdown": HTMLPcEditorKeyDropdownElement;
         "pc-editor-split-view": HTMLPcEditorSplitViewElement;
-        "pc-list": HTMLPcListElement;
         "pc-renderer": HTMLPcRendererElement;
     }
 }
@@ -203,6 +203,18 @@ declare namespace LocalJSX {
          */
         "value"?: any;
     }
+    interface PcDropdownListItem {
+        /**
+          * Define object mapping for labels
+         */
+        "dataLabel"?: string;
+        "isFocused"?: boolean;
+        "onChanged"?: (event: PcDropdownListItemCustomEvent<{ item: any; e: any }>) => void;
+        /**
+          * Define object mapping for id/value
+         */
+        "sourceItems"?: any[];
+    }
     interface PcEditor {
         "initialValue"?: string;
     }
@@ -212,29 +224,17 @@ declare namespace LocalJSX {
     }
     interface PcEditorSplitView {
     }
-    interface PcList {
-        /**
-          * Define object mapping for labels
-         */
-        "dataLabel"?: string;
-        "isFocused"?: boolean;
-        "onChanged"?: (event: PcListCustomEvent<{ item: any; e: any }>) => void;
-        /**
-          * Define object mapping for id/value
-         */
-        "sourceItems"?: any[];
-    }
     interface PcRenderer {
         "html"?: string;
         "mode"?: string;
     }
     interface IntrinsicElements {
         "pc-dropdown": PcDropdown;
+        "pc-dropdown-list-item": PcDropdownListItem;
         "pc-editor": PcEditor;
         "pc-editor-capo-dropdown": PcEditorCapoDropdown;
         "pc-editor-key-dropdown": PcEditorKeyDropdown;
         "pc-editor-split-view": PcEditorSplitView;
-        "pc-list": PcList;
         "pc-renderer": PcRenderer;
     }
 }
@@ -243,11 +243,11 @@ declare module "@stencil/core" {
     export namespace JSX {
         interface IntrinsicElements {
             "pc-dropdown": LocalJSX.PcDropdown & JSXBase.HTMLAttributes<HTMLPcDropdownElement>;
+            "pc-dropdown-list-item": LocalJSX.PcDropdownListItem & JSXBase.HTMLAttributes<HTMLPcDropdownListItemElement>;
             "pc-editor": LocalJSX.PcEditor & JSXBase.HTMLAttributes<HTMLPcEditorElement>;
             "pc-editor-capo-dropdown": LocalJSX.PcEditorCapoDropdown & JSXBase.HTMLAttributes<HTMLPcEditorCapoDropdownElement>;
             "pc-editor-key-dropdown": LocalJSX.PcEditorKeyDropdown & JSXBase.HTMLAttributes<HTMLPcEditorKeyDropdownElement>;
             "pc-editor-split-view": LocalJSX.PcEditorSplitView & JSXBase.HTMLAttributes<HTMLPcEditorSplitViewElement>;
-            "pc-list": LocalJSX.PcList & JSXBase.HTMLAttributes<HTMLPcListElement>;
             "pc-renderer": LocalJSX.PcRenderer & JSXBase.HTMLAttributes<HTMLPcRendererElement>;
         }
     }

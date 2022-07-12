@@ -23,7 +23,6 @@ export class Editor {
   
   connectedCallback() {
     if (!state.editorView) {
-      
       state.editorView = new EditorView({
           state: EditorState.create({
             doc: state.input,
