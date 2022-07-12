@@ -84,11 +84,6 @@
         "@praisecharts/studio-components#dev"
       ]
     },
-    "@praisecharts/studio-docs#dev": {
-      "dependsOn": [
-        "@praisecharts/studio-components#build"
-      ]
-    },
     "angular-demo#start": {
       "cache": false,
       "dependsOn": [
@@ -96,10 +91,7 @@
       ]
     },
     "dev": {
-      "cache": false,
-      "dependsOn": [
-        "@praisecharts/studio-components#build"
-      ]
+      "cache": false
     },
     "clean": {
       "cache": false
