@@ -12,3 +12,4 @@ server/dist
 public/dist
 .turbo
 storybook-static/
+packages/studio-components-angular/.angular/
