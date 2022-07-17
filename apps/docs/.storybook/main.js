@@ -1,27 +1,13 @@
-const path = require("path");
-
 module.exports = {
-  stories: ["../stories/**/*.stories.mdx", "../stories/**/*.stories.tsx"],
-  addons: ["@storybook/addon-links", "@storybook/addon-essentials"],
-  framework: "@storybook/react",
-  core: {
-    builder: "@storybook/builder-vite",
-  },
-  async viteFinal(config, { configType }) {
-    // customize the Vite config here
-    return {
-      ...config,
-      resolve: {
-        alias: [
-          {
-            find: "@praisecharts/core",
-            replacement: path.resolve(
-              __dirname,
-              "../../../packages/praisecharts-core/"
-            ),
-          },
-        ],
-      },
-    };
-  },
-};
+  "stories": [
+    "../../../packages/studio-components/src/**/*.stories.{ts,tsx}",
+    // "../stories/**/*.stories.mdx", 
+    // "../*.stories.@(js|jsx|ts|tsx)", 
+    // "../../**/**/*.stories.@(js|jsx|ts|tsx)"
+  ],
+  "addons": [
+    "@storybook/addon-links",
+    "@storybook/addon-essentials"
+  ],
+  "framework": "@storybook/html"
+}

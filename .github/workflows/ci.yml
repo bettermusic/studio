@@ -13,15 +13,23 @@ jobs:
     runs-on: ubuntu-latest
     strategy:
       matrix:
-        node: [ '14', '16' ]
+        node: [ '18' ]
     name: Node ${{ matrix.node }} sample
+    env:
+      TURBO_TOKEN: ${{ secrets.TURBO_TOKEN }}
+      TURBO_TEAM: ${{ secrets.TURBO_TEAM }}
     steps:
-      - uses: actions/checkout@v2
+      - uses: actions/checkout@v3
+        with:
+          submodules: 'recursive'
+          ssh-key: ${{ secrets.SUBMODULE_CHORDSHEETJS_PULL_KEY }}
+
       - name: Setup node
-        uses: actions/setup-node@v2
+        uses: actions/setup-node@v3
         with:
           node-version: ${{ matrix.node }}
+
       - run: yarn install
       - run: yarn lint
-      - run: yarn jest
+      - run: yarn test
       - run: yarn build

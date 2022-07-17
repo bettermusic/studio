@@ -1,0 +1,17 @@
+:host {
+  display: flex;
+  overflow: auto;
+  width: 100%;
+}
+
+.cm-gutter {
+  width: 20px;
+}
+
+.cm-editor {
+  width: 100%;
+}
+
+.cm-content {
+  padding: 0 !important;
+}

@@ -1,5 +1,0 @@
-{
-  "extends": "@example/tsconfig/react-library.json",
-  "include": ["../example-core"],
-  "exclude": ["../example-core/dist", "../example-core/build", "../example-core/node_modules"]
-}

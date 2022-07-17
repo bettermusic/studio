@@ -13,12 +13,31 @@
       "outputs": [
         "coverage/**"
       ],
-      "dependsOn": []
+      "dependsOn": [
+
+      ]
     },
     "lint": {
       "outputs": []
     },
-    "@praisecharts/chordchartjs#build": {
+    "@codemirror/lang-chordpro#prepare": {
+      "inputs": [
+        "src/index.ts",
+        "src/syntax.grammar"
+      ],
+      "outputs": [
+        "dist/**"
+      ],
+      "dependsOn": [
+        "^build"
+      ]
+    },
+    "@codemirror/lang-chordpro#test": {
+      "dependsOn": [
+        "@codemirror/lang-chordpro#prepare"
+      ]
+    },
+    "@praisecharts/chordsheetjs#build": {
       "outputs": [
         "lib/**"
       ],
@@ -26,8 +45,52 @@
         "^build"
       ]
     },
+    "@praisecharts/chordsheetjs#test": {
+      "dependsOn": [
+        "@praisecharts/chordsheetjs#build:code-generate"
+      ]
+    },
+    "@praisecharts/chordsheetjs#build:code-generate": {
+      "inputs": ["src/normalize_mappings/*.ts"]
+    },
+    "@praisecharts/chordsheetjs#dev": {
+      "inputs": ["src/index.ts"],
+      "outputs": ["lib/**"],
+      "dependsOn": [
+        "@praisecharts/chordsheetjs#build:code-generate"
+      ],
+      "cache": false
+    },
+    "@praisecharts/studio-components#dev": {
+      "inputs": [
+        "../../chordsheetjs/src/**.ts",
+        "../../chordsheetjs/src/chord_sheet/**.ts"
+      ],
+      "dependsOn": [
+        "@codemirror/lang-chordpro#prepare"
+      ],
+      "cache": false
+    },
+    "@praisecharts/studio-components-angular#build": {
+      "outputs": [
+        "dist/**"
+      ],
+      "dependsOn": [
+        "@praisecharts/studio-components#build"
+      ]
+    },
+    "@praisecharts/studio-compoents-angular#dev": {
+      "dependsOn": [
+        "@praisecharts/studio-components#dev"
+      ]
+    },
+    "angular-demo#start": {
+      "cache": false,
+      "dependsOn": [
+        "@praisecharts/studio-components-angular#build"
+      ]
+    },
     "dev": {
-      "dependsOn": ["@praisecharts/chordchartjs#build"],
       "cache": false
     },
     "clean": {
