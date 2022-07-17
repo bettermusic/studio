@@ -70,17 +70,19 @@ Type: `Promise<void>`
 
  - [pc-editor-capo-dropdown](../editor-capo-dropdown)
  - [pc-editor-key-dropdown](../editor-key-dropdown)
+ - [pc-editor-mode-dropdown](../editor-mode-dropdown)
 
 ### Depends on
 
-- [pc-list](../list)
+- [pc-dropdown-list-item](../dropdown-list-item)
 
 ### Graph
 ```mermaid
 graph TD;
-  pc-dropdown --> pc-list
+  pc-dropdown --> pc-dropdown-list-item
   pc-editor-capo-dropdown --> pc-dropdown
   pc-editor-key-dropdown --> pc-dropdown
+  pc-editor-mode-dropdown --> pc-dropdown
   style pc-dropdown fill:#f9f,stroke:#333,stroke-width:4px
 ```
 

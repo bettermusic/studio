@@ -18,10 +18,10 @@
 ### Graph
 ```mermaid
 graph TD;
-  pc-editor-key-dropdown --> pc-dropdown
-  pc-dropdown --> pc-list
-  pc-editor-split-view --> pc-editor-key-dropdown
-  style pc-editor-key-dropdown fill:#f9f,stroke:#333,stroke-width:4px
+  pc-editor-mode-dropdown --> pc-dropdown
+  pc-dropdown --> pc-dropdown-list-item
+  pc-editor-split-view --> pc-editor-mode-dropdown
+  style pc-editor-mode-dropdown fill:#f9f,stroke:#333,stroke-width:4px
 ```
 
 ----------------------------------------------

@@ -41,8 +41,8 @@ Type: `Promise<void>`
 ### Graph
 ```mermaid
 graph TD;
-  pc-dropdown --> pc-list
-  style pc-list fill:#f9f,stroke:#333,stroke-width:4px
+  pc-dropdown --> pc-dropdown-list-item
+  style pc-dropdown-list-item fill:#f9f,stroke:#333,stroke-width:4px
 ```
 
 ----------------------------------------------

@@ -45,6 +45,35 @@ export class PcDropdown {
 }
 
 
+export declare interface PcDropdownListItem extends Components.PcDropdownListItem {
+  /**
+   *  
+   */
+  changed: EventEmitter<CustomEvent<{ item: any; e: any }>>;
+
+}
+
+@ProxyCmp({
+  defineCustomElementFn: undefined,
+  inputs: ['dataLabel', 'isFocused', 'sourceItems'],
+  methods: ['refresh']
+})
+@Component({
+  selector: 'pc-dropdown-list-item',
+  changeDetection: ChangeDetectionStrategy.OnPush,
+  template: '<ng-content></ng-content>',
+  inputs: ['dataLabel', 'isFocused', 'sourceItems']
+})
+export class PcDropdownListItem {
+  protected el: HTMLElement;
+  constructor(c: ChangeDetectorRef, r: ElementRef, protected z: NgZone) {
+    c.detach();
+    this.el = r.nativeElement;
+    proxyOutputs(this, this.el, ['changed']);
+  }
+}
+
+
 export declare interface PcEditor extends Components.PcEditor {}
 
 @ProxyCmp({
@@ -105,6 +134,25 @@ export class PcEditorKeyDropdown {
 }
 
 
+export declare interface PcEditorModeDropdown extends Components.PcEditorModeDropdown {}
+
+@ProxyCmp({
+  defineCustomElementFn: undefined
+})
+@Component({
+  selector: 'pc-editor-mode-dropdown',
+  changeDetection: ChangeDetectionStrategy.OnPush,
+  template: '<ng-content></ng-content>'
+})
+export class PcEditorModeDropdown {
+  protected el: HTMLElement;
+  constructor(c: ChangeDetectorRef, r: ElementRef, protected z: NgZone) {
+    c.detach();
+    this.el = r.nativeElement;
+  }
+}
+
+
 export declare interface PcEditorSplitView extends Components.PcEditorSplitView {}
 
 @ProxyCmp({
@@ -120,35 +168,6 @@ export class PcEditorSplitView {
   constructor(c: ChangeDetectorRef, r: ElementRef, protected z: NgZone) {
     c.detach();
     this.el = r.nativeElement;
-  }
-}
-
-
-export declare interface PcList extends Components.PcList {
-  /**
-   *  
-   */
-  changed: EventEmitter<CustomEvent<{ item: any; e: any }>>;
-
-}
-
-@ProxyCmp({
-  defineCustomElementFn: undefined,
-  inputs: ['dataLabel', 'isFocused', 'sourceItems'],
-  methods: ['refresh']
-})
-@Component({
-  selector: 'pc-list',
-  changeDetection: ChangeDetectionStrategy.OnPush,
-  template: '<ng-content></ng-content>',
-  inputs: ['dataLabel', 'isFocused', 'sourceItems']
-})
-export class PcList {
-  protected el: HTMLElement;
-  constructor(c: ChangeDetectorRef, r: ElementRef, protected z: NgZone) {
-    c.detach();
-    this.el = r.nativeElement;
-    proxyOutputs(this, this.el, ['changed']);
   }
 }
 

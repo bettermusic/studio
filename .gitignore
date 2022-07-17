@@ -14,3 +14,4 @@ public/dist
 storybook-static/
 packages/studio-components-angular/.angular/
 .vscode
+packages/editor/www/
