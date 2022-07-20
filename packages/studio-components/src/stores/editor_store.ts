@@ -17,7 +17,7 @@ interface IStore {
     song: Song;
     minor: boolean;
     input: string;
-    editorMode: "chordpro" | "cow";
+    editorMode: "chordpro" | "chords_over_words";
     editorModes: any;
     parser: ChordProParser | ChordSheetParser;
     formatter: ChordProFormatter | HtmlDivFormatter | HtmlTableFormatter | TextFormatter;
@@ -71,9 +71,9 @@ onChange('currentKey', value => {
 
 onChange('editorMode', value => {
   let formatter;
-  if (value === "cow") { 
+  if (value === "chords_over_words") { 
     formatter = new TextFormatter();
-    state.parser = new ChordSheetParser();
+    state.parser = new ChordSheetParser({ preserveWhitespace: false });
   } 
   if (value === "chordpro") {
     formatter = new ChordProFormatter();
@@ -114,7 +114,7 @@ function initialState() {
       },
       {
         label: 'Chords Over Words', 
-        mode: 'cow',
+        mode: 'chords_over_words',
       }
     ],
     parser: new ChordProParser(),
