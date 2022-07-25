@@ -1,7 +1,6 @@
 {
   "name": "@praisecharts/studio-docs",
   "version": "0.0.1",
-  "private": true,
   "scripts": {
     "dev": "NODE_OPTIONS=--openssl-legacy-provider start-storybook -p 6006",
     "build": "NODE_OPTIONS=--openssl-legacy-provider build-storybook --docs",
@@ -10,14 +9,14 @@
   },
   "dependencies": {},
   "devDependencies": {
-    "@example/tsconfig": "*",
+    "@praisecharts/tsconfig": "*",
     "@praisecharts/studio-components": "*",
     "@storybook/addon-essentials": "^6.4.20",
     "@storybook/addon-links": "^6.4.20",
     "@storybook/addons": "^6.5.9",
     "@storybook/html": "^6.4.20",
     "@storybook/theming": "^6.5.9",
-    "eslint-config-praisecharts": "*",
+    "@praisecharts/eslint-config": "*",
     "serve": "^13.0.2",
     "typescript": "^4.5.4"
   }

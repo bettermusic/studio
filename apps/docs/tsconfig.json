@@ -1,5 +1,5 @@
 {
-  "extends": "@example/tsconfig/base.json",
+  "extends": "@praisecharts/tsconfig/base.json",
   "include": ["."],
   "exclude": ["dist", "build", "node_modules"],
   "paths" : {

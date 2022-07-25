@@ -4,7 +4,7 @@ import exampleChordPro from '../utils/example-chordpro'
 import {EditorView, highlightActiveLine, keymap, lineNumbers} from "@codemirror/view"
 import {defaultKeymap, history} from "@codemirror/commands"
 import {syntaxHighlighting} from "@codemirror/language"
-import {ChordPro, exampleStringLinter} from "@codemirror/lang-chordpro"
+import {ChordPro, exampleStringLinter} from "codemirror-lang-chordpro"
 import {lintGutter} from "@codemirror/lint"
 import { formatSong, getAvaliableCaposFromKey, getKeys, parseInput } from "../utils/chordsheetjs.helpers";
 import { language, myHighlightStyle, myTheme } from "../utils/codemirror.utils";

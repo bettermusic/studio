@@ -20,7 +20,7 @@
     "lint": {
       "outputs": []
     },
-    "@codemirror/lang-chordpro#prepare": {
+    "codemirror-lang-chordpro#prepare": {
       "inputs": [
         "src/index.ts",
         "src/syntax.grammar"
@@ -32,9 +32,9 @@
         "^build"
       ]
     },
-    "@codemirror/lang-chordpro#test": {
+    "codemirror-lang-chordpro#test": {
       "dependsOn": [
-        "@codemirror/lang-chordpro#prepare"
+        "codemirror-lang-chordpro#prepare"
       ]
     },
     "@praisecharts/chordsheetjs#build": {
@@ -67,7 +67,7 @@
         "../../chordsheetjs/src/chord_sheet/**.ts"
       ],
       "dependsOn": [
-        "@codemirror/lang-chordpro#prepare"
+        "codemirror-lang-chordpro#prepare"
       ],
       "cache": false
     },

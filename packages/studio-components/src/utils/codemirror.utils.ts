@@ -1,7 +1,7 @@
 import { Compartment} from "@codemirror/state"
 import {EditorView} from "@codemirror/view"
 import {HighlightStyle} from "@codemirror/language"
-import {customTags} from "@codemirror/lang-chordpro"
+import {customTags} from "codemirror-lang-chordpro"
 import {tags} from "@lezer/highlight"
 
 export const myTheme = EditorView.theme({
