@@ -1,5 +1,6 @@
 ---
 "@praisecharts/studio-docs": minor
+"@praisecharts/chordsheetjs": minor
 "codemirror-lang-chordpro": minor
 "@praisecharts/eslint-config": minor
 "@praisecharts/tsconfig": minor
