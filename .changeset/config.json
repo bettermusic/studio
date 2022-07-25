@@ -7,10 +7,5 @@
   "access": "public",
   "baseBranch": "master",
   "updateInternalDependencies": "patch",
-  "ignore": [
-    "@praisecharts/chordsheetjs",
-    "@praisecharts/studio-components",
-    "@praisecharts/studio-components-angular",
-    "@praisecharts/studio-angular-demo"
-  ]
+  "ignore": []
 }
