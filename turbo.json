@@ -84,7 +84,7 @@
         "@praisecharts/studio-components#dev"
       ]
     },
-    "angular-demo#start": {
+    "@praisecharts/studio-angular-demo#start": {
       "cache": false,
       "dependsOn": [
         "@praisecharts/studio-components-angular#build"
