@@ -10,6 +10,6 @@
   "ignore": [
     "@praisecharts/chordsheetjs",
     "@praisecharts/studio-components",
-    "@praisecharts/studio-angular"
+    "@praisecharts/studio-components-angular"
   ]
 }
