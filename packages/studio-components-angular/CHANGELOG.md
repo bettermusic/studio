@@ -1,5 +1,13 @@
 # @praisecharts/studio-components-angular
 
+## 0.0.6
+
+### Patch Changes
+
+- 9daa370: testing workflow again
+- Updated dependencies [9daa370]
+  - @praisecharts/studio-components@0.0.6
+
 ## 0.0.5
 
 ### Patch Changes

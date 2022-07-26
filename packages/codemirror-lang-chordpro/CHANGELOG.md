@@ -1,5 +1,11 @@
 # codemirror-lang-chordpro
 
+## 0.0.6
+
+### Patch Changes
+
+- 9daa370: testing workflow again
+
 ## 0.0.5
 
 ### Patch Changes
