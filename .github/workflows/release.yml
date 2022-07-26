@@ -19,6 +19,10 @@ jobs:
           submodules: 'true'
           # ssh-key: ${{ secrets.SUBMODULE_CHORDSHEETJS_DEPLOY_KEY }}
 
+      - name: Get the version
+        id: get_version
+        run: echo ::set-output name=VERSION::$(echo $GITHUB_REF | cut -d / -f 3)
+
       - name: Setup Node.js 16.x
         uses: actions/setup-node@v2
         with:
@@ -29,9 +33,11 @@ jobs:
 
       - name: Create Release Pull Request or Publish to npm
         id: changesets
-        uses: changesets/action@v1
+        uses: dotansimha/changesets-action@262e957f99be29087d2b13afa32a5d579bf1d080
         with:
-          # This expects you to have a script called release which does a build for your packages and calls changeset publish
+          createGithubReleases: aggregate
+          commit: "${{ steps.get_version.outputs.VERSION }})"
+          githubReleaseName: "${{ steps.get_version.outputs.VERSION }})"
           publish: yarn release
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
