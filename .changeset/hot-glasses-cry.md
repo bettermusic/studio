@@ -9,4 +9,4 @@
 "@praisecharts/tsconfig": patch
 ---
 
-testing workflow
+test workflow
