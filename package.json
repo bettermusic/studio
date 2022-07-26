@@ -1,6 +1,5 @@
 {
   "private": true,
-  "version": "0.0.3",
   "workspaces": [
     "packages/*",
     "apps/*",
@@ -19,8 +18,7 @@
     "changeset:beta": "changeset pre enter beta",
     "version-packages": "changeset version",
     "version:snapshot": "changeset version --snapshot",
-    "bump": "node ./scripts/bump.js",
-    "release": "turbo run build --filter=docs^... && node ./scripts/release.js"
+    "release": "turbo run build --filter=docs^... && changeset publish"
   },
   "devDependencies": {
     "@changesets/cli": "^2.22.0",

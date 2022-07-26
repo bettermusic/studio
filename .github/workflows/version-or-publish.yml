@@ -36,9 +36,8 @@ jobs:
         uses: dotansimha/changesets-action@262e957f99be29087d2b13afa32a5d579bf1d080
         with:
           createGithubReleases: aggregate
-          # commit: "${{ steps.get_version.outputs.VERSION }})"
+          commit: "${{ steps.get_version.outputs.VERSION }})"
           githubReleaseName: "${{ steps.get_version.outputs.VERSION }})"
-          version: yarn bump
           publish: yarn release
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
