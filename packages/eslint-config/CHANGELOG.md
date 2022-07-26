@@ -1,5 +1,11 @@
 # @praisecharts/eslint-config
 
+## 0.0.5
+
+### Patch Changes
+
+- 3b09082: testing workflow
+
 ## 0.0.4
 
 ### Patch Changes

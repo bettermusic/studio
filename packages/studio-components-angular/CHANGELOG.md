@@ -1,5 +1,13 @@
 # @praisecharts/studio-components-angular
 
+## 0.0.5
+
+### Patch Changes
+
+- 3b09082: testing workflow
+- Updated dependencies [3b09082]
+  - @praisecharts/studio-components@0.0.5
+
 ## 0.0.4
 
 ### Patch Changes
