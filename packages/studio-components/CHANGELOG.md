@@ -1,5 +1,14 @@
 # @praisecharts/studio-components
 
+## 0.0.4
+
+### Patch Changes
+
+- 64179a9: bumping packages to test release
+- Updated dependencies [64179a9]
+  - @praisecharts/chordsheetjs@0.0.2
+  - codemirror-lang-chordpro@0.0.4
+
 ## 0.0.3
 
 ### Patch Changes

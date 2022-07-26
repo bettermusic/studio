@@ -1,5 +1,14 @@
 # @praisecharts/studio-angular-demo
 
+## 0.0.4
+
+### Patch Changes
+
+- 64179a9: bumping packages to test release
+- Updated dependencies [64179a9]
+  - @praisecharts/studio-components@0.0.4
+  - @praisecharts/studio-components-angular@0.0.4
+
 ## 0.0.3
 
 ### Patch Changes
