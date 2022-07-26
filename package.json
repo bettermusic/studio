@@ -1,5 +1,6 @@
 {
   "private": true,
+  "version": "0.0.3",
   "workspaces": [
     "packages/*",
     "apps/*",
@@ -15,8 +16,11 @@
     "clean": "turbo run clean && rm -rf node_modules",
     "format": "prettier --write \"**/*.{ts,tsx,md}\"",
     "changeset": "changeset",
+    "changeset:beta": "changeset pre enter beta",
     "version-packages": "changeset version",
-    "release": "turbo run build --filter=docs^... && changeset publish"
+    "version:snapshot": "changeset version --snapshot",
+    "bump": "node ./scripts/bump.js",
+    "release": "turbo run build --filter=docs^... && node ./scripts/release.js"
   },
   "devDependencies": {
     "@changesets/cli": "^2.22.0",
