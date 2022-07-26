@@ -1,6 +1,6 @@
 {
   "name": "@praisecharts/studio-docs",
-  "version": "0.0.1",
+  "version": "0.1.0",
   "scripts": {
     "dev": "NODE_OPTIONS=--openssl-legacy-provider start-storybook -p 6006",
     "build": "NODE_OPTIONS=--openssl-legacy-provider build-storybook --docs",
