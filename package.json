@@ -8,7 +8,7 @@
   "scripts": {
     "build": "turbo run build --filter=!./demos/*",
     "dev": "turbo run dev --filter=!./apps/docs --filter=!./demos/* --no-cache --continue",
-    "demo:angular": "turbo run angular-demo#start",
+    "demo:angular": "turbo run @praisecharts/studio-angular-demo#start",
     "serve-docs": "turbo run @praisecharts/studio-docs#dev",
     "lint": "turbo run lint",
     "test": "turbo run test --filter=./packages/* --filter=./apps/* --filter=!./packages/angular",

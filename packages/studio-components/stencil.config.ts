@@ -18,10 +18,6 @@ export const config: Config = {
   },
   outputTargets: [
     {
-    type: 'dist',
-    esmLoaderPath: '../loader', 
-    },
-    {
       type: 'www',
       serviceWorker: null // disable service workers
     },
@@ -41,6 +37,10 @@ export const config: Config = {
         // exclude components
       ]
     }),
+    {
+    type: 'dist',
+    esmLoaderPath: '../loader', 
+    },
   ],
   plugins: [
     sass()

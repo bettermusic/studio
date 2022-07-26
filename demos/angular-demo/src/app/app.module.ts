@@ -20,6 +20,5 @@ import { StudioComponentsModule } from '@praisecharts/studio-components-angular/
   ],
   providers: [],
   bootstrap: [AppComponent],
-  schemas: [CUSTOM_ELEMENTS_SCHEMA]
 })
 export class AppModule { }

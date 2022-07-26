@@ -61,6 +61,16 @@
       ],
       "cache": false
     },
+    "@praisecharts/studio-components#build": {
+      "outputs": [
+        "loader/**",
+        "dist/**"
+      ],
+      "dependsOn": [
+        "codemirror-lang-chordpro#prepare",
+        "@praisecharts/chordsheetjs#build"
+      ]
+    },
     "@praisecharts/studio-components#dev": {
       "inputs": [
         "../../chordsheetjs/src/**.ts",

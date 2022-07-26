@@ -4,7 +4,7 @@ import { platformBrowserDynamic } from '@angular/platform-browser-dynamic';
 import { AppModule } from './app/app.module';
 import { environment } from './environments/environment';
 
-import {defineCustomElements, applyPolyfills} from '@praisecharts/studio-components/loader';
+import {defineCustomElements, applyPolyfills} from '@praisecharts/studio-components/loader/index';
 
 if (environment.production) {
   enableProdMode();
@@ -12,6 +12,7 @@ if (environment.production) {
 
 platformBrowserDynamic().bootstrapModule(AppModule)
   .catch(err => console.error(err));
-  applyPolyfills().then(() => {
-    defineCustomElements();
-  });
+
+applyPolyfills().then(() => {
+  defineCustomElements();
+});
