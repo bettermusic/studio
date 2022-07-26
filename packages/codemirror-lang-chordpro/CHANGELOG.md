@@ -1,5 +1,11 @@
 # codemirror-lang-chordpro
 
+## 0.0.4
+
+### Patch Changes
+
+- 64179a9: bumping packages to test release
+
 ## 0.0.3
 
 ### Patch Changes
