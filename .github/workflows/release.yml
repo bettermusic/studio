@@ -16,7 +16,7 @@ jobs:
         uses: actions/checkout@v3
         with:
           submodules: 'recursive'
-          ssh-key: ${{ secrets.SUBMODULE_CHORDSHEETJS_PULL_KEY }}
+          ssh-key: ${{ secrets.SUBMODULE_CHORDSHEETJS_DEPLOY_KEY }}
 
       - name: Setup Node.js 16.x
         uses: actions/setup-node@v2
