@@ -15,10 +15,8 @@
     "clean": "turbo run clean && rm -rf node_modules",
     "format": "prettier --write \"**/*.{ts,tsx,md}\"",
     "changeset": "changeset",
-    "changeset:beta": "changeset pre enter beta",
     "version-packages": "changeset version",
-    "version:snapshot": "changeset version --snapshot",
-    "release": "turbo run build --filter=docs^... && changeset publish"
+    "release": "turbo run build --filter=docs^... && changeset publish --no-git-tag"
   },
   "devDependencies": {
     "@changesets/cli": "^2.22.0",
