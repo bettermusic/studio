@@ -43,7 +43,7 @@
     "@stencil/sass": "^1.5.2",
     "@stencil/store": "^2.0.0",
     "@types/jest": "^27.4.5",
-    "eslint": "^8.15.0",
+    "eslint": "^8.20.0",
     "@praisecharts/eslint-config": "*",
     "jest": "^27.4.5",
     "jest-cli": "^27.4.5",
