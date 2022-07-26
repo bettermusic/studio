@@ -1,5 +1,14 @@
 # @praisecharts/studio-angular-demo
 
+## 0.0.5
+
+### Patch Changes
+
+- 92b570f: test workflow
+- Updated dependencies [92b570f]
+  - @praisecharts/studio-components@0.0.5
+  - @praisecharts/studio-components-angular@0.0.5
+
 ## 0.0.4
 
 ### Patch Changes
