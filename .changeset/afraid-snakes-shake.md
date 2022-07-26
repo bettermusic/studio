@@ -9,4 +9,4 @@
 "@praisecharts/tsconfig": patch
 ---
 
-test agregate release for changesets
+test agregate release for changesets to pull from tag name
