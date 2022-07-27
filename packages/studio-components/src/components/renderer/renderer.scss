@@ -14,6 +14,7 @@
     padding-top: .5rem;
     text-decoration: underline;
     text-underline-offset: 0.2rem;
+    color: #222;
 }
 
 .chord-sheet {
@@ -29,6 +30,7 @@
     display: flex;
     flex-direction: column;
     flex: 0 1 auto;
+    flex-wrap: nowrap;
 }
 
 .row {
@@ -36,20 +38,16 @@
     flex-direction: row;
     padding-top: 0.3rem;
     padding-bottom: 0.3rem;
+    flex-wrap: nowrap;
 }
 
 .column {
     display: flex;
     flex-direction: column;
     justify-content: space-between;
-    // padding-left: 0.3rem;
-    padding-right: 0.3rem;
-}
-
-.lyrics {
-    padding-left: 0.1rem;
+    white-space: pre;
 }
 
 .chord {
-    font-weight: bold;
+    color: #5e83ba;
 }
