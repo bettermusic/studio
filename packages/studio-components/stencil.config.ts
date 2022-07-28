@@ -11,6 +11,7 @@ const angularValueAccessorBindings: ValueAccessorConfig[] = [];
 export const config: Config = {
   namespace: 'studio',
   taskQueue: 'async',
+  preamble: 'Built with Stencil\nCopyright (c) Sonreign Media Inc.',
   sourceMap: true,
   devServer: {
     openBrowser: false,

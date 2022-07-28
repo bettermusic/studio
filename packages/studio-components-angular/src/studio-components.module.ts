@@ -5,6 +5,8 @@ import {
     PcEditorSplitView,
     PcEditor,
     PcRenderer,
+    PcDropdown,
+    PcDropdownListItem,
 } from './lib/stencil-generated/components';
 
 
@@ -13,6 +15,8 @@ const DECLARATIONS = [
     PcEditorSplitView,
     PcEditor,
     PcRenderer,
+    PcDropdown,
+    PcDropdownListItem
 ];
 
 @NgModule({

@@ -19,6 +19,7 @@
     "target": "es2017",
     "module": "es2020",
     "paths": {
+      "@praisecharts/studio-components": ["../studio-components"],
       "@praisecharts/studio-components-angular": [
         "dist/studio-components-angular/studio-components-angular",
         "dist/studio-components-angular"

@@ -27,7 +27,7 @@
 }
 
 .paragraph {
-    display: flex;
+    display: inline-flex;
     flex-direction: column;
     flex: 0 1 auto;
     flex-wrap: nowrap;
@@ -36,13 +36,15 @@
 .row {
     display: flex;
     flex-direction: row;
+    justify-content: flex-start;
+    flex-wrap: nowrap;
+    flex-grow: 1;
     padding-top: 0.3rem;
     padding-bottom: 0.3rem;
-    flex-wrap: nowrap;
 }
 
 .column {
-    display: flex;
+    display: inline-flex;
     flex-direction: column;
     justify-content: space-between;
     white-space: pre;

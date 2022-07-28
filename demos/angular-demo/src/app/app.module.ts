@@ -7,6 +7,7 @@ import { AppComponent } from './app.component';
 
 import { StudioComponentsModule } from '@praisecharts/studio-components-angular/dist';
 
+
 @NgModule({
   declarations: [
     AppComponent,
