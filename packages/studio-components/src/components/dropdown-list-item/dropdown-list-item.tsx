@@ -1,7 +1,11 @@
 import { Component, h, Prop, Event, EventEmitter, Method, Listen, State } from '@stencil/core';
 import { getItemLabel } from '../../utils/dropdown-list-item.helpers';
 
-@Component({ tag: 'pc-dropdown-list-item', styleUrl: 'dropdown-list-item.style.scss' })
+@Component({ 
+  tag: 'pc-dropdown-list-item', 
+  styleUrl: 'dropdown-list-item.style.scss',
+  shadow: false
+})
 export class PcDropdownListItem {
   @State() currentItem = 0;
   private selectedEl: HTMLElement;

@@ -8,6 +8,7 @@ import { ArrowRenderer } from './arrow';
 @Component({
   tag: 'pc-dropdown',
   styleUrl: 'pc-dropdown.style.scss',
+  shadow: false
 })
 export class PcDropdown {
   private element: Element;
@@ -203,6 +204,9 @@ export class PcDropdown {
   }
 
   private renderDropdown() {
+    if (!this.hasFilter) {
+      this.currentSource = this.source;
+    }
     return (
       <div class="pc-dropdown-list" ref={e => (this.dropdown = e)}>
         <div {...{ [UUID]: this.uuid }} class="dropdown-inner" ref={e => (this.dropdownInner = e)}>

@@ -22,7 +22,7 @@ export class PcKeyDropdown {
   render() {
     return (
       <Host>
-        <pc-dropdown dataLabel="label" dataId="mode" source={state.editorModes} value={this.editorMode} placeholder="Mode" maxHeight={400}></pc-dropdown>
+        <pc-dropdown dataLabel="label" dataId="mode" source={state.editorModes} value={this.editorMode} hasFilter={false} placeholder="Mode" maxHeight={400}></pc-dropdown>
       </Host>
     );
   }
