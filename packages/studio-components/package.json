@@ -47,7 +47,7 @@
     "@praisecharts/eslint-config": "*",
     "jest": "^27.4.5",
     "jest-cli": "^27.4.5",
-    "puppeteer": "^10.0.0",
+    "puppeteer": "^16.1.1",
     "rollup-plugin-node-polyfills": "^0.2.1"
   },
   "license": "MIT"
