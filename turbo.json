@@ -61,7 +61,7 @@
       ],
       "cache": false
     },
-    "@praisecharts/studio-components#build": {
+    "@praisecharts/studio#build": {
       "outputs": [
         "loader/**",
         "dist/**"
@@ -71,7 +71,7 @@
         "@praisecharts/chordsheetjs#build"
       ]
     },
-    "@praisecharts/studio-components#dev": {
+    "@praisecharts/studio#dev": {
       "inputs": [
         "../../chordsheetjs/src/**.ts",
         "../../chordsheetjs/src/chord_sheet/**.ts"
@@ -81,23 +81,31 @@
       ],
       "cache": false
     },
-    "@praisecharts/studio-components-angular#build": {
+    "@praisecharts/ui-angular#build": {
       "outputs": [
         "dist/**"
       ],
       "dependsOn": [
-        "@praisecharts/studio-components#build"
+        "@praisecharts/ui#build"
       ]
     },
-    "@praisecharts/studio-compoents-angular#dev": {
+    "@praisecharts/studio-angular#build": {
+      "outputs": [
+        "dist/**"
+      ],
       "dependsOn": [
-        "@praisecharts/studio-components#dev"
+        "@praisecharts/studio#build"
+      ]
+    },
+    "@praisecharts/studio-angular#dev": {
+      "dependsOn": [
+        "@praisecharts/studio#dev"
       ]
     },
     "@praisecharts/studio-angular-demo#start": {
       "cache": false,
       "dependsOn": [
-        "@praisecharts/studio-components-angular#build"
+        "@praisecharts/studio-angular#build"
       ]
     },
     "dev": {

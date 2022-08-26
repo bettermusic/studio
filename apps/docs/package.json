@@ -10,7 +10,7 @@
   "dependencies": {},
   "devDependencies": {
     "@praisecharts/tsconfig": "*",
-    "@praisecharts/studio-components": "*",
+    "@praisecharts/studio": "*",
     "@storybook/addon-essentials": "^6.4.20",
     "@storybook/addon-links": "^6.4.20",
     "@storybook/addons": "^6.5.9",

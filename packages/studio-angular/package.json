@@ -1,0 +1,28 @@
+{
+  "name": "@praisecharts/studio-angular",
+  "version": "0.0.6",
+  "peerDependencies": {
+    "@angular/common": "^13.3.0",
+    "@angular/core": "^13.3.0",
+    "@praisecharts/studio": "*"
+  },
+  "scripts": {
+    "ng": "ng",
+    "start": "ng serve",
+    "build": "ng build",
+    "watch": "ng build --watch --configuration development",
+    "clean": "rm -rf .turbo && rm -rf node_modules && rm -rf dist"
+  },
+  "dependencies": {
+    "tslib": "^2.3.0"
+  },
+  "devDependencies": {
+    "ng-packagr": "^13.0.0",
+    "@angular-devkit/build-angular": "~13.3.8",
+    "@angular/cli": "~13.3.8",
+    "@angular/compiler-cli": "~13.3.0",
+    "@types/node": "^12.11.1",
+    "typescript": "~4.6.2"
+  },
+  "license": "MIT"
+}

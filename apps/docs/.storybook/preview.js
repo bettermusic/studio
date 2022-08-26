@@ -1,3 +1,3 @@
-import {defineCustomElements} from '@praisecharts/studio-components/loader';
+import {defineCustomElements} from '@praisecharts/studio/loader';
 
 defineCustomElements();
