@@ -3,6 +3,6 @@
   "include": ["."],
   "exclude": ["dist", "build", "node_modules"],
   "paths" : {
-    "@praisecharts/studio-components": "../../../packages/studio-components",
+    "@praisecharts/studio": "../../../packages/studio",
   }
 }

@@ -1,0 +1,47 @@
+{
+  "name": "@praisecharts/ui",
+  "version": "0.0.6",
+  "description": "Stencil Component Starter",
+  "main": "dist/index.cjs.js",
+  "module": "dist/index.js",
+  "es2015": "dist/esm/index.mjs",
+  "es2017": "dist/esm/index.mjs",
+  "types": "dist/types/index.d.ts",
+  "collection": "dist/collection/collection-manifest.json",
+  "collection:main": "dist/collection/index.js",
+  "unpkg": "dist/ui/studio.esm.js",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/ionic-team/stencil-component-starter.git"
+  },
+  "files": [
+    "dist/",
+    "loader/"
+  ],
+  "scripts": {
+    "build": "stencil build --docs",
+    "dev": "stencil build --watch",
+    "test": "stencil test --spec --e2e",
+    "test.watch": "stencil test --spec --e2e --watchAll",
+    "generate": "stencil generate",
+    "clean": "rm -rf .turbo && rm -rf node_modules && rm -rf dist && rm -rf loader"
+  },
+  "dependencies": {
+    "@stencil/angular-output-target": "^0.4.0",
+    "@stencil/core": "^2.13.0",
+    "split.js": "^1.6.5"
+  },
+  "devDependencies": {
+    "@praisecharts/eslint-config": "*",
+    "@praisecharts/tsconfig": "*",
+    "@stencil/sass": "^1.5.2",
+    "@stencil/store": "^2.0.0",
+    "@types/jest": "^27.4.5",
+    "eslint": "^8.15.0",
+    "jest-cli": "^27.4.5",
+    "jest": "^27.4.5",
+    "puppeteer": "^10.0.0",
+    "rollup-plugin-node-polyfills": "^0.2.1"
+  },
+  "license": "MIT"
+}

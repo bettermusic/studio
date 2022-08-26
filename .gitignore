@@ -12,6 +12,6 @@ server/dist
 public/dist
 .turbo
 storybook-static/
-packages/studio-components-angular/.angular/
+packages/studio-angular/.angular/
 .vscode
 packages/editor/www/
