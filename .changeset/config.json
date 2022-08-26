@@ -3,15 +3,6 @@
   "changelog": "@changesets/cli/changelog",
   "commit": false,
   "fixed": [
-    [
-      "@praisecharts/studio-docs",
-      "codemirror-lang-chordpro",
-      "@praisecharts/studio",
-      "@praisecharts/studio-angular",
-      "@praisecharts/studio-angular-demo",
-      "@praisecharts/ui",
-      "@praisecharts/ui-angular"
-    ]
   ],
   "linked": [],
   "access": "public",
