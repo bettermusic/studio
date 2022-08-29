@@ -68,8 +68,15 @@
       ],
       "dependsOn": [
         "codemirror-lang-chordpro#prepare",
+        "@praisecharts/ui#build",
         "@praisecharts/chordsheetjs#build"
       ]
+    },
+    "@praisecharts/studio-docs#dev": {
+      "dependsOn": [
+        "@praisecharts/studio#build"
+      ],
+      "cache": false
     },
     "@praisecharts/studio#dev": {
       "inputs": [
