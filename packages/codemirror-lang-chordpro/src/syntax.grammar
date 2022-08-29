@@ -4,7 +4,7 @@
 
 expression {
   Chord |
-  MetaData | 
+  MetaData |
   Bracket |
   Comment |
   String
@@ -17,11 +17,11 @@ expression {
   SymbolChord { ($[A-G] $[b|#]? ($[a-zA-Z0-9\(\#)]*)?) ( '/' $[A-G] $[b|#]?)? }
 
   NumericChord { ($[b|#]? $[1-7] ($[a-zA-Z0-9\(\#)]*)?) ( '/' $[b|#]? $[1-7])?  }
-  
+
   NumeralChord { ($[b|#]? ('I' | 'II' | 'III' | 'IV' | 'V' | 'VI' | 'VII') ($[a-zA-Z0-9\(\)#]*)?) ( '/' $[b|#]? ('I' | 'II' | 'III' | 'IV' | 'V' | 'VI' | 'VII'))?  }
 
   Chord { '[' ( SymbolChord | NumericChord | NumeralChord | $[x] | '|' | '/' ) ']' }
-  
+
   Bracket { '[' | ']' }
 
   @precedence { Chord, SymbolChord, NumericChord, NumeralChord }
@@ -29,12 +29,12 @@ expression {
   MetaData { "{" char* ":" char* "}" }
 
   String { '"' char* '"' }
-  
+
   char { $[\u{20}\u{21}\u{23}-\u{5b}\u{5d}-\u{10ffff}] | "\\" esc }
   esc  { $["\\\/bfnrt] | "u" hex hex hex hex }
   hex  { $[0-9a-fA-F] }
 
-  Comment { "//" ![\n]* }
+  Comment { "#" ![\n]* }
 }
 
 @detectDelim

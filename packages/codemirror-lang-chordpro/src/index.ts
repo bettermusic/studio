@@ -12,14 +12,14 @@ export const ChordProLanguage = LRLanguage.define({
       styleTags({
         Chord: customTags.chord,
         MetaData: t.meta,
-        Comment: t.comment,
+        Comment: t.lineComment,
         Bracket: t.squareBracket,
         String: t.string,
       })
     ]
   }),
   languageData: {
-    commentTokens: {line: "//"}
+    commentTokens: {line: "#"}
   }
 })
 
