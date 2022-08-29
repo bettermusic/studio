@@ -32,12 +32,13 @@ turborepo monorepo
 │   
 └───Packages
     │   stand alone packages
+```
 
 Getting Started:
 
 ```
 gh repo clone PraiseCharts/studio
 git submodule update --init --recursive
-
+yarn install
 yarn dev
 ```
