@@ -1,0 +1,37 @@
+# Symbols
+[C2/E]
+[Dbm7]
+==>
+Program(Chord, Chord)
+
+# Numeric - minor
+[2m]
+==>
+Program(Chord)
+
+# Numeric - accidentals
+[#4m7]
+[b7]
+==>
+Program(Chord, Chord)
+
+# Numeric - bass
+[4/1]
+==>
+Program(Chord)
+
+# Numeral
+[V13]
+==>
+Program(Chord)
+
+# Numeral - accidentals
+[VIIb]
+[IV#]
+==>
+Program(Chord, Chord)
+
+# Numeral - bass
+[IV/I]
+==>
+Program(Chord)
