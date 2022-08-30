@@ -24,8 +24,6 @@ expression {
 
   Bracket { '[' | ']' }
 
-  @precedence { Chord, SymbolChord, NumericChord, NumeralChord }
-
   MetaData { "{" char* ":" char* "}" }
 
   String { '"' char* '"' }
