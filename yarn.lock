@@ -2673,34 +2673,22 @@
   resolved "https://registry.npmjs.org/@lezer/common/-/common-0.15.12.tgz"
   integrity sha512-edfwCxNLnzq5pBA/yaIhwJ3U3Kz8VAUOTRg0hhxaizaI1N+qxV7EXDv/kLCkLeq2RzSFvxexlaj5Mzfn2kY0Ig==
 
-"@lezer/common@^0.16.0":
-  version "0.16.1"
-  resolved "https://registry.npmjs.org/@lezer/common/-/common-0.16.1.tgz"
-  integrity sha512-qPmG7YTZ6lATyTOAWf8vXE+iRrt1NJd4cm2nJHK+v7X9TsOF6+HtuU/ctaZy2RCrluxDb89hI6KWQ5LfQGQWuA==
-
 "@lezer/common@^1.0.0":
   version "1.0.0"
   resolved "https://registry.npmjs.org/@lezer/common/-/common-1.0.0.tgz"
   integrity sha512-ohydQe+Hb+w4oMDvXzs8uuJd2NoA3D8YDcLiuDsLqH+yflDTPEpgCsWI3/6rH5C3BAedtH1/R51dxENldQceEA==
 
-"@lezer/generator@^0.16.0":
-  version "0.16.0"
-  resolved "https://registry.npmjs.org/@lezer/generator/-/generator-0.16.0.tgz"
-  integrity sha512-dhkChgTGXdgj++0VV/Av1ARNe35Fj5uYuVt7W6g/7cDtHToS1dNn73rUtRb1cRO6kQXaISE/ne1cr3VofyBcng==
+"@lezer/generator@^1.1.1":
+  version "1.1.1"
+  resolved "https://registry.yarnpkg.com/@lezer/generator/-/generator-1.1.1.tgz#c4708b2b12de27f10bf7de4596f96deabac51808"
+  integrity sha512-GrB5EwOn09yf5YfDk6TcspHcF7PQZP83665moY5VmOURwCmNOx+Qit3mwp7W/EsGpqd4PPRioxNkYwYZii69cw==
   dependencies:
-    "@lezer/common" "^0.16.0"
-    "@lezer/lr" "^0.16.0"
-
-"@lezer/highlight@^0.16.0":
-  version "0.16.0"
-  resolved "https://registry.npmjs.org/@lezer/highlight/-/highlight-0.16.0.tgz"
-  integrity sha512-iE5f4flHlJ1g1clOStvXNLbORJoiW4Kytso6ubfYzHnaNo/eo5SKhxs4wv/rtvwZQeZrK3we8S9SyA7OGOoRKQ==
-  dependencies:
-    "@lezer/common" "^0.16.0"
+    "@lezer/common" "^1.0.0"
+    "@lezer/lr" "^1.0.0"
 
 "@lezer/highlight@^1.0.0":
   version "1.0.0"
-  resolved "https://registry.npmjs.org/@lezer/highlight/-/highlight-1.0.0.tgz"
+  resolved "https://registry.yarnpkg.com/@lezer/highlight/-/highlight-1.0.0.tgz#1dc82300f5d39fbd67ae1194b5519b4c381878d3"
   integrity sha512-nsCnNtim90UKsB5YxoX65v3GEIw3iCHw9RM2DtdgkiqAbKh9pCdvi8AWNwkYf10Lu6fxNhXPpkpHbW6mihhvJA==
   dependencies:
     "@lezer/common" "^1.0.0"
@@ -2720,17 +2708,17 @@
   dependencies:
     "@lezer/common" "^0.15.0"
 
-"@lezer/lr@^0.16.0":
-  version "0.16.3"
-  resolved "https://registry.npmjs.org/@lezer/lr/-/lr-0.16.3.tgz"
-  integrity sha512-pau7um4eAw94BEuuShUIeQDTf3k4Wt6oIUOYxMmkZgDHdqtIcxWND4LRxi8nI9KuT4I1bXQv67BCapkxt7Ywqw==
-  dependencies:
-    "@lezer/common" "^0.16.0"
-
 "@lezer/lr@^1.0.0":
   version "1.2.0"
   resolved "https://registry.npmjs.org/@lezer/lr/-/lr-1.2.0.tgz"
   integrity sha512-TgEpfm9br2SX8JwtwKT8HsQZKuFkLRg6g+IRxObk9nVKQLKnkP3oMh+QGcTBL9GQsfQ2ADtKPbj2iGSMf3ytiA==
+  dependencies:
+    "@lezer/common" "^1.0.0"
+
+"@lezer/lr@^1.2.3":
+  version "1.2.3"
+  resolved "https://registry.yarnpkg.com/@lezer/lr/-/lr-1.2.3.tgz#f44ca844f15f6762fde4eab877d110567e34ffa1"
+  integrity sha512-qpB7rBzH8f6Mzjv2AVZRahcm+2Cf7nbIH++uXbvVOL1yIRvVWQ3HAM/saeBLCyz/togB7LGo76qdJYL1uKQlqA==
   dependencies:
     "@lezer/common" "^1.0.0"
 
@@ -13854,7 +13842,15 @@ param-case@^3.0.3:
     dot-case "^3.0.4"
     tslib "^2.0.3"
 
-parcel@2.7.0:
+parcel-transformer-hbs@^1.0.4:
+  version "1.0.4"
+  resolved "https://registry.yarnpkg.com/parcel-transformer-hbs/-/parcel-transformer-hbs-1.0.4.tgz#098d4ee6dd45a29f8f0aef87bb66b584db234a3f"
+  integrity sha512-rs11O/iHR+eLnDMdlqiqFgfI8JjjEBb10sOKwd4SRExAGizT5sak4D6WhM014iF/3GaauHAnYbWWJeY7q7rKqw==
+  dependencies:
+    handlebars "^4.7.7"
+    parcel "^2.0.1"
+
+parcel@^2.0.1, parcel@^2.4.1:
   version "2.7.0"
   resolved "https://registry.yarnpkg.com/parcel/-/parcel-2.7.0.tgz#41fdd3e5c7144d4cf7f1fa3ab8d0ea0d47d31f77"
   integrity sha512-pRYwnivwtNP0tip8xYSo4zCB0XhLt7/gJzP1p8OovCqkmFjG9VG+GW9TcAKqMIo0ovEa9tT+/s6gY1Qy+BONGQ==
