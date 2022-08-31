@@ -1,38 +1,37 @@
-@top Program { (line (eol | eof))* }
+@top Program { line* }
 
 @skip { whitespace }
 
-line { Comment | Directive | Lyrics }
+line { (Comment | Directive | Lyrics) (eol | eof) }
 
 Directive { "{" DirectiveName (":" DirectiveValue)? "}" }
 Lyrics { ( "[" Chord "]" | Lyric)+ }
 Chord { symbolChord | numericChord | numeralChord | rhythmSymbol }
 
 @tokens {
-  DirectiveName { (@asciiLetter | $[_])+ }
-
-  DirectiveValue { ![\}\n]+ }
+  // Directives
+  DirectiveName { (@asciiLetter | "_")+ }
+  DirectiveValue { ![}\n]+ }
   @precedence { DirectiveValue, Lyrics, whitespace }
 
+  // Chords
   symbolChord { ($[A-G] accidental? ($[a-zA-Z0-9\(\#)]*)?) ( '/' $[A-G] accidental?)? }
-
   numericChord { (accidental? $[1-7] ($[a-zA-Z0-9\(\#)]*)?) ( '/' accidental? $[1-7])?  }
-
   numeralChord { (accidental? ('I' | 'II' | 'III' | 'IV' | 'V' | 'VI' | 'VII') ($[a-zA-Z0-9\(\)#]*)?) ( '/' accidental? ('I' | 'II' | 'III' | 'IV' | 'V' | 'VI' | 'VII'))?  }
-
   rhythmSymbol { $[x|/] }
   accidental { $[b#] }
 
+  // Lyrics
   Lyric { ![{[]+ }
   @precedence { eol, Lyric }
   @precedence { Lyric, whitespace }
 
+  // Comments
   Comment { "#" ![\n]* }
   @precedence { Comment, Lyric }
 
+  // characters
   whitespace { $[ \t] }
   eol { "\r"? "\n" }
   eof { @eof }
 }
-
-@detectDelim
