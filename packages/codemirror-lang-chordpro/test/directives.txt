@@ -1,0 +1,12 @@
+# Meta Directives
+{capo: 2}
+{artist: Maverick City Music}
+==> Program(Directive(DirectiveName, DirectiveValue), Directive(DirectiveName, DirectiveValue))
+
+# t
+{t: Get Back}
+==> Program(Directive(DirectiveName, DirectiveValue))
+
+# Inline directive
+{start_of_verse}
+==> Program(Directive(DirectiveName))

@@ -1,18 +1,19 @@
-@top Program { expression* }
+@top Program { line* }
 
 @skip { whitespace }
 
-expression {
+line {
   Chord |
-  MetaData |
+  Directive |
   Bracket |
   Comment |
   String
 }
 
-@tokens {
+Directive { "{" DirectiveName (":" DirectiveValue)? "}" }
 
-  whitespace { $[ \n\r\t] }
+@tokens {
+  whitespace { @whitespace }
 
   SymbolChord { ($[A-G] $[b|#]? ($[a-zA-Z0-9\(\#)]*)?) ( '/' $[A-G] $[b|#]?)? }
 
@@ -24,7 +25,11 @@ expression {
 
   Bracket { '[' | ']' }
 
-  MetaData { "{" char* ":" char* "}" }
+  DirectiveName { (@asciiLetter | $[_])+ }
+
+  DirectiveValue { ![\}\n]+ }
+
+  @precedence { DirectiveValue, whitespace }
 
   String { '"' char* '"' }
 
