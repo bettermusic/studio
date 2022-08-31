@@ -1,6 +1,6 @@
 @top Program { line* }
 
-@skip { whitespace }
+@skip { space }
 
 line { (Comment | Directive | Lyrics) (eol | eof) }
 
@@ -12,7 +12,7 @@ Chord { symbolChord | numericChord | numeralChord | rhythmSymbol }
   // Directives
   DirectiveName { (@asciiLetter | "_")+ }
   DirectiveValue { ![}\n]+ }
-  @precedence { DirectiveValue, Lyrics, whitespace }
+  @precedence { DirectiveValue, space }
 
   // Chords
   symbolChord { ($[A-G] accidental? ($[a-zA-Z0-9\(\#)]*)?) ( '/' $[A-G] accidental?)? }
@@ -24,14 +24,14 @@ Chord { symbolChord | numericChord | numeralChord | rhythmSymbol }
   // Lyrics
   Lyric { ![{[]+ }
   @precedence { eol, Lyric }
-  @precedence { Lyric, whitespace }
+  @precedence { Lyric, space }
 
   // Comments
   Comment { "#" ![\n]* }
   @precedence { Comment, Lyric }
 
   // characters
-  whitespace { $[ \t] }
+  space { $[ \t]+ }
   eol { "\r"? "\n" }
   eof { @eof }
 }
