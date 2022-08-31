@@ -1,10 +1,10 @@
-@top Program { line* }
+@top Program { (line (eol | eof))* }
 
 @skip { whitespace }
 
 line {
-  Chord |
   Directive |
+  Chord |
   Bracket |
   Comment |
   String
@@ -13,7 +13,10 @@ line {
 Directive { "{" DirectiveName (":" DirectiveValue)? "}" }
 
 @tokens {
-  whitespace { @whitespace }
+  DirectiveName { (@asciiLetter | $[_])+ }
+
+  DirectiveValue { ![\}\n]+ }
+  @precedence { DirectiveValue, whitespace }
 
   SymbolChord { ($[A-G] $[b|#]? ($[a-zA-Z0-9\(\#)]*)?) ( '/' $[A-G] $[b|#]?)? }
 
@@ -25,17 +28,15 @@ Directive { "{" DirectiveName (":" DirectiveValue)? "}" }
 
   Bracket { '[' | ']' }
 
-  DirectiveName { (@asciiLetter | $[_])+ }
-
-  DirectiveValue { ![\}\n]+ }
-
-  @precedence { DirectiveValue, whitespace }
 
   String { '"' char* '"' }
 
   char { $[\u{20}\u{21}\u{23}-\u{5b}\u{5d}-\u{10ffff}] | "\\" esc }
   esc  { $["\\\/bfnrt] | "u" hex hex hex hex }
   hex  { $[0-9a-fA-F] }
+  whitespace { $[ \t] }
+  eol { "\r"? "\n" }
+  eof { @eof }
 
   Comment { "#" ![\n]* }
 }
