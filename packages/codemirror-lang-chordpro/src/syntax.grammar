@@ -2,43 +2,37 @@
 
 @skip { whitespace }
 
-line {
-  Directive |
-  Chord |
-  Bracket |
-  Comment |
-  String
-}
+line { Comment | Directive | Lyrics }
 
 Directive { "{" DirectiveName (":" DirectiveValue)? "}" }
+Lyrics { ( "[" Chord "]" | Lyric)+ }
+Chord { symbolChord | numericChord | numeralChord | rhythmSymbol }
 
 @tokens {
   DirectiveName { (@asciiLetter | $[_])+ }
 
   DirectiveValue { ![\}\n]+ }
-  @precedence { DirectiveValue, whitespace }
+  @precedence { DirectiveValue, Lyrics, whitespace }
 
-  SymbolChord { ($[A-G] $[b|#]? ($[a-zA-Z0-9\(\#)]*)?) ( '/' $[A-G] $[b|#]?)? }
+  symbolChord { ($[A-G] accidental? ($[a-zA-Z0-9\(\#)]*)?) ( '/' $[A-G] accidental?)? }
 
-  NumericChord { ($[b|#]? $[1-7] ($[a-zA-Z0-9\(\#)]*)?) ( '/' $[b|#]? $[1-7])?  }
+  numericChord { (accidental? $[1-7] ($[a-zA-Z0-9\(\#)]*)?) ( '/' accidental? $[1-7])?  }
 
-  NumeralChord { ($[b|#]? ('I' | 'II' | 'III' | 'IV' | 'V' | 'VI' | 'VII') ($[a-zA-Z0-9\(\)#]*)?) ( '/' $[b|#]? ('I' | 'II' | 'III' | 'IV' | 'V' | 'VI' | 'VII'))?  }
+  numeralChord { (accidental? ('I' | 'II' | 'III' | 'IV' | 'V' | 'VI' | 'VII') ($[a-zA-Z0-9\(\)#]*)?) ( '/' accidental? ('I' | 'II' | 'III' | 'IV' | 'V' | 'VI' | 'VII'))?  }
 
-  Chord { '[' ( SymbolChord | NumericChord | NumeralChord | $[x] | '|' | '/' ) ']' }
+  rhythmSymbol { $[x|/] }
+  accidental { $[b#] }
 
-  Bracket { '[' | ']' }
+  Lyric { ![{[]+ }
+  @precedence { eol, Lyric }
+  @precedence { Lyric, whitespace }
 
+  Comment { "#" ![\n]* }
+  @precedence { Comment, Lyric }
 
-  String { '"' char* '"' }
-
-  char { $[\u{20}\u{21}\u{23}-\u{5b}\u{5d}-\u{10ffff}] | "\\" esc }
-  esc  { $["\\\/bfnrt] | "u" hex hex hex hex }
-  hex  { $[0-9a-fA-F] }
   whitespace { $[ \t] }
   eol { "\r"? "\n" }
   eof { @eof }
-
-  Comment { "#" ![\n]* }
 }
 
 @detectDelim

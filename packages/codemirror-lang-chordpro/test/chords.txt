@@ -1,30 +1,30 @@
 # Symbols
 [C2/E]
 [Dbm7]
-==> Program(Chord, Chord)
+==> Program(Lyrics(Chord), Lyrics(Chord))
 
 # Numeric - minor
 [2m]
-==> Program(Chord)
+==> Program(Lyrics(Chord))
 
 # Numeric - accidentals
 [#4m7]
 [b7]
-==> Program(Chord, Chord)
+==> Program(Lyrics(Chord), Lyrics(Chord))
 
 # Numeric - bass
 [4/1]
-==> Program(Chord)
+==> Program(Lyrics(Chord))
 
 # Numeral
 [V13]
-==> Program(Chord)
+==> Program(Lyrics(Chord))
 
 # Numeral - accidentals
 [VIIb]
 [IV#]
-==> Program(Chord, Chord)
+==> Program(Lyrics(Chord), Lyrics(Chord))
 
 # Numeral - bass
 [IV/I]
-==> Program(Chord)
+==> Program(Lyrics(Chord))
