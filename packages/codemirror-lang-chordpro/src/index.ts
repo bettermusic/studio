@@ -11,6 +11,8 @@ export const ChordProLanguage = LRLanguage.define({
         DirectiveName: t.attributeName,
         DirectiveValue: t.attributeValue,
         Lyric: t.content,
+        "{ }": t.brace,
+        "[ ]": t.squareBracket,
       })
     ]
   }),
