@@ -37,7 +37,7 @@ export const myHighlightStyle = HighlightStyle.define([
   {tag: tags.attributeName, color: "#8a8c8d"},
   {tag: tags.attributeValue, color: "#fa7c6c"},
   {tag: tags.lineComment, color: "#5d6063"},
-  {tag: tags.content, color: '#fff'}
+  {tag: tags.content, color: '#c1c1c1'}
 ])
 
 export const wordHover = hoverTooltip((view, pos, side) => {
