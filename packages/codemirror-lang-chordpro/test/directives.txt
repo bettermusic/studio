@@ -1,0 +1,12 @@
+# meta
+{capo: 2}
+{artist: Maverick City Music}
+==> Program(Directive(DirectiveName, DirectiveValue), Directive(DirectiveName, DirectiveValue))
+
+# alias
+{t: Get Back}
+==> Program(Directive(DirectiveName, DirectiveValue))
+
+# inline
+{start_of_verse}
+==> Program(Directive(DirectiveName))

@@ -2,24 +2,22 @@ import {parser} from "./syntax.grammar"
 import {LRLanguage, LanguageSupport, indentNodeProp, foldNodeProp, foldInside, delimitedIndent} from "@codemirror/language"
 import {styleTags, Tag, tags as t} from "@lezer/highlight"
 
-export const customTags = {
-  chord: Tag.define(), // define custom tag, that can be picked up by the style configuration
-}
-
 export const ChordProLanguage = LRLanguage.define({
   parser: parser.configure({
     props: [
       styleTags({
-        Chord: customTags.chord,
-        MetaData: t.meta,
-        Comment: t.comment,
-        Bracket: t.squareBracket,
-        String: t.string,
+        Chord: t.keyword,
+        Comment: t.lineComment,
+        DirectiveName: t.attributeName,
+        DirectiveValue: t.attributeValue,
+        Lyric: t.content,
+        "{ }": t.brace,
+        "[ ]": t.squareBracket,
       })
     ]
   }),
   languageData: {
-    commentTokens: {line: "//"}
+    commentTokens: {line: "#"}
   }
 })
 

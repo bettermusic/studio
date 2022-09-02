@@ -1,0 +1,3 @@
+# Lyrics
+My [Dm7]heart has always [C/E]longed for something[F] more
+==> Program(Lyrics(Lyric, Chord, Lyric, Chord, Lyric, Chord, Lyric))

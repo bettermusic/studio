@@ -1,40 +1,41 @@
-@top Program { expression* }
+@top Program { line* }
 
-@skip { whitespace }
+@skip { space }
 
-expression {
-  Chord |
-  MetaData | 
-  Bracket |
-  Comment |
-  String
-}
+line { (Comment | Directive | Lyrics) (eol | eof) }
+
+Directive { "{" DirectiveName (":" DirectiveValue)? "}" }
+Lyrics { ( "[" Chord? "]" | Lyric)+ }
+Chord { symbolChord | numericChord | numeralChord | rhythmSymbol }
 
 @tokens {
+  // Directives
+  DirectiveName { (@asciiLetter | "_")+ }
+  DirectiveValue { ![}\n]+ }
+  @precedence { DirectiveValue, space }
 
-  whitespace { $[ \n\r\t] }
+  // Chords
+  symbolChord { ($[A-G] accidental? ($[a-zA-Z0-9\(\#)]*)?) ( '/' $[A-G] accidental?)? }
+  numericChord { (accidental? $[1-7] ($[a-zA-Z0-9\(\#)]*)?) ( '/' accidental? $[1-7])?  }
+  numeralChord { (accidental? ('I' | 'II' | 'III' | 'IV' | 'V' | 'VI' | 'VII') ($[a-zA-Z0-9\(\)#]*)?) ( '/' accidental? ('I' | 'II' | 'III' | 'IV' | 'V' | 'VI' | 'VII'))?  }
+  rhythmSymbol { $[x|/] }
+  accidental { $[b#] }
 
-  SymbolChord { ($[A-G] $[b|#]? ($[a-zA-Z0-9\(\#)]*)?) ( '/' $[A-G] $[b|#]?)? }
+  // Lyrics
+  Lyric { ![{[]+ }
+  @precedence { eol, Lyric }
+  @precedence { Lyric, space }
 
-  NumericChord { ($[b|#]? $[1-7] ($[a-zA-Z0-9\(\#)]*)?) ( '/' $[b|#]? $[1-7])?  }
-  
-  NumeralChord { ($[b|#]? ('I' | 'II' | 'III' | 'IV' | 'V' | 'VI' | 'VII') ($[a-zA-Z0-9\(\)#]*)?) ( '/' $[b|#]? ('I' | 'II' | 'III' | 'IV' | 'V' | 'VI' | 'VII'))?  }
+  // Comments
+  Comment { "#" ![\n]* }
+  @precedence { Comment, Lyric }
 
-  Chord { '[' ( SymbolChord | NumericChord | NumeralChord | $[x] | '|' | '/' ) ']' }
-  
-  Bracket { '[' | ']' }
+  // characters
+  space { $[ \t]+ }
+  eol { "\r"? "\n" }
+  eof { @eof }
 
-  @precedence { Chord, SymbolChord, NumericChord, NumeralChord }
-
-  MetaData { "{" char* ":" char* "}" }
-
-  String { '"' char* '"' }
-  
-  char { $[\u{20}\u{21}\u{23}-\u{5b}\u{5d}-\u{10ffff}] | "\\" esc }
-  esc  { $["\\\/bfnrt] | "u" hex hex hex hex }
-  hex  { $[0-9a-fA-F] }
-
-  Comment { "//" ![\n]* }
+  // string literals
+  "{" "}"
+  "[" "]"
 }
-
-@detectDelim
