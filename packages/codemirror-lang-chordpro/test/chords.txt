@@ -28,3 +28,7 @@
 # Numeral - bass
 [IV/I]
 ==> Program(Lyrics(Chord))
+
+# no chord
+[]
+==> Program(Lyrics("[", "]"))

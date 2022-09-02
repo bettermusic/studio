@@ -5,7 +5,7 @@
 line { (Comment | Directive | Lyrics) (eol | eof) }
 
 Directive { "{" DirectiveName (":" DirectiveValue)? "}" }
-Lyrics { ( "[" Chord "]" | Lyric)+ }
+Lyrics { ( "[" Chord? "]" | Lyric)+ }
 Chord { symbolChord | numericChord | numeralChord | rhythmSymbol }
 
 @tokens {
