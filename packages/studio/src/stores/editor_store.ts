@@ -1,6 +1,5 @@
 import { createStore } from "@stencil/store";
 import { ChordProFormatter, HtmlDivFormatter, HtmlTableFormatter, Song, ChordProParser, ChordSheetParser, TextFormatter  } from '@praisecharts/chordsheetjs';
-import exampleChordPro from '../utils/example-chordpro'
 import {EditorView, highlightActiveLine, keymap, lineNumbers} from "@codemirror/view"
 import {defaultKeymap, history} from "@codemirror/commands"
 import {syntaxHighlighting} from "@codemirror/language"
@@ -44,9 +43,15 @@ const { state, onChange } = createStore<IStore>({
 });
 
 onChange('input', value => {
-  let song = parseInput(value, state.parser, state.metadata);
-  state.html = formatSong(song, state.formatter);
-  state.song = song;
+  state.song = parseInput(value, state.parser, state.metadata);
+  state.html = formatSong(state.song, state.formatter);
+
+  if (state.song.key !== state.currentKey.name) {
+    state.currentKey = { name: state.song.key };
+    // take majorKeys from teh keys config and map each key to an array of objects where there is a name and a value
+    state.keys = getKeys(true);
+    state.capos = getAvaliableCaposFromKey(state.song.key);
+  }
 });
 
 onChange('capo', value => {
@@ -72,10 +77,10 @@ onChange('currentKey', value => {
 
 onChange('editorMode', value => {
   let formatter;
-  if (value === "chords_over_words") { 
+  if (value === "chords_over_words") {
     formatter = new TextFormatter();
     state.parser = new ChordSheetParser({ preserveWhitespace: false });
-  } 
+  }
   if (value === "chordpro") {
     formatter = new ChordProFormatter();
     state.parser = new ChordProParser();
@@ -88,42 +93,26 @@ onChange('editorMode', value => {
 });
 
 function initialState() {
-  let song = parseInput(exampleChordPro, new ChordProParser() )
-  let capo = 0;
-  let currentKey = {
-    name: song.key
-  }
-  // take majorKeys from teh keys config and map each key to an array of objects where there is a name and a value
-  let keys = getKeys(true);
-  let capos = getAvaliableCaposFromKey(song.key);
-  let html = formatSong(song, new HtmlDivFormatter());
-  
   return <IStore> {
-    input: exampleChordPro,
-    song: song,
-    html: html,
-    capo: capo,
-    currentKey: currentKey,
-    keys: keys,
-    capos: capos,
+    input: '',
+    song: null,
+    html: '',
+    capo: 0,
+    currentKey: null,
+    keys: [],
+    capos: [],
     minor: false,
     editorMode: "chordpro",
     editorModes: [
       {
-        label: 'ChordPro', 
+        label: 'ChordPro',
         mode: 'chordpro',
       },
       {
-        label: 'Chords Over Words', 
+        label: 'Chords Over Words',
         mode: 'chords_over_words',
       }
     ],
-    // metadata: {
-    //   title: "Test Song",
-    //   key: currentKey,
-    //   capo: capo,
-    //   artist: "test Artist"
-    // },
     parser: new ChordProParser(),
     formatter: new HtmlDivFormatter(),
     rendererMode: "pdf",
@@ -132,8 +121,8 @@ function initialState() {
     editorExtensions: [
       language.of(ChordPro()),
       syntaxHighlighting(myHighlightStyle, {fallback: true}),
-      keymap.of(defaultKeymap), 
-      lineNumbers(), 
+      keymap.of(defaultKeymap),
+      lineNumbers(),
       exampleStringLinter,
       lintGutter(),
       highlightActiveLine(),
