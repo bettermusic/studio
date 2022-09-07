@@ -7,4 +7,6 @@ import PraiseChartsTheme from './PraiseChartsTheme';
 
 addons.setConfig({
   theme: PraiseChartsTheme,
+  // shortcuts do not play well with codemirror
+  enableShortcuts: false,
 });
