@@ -29,7 +29,7 @@ export class EditorSplitView {
           <pc-editor-capo-dropdown></pc-editor-capo-dropdown>
         </div>
         <div id="flex">
-          <pc-editor ref={el => this.editor = el as HTMLElement} initialValue={state.input}></pc-editor>
+          <pc-editor ref={el => this.editor = el as HTMLElement} value={state.input}></pc-editor>
           <pc-renderer ref={el => this.view = el as HTMLElement} html={state.html}></pc-renderer>
         </div>
       </Host>

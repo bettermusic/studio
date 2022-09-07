@@ -7,8 +7,8 @@
 import { HTMLStencilElement, JSXBase } from "@stencil/core/internal";
 export namespace Components {
     interface PcEditor {
-        "initialValue": string;
         "setCapo": (capoPosition: number) => Promise<void>;
+        "value": string;
     }
     interface PcEditorCapoDropdown {
     }
@@ -71,7 +71,7 @@ declare global {
 }
 declare namespace LocalJSX {
     interface PcEditor {
-        "initialValue"?: string;
+        "value"?: string;
     }
     interface PcEditorCapoDropdown {
     }

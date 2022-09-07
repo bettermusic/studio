@@ -9,23 +9,23 @@ import state from "../../stores/editor_store";
   shadow: true,
 })
 export class Editor {
-  
-  @Prop() initialValue: string;
+
+  @Prop() value: string;
 
   @State() capo: number;
-  
+
   @Element() host: HTMLElement;
 
   @Method()
   async setCapo(capoPosition: number) {
     state.capo = capoPosition;
   }
-  
+
   connectedCallback() {
     if (!state.editorView) {
       state.editorView = new EditorView({
           state: EditorState.create({
-            doc: state.input,
+            doc: this.value,
             extensions: state.editorExtensions
           }),
           parent:  this.host.shadowRoot,
@@ -41,4 +41,3 @@ export class Editor {
     );
   }
 }
-

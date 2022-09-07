@@ -12,14 +12,14 @@ export declare interface PcEditor extends Components.PcEditor {}
 
 @ProxyCmp({
   defineCustomElementFn: undefined,
-  inputs: ['initialValue'],
+  inputs: ['value'],
   methods: ['setCapo']
 })
 @Component({
   selector: 'pc-editor',
   changeDetection: ChangeDetectionStrategy.OnPush,
   template: '<ng-content></ng-content>',
-  inputs: ['initialValue']
+  inputs: ['value']
 })
 export class PcEditor {
   protected el: HTMLElement;
