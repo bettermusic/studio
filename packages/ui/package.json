@@ -37,7 +37,7 @@
     "@stencil/sass": "^1.5.2",
     "@stencil/store": "^2.0.0",
     "@types/jest": "^27.4.5",
-    "eslint": "^8.15.0",
+    "eslint": "^8.23.0",
     "jest-cli": "^27.4.5",
     "jest": "^27.4.5",
     "puppeteer": "^10.0.0",
