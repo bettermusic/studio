@@ -14,7 +14,7 @@
     "@storybook/addon-essentials": "^6.4.20",
     "@storybook/addon-links": "^6.4.20",
     "@storybook/addons": "^6.5.9",
-    "@storybook/html": "^6.4.20",
+    "@storybook/html": "^6.5.10",
     "@storybook/theming": "^6.5.9",
     "@praisecharts/eslint-config": "*",
     "serve": "^13.0.2",
