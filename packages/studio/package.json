@@ -37,7 +37,7 @@
     "@stencil/angular-output-target": "^0.4.0",
     "@stencil/core": "^2.13.0",
     "codemirror-lang-chordpro": "*",
-    "codemirror": "^5.65.6",
+    "codemirror": "^6.0.1",
     "split.js": "^1.6.5"
   },
   "devDependencies": {
