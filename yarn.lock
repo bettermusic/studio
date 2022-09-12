@@ -13046,10 +13046,10 @@ rollup-plugin-dts@^4.0.1:
   optionalDependencies:
     "@babel/code-frame" "^7.16.7"
 
-rollup-plugin-esbuild@^4.9.1:
-  version "4.9.1"
-  resolved "https://registry.npmjs.org/rollup-plugin-esbuild/-/rollup-plugin-esbuild-4.9.1.tgz"
-  integrity sha512-qn/x7Wz9p3Xnva99qcb+nopH0d2VJwVnsxJTGEg+Sh2Z3tqQl33MhOwzekVo1YTKgv+yAmosjcBRJygMfGrtLw==
+rollup-plugin-esbuild@^4.10.1:
+  version "4.10.1"
+  resolved "https://registry.yarnpkg.com/rollup-plugin-esbuild/-/rollup-plugin-esbuild-4.10.1.tgz#84a32419b56680149a0456442a71456e49f122c0"
+  integrity sha512-/ymcRB283zjFp1JTBXO8ekxv0c9vRc2L6OTljghsLthQ4vqeDSDWa9BVz1tHiVrx6SbUnUpDPLC0K/MXK7j5TA==
   dependencies:
     "@rollup/pluginutils" "^4.1.1"
     debug "^4.3.3"
