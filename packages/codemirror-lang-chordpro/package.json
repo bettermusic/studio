@@ -20,10 +20,10 @@
   "types": "dist/index.d.ts",
   "sideEffects": false,
   "dependencies": {
-    "@codemirror/language": "^6.1.0",
-    "@codemirror/lint": "^6.0.0",
-    "@lezer/highlight": "^1.0.0",
-    "@lezer/lr": "^1.2.3"
+    "@codemirror/language": "^6.2",
+    "@codemirror/lint": "^6.0",
+    "@lezer/highlight": "^1.0",
+    "@lezer/lr": "^1.2"
   },
   "devDependencies": {
     "@lezer/generator": "^1.1.1",
