@@ -42,9 +42,9 @@
   "devDependencies": {
     "@praisecharts/eslint-config": "*",
     "@stencil/sass": "^1.5.2",
-    "@stencil/store": "^2.0.0",
+    "@stencil/store": "^2.0.1",
     "@types/jest": "^27.4.5",
-    "eslint": "^8.23.0",
+    "eslint": "^8.23.1",
     "jest": "^27.4.5",
     "jest-cli": "^27.4.5",
     "puppeteer": "^17.1.3",
