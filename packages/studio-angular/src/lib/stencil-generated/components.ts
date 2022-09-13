@@ -12,8 +12,7 @@ export declare interface PcEditor extends Components.PcEditor {}
 
 @ProxyCmp({
   defineCustomElementFn: undefined,
-  inputs: ['value'],
-  methods: ['setCapo']
+  inputs: ['value']
 })
 @Component({
   selector: 'pc-editor',
@@ -90,12 +89,14 @@ export class PcEditorModeDropdown {
 export declare interface PcEditorSplitView extends Components.PcEditorSplitView {}
 
 @ProxyCmp({
-  defineCustomElementFn: undefined
+  defineCustomElementFn: undefined,
+  inputs: ['value']
 })
 @Component({
   selector: 'pc-editor-split-view',
   changeDetection: ChangeDetectionStrategy.OnPush,
-  template: '<ng-content></ng-content>'
+  template: '<ng-content></ng-content>',
+  inputs: ['value']
 })
 export class PcEditorSplitView {
   protected el: HTMLElement;

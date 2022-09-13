@@ -12,19 +12,6 @@
 | `value`  | `value`   |             | `string` | `undefined` |
 
 
-## Methods
-
-### `setCapo(capoPosition: number) => Promise<void>`
-
-
-
-#### Returns
-
-Type: `Promise<void>`
-
-
-
-
 ## Dependencies
 
 ### Used by
