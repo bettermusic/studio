@@ -7,22 +7,9 @@
 
 ## Properties
 
-| Property       | Attribute       | Description | Type     | Default     |
-| -------------- | --------------- | ----------- | -------- | ----------- |
-| `initialValue` | `initial-value` |             | `string` | `undefined` |
-
-
-## Methods
-
-### `setCapo(capoPosition: number) => Promise<void>`
-
-
-
-#### Returns
-
-Type: `Promise<void>`
-
-
+| Property | Attribute | Description | Type     | Default     |
+| -------- | --------- | ----------- | -------- | ----------- |
+| `value`  | `value`   |             | `string` | `undefined` |
 
 
 ## Dependencies
