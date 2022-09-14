@@ -1,12 +1,16 @@
-# meta
+# meta {"dialect": "pro"}
 {capo: 2}
 {artist: Maverick City Music}
 ==> Program(Directive(DirectiveName, DirectiveValue), Directive(DirectiveName, DirectiveValue))
 
-# alias
+# alias {"dialect": "pro"}
 {t: Get Back}
 ==> Program(Directive(DirectiveName, DirectiveValue))
 
-# inline
+# inline {"dialect": "pro"}
 {start_of_verse}
 ==> Program(Directive(DirectiveName))
+
+# meta - crd {"dialect": "crd"}
+title: Song Title
+==> Program(Directive(DirectiveName, DirectiveValue))

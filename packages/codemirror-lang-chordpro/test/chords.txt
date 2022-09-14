@@ -1,34 +1,34 @@
-# Symbols
+# Symbols {"dialect": "pro"}
 [C2/E]
 [Dbm7]
 ==> Program(Lyrics(Chord), Lyrics(Chord))
 
-# Numeric - minor
+# Numeric - minor {"dialect": "pro"}
 [2m]
 ==> Program(Lyrics(Chord))
 
-# Numeric - accidentals
+# Numeric - accidentals {"dialect": "pro"}
 [#4m7]
 [b7]
 ==> Program(Lyrics(Chord), Lyrics(Chord))
 
-# Numeric - bass
+# Numeric - bass {"dialect": "pro"}
 [4/1]
 ==> Program(Lyrics(Chord))
 
-# Numeral
+# Numeral {"dialect": "pro"}
 [V13]
 ==> Program(Lyrics(Chord))
 
-# Numeral - accidentals
+# Numeral - accidentals {"dialect": "pro"}
 [VIIb]
 [IV#]
 ==> Program(Lyrics(Chord), Lyrics(Chord))
 
-# Numeral - bass
+# Numeral - bass {"dialect": "pro"}
 [IV/I]
 ==> Program(Lyrics(Chord))
 
-# no chord
+# no chord {"dialect": "pro"}
 []
 ==> Program(Lyrics("[", "]"))

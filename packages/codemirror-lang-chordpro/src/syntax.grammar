@@ -1,18 +1,24 @@
+@dialects { pro, crd }
+
 @top Program { line* }
 
-@skip { space }
+@skip { space | Comment }
 
-line { (Comment | Directive | Lyrics) (eol | eof) }
+line { (Directive | Lyrics) (eol | eof) }
 
-Directive { "{" DirectiveName (":" DirectiveValue)? "}" }
-Lyrics { ( "[" Chord? "]" | Lyric)+ }
+Directive {
+  braced<DirectiveName (":" DirectiveValue)?> |
+  ~DirectiveName ":" DirectiveValue // FIXME: only allow in crd dialect
+}
+
+Lyrics { ( bracketed<Chord?> | Lyric)+ }
 Chord { symbolChord | numericChord | numeralChord | rhythmSymbol }
 
 @tokens {
   // Directives
   DirectiveName { (@asciiLetter | "_")+ }
   DirectiveValue { ![}\n]+ }
-  @precedence { DirectiveValue, space }
+  @precedence { Lyric, space }
 
   // Chords
   symbolChord { ($[A-G] accidental? ($[a-zA-Z0-9\(\#)]*)?) ( '/' $[A-G] accidental?)? }
@@ -27,8 +33,8 @@ Chord { symbolChord | numericChord | numeralChord | rhythmSymbol }
   @precedence { Lyric, space }
 
   // Comments
-  Comment { "#" ![\n]* }
-  @precedence { Comment, Lyric }
+  Comment { "#" ![\r\n]* }
+  // @precedence { Comment, Lyric }
 
   // characters
   space { $[ \t]+ }
@@ -36,6 +42,11 @@ Chord { symbolChord | numericChord | numeralChord | rhythmSymbol }
   eof { @eof }
 
   // string literals
-  "{" "}"
-  "[" "]"
+  "{"[@dialect=pro,closedBy="}"]
+  "}"[@dialect=pro]
+  "["[@dialect=pro,closedBy="]"]
+  "]"[@dialect=pro]
 }
+
+braced<content> { "{" content "}" }
+bracketed<content> { "[" content "]" }
