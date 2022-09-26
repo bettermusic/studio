@@ -22,7 +22,7 @@
     "@angular/router": "~13.3.0",
     "@praisecharts/studio-angular": "*",
     "@praisecharts/studio": "*",
-    "rxjs": "~7.5.6",
+    "rxjs": "~7.5.7",
     "tslib": "^2.3.0",
     "zone.js": "~0.11.8"
   },
