@@ -19,7 +19,7 @@
     "release": "turbo run build --filter=docs^... && changeset publish"
   },
   "devDependencies": {
-    "@changesets/cli": "^2.24.4",
+    "@changesets/cli": "^2.25.0",
     "eslint": "^8.23.1",
     "@praisecharts/eslint-config": "*",
     "prettier": "^2.5.1",
