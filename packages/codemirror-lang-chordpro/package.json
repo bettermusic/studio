@@ -20,7 +20,7 @@
   "types": "dist/index.d.ts",
   "sideEffects": false,
   "dependencies": {
-    "@codemirror/language": "^6.2",
+    "@codemirror/language": "^6.3",
     "@codemirror/lint": "^6.0",
     "@lezer/highlight": "^1.0",
     "@lezer/lr": "^1.2"
