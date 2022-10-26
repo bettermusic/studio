@@ -35,7 +35,7 @@
     "@praisecharts/chordsheetjs": "*",
     "@praisecharts/ui": "*",
     "@stencil/angular-output-target": "^0.4",
-    "@stencil/core": "^2.18",
+    "@stencil/core": "^2.19",
     "codemirror-lang-chordpro": "*",
     "split.js": "^1.6.5"
   },
