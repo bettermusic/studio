@@ -31,7 +31,7 @@
     "@codemirror/lang-javascript": "^6.0",
     "@codemirror/lint": "^6.0",
     "@codemirror/state": "^6.1",
-    "@codemirror/view": "^6.2",
+    "@codemirror/view": "^6.4",
     "@praisecharts/chordsheetjs": "*",
     "@praisecharts/ui": "*",
     "@stencil/angular-output-target": "^0.4",
