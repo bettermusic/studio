@@ -1,5 +1,5 @@
 {
-  "name": "@praisecharts/studio-docs",
+  "name": "@bettermusic/studio-docs",
   "version": "0.0.6",
   "scripts": {
     "dev": "NODE_OPTIONS=--openssl-legacy-provider start-storybook -p 6006",
@@ -9,14 +9,14 @@
   },
   "dependencies": {},
   "devDependencies": {
-    "@praisecharts/tsconfig": "*",
-    "@praisecharts/studio": "*",
+    "@bettermusic/tsconfig": "*",
+    "@bettermusic/studio": "*",
     "@storybook/addon-essentials": "^6.5",
     "@storybook/addon-links": "^6.5",
     "@storybook/addons": "^6.5",
     "@storybook/html": "^6.5",
     "@storybook/theming": "^6.5",
-    "@praisecharts/eslint-config": "*",
+    "@bettermusic/eslint-config": "*",
     "serve": "^14.0.1",
     "typescript": "^4.5.4"
   }

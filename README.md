@@ -1,6 +1,6 @@
-# PraiseCharts Studio
+# BetterMusic Studio
 
-What will become the open source design system for PraiseCharts, featuring a suite of tools to be used for creating, editing and playing music. Including the most robust chordpro editor, a cross platform PDF viewer, multitrack player. 
+What will become the open source design system for BetterMusic, featuring a suite of tools to be used for creating, editing and playing music. Including the most robust chordpro editor, a cross platform PDF viewer, multitrack player. 
 
 Tools used:
 
@@ -12,11 +12,11 @@ Tools used:
 Packages:
 |Name|Description|
 |---|---|
-|@praisecharts/chordsheetjs|chordsheet Parsing Library|
-|@praisecharts/studio|Web components for a suite of editor tools|
-|@praisecharts/studio-angular|Angular build for @praisecharts/studio|
-|@praisecharts/ui|UI Library|
-|@praisecharts/ui-angular|Angular build for @prasiecharts/ui|
+|@bettermusic/chordsheetjs|chordsheet Parsing Library|
+|@bettermusic/studio|Web components for a suite of editor tools|
+|@bettermusic/studio-angular|Angular build for @bettermusic/studio|
+|@bettermusic/ui|UI Library|
+|@bettermusic/ui-angular|Angular build for @prasiecharts/ui|
 |codemirror-lang-chordpro|ChordPro Languagae Support for codemirror|
 
 Project Structure:
@@ -37,7 +37,7 @@ turborepo monorepo
 Getting Started:
 
 ```
-gh repo clone PraiseCharts/studio
+gh repo clone BetterMusic/studio
 git submodule update --init --recursive
 yarn install
 yarn dev

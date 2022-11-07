@@ -1,1 +1,1 @@
-import '@praisecharts/ui';
+import '@bettermusic/ui';

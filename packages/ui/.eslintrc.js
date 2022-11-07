@@ -1,6 +1,6 @@
 module.exports = {
   root: true,
-  extends: ["@praisecharts/eslint-config"],
+  extends: ["@bettermusic/eslint-config"],
   rules: {
     "react/no-unknown-property": "off",
   }

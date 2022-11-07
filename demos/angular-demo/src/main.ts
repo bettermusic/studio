@@ -4,7 +4,7 @@ import { platformBrowserDynamic } from '@angular/platform-browser-dynamic';
 import { AppModule } from './app/app.module';
 import { environment } from './environments/environment';
 
-import {defineCustomElements, applyPolyfills} from '@praisecharts/studio/loader/index';
+import {defineCustomElements, applyPolyfills} from '@bettermusic/studio/loader/index';
 
 if (environment.production) {
   enableProdMode();

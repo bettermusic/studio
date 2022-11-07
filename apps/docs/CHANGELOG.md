@@ -1,4 +1,4 @@
-# @praisecharts/studio-docs
+# @bettermusic/studio-docs
 
 ## 0.0.6
 

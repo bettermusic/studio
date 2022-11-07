@@ -5,7 +5,7 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 
 
-import { StudioComponentsModule } from '@praisecharts/studio-angular/dist';
+import { StudioComponentsModule } from '@bettermusic/studio-angular/dist';
 
 
 @NgModule({

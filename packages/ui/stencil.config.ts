@@ -34,7 +34,7 @@ export const config: Config = {
       type: 'docs-readme',
     },
     angularOutputTarget({
-      componentCorePackage: '@praisecharts/ui',
+      componentCorePackage: '@bettermusic/ui',
       directivesProxyFile: '../ui-angular/src/lib/stencil-generated/components.ts',
       directivesArrayFile: '../ui-angular/src/lib/stencil-generated/index.ts',
       valueAccessorConfigs: angularValueAccessorBindings,

@@ -1,5 +1,5 @@
 {
-  "extends": "@praisecharts/tsconfig/stencil-library.json",
+  "extends": "@bettermusic/tsconfig/stencil-library.json",
   "include": [
     "src"
   ],

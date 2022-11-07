@@ -1,4 +1,4 @@
-# @praisecharts/studio
+# @bettermusic/studio
 
 ## 0.0.6
 
@@ -6,7 +6,7 @@
 
 - 9daa370: testing workflow again
 - Updated dependencies [9daa370]
-  - @praisecharts/chordsheetjs@0.0.2
+  - @bettermusic/chordsheetjs@0.0.2
   - codemirror-lang-chordpro@0.0.6
 
 ## 0.0.5
@@ -15,7 +15,7 @@
 
 - 92b570f: test workflow
 - Updated dependencies [92b570f]
-  - @praisecharts/chordsheetjs@0.0.2
+  - @bettermusic/chordsheetjs@0.0.2
   - codemirror-lang-chordpro@0.0.5
 
 ## 0.0.4
@@ -24,7 +24,7 @@
 
 - 64179a9: bumping packages to test release
 - Updated dependencies [64179a9]
-  - @praisecharts/chordsheetjs@0.0.2
+  - @bettermusic/chordsheetjs@0.0.2
   - codemirror-lang-chordpro@0.0.4
 
 ## 0.0.3
@@ -33,7 +33,7 @@
 
 - 97fb664: test agregate release for changesets to pull from tag name
 - Updated dependencies [97fb664]
-  - @praisecharts/chordsheetjs@0.0.2
+  - @bettermusic/chordsheetjs@0.0.2
   - codemirror-lang-chordpro@0.0.3
 
 ## 0.0.2
@@ -43,5 +43,5 @@
 - 05fad36: Initial Patch Bump to test changesets on the component and chordsheetjs libraries
 - Updated dependencies [05fad36]
 - Updated dependencies [05fad36]
-  - @praisecharts/chordsheetjs@0.0.2
+  - @bettermusic/chordsheetjs@0.0.2
   - codemirror-lang-chordpro@0.0.2

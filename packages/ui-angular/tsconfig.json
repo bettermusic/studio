@@ -19,8 +19,8 @@
     "target": "es2017",
     "module": "es2020",
     "paths": {
-      "@praisecharts/ui": ["../ui"],
-      "@praisecharts/ui-angular": [
+      "@bettermusic/ui": ["../ui"],
+      "@bettermusic/ui-angular": [
         "dist/ui-angular/ui-angular",
         "dist/ui-angular"
       ]

@@ -1,14 +1,14 @@
 ---
-"@praisecharts/studio-docs": minor
-"@praisecharts/studio-angular-demo": minor
-"@praisecharts/studio": minor
-"@praisecharts/studio-angular": minor
-"@praisecharts/tsconfig": minor
-"@praisecharts/ui": minor
-"@praisecharts/ui-angular": minor
-"@praisecharts/chordsheetjs": minor
+"@bettermusic/studio-docs": minor
+"@bettermusic/studio-angular-demo": minor
+"@bettermusic/studio": minor
+"@bettermusic/studio-angular": minor
+"@bettermusic/tsconfig": minor
+"@bettermusic/ui": minor
+"@bettermusic/ui-angular": minor
+"@bettermusic/chordsheetjs": minor
 "codemirror-lang-chordpro": minor
-"@praisecharts/eslint-config": minor
+"@bettermusic/eslint-config": minor
 ---
 
 project restructure

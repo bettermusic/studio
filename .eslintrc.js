@@ -1,6 +1,6 @@
 module.exports = {
   root: true,
-  extends: ["@praisecharts/eslint-config"],
+  extends: ["@bettermusic/eslint-config"],
   settings: {
     next: {
       rootDir: ["apps/*/"],

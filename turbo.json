@@ -37,7 +37,7 @@
         "codemirror-lang-chordpro#prepare"
       ]
     },
-    "@praisecharts/chordsheetjs#build": {
+    "@bettermusic/chordsheetjs#build": {
       "outputs": [
         "lib/**"
       ],
@@ -45,40 +45,40 @@
         "^build"
       ]
     },
-    "@praisecharts/chordsheetjs#test": {
+    "@bettermusic/chordsheetjs#test": {
       "dependsOn": [
-        "@praisecharts/chordsheetjs#build:code-generate"
+        "@bettermusic/chordsheetjs#build:code-generate"
       ]
     },
-    "@praisecharts/chordsheetjs#build:code-generate": {
+    "@bettermusic/chordsheetjs#build:code-generate": {
       "inputs": ["src/normalize_mappings/*.ts"]
     },
-    "@praisecharts/chordsheetjs#dev": {
+    "@bettermusic/chordsheetjs#dev": {
       "inputs": ["src/index.ts"],
       "outputs": ["lib/**"],
       "dependsOn": [
-        "@praisecharts/chordsheetjs#build:code-generate"
+        "@bettermusic/chordsheetjs#build:code-generate"
       ],
       "cache": false
     },
-    "@praisecharts/studio#build": {
+    "@bettermusic/studio#build": {
       "outputs": [
         "loader/**",
         "dist/**"
       ],
       "dependsOn": [
         "codemirror-lang-chordpro#prepare",
-        "@praisecharts/ui#build",
-        "@praisecharts/chordsheetjs#build"
+        "@bettermusic/ui#build",
+        "@bettermusic/chordsheetjs#build"
       ]
     },
-    "@praisecharts/studio-docs#dev": {
+    "@bettermusic/studio-docs#dev": {
       "dependsOn": [
-        "@praisecharts/studio#build"
+        "@bettermusic/studio#build"
       ],
       "cache": false
     },
-    "@praisecharts/studio#dev": {
+    "@bettermusic/studio#dev": {
       "inputs": [
         "../../chordsheetjs/src/**.ts",
         "../../chordsheetjs/src/chord_sheet/**.ts"
@@ -88,31 +88,31 @@
       ],
       "cache": false
     },
-    "@praisecharts/ui-angular#build": {
+    "@bettermusic/ui-angular#build": {
       "outputs": [
         "dist/**"
       ],
       "dependsOn": [
-        "@praisecharts/ui#build"
+        "@bettermusic/ui#build"
       ]
     },
-    "@praisecharts/studio-angular#build": {
+    "@bettermusic/studio-angular#build": {
       "outputs": [
         "dist/**"
       ],
       "dependsOn": [
-        "@praisecharts/studio#build"
+        "@bettermusic/studio#build"
       ]
     },
-    "@praisecharts/studio-angular#dev": {
+    "@bettermusic/studio-angular#dev": {
       "dependsOn": [
-        "@praisecharts/studio#dev"
+        "@bettermusic/studio#dev"
       ]
     },
-    "@praisecharts/studio-angular-demo#start": {
+    "@bettermusic/studio-angular-demo#start": {
       "cache": false,
       "dependsOn": [
-        "@praisecharts/studio-angular#build"
+        "@bettermusic/studio-angular#build"
       ]
     },
     "dev": {

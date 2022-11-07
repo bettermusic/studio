@@ -35,7 +35,7 @@ export const config: Config = {
       type: 'docs-readme',
     },
     angularOutputTarget({
-      componentCorePackage: '@praisecharts/studio',
+      componentCorePackage: '@bettermusic/studio',
       directivesProxyFile: '../studio-angular/src/lib/stencil-generated/components.ts',
       directivesArrayFile: '../studio-angular/src/lib/stencil-generated/index.ts',
       valueAccessorConfigs: angularValueAccessorBindings,

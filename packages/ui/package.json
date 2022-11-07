@@ -1,5 +1,5 @@
 {
-  "name": "@praisecharts/ui",
+  "name": "@bettermusic/ui",
   "version": "0.0.6",
   "description": "Stencil Component Starter",
   "main": "dist/index.cjs.js",
@@ -32,8 +32,8 @@
     "split.js": "^1.6.5"
   },
   "devDependencies": {
-    "@praisecharts/eslint-config": "*",
-    "@praisecharts/tsconfig": "*",
+    "@bettermusic/eslint-config": "*",
+    "@bettermusic/tsconfig": "*",
     "@stencil/sass": "^2.0.0",
     "@stencil/store": "^2.0.1",
     "@types/jest": "27.0.3",

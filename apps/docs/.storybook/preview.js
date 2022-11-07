@@ -1,3 +1,3 @@
-import {defineCustomElements} from '@praisecharts/studio/loader';
+import {defineCustomElements} from '@bettermusic/studio/loader';
 
 defineCustomElements();

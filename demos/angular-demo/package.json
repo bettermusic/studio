@@ -1,5 +1,5 @@
 {
-  "name": "@praisecharts/studio-angular-demo",
+  "name": "@bettermusic/studio-angular-demo",
   "version": "0.0.6",
   "scripts": {
     "ng": "ng",
@@ -20,8 +20,8 @@
     "@angular/platform-browser": "~13.3.0",
     "@angular/platform-browser-dynamic": "~13.3.0",
     "@angular/router": "~13.3.0",
-    "@praisecharts/studio-angular": "*",
-    "@praisecharts/studio": "*",
+    "@bettermusic/studio-angular": "*",
+    "@bettermusic/studio": "*",
     "rxjs": "~7.5.6",
     "tslib": "^2.3.0",
     "zone.js": "~0.11.8"

@@ -1,4 +1,4 @@
 module.exports = {
   root: true,
-  extends: ["p@praisecharts/eslint-config"],
+  extends: ["p@bettermusic/eslint-config"],
 };

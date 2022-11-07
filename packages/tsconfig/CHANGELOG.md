@@ -1,4 +1,4 @@
-# @praisecharts/tsconfig
+# @bettermusic/tsconfig
 
 ## 0.0.6
 

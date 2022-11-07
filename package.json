@@ -8,8 +8,8 @@
   "scripts": {
     "build": "turbo run build --filter=!./demos/*",
     "dev": "turbo run dev --filter=!./apps/docs --filter=!./demos/* --no-cache --continue",
-    "demo:angular": "turbo run @praisecharts/studio-angular-demo#start",
-    "serve-docs": "turbo run @praisecharts/studio-docs#dev",
+    "demo:angular": "turbo run @bettermusic/studio-angular-demo#start",
+    "serve-docs": "turbo run @bettermusic/studio-docs#dev",
     "lint": "turbo run lint",
     "test": "turbo run test --filter=./packages/* --filter=./apps/* --filter=!./packages/angular",
     "clean": "turbo run clean && rm -rf node_modules",
@@ -21,7 +21,7 @@
   "devDependencies": {
     "@changesets/cli": "^2.24.4",
     "eslint": "^8.23.1",
-    "@praisecharts/eslint-config": "*",
+    "@bettermusic/eslint-config": "*",
     "prettier": "^2.5.1",
     "turbo": "latest"
   }

@@ -1,4 +1,4 @@
-# @praisecharts/eslint-config
+# @bettermusic/eslint-config
 
 ## 0.0.6
 

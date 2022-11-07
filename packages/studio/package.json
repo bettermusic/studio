@@ -1,5 +1,5 @@
 {
-  "name": "@praisecharts/studio",
+  "name": "@bettermusic/studio",
   "version": "0.0.6",
   "description": "Stencil Component Starter",
   "main": "dist/index.cjs.js",
@@ -32,15 +32,15 @@
     "@codemirror/lint": "^6.0",
     "@codemirror/state": "^6.1",
     "@codemirror/view": "^6.2",
-    "@praisecharts/chordsheetjs": "*",
-    "@praisecharts/ui": "*",
+    "@bettermusic/chordsheetjs": "*",
+    "@bettermusic/ui": "*",
     "@stencil/angular-output-target": "^0.4",
     "@stencil/core": "^2.18",
     "codemirror-lang-chordpro": "*",
     "split.js": "^1.6.5"
   },
   "devDependencies": {
-    "@praisecharts/eslint-config": "*",
+    "@bettermusic/eslint-config": "*",
     "@stencil/sass": "^2.0",
     "@stencil/store": "^2.0",
     "@types/jest": "^27.4.5",

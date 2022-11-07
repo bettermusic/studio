@@ -19,8 +19,8 @@
     "target": "es2017",
     "module": "es2020",
     "paths": {
-      "@praisecharts/studio": ["../studio"],
-      "@praisecharts/studio-angular": [
+      "@bettermusic/studio": ["../studio"],
+      "@bettermusic/studio-angular": [
         "dist/studio-angular/studio-angular",
         "dist/studio-angular"
       ]
