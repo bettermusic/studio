@@ -2,7 +2,7 @@
 
 import { addons } from '@storybook/addons';
 import { themes } from '@storybook/theming';
-import BetterMusicTheme from './BetterMusicTheme';
+import PraiseChartsTheme from './PraiseChartsTheme';
 
 
 addons.setConfig({
