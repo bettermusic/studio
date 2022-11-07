@@ -9,7 +9,7 @@ export default {
   // component: Studio 
 };
 
-const Template = (args) => `<pc-editor initial-value="${args.initialValue}"></pc-editor>`;
+const Template = (args) => `<bm-editor initial-value="${args.initialValue}"></bm-editor>`;
 
 export const Example = Template.bind({});
 Example.args = {

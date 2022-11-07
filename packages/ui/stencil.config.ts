@@ -9,7 +9,7 @@ import {
 const angularValueAccessorBindings: ValueAccessorConfig[] = [];
 
 export const config: Config = {
-  namespace: 'praisecharts-ui',
+  namespace: 'bettermusic-ui',
   taskQueue: 'async',
   preamble: 'Built with Stencil\nCopyright (c) Sonreign Media Inc.',
   sourceMap: true,

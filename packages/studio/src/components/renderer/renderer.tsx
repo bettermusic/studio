@@ -2,7 +2,7 @@ import { Component, Host, h, Prop, Element } from '@stencil/core';
 import state from "../../stores/editor_store";
 
 @Component({
-  tag: 'pc-renderer',
+  tag: 'bm-renderer',
   styleUrl: 'renderer.scss',
   shadow: true,
 })

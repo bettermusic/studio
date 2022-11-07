@@ -2,10 +2,10 @@ import { Component, Host, h, Listen } from '@stencil/core';
 import state from "../../stores/editor_store";
 
 @Component({
-  tag: 'pc-editor-key-dropdown',
+  tag: 'bm-editor-key-dropdown',
   styleUrl: 'editor-key-dropdown.css',
 })
-export class PcKeyDropdown {
+export class BmKeyDropdown {
 
   @Listen('changed')
   dropDownChangedHandler(event: CustomEvent) {
@@ -19,7 +19,7 @@ export class PcKeyDropdown {
   render() {
     return (
       <Host>
-        <pc-dropdown dataLabel="name" dataId="name" source={state.keys} value={state.currentKey} placeholder="Key" maxHeight={400}></pc-dropdown>
+        <bm-dropdown dataLabel="name" dataId="name" source={state.keys} value={state.currentKey} placeholder="Key" maxHeight={400}></bm-dropdown>
       </Host>
     );
   }

@@ -1,4 +1,4 @@
-# pc-dropdown
+# bm-dropdown
 
 <!-- Auto Generated Below -->
 
@@ -68,13 +68,13 @@ Type: `Promise<void>`
 
 ### Depends on
 
-- [pc-dropdown-list-item](../dropdown-list-item)
+- [bm-dropdown-list-item](../dropdown-list-item)
 
 ### Graph
 ```mermaid
 graph TD;
-  pc-dropdown --> pc-dropdown-list-item
-  style pc-dropdown fill:#f9f,stroke:#333,stroke-width:4px
+  bm-dropdown --> bm-dropdown-list-item
+  style bm-dropdown fill:#f9f,stroke:#333,stroke-width:4px
 ```
 
 ----------------------------------------------

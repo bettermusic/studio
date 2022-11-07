@@ -6,104 +6,104 @@
  */
 import { HTMLStencilElement, JSXBase } from "@stencil/core/internal";
 export namespace Components {
-    interface PcEditor {
+    interface BmEditor {
         "initialValue": string;
         "setCapo": (capoPosition: number) => Promise<void>;
     }
-    interface PcEditorCapoDropdown {
+    interface BmEditorCapoDropdown {
     }
-    interface PcEditorKeyDropdown {
+    interface BmEditorKeyDropdown {
     }
-    interface PcEditorModeDropdown {
+    interface BmEditorModeDropdown {
     }
-    interface PcEditorSplitView {
+    interface BmEditorSplitView {
     }
-    interface PcRenderer {
+    interface BmRenderer {
         "html": string;
         "mode": string;
     }
 }
 declare global {
-    interface HTMLPcEditorElement extends Components.PcEditor, HTMLStencilElement {
+    interface HTMLBmEditorElement extends Components.BmEditor, HTMLStencilElement {
     }
-    var HTMLPcEditorElement: {
-        prototype: HTMLPcEditorElement;
-        new (): HTMLPcEditorElement;
+    var HTMLBmEditorElement: {
+        prototype: HTMLBmEditorElement;
+        new (): HTMLBmEditorElement;
     };
-    interface HTMLPcEditorCapoDropdownElement extends Components.PcEditorCapoDropdown, HTMLStencilElement {
+    interface HTMLBmEditorCapoDropdownElement extends Components.BmEditorCapoDropdown, HTMLStencilElement {
     }
-    var HTMLPcEditorCapoDropdownElement: {
-        prototype: HTMLPcEditorCapoDropdownElement;
-        new (): HTMLPcEditorCapoDropdownElement;
+    var HTMLBmEditorCapoDropdownElement: {
+        prototype: HTMLBmEditorCapoDropdownElement;
+        new (): HTMLBmEditorCapoDropdownElement;
     };
-    interface HTMLPcEditorKeyDropdownElement extends Components.PcEditorKeyDropdown, HTMLStencilElement {
+    interface HTMLBmEditorKeyDropdownElement extends Components.BmEditorKeyDropdown, HTMLStencilElement {
     }
-    var HTMLPcEditorKeyDropdownElement: {
-        prototype: HTMLPcEditorKeyDropdownElement;
-        new (): HTMLPcEditorKeyDropdownElement;
+    var HTMLBmEditorKeyDropdownElement: {
+        prototype: HTMLBmEditorKeyDropdownElement;
+        new (): HTMLBmEditorKeyDropdownElement;
     };
-    interface HTMLPcEditorModeDropdownElement extends Components.PcEditorModeDropdown, HTMLStencilElement {
+    interface HTMLBmEditorModeDropdownElement extends Components.BmEditorModeDropdown, HTMLStencilElement {
     }
-    var HTMLPcEditorModeDropdownElement: {
-        prototype: HTMLPcEditorModeDropdownElement;
-        new (): HTMLPcEditorModeDropdownElement;
+    var HTMLBmEditorModeDropdownElement: {
+        prototype: HTMLBmEditorModeDropdownElement;
+        new (): HTMLBmEditorModeDropdownElement;
     };
-    interface HTMLPcEditorSplitViewElement extends Components.PcEditorSplitView, HTMLStencilElement {
+    interface HTMLBmEditorSplitViewElement extends Components.BmEditorSplitView, HTMLStencilElement {
     }
-    var HTMLPcEditorSplitViewElement: {
-        prototype: HTMLPcEditorSplitViewElement;
-        new (): HTMLPcEditorSplitViewElement;
+    var HTMLBmEditorSplitViewElement: {
+        prototype: HTMLBmEditorSplitViewElement;
+        new (): HTMLBmEditorSplitViewElement;
     };
-    interface HTMLPcRendererElement extends Components.PcRenderer, HTMLStencilElement {
+    interface HTMLBmRendererElement extends Components.BmRenderer, HTMLStencilElement {
     }
-    var HTMLPcRendererElement: {
-        prototype: HTMLPcRendererElement;
-        new (): HTMLPcRendererElement;
+    var HTMLBmRendererElement: {
+        prototype: HTMLBmRendererElement;
+        new (): HTMLBmRendererElement;
     };
     interface HTMLElementTagNameMap {
-        "pc-editor": HTMLPcEditorElement;
-        "pc-editor-capo-dropdown": HTMLPcEditorCapoDropdownElement;
-        "pc-editor-key-dropdown": HTMLPcEditorKeyDropdownElement;
-        "pc-editor-mode-dropdown": HTMLPcEditorModeDropdownElement;
-        "pc-editor-split-view": HTMLPcEditorSplitViewElement;
-        "pc-renderer": HTMLPcRendererElement;
+        "bm-editor": HTMLBmEditorElement;
+        "bm-editor-capo-dropdown": HTMLBmEditorCapoDropdownElement;
+        "bm-editor-key-dropdown": HTMLBmEditorKeyDropdownElement;
+        "bm-editor-mode-dropdown": HTMLBmEditorModeDropdownElement;
+        "bm-editor-split-view": HTMLBmEditorSplitViewElement;
+        "bm-renderer": HTMLBmRendererElement;
     }
 }
 declare namespace LocalJSX {
-    interface PcEditor {
+    interface BmEditor {
         "initialValue"?: string;
     }
-    interface PcEditorCapoDropdown {
+    interface BmEditorCapoDropdown {
     }
-    interface PcEditorKeyDropdown {
+    interface BmEditorKeyDropdown {
     }
-    interface PcEditorModeDropdown {
+    interface BmEditorModeDropdown {
     }
-    interface PcEditorSplitView {
+    interface BmEditorSplitView {
     }
-    interface PcRenderer {
+    interface BmRenderer {
         "html"?: string;
         "mode"?: string;
     }
     interface IntrinsicElements {
-        "pc-editor": PcEditor;
-        "pc-editor-capo-dropdown": PcEditorCapoDropdown;
-        "pc-editor-key-dropdown": PcEditorKeyDropdown;
-        "pc-editor-mode-dropdown": PcEditorModeDropdown;
-        "pc-editor-split-view": PcEditorSplitView;
-        "pc-renderer": PcRenderer;
+        "bm-editor": BmEditor;
+        "bm-editor-capo-dropdown": BmEditorCapoDropdown;
+        "bm-editor-key-dropdown": BmEditorKeyDropdown;
+        "bm-editor-mode-dropdown": BmEditorModeDropdown;
+        "bm-editor-split-view": BmEditorSplitView;
+        "bm-renderer": BmRenderer;
     }
 }
 export { LocalJSX as JSX };
 declare module "@stencil/core" {
     export namespace JSX {
         interface IntrinsicElements {
-            "pc-editor": LocalJSX.PcEditor & JSXBase.HTMLAttributes<HTMLPcEditorElement>;
-            "pc-editor-capo-dropdown": LocalJSX.PcEditorCapoDropdown & JSXBase.HTMLAttributes<HTMLPcEditorCapoDropdownElement>;
-            "pc-editor-key-dropdown": LocalJSX.PcEditorKeyDropdown & JSXBase.HTMLAttributes<HTMLPcEditorKeyDropdownElement>;
-            "pc-editor-mode-dropdown": LocalJSX.PcEditorModeDropdown & JSXBase.HTMLAttributes<HTMLPcEditorModeDropdownElement>;
-            "pc-editor-split-view": LocalJSX.PcEditorSplitView & JSXBase.HTMLAttributes<HTMLPcEditorSplitViewElement>;
-            "pc-renderer": LocalJSX.PcRenderer & JSXBase.HTMLAttributes<HTMLPcRendererElement>;
+            "bm-editor": LocalJSX.BmEditor & JSXBase.HTMLAttributes<HTMLBmEditorElement>;
+            "bm-editor-capo-dropdown": LocalJSX.BmEditorCapoDropdown & JSXBase.HTMLAttributes<HTMLBmEditorCapoDropdownElement>;
+            "bm-editor-key-dropdown": LocalJSX.BmEditorKeyDropdown & JSXBase.HTMLAttributes<HTMLBmEditorKeyDropdownElement>;
+            "bm-editor-mode-dropdown": LocalJSX.BmEditorModeDropdown & JSXBase.HTMLAttributes<HTMLBmEditorModeDropdownElement>;
+            "bm-editor-split-view": LocalJSX.BmEditorSplitView & JSXBase.HTMLAttributes<HTMLBmEditorSplitViewElement>;
+            "bm-renderer": LocalJSX.BmRenderer & JSXBase.HTMLAttributes<HTMLBmRendererElement>;
         }
     }
 }

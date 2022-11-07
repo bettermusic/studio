@@ -2,10 +2,10 @@ import { Component, Host, h, Listen } from '@stencil/core';
 import state from "../../stores/editor_store";
 
 @Component({
-  tag: 'pc-editor-capo-dropdown',
+  tag: 'bm-editor-capo-dropdown',
   styleUrl: 'editor-capo-dropdown.css',
 })
-export class PcCapoDropdown {
+export class BmCapoDropdown {
 
   @Listen('changed')
   dropDownChangedHandler(event: CustomEvent) {
@@ -22,7 +22,7 @@ export class PcCapoDropdown {
   render() {
     return (
       <Host>
-        <pc-dropdown dataLabel="label" dataId="position" source={state.capos} value={this.currentCapo} placeholder="Capo" maxHeight={400}></pc-dropdown>
+        <bm-dropdown dataLabel="label" dataId="position" source={state.capos} value={this.currentCapo} placeholder="Capo" maxHeight={400}></bm-dropdown>
       </Host>
     );
   }

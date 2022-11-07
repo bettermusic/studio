@@ -6,17 +6,17 @@ import { DropdownListFilter } from '../dropdown-list-item/dropdown-list-filter';
 import { ArrowRenderer } from './arrow';
 
 @Component({
-  tag: 'pc-dropdown',
-  styleUrl: 'pc-dropdown.style.scss',
+  tag: 'bm-dropdown',
+  styleUrl: 'bm-dropdown.style.scss',
   shadow: false
 })
-export class PcDropdown {
+export class BmDropdown {
   private element: Element;
   private dropdown: HTMLElement;
   private dropdownInner: HTMLElement;
   private dropdownInput: HTMLInputElement;
   private autocompleteInput: HTMLInputElement;
-  private pcList: HTMLPcDropdownListItemElement;
+  private pcList: HTMLBmDropdownListItemElement;
   private uuid: string = '';
   private currentSource?: any[];
   private isClosing = false;
@@ -208,7 +208,7 @@ export class PcDropdown {
       this.currentSource = this.source;
     }
     return (
-      <div class="pc-dropdown-list" ref={e => (this.dropdown = e)}>
+      <div class="bm-dropdown-list" ref={e => (this.dropdown = e)}>
         <div {...{ [UUID]: this.uuid }} class="dropdown-inner" ref={e => (this.dropdownInner = e)}>
           {this.hasFilter && !this.autocomplete ? (
             <DropdownListFilter
@@ -225,7 +225,7 @@ export class PcDropdown {
               }}
             />
           ) : undefined}
-          <pc-dropdown-list-item
+          <bm-dropdown-list-item
             ref={e => (this.pcList = e)}
             isFocused={true}
             sourceItems={this.currentSource}
@@ -297,7 +297,7 @@ export class PcDropdown {
     return (
       <Host {...props}>
         <label>{this.placeholder}</label>
-        <div class="pc-dr-root">
+        <div class="bm-dr-root">
           {this.autocomplete ? this.renderAutocomplete() : this.renderSelect()}
           <span class="actions"><ArrowRenderer/></span>
           <fieldset>

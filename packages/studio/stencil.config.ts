@@ -41,10 +41,10 @@ export const config: Config = {
       valueAccessorConfigs: angularValueAccessorBindings,
       excludeComponents: [
         // exclude components
-        'pc-button',
-        'pc-modal',
-        'pc-dropdown',
-        'pc-dropdown-list-item',
+        'bm-button',
+        'bm-modal',
+        'bm-dropdown',
+        'bm-dropdown-list-item',
       ]
     }),
     {

@@ -1,11 +1,11 @@
 import { Component, Host, h } from '@stencil/core';
 
 @Component({
-  tag: 'pc-button',
+  tag: 'bm-button',
   styleUrl: 'button.css',
   shadow: true,
 })
-export class PcButton {
+export class BmButton {
 
   render() {
     return (

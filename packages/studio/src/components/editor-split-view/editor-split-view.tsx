@@ -4,7 +4,7 @@ import state from "../../stores/editor_store";
 
 
 @Component({
-  tag: 'pc-editor-split-view',
+  tag: 'bm-editor-split-view',
   styleUrl: 'editor-split-view.scss',
 })
 export class EditorSplitView {
@@ -24,13 +24,13 @@ export class EditorSplitView {
     return (
       <Host>
         <div class="controls">
-          <pc-editor-mode-dropdown></pc-editor-mode-dropdown>
-          <pc-editor-key-dropdown></pc-editor-key-dropdown>
-          <pc-editor-capo-dropdown></pc-editor-capo-dropdown>
+          <bm-editor-mode-dropdown></bm-editor-mode-dropdown>
+          <bm-editor-key-dropdown></bm-editor-key-dropdown>
+          <bm-editor-capo-dropdown></bm-editor-capo-dropdown>
         </div>
         <div id="flex">
-          <pc-editor ref={el => this.editor = el as HTMLElement} initialValue={state.input}></pc-editor>
-          <pc-renderer ref={el => this.view = el as HTMLElement} html={state.html}></pc-renderer>
+          <bm-editor ref={el => this.editor = el as HTMLElement} initialValue={state.input}></bm-editor>
+          <bm-renderer ref={el => this.view = el as HTMLElement} html={state.html}></bm-renderer>
         </div>
       </Host>
     );

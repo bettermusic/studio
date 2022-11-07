@@ -8,17 +8,17 @@ import { Components } from '@bettermusic/ui';
 
 
 
-export declare interface PcButton extends Components.PcButton {}
+export declare interface BmButton extends Components.BmButton {}
 
 @ProxyCmp({
   defineCustomElementFn: undefined
 })
 @Component({
-  selector: 'pc-button',
+  selector: 'bm-button',
   changeDetection: ChangeDetectionStrategy.OnPush,
   template: '<ng-content></ng-content>'
 })
-export class PcButton {
+export class BmButton {
   protected el: HTMLElement;
   constructor(c: ChangeDetectorRef, r: ElementRef, protected z: NgZone) {
     c.detach();
@@ -27,7 +27,7 @@ export class PcButton {
 }
 
 
-export declare interface PcDropdown extends Components.PcDropdown {
+export declare interface BmDropdown extends Components.BmDropdown {
   /**
    * When value changed 
    */
@@ -49,12 +49,12 @@ export declare interface PcDropdown extends Components.PcDropdown {
   methods: ['doClose', 'doOpen', 'doChange']
 })
 @Component({
-  selector: 'pc-dropdown',
+  selector: 'bm-dropdown',
   changeDetection: ChangeDetectionStrategy.OnPush,
   template: '<ng-content></ng-content>',
   inputs: ['appendTo', 'autoClose', 'autoFocus', 'autocomplete', 'currentFilter', 'dataId', 'dataLabel', 'filter', 'hasFilter', 'maxHeight', 'placeholder', 'source', 'value']
 })
-export class PcDropdown {
+export class BmDropdown {
   protected el: HTMLElement;
   constructor(c: ChangeDetectorRef, r: ElementRef, protected z: NgZone) {
     c.detach();
@@ -64,7 +64,7 @@ export class PcDropdown {
 }
 
 
-export declare interface PcDropdownListItem extends Components.PcDropdownListItem {
+export declare interface BmDropdownListItem extends Components.BmDropdownListItem {
   /**
    *  
    */
@@ -78,12 +78,12 @@ export declare interface PcDropdownListItem extends Components.PcDropdownListIte
   methods: ['refresh']
 })
 @Component({
-  selector: 'pc-dropdown-list-item',
+  selector: 'bm-dropdown-list-item',
   changeDetection: ChangeDetectionStrategy.OnPush,
   template: '<ng-content></ng-content>',
   inputs: ['dataLabel', 'isFocused', 'sourceItems']
 })
-export class PcDropdownListItem {
+export class BmDropdownListItem {
   protected el: HTMLElement;
   constructor(c: ChangeDetectorRef, r: ElementRef, protected z: NgZone) {
     c.detach();
@@ -93,17 +93,17 @@ export class PcDropdownListItem {
 }
 
 
-export declare interface PcModal extends Components.PcModal {}
+export declare interface BmModal extends Components.BmModal {}
 
 @ProxyCmp({
   defineCustomElementFn: undefined
 })
 @Component({
-  selector: 'pc-modal',
+  selector: 'bm-modal',
   changeDetection: ChangeDetectionStrategy.OnPush,
   template: '<ng-content></ng-content>'
 })
-export class PcModal {
+export class BmModal {
   protected el: HTMLElement;
   constructor(c: ChangeDetectorRef, r: ElementRef, protected z: NgZone) {
     c.detach();

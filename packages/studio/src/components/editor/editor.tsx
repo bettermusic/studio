@@ -4,7 +4,7 @@ import {EditorView} from "@codemirror/view"
 import state from "../../stores/editor_store";
 
 @Component({
-  tag: 'pc-editor',
+  tag: 'bm-editor',
   styleUrl: 'editor.scss',
   shadow: true,
 })

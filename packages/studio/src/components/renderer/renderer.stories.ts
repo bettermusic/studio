@@ -7,7 +7,7 @@ export default {
   },
 };
 
-const Template = (args) => `<pc-renderer html="${args.html}"></pc-renderer>`;
+const Template = (args) => `<bm-renderer html="${args.html}"></bm-renderer>`;
 
 export const Example = Template.bind({});
 Example.args = {

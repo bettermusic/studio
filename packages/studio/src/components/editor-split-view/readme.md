@@ -1,4 +1,4 @@
-# pc-studio
+# bm-studio
 
 
 
@@ -9,25 +9,25 @@
 
 ### Depends on
 
-- [pc-editor-mode-dropdown](../editor-mode-dropdown)
-- [pc-editor-key-dropdown](../editor-key-dropdown)
-- [pc-editor-capo-dropdown](../editor-capo-dropdown)
-- [pc-editor](../editor)
-- [pc-renderer](../renderer)
+- [bm-editor-mode-dropdown](../editor-mode-dropdown)
+- [bm-editor-key-dropdown](../editor-key-dropdown)
+- [bm-editor-capo-dropdown](../editor-capo-dropdown)
+- [bm-editor](../editor)
+- [bm-renderer](../renderer)
 
 ### Graph
 ```mermaid
 graph TD;
-  pc-editor-split-view --> pc-editor-mode-dropdown
-  pc-editor-split-view --> pc-editor-key-dropdown
-  pc-editor-split-view --> pc-editor-capo-dropdown
-  pc-editor-split-view --> pc-editor
-  pc-editor-split-view --> pc-renderer
-  pc-editor-mode-dropdown --> pc-dropdown
-  pc-dropdown --> pc-dropdown-list-item
-  pc-editor-key-dropdown --> pc-dropdown
-  pc-editor-capo-dropdown --> pc-dropdown
-  style pc-editor-split-view fill:#f9f,stroke:#333,stroke-width:4px
+  bm-editor-split-view --> bm-editor-mode-dropdown
+  bm-editor-split-view --> bm-editor-key-dropdown
+  bm-editor-split-view --> bm-editor-capo-dropdown
+  bm-editor-split-view --> bm-editor
+  bm-editor-split-view --> bm-renderer
+  bm-editor-mode-dropdown --> bm-dropdown
+  bm-dropdown --> bm-dropdown-list-item
+  bm-editor-key-dropdown --> bm-dropdown
+  bm-editor-capo-dropdown --> bm-dropdown
+  style bm-editor-split-view fill:#f9f,stroke:#333,stroke-width:4px
 ```
 
 ----------------------------------------------

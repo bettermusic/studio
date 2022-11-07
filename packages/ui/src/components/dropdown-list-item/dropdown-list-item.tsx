@@ -2,11 +2,11 @@ import { Component, h, Prop, Event, EventEmitter, Method, Listen, State } from '
 import { getItemLabel } from '../../utils/dropdown-list-item.helpers';
 
 @Component({ 
-  tag: 'pc-dropdown-list-item', 
+  tag: 'bm-dropdown-list-item', 
   styleUrl: 'dropdown-list-item.style.scss',
   shadow: false
 })
-export class PcDropdownListItem {
+export class BmDropdownListItem {
   @State() currentItem = 0;
   private selectedEl: HTMLElement;
   /**

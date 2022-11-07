@@ -1,4 +1,4 @@
-# pc-list
+# bm-list
 
 <!-- Auto Generated Below -->
 
@@ -36,13 +36,13 @@ Type: `Promise<void>`
 
 ### Used by
 
- - [pc-dropdown](../dropdown)
+ - [bm-dropdown](../dropdown)
 
 ### Graph
 ```mermaid
 graph TD;
-  pc-dropdown --> pc-dropdown-list-item
-  style pc-dropdown-list-item fill:#f9f,stroke:#333,stroke-width:4px
+  bm-dropdown --> bm-dropdown-list-item
+  style bm-dropdown-list-item fill:#f9f,stroke:#333,stroke-width:4px
 ```
 
 ----------------------------------------------

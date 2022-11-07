@@ -1,4 +1,4 @@
-# pc-editor-key-dropdown
+# bm-editor-key-dropdown
 
 
 
@@ -9,19 +9,19 @@
 
 ### Used by
 
- - [pc-editor-split-view](../editor-split-view)
+ - [bm-editor-split-view](../editor-split-view)
 
 ### Depends on
 
-- pc-dropdown
+- bm-dropdown
 
 ### Graph
 ```mermaid
 graph TD;
-  pc-editor-mode-dropdown --> pc-dropdown
-  pc-dropdown --> pc-dropdown-list-item
-  pc-editor-split-view --> pc-editor-mode-dropdown
-  style pc-editor-mode-dropdown fill:#f9f,stroke:#333,stroke-width:4px
+  bm-editor-mode-dropdown --> bm-dropdown
+  bm-dropdown --> bm-dropdown-list-item
+  bm-editor-split-view --> bm-editor-mode-dropdown
+  style bm-editor-mode-dropdown fill:#f9f,stroke:#333,stroke-width:4px
 ```
 
 ----------------------------------------------

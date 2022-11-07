@@ -1,11 +1,11 @@
 import { Component, Host, h } from '@stencil/core';
 
 @Component({
-  tag: 'pc-modal',
+  tag: 'bm-modal',
   styleUrl: 'modal.css',
   shadow: true,
 })
-export class PcModal {
+export class BmModal {
 
   render() {
     return (

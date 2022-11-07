@@ -8,7 +8,7 @@ import { Components } from '@bettermusic/studio';
 
 
 
-export declare interface PcEditor extends Components.PcEditor {}
+export declare interface BmEditor extends Components.BmEditor {}
 
 @ProxyCmp({
   defineCustomElementFn: undefined,
@@ -16,12 +16,12 @@ export declare interface PcEditor extends Components.PcEditor {}
   methods: ['setCapo']
 })
 @Component({
-  selector: 'pc-editor',
+  selector: 'bm-editor',
   changeDetection: ChangeDetectionStrategy.OnPush,
   template: '<ng-content></ng-content>',
   inputs: ['initialValue']
 })
-export class PcEditor {
+export class BmEditor {
   protected el: HTMLElement;
   constructor(c: ChangeDetectorRef, r: ElementRef, protected z: NgZone) {
     c.detach();
@@ -30,17 +30,17 @@ export class PcEditor {
 }
 
 
-export declare interface PcEditorCapoDropdown extends Components.PcEditorCapoDropdown {}
+export declare interface BmEditorCapoDropdown extends Components.BmEditorCapoDropdown {}
 
 @ProxyCmp({
   defineCustomElementFn: undefined
 })
 @Component({
-  selector: 'pc-editor-capo-dropdown',
+  selector: 'bm-editor-capo-dropdown',
   changeDetection: ChangeDetectionStrategy.OnPush,
   template: '<ng-content></ng-content>'
 })
-export class PcEditorCapoDropdown {
+export class BmEditorCapoDropdown {
   protected el: HTMLElement;
   constructor(c: ChangeDetectorRef, r: ElementRef, protected z: NgZone) {
     c.detach();
@@ -49,17 +49,17 @@ export class PcEditorCapoDropdown {
 }
 
 
-export declare interface PcEditorKeyDropdown extends Components.PcEditorKeyDropdown {}
+export declare interface BmEditorKeyDropdown extends Components.BmEditorKeyDropdown {}
 
 @ProxyCmp({
   defineCustomElementFn: undefined
 })
 @Component({
-  selector: 'pc-editor-key-dropdown',
+  selector: 'bm-editor-key-dropdown',
   changeDetection: ChangeDetectionStrategy.OnPush,
   template: '<ng-content></ng-content>'
 })
-export class PcEditorKeyDropdown {
+export class BmEditorKeyDropdown {
   protected el: HTMLElement;
   constructor(c: ChangeDetectorRef, r: ElementRef, protected z: NgZone) {
     c.detach();
@@ -68,17 +68,17 @@ export class PcEditorKeyDropdown {
 }
 
 
-export declare interface PcEditorModeDropdown extends Components.PcEditorModeDropdown {}
+export declare interface BmEditorModeDropdown extends Components.BmEditorModeDropdown {}
 
 @ProxyCmp({
   defineCustomElementFn: undefined
 })
 @Component({
-  selector: 'pc-editor-mode-dropdown',
+  selector: 'bm-editor-mode-dropdown',
   changeDetection: ChangeDetectionStrategy.OnPush,
   template: '<ng-content></ng-content>'
 })
-export class PcEditorModeDropdown {
+export class BmEditorModeDropdown {
   protected el: HTMLElement;
   constructor(c: ChangeDetectorRef, r: ElementRef, protected z: NgZone) {
     c.detach();
@@ -87,17 +87,17 @@ export class PcEditorModeDropdown {
 }
 
 
-export declare interface PcEditorSplitView extends Components.PcEditorSplitView {}
+export declare interface BmEditorSplitView extends Components.BmEditorSplitView {}
 
 @ProxyCmp({
   defineCustomElementFn: undefined
 })
 @Component({
-  selector: 'pc-editor-split-view',
+  selector: 'bm-editor-split-view',
   changeDetection: ChangeDetectionStrategy.OnPush,
   template: '<ng-content></ng-content>'
 })
-export class PcEditorSplitView {
+export class BmEditorSplitView {
   protected el: HTMLElement;
   constructor(c: ChangeDetectorRef, r: ElementRef, protected z: NgZone) {
     c.detach();
@@ -106,19 +106,19 @@ export class PcEditorSplitView {
 }
 
 
-export declare interface PcRenderer extends Components.PcRenderer {}
+export declare interface BmRenderer extends Components.BmRenderer {}
 
 @ProxyCmp({
   defineCustomElementFn: undefined,
   inputs: ['html', 'mode']
 })
 @Component({
-  selector: 'pc-renderer',
+  selector: 'bm-renderer',
   changeDetection: ChangeDetectionStrategy.OnPush,
   template: '<ng-content></ng-content>',
   inputs: ['html', 'mode']
 })
-export class PcRenderer {
+export class BmRenderer {
   protected el: HTMLElement;
   constructor(c: ChangeDetectorRef, r: ElementRef, protected z: NgZone) {
     c.detach();

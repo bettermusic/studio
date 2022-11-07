@@ -6,9 +6,9 @@
  */
 import { HTMLStencilElement, JSXBase } from "@stencil/core/internal";
 export namespace Components {
-    interface PcButton {
+    interface BmButton {
     }
-    interface PcDropdown {
+    interface BmDropdown {
         /**
           * Where to append element
          */
@@ -62,7 +62,7 @@ export namespace Components {
          */
         "value": any;
     }
-    interface PcDropdownListItem {
+    interface BmDropdownListItem {
         /**
           * Define object mapping for labels
          */
@@ -74,53 +74,53 @@ export namespace Components {
          */
         "sourceItems": any[];
     }
-    interface PcModal {
+    interface BmModal {
     }
 }
-export interface PcDropdownCustomEvent<T> extends CustomEvent<T> {
+export interface BmDropdownCustomEvent<T> extends CustomEvent<T> {
     detail: T;
-    target: HTMLPcDropdownElement;
+    target: HTMLBmDropdownElement;
 }
-export interface PcDropdownListItemCustomEvent<T> extends CustomEvent<T> {
+export interface BmDropdownListItemCustomEvent<T> extends CustomEvent<T> {
     detail: T;
-    target: HTMLPcDropdownListItemElement;
+    target: HTMLBmDropdownListItemElement;
 }
 declare global {
-    interface HTMLPcButtonElement extends Components.PcButton, HTMLStencilElement {
+    interface HTMLBmButtonElement extends Components.BmButton, HTMLStencilElement {
     }
-    var HTMLPcButtonElement: {
-        prototype: HTMLPcButtonElement;
-        new (): HTMLPcButtonElement;
+    var HTMLBmButtonElement: {
+        prototype: HTMLBmButtonElement;
+        new (): HTMLBmButtonElement;
     };
-    interface HTMLPcDropdownElement extends Components.PcDropdown, HTMLStencilElement {
+    interface HTMLBmDropdownElement extends Components.BmDropdown, HTMLStencilElement {
     }
-    var HTMLPcDropdownElement: {
-        prototype: HTMLPcDropdownElement;
-        new (): HTMLPcDropdownElement;
+    var HTMLBmDropdownElement: {
+        prototype: HTMLBmDropdownElement;
+        new (): HTMLBmDropdownElement;
     };
-    interface HTMLPcDropdownListItemElement extends Components.PcDropdownListItem, HTMLStencilElement {
+    interface HTMLBmDropdownListItemElement extends Components.BmDropdownListItem, HTMLStencilElement {
     }
-    var HTMLPcDropdownListItemElement: {
-        prototype: HTMLPcDropdownListItemElement;
-        new (): HTMLPcDropdownListItemElement;
+    var HTMLBmDropdownListItemElement: {
+        prototype: HTMLBmDropdownListItemElement;
+        new (): HTMLBmDropdownListItemElement;
     };
-    interface HTMLPcModalElement extends Components.PcModal, HTMLStencilElement {
+    interface HTMLBmModalElement extends Components.BmModal, HTMLStencilElement {
     }
-    var HTMLPcModalElement: {
-        prototype: HTMLPcModalElement;
-        new (): HTMLPcModalElement;
+    var HTMLBmModalElement: {
+        prototype: HTMLBmModalElement;
+        new (): HTMLBmModalElement;
     };
     interface HTMLElementTagNameMap {
-        "pc-button": HTMLPcButtonElement;
-        "pc-dropdown": HTMLPcDropdownElement;
-        "pc-dropdown-list-item": HTMLPcDropdownListItemElement;
-        "pc-modal": HTMLPcModalElement;
+        "bm-button": HTMLBmButtonElement;
+        "bm-dropdown": HTMLBmDropdownElement;
+        "bm-dropdown-list-item": HTMLBmDropdownListItemElement;
+        "bm-modal": HTMLBmModalElement;
     }
 }
 declare namespace LocalJSX {
-    interface PcButton {
+    interface BmButton {
     }
-    interface PcDropdown {
+    interface BmDropdown {
         /**
           * Where to append element
          */
@@ -152,15 +152,15 @@ declare namespace LocalJSX {
         /**
           * When value changed
          */
-        "onChanged"?: (event: PcDropdownCustomEvent<{ val: any; originalEvent?: MouseEvent }>) => void;
+        "onChanged"?: (event: BmDropdownCustomEvent<{ val: any; originalEvent?: MouseEvent }>) => void;
         /**
           * Before element close, can be prevented
          */
-        "onClose"?: (event: PcDropdownCustomEvent<any>) => void;
+        "onClose"?: (event: BmDropdownCustomEvent<any>) => void;
         /**
           * Before element open, can be prevented
          */
-        "onOpen"?: (event: PcDropdownCustomEvent<any>) => void;
+        "onOpen"?: (event: BmDropdownCustomEvent<any>) => void;
         /**
           * Placeholder text
          */
@@ -174,35 +174,35 @@ declare namespace LocalJSX {
          */
         "value"?: any;
     }
-    interface PcDropdownListItem {
+    interface BmDropdownListItem {
         /**
           * Define object mapping for labels
          */
         "dataLabel"?: string;
         "isFocused"?: boolean;
-        "onChanged"?: (event: PcDropdownListItemCustomEvent<{ item: any; e: any }>) => void;
+        "onChanged"?: (event: BmDropdownListItemCustomEvent<{ item: any; e: any }>) => void;
         /**
           * Define object mapping for id/value
          */
         "sourceItems"?: any[];
     }
-    interface PcModal {
+    interface BmModal {
     }
     interface IntrinsicElements {
-        "pc-button": PcButton;
-        "pc-dropdown": PcDropdown;
-        "pc-dropdown-list-item": PcDropdownListItem;
-        "pc-modal": PcModal;
+        "bm-button": BmButton;
+        "bm-dropdown": BmDropdown;
+        "bm-dropdown-list-item": BmDropdownListItem;
+        "bm-modal": BmModal;
     }
 }
 export { LocalJSX as JSX };
 declare module "@stencil/core" {
     export namespace JSX {
         interface IntrinsicElements {
-            "pc-button": LocalJSX.PcButton & JSXBase.HTMLAttributes<HTMLPcButtonElement>;
-            "pc-dropdown": LocalJSX.PcDropdown & JSXBase.HTMLAttributes<HTMLPcDropdownElement>;
-            "pc-dropdown-list-item": LocalJSX.PcDropdownListItem & JSXBase.HTMLAttributes<HTMLPcDropdownListItemElement>;
-            "pc-modal": LocalJSX.PcModal & JSXBase.HTMLAttributes<HTMLPcModalElement>;
+            "bm-button": LocalJSX.BmButton & JSXBase.HTMLAttributes<HTMLBmButtonElement>;
+            "bm-dropdown": LocalJSX.BmDropdown & JSXBase.HTMLAttributes<HTMLBmDropdownElement>;
+            "bm-dropdown-list-item": LocalJSX.BmDropdownListItem & JSXBase.HTMLAttributes<HTMLBmDropdownListItemElement>;
+            "bm-modal": LocalJSX.BmModal & JSXBase.HTMLAttributes<HTMLBmModalElement>;
         }
     }
 }

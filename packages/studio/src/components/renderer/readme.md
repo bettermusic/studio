@@ -1,4 +1,4 @@
-# pc-renderer
+# bm-renderer
 
 
 
@@ -17,13 +17,13 @@
 
 ### Used by
 
- - [pc-editor-split-view](../editor-split-view)
+ - [bm-editor-split-view](../editor-split-view)
 
 ### Graph
 ```mermaid
 graph TD;
-  pc-editor-split-view --> pc-renderer
-  style pc-renderer fill:#f9f,stroke:#333,stroke-width:4px
+  bm-editor-split-view --> bm-renderer
+  style bm-renderer fill:#f9f,stroke:#333,stroke-width:4px
 ```
 
 ----------------------------------------------

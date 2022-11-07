@@ -13,7 +13,7 @@ $border-size: 1px;
 $padding: 10px;
 $font-size: 14px;
 
-pc-dropdown {
+bm-dropdown {
   @include fontStyle;
 
   display: inline-flex;
@@ -25,7 +25,7 @@ pc-dropdown {
   cursor: pointer;
   position: relative;
 
-  .pc-dr-root {
+  .bm-dr-root {
     padding: 5px 9px;
     padding-right: 35px;
     flex-wrap: wrap;
@@ -154,7 +154,7 @@ pc-dropdown {
   }
 }
 
-.pc-dropdown-list {
+.bm-dropdown-list {
   @include fontStyle;
 
   position: absolute;
