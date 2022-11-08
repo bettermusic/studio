@@ -6,7 +6,7 @@ line { (Comment | Directive | Lyrics) (eol | eof) }
 
 Directive { "{" DirectiveName (":" DirectiveValue)? "}" }
 Lyrics { ( "[" Chord? "]" | Lyric)+ }
-Chord { symbolChord | numericChord | numeralChord | bassOnlyChord | rhythmSymbol }
+Chord { "("? (symbolChord | numericChord | numeralChord | bassOnlyChord | rhythmSymbol) ")"? }
 
 @tokens {
   // Directives
@@ -35,7 +35,7 @@ Chord { symbolChord | numericChord | numeralChord | bassOnlyChord | rhythmSymbol
   bassOnlyChord { '/' (symbolChordBass | numericChordBass | numeralChordBass) }
   
   // Special Symbols
-  rhythmSymbol { $[x|/] }
+  rhythmSymbol { $[x|/-] }
   @precedence { bassOnlyChord, rhythmSymbol }
 
   // Lyrics

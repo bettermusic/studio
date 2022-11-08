@@ -30,7 +30,8 @@
       ],
       "dependsOn": [
         "^build"
-      ]
+      ],
+      "cache": false
     },
     "codemirror-lang-chordpro#test": {
       "dependsOn": [
