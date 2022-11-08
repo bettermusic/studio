@@ -6,7 +6,7 @@ line { (Comment | Directive | Lyrics) (eol | eof) }
 
 Directive { "{" DirectiveName (":" DirectiveValue)? "}" }
 Lyrics { ( "[" Chord? "]" | Lyric)+ }
-Chord { symbolChord | numericChord | numeralChord | rhythmSymbol }
+Chord { symbolChord | numericChord | numeralChord | bassOnlyChord | rhythmSymbol }
 
 @tokens {
   // Directives
@@ -14,12 +14,29 @@ Chord { symbolChord | numericChord | numeralChord | rhythmSymbol }
   DirectiveValue { ![}\n]+ }
   @precedence { DirectiveValue, space }
 
-  // Chords
-  symbolChord { ($[A-G] accidental? ($[a-zA-Z0-9\(\#)]*)?) ( '/' $[A-G] accidental?)? }
-  numericChord { (accidental? $[1-7] ($[a-zA-Z0-9\(\#)]*)?) ( '/' accidental? $[1-7])?  }
-  numeralChord { (accidental? ('I' | 'II' | 'III' | 'IV' | 'V' | 'VI' | 'VII') ($[a-zA-Z0-9\(\)#]*)?) ( '/' accidental? ('I' | 'II' | 'III' | 'IV' | 'V' | 'VI' | 'VII'))?  }
-  rhythmSymbol { $[x|/] }
+  // Notes & Chord Parts
+  symbolNote { $[A-G] }
+  numeralNote { 'I' | 'II' | 'III' | 'IV' | 'V' | 'VI' | 'VII' | 'i' | 'ii' | 'iii' | 'iv' | 'v' | 'vi' | 'vii'  }
+  numericNote { $[1-7] }
+  suffix { $[a-zA-Z0-9\(\#)]* }
   accidental { $[b#] }
+
+  // Bass 
+  symbolChordBass { symbolNote accidental? }
+  numericChordBass { accidental? numericNote }
+  numeralChordBass { accidental? numeralNote? }
+  
+  // Chords Patterns
+  symbolChord { symbolNote accidental? suffix? ('/' symbolChordBass)? }
+  numericChord { accidental? numericNote suffix? ( '/' numericChordBass)?  }
+  numeralChord { accidental? numeralNote suffix? ( '/' numeralChordBass)?  }
+  
+  // Bass Only Chords
+  bassOnlyChord { '/' (symbolChordBass | numericChordBass | numeralChordBass) }
+  
+  // Special Symbols
+  rhythmSymbol { $[x|/] }
+  @precedence { bassOnlyChord, rhythmSymbol }
 
   // Lyrics
   Lyric { ![{[]+ }
@@ -39,3 +56,7 @@ Chord { symbolChord | numericChord | numeralChord | rhythmSymbol }
   "{" "}"
   "[" "]"
 }
+
+
+braced<content> { "{" content "}" }
+bracketed<content> { "[" content "]" }
