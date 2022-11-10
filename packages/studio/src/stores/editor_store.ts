@@ -1,5 +1,5 @@
 import { createStore } from "@stencil/store";
-import { ChordProFormatter, HtmlDivFormatter, HtmlTableFormatter, Song, ChordProParser, ChordSheetParser, TextFormatter  } from '@bettermusic/chordsheetjs';
+import { ChordProFormatter, HtmlDivFormatter, HtmlTableFormatter, Song, ChordProParser, ChordsOverWordsParser, ChordsOverWordsFormatter  } from '@bettermusic/chordsheetjs';
 import exampleChordPro from '../utils/example-chordpro'
 import {EditorView, highlightActiveLine, keymap, lineNumbers} from "@codemirror/view"
 import {defaultKeymap, history} from "@codemirror/commands"
@@ -19,14 +19,14 @@ interface IStore {
     editorMode: "chordpro" | "chords_over_words";
     editorModes: any;
     editorView: EditorView;
-    formatter: ChordProFormatter | HtmlDivFormatter | HtmlTableFormatter | TextFormatter;
+    formatter: ChordProFormatter | HtmlDivFormatter | HtmlTableFormatter | ChordsOverWordsFormatter;
     html: string;
     input: string;
     keys: any[];
     mdNotes: boolean;
     metadata: any;
     minor: boolean;
-    parser: ChordProParser | ChordSheetParser;
+    parser: ChordProParser | ChordsOverWordsParser;
     rendererMode: "pdf" | "html";
     rendererZoom: string;
     song: Song;
@@ -73,8 +73,8 @@ onChange('currentKey', value => {
 onChange('editorMode', value => {
   let formatter;
   if (value === "chords_over_words") { 
-    formatter = new TextFormatter();
-    state.parser = new ChordSheetParser({ preserveWhitespace: false });
+    formatter = new ChordsOverWordsFormatter();
+    state.parser = new ChordsOverWordsParser();
   } 
   if (value === "chordpro") {
     formatter = new ChordProFormatter();
