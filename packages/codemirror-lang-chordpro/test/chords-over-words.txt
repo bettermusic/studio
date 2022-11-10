@@ -1,0 +1,123 @@
+# Simple {"dialect": "chordsOverWords"}
+   Dm7              C/E                 F#
+My heart has always longed for something   more
+==> Program()
+
+# Simple - Numbers {"dialect": "chordsOverWords"}
+   2m7              2/3                 #4
+My heart has always longed for something  more
+==> Program()
+
+# Simple - Numerals {"dialect": "chordsOverWords"}
+   ii7              II/III              #IV
+My heart has always longed for something   more
+==> Program()
+
+# Backslash should have it's own token {"dialect": "chordsOverWords"}
+   Dm7               C/E                 F
+My heart has always \longed for something  more
+==> Program()
+
+# Meta and Multiple Sections {"dialect": "chordsOverWords"}
+title: Rattle
+artist: Elevation Worship
+
+Intro (5x)
+Eb(no3) / / / | / / / / |
+
+Verse 1
+Eb                   Ebsus         Eb      
+Saturday was silent, surely it was through
+Cm                         Bb        Ab2  Eb/G    Eb  / / / / 
+   But since when has im - possible\ ever stopped You
+==> Program()
+
+# No meta {"dialect": "chordsOverWords"}
+Intro (5x)
+Eb(no3) / / / | / / / / |
+
+Verse 1
+Eb                   Ebsus         Eb      
+Saturday was silent, surely it was through
+Cm                         Bb        Ab2  Eb/G    Eb  / / / / 
+   But since when has im - possible\ ever stopped You
+==> Program()
+
+# Directive mid-section {"dialect": "chordsOverWords"}
+Verse 1
+Eb                   Ebsus         Eb      
+Saturday was silent, surely it was through
+transpose: 2
+Cm                         Bb        Ab2  Eb/G    Eb  / / / / 
+   But since when has im - possible\ ever stopped You
+==> Program()
+
+# Space Mid-Section {"dialect": "chordsOverWords"}
+Chorus 1:
+Eb5                                     /Bb - /Ab Eb5 
+This is the sound\ of dry bones rattling
+Eb5                                           /Bb - /Ab Eb5 
+This is the praise\ make a dead man walk again
+
+         Cm                Bb  
+Open the grave, I'm coming out
+          Ab                   Eb   
+I'm gonna live, gonna live a - gain
+Eb5                                     Ab - Eb/G Eb5 
+This is the sound\ of dry bones rattling
+Ab - Eb/G Eb5 / | Ab - Eb/G Eb5 /
+
+# Lyrics Only Section {"dialect": "chordsOverWords"}
+Chorus 2:
+This is the sound of dry bones rattling
+This is the praise make a dead man walk again
+Open the grave, I'm coming out
+I'm gonna live, gonna live a - gain
+This is the sound of dry bones rattling
+==> Program()
+
+# Lyrics Only Section with space mid section {"dialect": "chordsOverWords"}
+Chorus 2:
+This is the sound of dry bones rattling
+This is the praise make a dead man walk again
+
+Open the grave, I'm coming out
+I'm gonna live, gonna live a - gain
+This is the sound of dry bones rattling
+==> Program()
+
+# Chords Only Section {"dialect": "chordsOverWords"}
+Instrumental 2
+Db / / Db/C | Bbm7 / / Absus | Gb / / Db/F | Gb / / Absus |
+Db / / Fm7 | Bbm9 / / Absus/C | Gb / / Db/F | Gb / / Absus |
+==> Program()
+
+# Section Name with no content {"dialect": "chordsOverWords"}
+Chorus 2 *4b
+         Dm7/A         G13      G13(#5) Gm7/C     F
+We’ll be singing for - ever and ever,         a - men
+
+Interlude 1 (4x) *5
+
+Bridge (3x) *6-7
+Dm7           C/E          F      Bb2
+    If you've ever wondered  What Heaven looks like
+==> Program()
+
+# Lowercase or UpperCase Section Names {"dialect": "chordsOverWords"}
+Chorus 1
+       Am         C/A C/G#        F          C
+Let it be, let it     be,  let it be, let it be
+
+chorus 2
+       Am         C/A C/G#        F          C
+Let it be, let it     be,  let it be, let it b
+
+CHORUS 3
+       Am         C/A C/G#        F          C
+Let it be, let it     be,  let it be, let it be
+
+Not a Section Heading
+       Am         C/A C/G#        F          C
+Let it be, let it     be,  let it be, let it be
+==> Program()
