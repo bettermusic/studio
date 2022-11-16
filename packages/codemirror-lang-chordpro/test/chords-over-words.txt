@@ -1,24 +1,41 @@
-# Simple {"dialect": "chordsOverWords"}
+# Simple {"dialect": "noTitle"}
+
    Dm7              C/E                 F#
 My heart has always longed for something   more
-==> Program()
 
-# Simple - Numbers {"dialect": "chordsOverWords"}
+==>
+
+Song(ChordLine(Chord,Chord,Chord),Lyrics(Lyric))
+
+# Simple - Numbers {"dialect": "noTitle"}
+
    2m7              2/3                 #4
 My heart has always longed for something  more
-==> Program()
 
-# Simple - Numerals {"dialect": "chordsOverWords"}
+==>
+
+Song(ChordLine(Chord,Chord,Chord),Lyrics(Lyric))
+
+# Simple - Numerals {"dialect": "noTitle"}
+
    ii7              II/III              #IV
 My heart has always longed for something   more
-==> Program()
 
-# Backslash should have it's own token {"dialect": "chordsOverWords"}
+==>
+
+Song(ChordLine(Chord,Chord,Chord),Lyrics(Lyric))
+
+# Backslash should have it's own token {"dialect": "noTitle"}
+
    Dm7               C/E                 F
 My heart has always \longed for something  more
-==> Program()
 
-# Meta and Multiple Sections {"dialect": "chordsOverWords"}
+==>
+
+Song(ChordLine(Chord,Chord,Chord),Lyrics(Lyric,Separator,Lyric))
+
+# Meta and Multiple Sections
+
 title: Rattle
 artist: Elevation Worship
 
@@ -30,9 +47,22 @@ Eb                   Ebsus         Eb
 Saturday was silent, surely it was through
 Cm                         Bb        Ab2  Eb/G    Eb  / / / / 
    But since when has im - possible\ ever stopped You
-==> Program()
 
-# No meta {"dialect": "chordsOverWords"}
+==>
+
+Song(
+  Directive(DirectiveName,":",DirectiveValue),
+  Directive(DirectiveName,":",DirectiveValue),
+  Section(SectionName,SectionText),
+  ChordLine(Chord,Chord,Chord,Chord,Chord,Chord,Chord,Chord,Chord,Chord),
+  Section(SectionName,SectionText),
+  ChordLine(Chord,Chord,Chord),
+  Lyrics(Lyric),
+  ChordLine(Chord,Chord,Chord,Chord,Chord,Chord,Chord,Chord,Chord),
+  Lyrics(Lyric,Separator,Lyric))
+
+# No meta
+
 Intro (5x)
 Eb(no3) / / / | / / / / |
 
@@ -41,18 +71,39 @@ Eb                   Ebsus         Eb
 Saturday was silent, surely it was through
 Cm                         Bb        Ab2  Eb/G    Eb  / / / / 
    But since when has im - possible\ ever stopped You
-==> Program()
 
-# Directive mid-section {"dialect": "chordsOverWords"}
+==>
+
+Song(
+  Section(SectionName,SectionText),
+  ChordLine(Chord,Chord,Chord,Chord,Chord,Chord,Chord,Chord,Chord,Chord),
+  Section(SectionName,SectionText),
+  ChordLine(Chord,Chord,Chord),
+  Lyrics(Lyric),
+  ChordLine(Chord,Chord,Chord,Chord,Chord,Chord,Chord,Chord,Chord),
+  Lyrics(Lyric,Separator,Lyric))
+
+# Directive mid-section
+
 Verse 1
 Eb                   Ebsus         Eb      
 Saturday was silent, surely it was through
 transpose: 2
 Cm                         Bb        Ab2  Eb/G    Eb  / / / / 
    But since when has im - possible\ ever stopped You
-==> Program()
 
-# Space Mid-Section {"dialect": "chordsOverWords"}
+==>
+
+Song(
+  Section(SectionName,SectionText),
+  ChordLine(Chord,Chord,Chord),
+  Lyrics(Lyric),
+  Directive(DirectiveName,":",DirectiveValue),
+  ChordLine(Chord,Chord,Chord,Chord,Chord,Chord,Chord,Chord,Chord),
+  Lyrics(Lyric,Separator,Lyric))
+
+# Space Mid-Section
+
 Chorus 1:
 Eb5                                     /Bb - /Ab Eb5 
 This is the sound\ of dry bones rattling
@@ -67,16 +118,43 @@ Eb5                                     Ab - Eb/G Eb5
 This is the sound\ of dry bones rattling
 Ab - Eb/G Eb5 / | Ab - Eb/G Eb5 /
 
-# Lyrics Only Section {"dialect": "chordsOverWords"}
+==>
+
+Song(
+  Section(SectionName,SectionText,":"),
+  ChordLine(Chord,Chord,Chord,Chord,Chord),
+  Lyrics(Lyric,Separator,Lyric),
+  ChordLine(Chord,Chord,Chord,Chord,Chord),
+  Lyrics(Lyric,Separator,Lyric),
+  ChordLine(Chord,Chord),
+  Lyrics(Lyric),
+  ChordLine(Chord,Chord),
+  Lyrics(Lyric),
+  ChordLine(Chord,Chord,Chord,Chord,Chord),
+  Lyrics(Lyric,Separator,Lyric),
+  ChordLine(Chord,Chord,Chord,Chord,Chord,Chord,Chord,Chord,Chord,Chord,Chord))
+
+# Lyrics Only Section
+
 Chorus 2:
 This is the sound of dry bones rattling
 This is the praise make a dead man walk again
 Open the grave, I'm coming out
 I'm gonna live, gonna live a - gain
 This is the sound of dry bones rattling
-==> Program()
 
-# Lyrics Only Section with space mid section {"dialect": "chordsOverWords"}
+==>
+
+Song(
+  Section(SectionName,SectionText,":"),
+  Lyrics(Lyric),
+  Lyrics(Lyric),
+  Lyrics(Lyric),
+  Lyrics(Lyric),
+  Lyrics(Lyric))
+
+# Lyrics Only Section with space mid section
+
 Chorus 2:
 This is the sound of dry bones rattling
 This is the praise make a dead man walk again
@@ -84,15 +162,32 @@ This is the praise make a dead man walk again
 Open the grave, I'm coming out
 I'm gonna live, gonna live a - gain
 This is the sound of dry bones rattling
-==> Program()
 
-# Chords Only Section {"dialect": "chordsOverWords"}
+==>
+
+Song(
+  Section(SectionName,SectionText,":"),
+  Lyrics(Lyric),
+  Lyrics(Lyric),
+  Lyrics(Lyric),
+  Lyrics(Lyric),
+  Lyrics(Lyric))
+
+# Chords Only Section
+
 Instrumental 2
 Db / / Db/C | Bbm7 / / Absus | Gb / / Db/F | Gb / / Absus |
 Db / / Fm7 | Bbm9 / / Absus/C | Gb / / Db/F | Gb / / Absus |
-==> Program()
 
-# Section Name with no content {"dialect": "chordsOverWords"}
+==>
+
+Song(
+  Section(SectionName,SectionText),
+  ChordLine(Chord,Chord,Chord,Chord,Chord,Chord,Chord,Chord,Chord,Chord,Chord,Chord,Chord,Chord,Chord,Chord,Chord,Chord,Chord,Chord),
+  ChordLine(Chord,Chord,Chord,Chord,Chord,Chord,Chord,Chord,Chord,Chord,Chord,Chord,Chord,Chord,Chord,Chord,Chord,Chord,Chord,Chord))
+
+# Section Name with no content
+
 Chorus 2 *4b
          Dm7/A         G13      G13(#5) Gm7/C     F
 We’ll be singing for - ever and ever,         a - men
@@ -102,9 +197,20 @@ Interlude 1 (4x) *5
 Bridge (3x) *6-7
 Dm7           C/E          F      Bb2
     If you've ever wondered  What Heaven looks like
-==> Program()
 
-# Lowercase or UpperCase Section Names {"dialect": "chordsOverWords"}
+==>
+
+Song(
+  Section(SectionName,SectionText),
+  ChordLine(Chord,Chord,Chord,Chord,Chord),
+  Lyrics(Lyric),
+  Section(SectionName,SectionText),
+  Section(SectionName,SectionText),
+  ChordLine(Chord,Chord,Chord,Chord),
+  Lyrics(Lyric))
+
+# Lowercase or UpperCase Section Names
+
 Chorus 1
        Am         C/A C/G#        F          C
 Let it be, let it     be,  let it be, let it be
@@ -120,4 +226,19 @@ Let it be, let it     be,  let it be, let it be
 Not a Section Heading
        Am         C/A C/G#        F          C
 Let it be, let it     be,  let it be, let it be
-==> Program()
+
+==>
+
+Song(
+  Section(SectionName,SectionText),
+  ChordLine(Chord,Chord,Chord,Chord,Chord),
+  Lyrics(Lyric),
+  Section(SectionName,SectionText),
+  ChordLine(Chord,Chord,Chord,Chord,Chord),
+  Lyrics(Lyric),
+  Section(SectionName,SectionText),
+  ChordLine(Chord,Chord,Chord,Chord,Chord),
+  Lyrics(Lyric),
+  Lyrics(Lyric),
+  ChordLine(Chord,Chord,Chord,Chord,Chord),
+  Lyrics(Lyric))

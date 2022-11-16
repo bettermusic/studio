@@ -23,7 +23,7 @@
     "@codemirror/language": "^6.2",
     "@codemirror/lint": "^6.0",
     "@lezer/highlight": "^1.0",
-    "@lezer/lr": "^1.2"
+    "@lezer/lr": "^1.2.5"
   },
   "devDependencies": {
     "@lezer/generator": "^1.1.1",
