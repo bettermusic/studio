@@ -1,46 +1,32 @@
-# Symbols {"dialect": "noTitle"}
-
+# Symbols
 C2/E
 Dbm7
 /B
+==> Program(Lyrics(Chord), Lyrics(Chord))
 
-==> Song(ChordLine(Chord), ChordLine(Chord), ChordLine(Chord))
-
-# Numeric - minor {"dialect": "noTitle"}
-
+# Numeric - minor
 2m
+==> Program(Lyrics(Chord))
 
-==> Song(ChordLine(Chord))
-
-# Numeric - accidentals {"dialect": "noTitle"}
-
+# Numeric - accidentals
 #4m7
-
 b7
+==> Program(Lyrics(Chord), Lyrics(Chord))
 
-==> Song(ChordLine(Chord), ChordLine(Chord))
-
-# Numeric - bass {"dialect": "noTitle"}
-
+# Numeric - bass
 4/1
+==> Program(Lyrics(Chord))
 
-==> Song(ChordLine(Chord))
-
-# Numeral {"dialect": "noTitle"}
-
+# Numeral
 V13
+==> Program(Lyrics(Chord))
 
-==> Song(ChordLine(Chord))
-
-# Numeral - accidentals {"dialect": "noTitle"}
-
+# Numeral - accidentals
 bVII
 IV
+==> Program(Lyrics(Chord), Lyrics(Chord))
 
-==> Song(ChordLine(Chord), ChordLine(Chord))
-
-# Numeral - bass {"dialect": "noTitle"}
-
+# Numeral - bass
 iv/I
+==> Program(Lyrics(Chord))
 
-==> Song(ChordLine(Chord))

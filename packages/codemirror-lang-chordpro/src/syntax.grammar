@@ -1,50 +1,62 @@
-@dialects { noTitle }
+@top Program { line* }
 
-@top Song {
-  (Title { titleText } eol (Author { authorText } eol)?)?
-  ((Comment | Directive | LineDirective | Lyrics | blankLine | ChordLine | Section) (eol | eof))*
-}
+@skip { space }
 
-Directive { "{" DirectiveName (":" space? DirectiveValue)? "}" }
+line { (Comment | Directive | Lyrics) (eol | eof) }
 
-LineDirective[@name=Directive] { directiveLineStart DirectiveName ":" space? DirectiveValue }
-
-Lyrics {
-  (InlineChord | Lyric | Separator) (InlineChord | Lyric | Directive | Separator)* |
-  Directive (InlineChord | Lyric | Directive | Separator)+
-}
-
-ChordLine { chordLineStart (space? Chord)+ space? }
-
-Section { SectionName SectionText? ":"? }
-
-InlineChord { "[" Chord? "]" }
-
-@external tokens line from "./tokens.js" {
-  Comment
-  blankLine
-  titleText
-  authorText
-  SectionName
-  chordLineStart
-  directiveLineStart
-}
-
-@external tokens chord from "./tokens.js" { Chord }
+Directive { "{" DirectiveName (":" DirectiveValue)? "}" }
+Lyrics { ( "[" Chord? "]" | Lyric)+ }
+Chord { "("? (symbolChord | numericChord | numeralChord | bassOnlyChord | rhythmSymbol) ")"? }
 
 @tokens {
+  // Directives
   DirectiveName { (@asciiLetter | "_")+ }
-  DirectiveValue { ("\\" ![\r\n] | ![\\}\r\n])+ }
-  SectionText { ![\r\n:]+ }
+  DirectiveValue { ![}\n]+ }
+  @precedence { DirectiveValue, space }
 
-  Lyric { ![\\{\[\r\n]+ }
-  Separator { "\\" }
+  // Notes & Chord Parts
+  symbolNote { $[A-G] }
+  numeralNote { 'I' | 'II' | 'III' | 'IV' | 'V' | 'VI' | 'VII' | 'i' | 'ii' | 'iii' | 'iv' | 'v' | 'vi' | 'vii'  }
+  numericNote { $[1-7] }
+  suffix { $[a-zA-Z0-9\(\#)]* }
+  accidental { $[b#] }
 
+  // Bass 
+  symbolChordBass { symbolNote accidental? }
+  numericChordBass { accidental? numericNote }
+  numeralChordBass { accidental? numeralNote? }
+  
+  // Chords Patterns
+  symbolChord { symbolNote accidental? suffix? ('/' symbolChordBass)? }
+  numericChord { accidental? numericNote suffix? ( '/' numericChordBass)?  }
+  numeralChord { accidental? numeralNote suffix? ( '/' numeralChordBass)?  }
+  
+  // Bass Only Chords
+  bassOnlyChord { '/' (symbolChordBass | numericChordBass | numeralChordBass) }
+  
+  // Special Symbols
+  rhythmSymbol { $[x|/-] }
+  @precedence { bassOnlyChord, rhythmSymbol }
+
+  // Lyrics
+  Lyric { ![{[]+ }
+  @precedence { eol, Lyric }
+  @precedence { Lyric, space }
+
+  // Comments
+  Comment { "#" ![\n]* }
+  @precedence { Comment, Lyric }
+
+  // characters
+  space { $[ \t]+ }
   eol { "\r"? "\n" }
   eof { @eof }
-  space { $[ \t]+ }
 
-  @precedence { space, DirectiveValue }
-
-  "{" "}" "[" "]" ":"
+  // string literals
+  "{" "}"
+  "[" "]"
 }
+
+
+braced<content> { "{" content "}" }
+bracketed<content> { "[" content "]" }

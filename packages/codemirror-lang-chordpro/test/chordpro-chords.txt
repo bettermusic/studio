@@ -1,51 +1,35 @@
-# Symbols {"dialect": "noTitle"}
-
+# Symbols
 [C2/E]
 [Dbm7]
 [/B]
+==> Program(Lyrics(Chord), Lyrics(Chord), Lyrics(Chord))
 
-==> Song(Lyrics(InlineChord(Chord)), Lyrics(InlineChord(Chord)), Lyrics(InlineChord(Chord)))
-
-# Numeric - minor {"dialect": "noTitle"}
-
+# Numeric - minor
 [2m]
+==> Program(Lyrics(Chord))
 
-==> Song(Lyrics(InlineChord(Chord)))
-
-# Numeric - accidentals {"dialect": "noTitle"}
-
+# Numeric - accidentals
 [#4m7]
 [b7]
+==> Program(Lyrics(Chord), Lyrics(Chord))
 
-==> Song(Lyrics(InlineChord(Chord)), Lyrics(InlineChord(Chord)))
-
-# Numeric - bass {"dialect": "noTitle"}
-
+# Numeric - bass
 [4/1]
+==> Program(Lyrics(Chord))
 
-==> Song(Lyrics(InlineChord(Chord)))
-
-# Numeral {"dialect": "noTitle"}
-
+# Numeral
 [V13]
+==> Program(Lyrics(Chord))
 
-==> Song(Lyrics(InlineChord(Chord)))
-
-# Numeral - accidentals {"dialect": "noTitle"}
-
+# Numeral - accidentals
 [bVII]
 [#IV]
+==> Program(Lyrics(Chord), Lyrics(Chord))
 
-==> Song(Lyrics(InlineChord(Chord)), Lyrics(InlineChord(Chord)))
-
-# Numeral - bass {"dialect": "noTitle"}
-
+# Numeral - bass
 [IV/I]
+==> Program(Lyrics(Chord))
 
-==> Song(Lyrics(InlineChord(Chord)))
-
-# no chord {"dialect": "noTitle"}
-
+# no chord
 []
-
-==> Song(Lyrics(InlineChord))
+==> Program(Lyrics("[", "]"))
