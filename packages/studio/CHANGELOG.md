@@ -1,5 +1,18 @@
 # @bettermusic/studio
 
+## 0.1.0
+
+### Minor Changes
+
+- 40df3a3: project restructure
+
+### Patch Changes
+
+- Updated dependencies [40df3a3]
+  - @bettermusic/ui@0.1.0
+  - @bettermusic/chordsheetjs@0.1.0
+  - codemirror-lang-chordpro@0.1.0
+
 ## 0.0.6
 
 ### Patch Changes
