@@ -10,11 +10,18 @@ export const ChordProLanguage = LRLanguage.define({
         Comment: t.lineComment,
         DirectiveName: t.attributeName,
         DirectiveValue: t.attributeValue,
+        Title: t.heading1,
+        Author: t.meta,
+        SectionName: t.name,
+        "Section/...": t.heading2,
         Lyric: t.content,
         "{ }": t.brace,
         "[ ]": t.squareBracket,
+        ":": t.punctuation,
+        Separator: t.separator
       })
-    ]
+    ],
+    dialect: "noTitle"
   }),
   languageData: {
     commentTokens: {line: "#"}

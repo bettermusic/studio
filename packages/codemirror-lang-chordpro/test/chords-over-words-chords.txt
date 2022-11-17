@@ -1,0 +1,46 @@
+# Symbols {"dialect": "noTitle"}
+
+C2/E
+Dbm7
+/B
+
+==> Song(ChordLine(Chord), ChordLine(Chord), ChordLine(Chord))
+
+# Numeric - minor {"dialect": "noTitle"}
+
+2m
+
+==> Song(ChordLine(Chord))
+
+# Numeric - accidentals {"dialect": "noTitle"}
+
+#4m7
+
+b7
+
+==> Song(ChordLine(Chord), ChordLine(Chord))
+
+# Numeric - bass {"dialect": "noTitle"}
+
+4/1
+
+==> Song(ChordLine(Chord))
+
+# Numeral {"dialect": "noTitle"}
+
+V13
+
+==> Song(ChordLine(Chord))
+
+# Numeral - accidentals {"dialect": "noTitle"}
+
+bVII
+IV
+
+==> Song(ChordLine(Chord), ChordLine(Chord))
+
+# Numeral - bass {"dialect": "noTitle"}
+
+iv/I
+
+==> Song(ChordLine(Chord))

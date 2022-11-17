@@ -1,0 +1,244 @@
+# Simple {"dialect": "noTitle"}
+
+   Dm7              C/E                 F#
+My heart has always longed for something   more
+
+==>
+
+Song(ChordLine(Chord,Chord,Chord),Lyrics(Lyric))
+
+# Simple - Numbers {"dialect": "noTitle"}
+
+   2m7              2/3                 #4
+My heart has always longed for something  more
+
+==>
+
+Song(ChordLine(Chord,Chord,Chord),Lyrics(Lyric))
+
+# Simple - Numerals {"dialect": "noTitle"}
+
+   ii7              II/III              #IV
+My heart has always longed for something   more
+
+==>
+
+Song(ChordLine(Chord,Chord,Chord),Lyrics(Lyric))
+
+# Backslash should have it's own token {"dialect": "noTitle"}
+
+   Dm7               C/E                 F
+My heart has always \longed for something  more
+
+==>
+
+Song(ChordLine(Chord,Chord,Chord),Lyrics(Lyric,Separator,Lyric))
+
+# Meta and Multiple Sections
+
+title: Rattle
+artist: Elevation Worship
+
+Intro (5x)
+Eb(no3) / / / | / / / / |
+
+Verse 1
+Eb                   Ebsus         Eb      
+Saturday was silent, surely it was through
+Cm                         Bb        Ab2  Eb/G    Eb  / / / / 
+   But since when has im - possible\ ever stopped You
+
+==>
+
+Song(
+  Directive(DirectiveName,":",DirectiveValue),
+  Directive(DirectiveName,":",DirectiveValue),
+  Section(SectionName,SectionText),
+  ChordLine(Chord,Chord,Chord,Chord,Chord,Chord,Chord,Chord,Chord,Chord),
+  Section(SectionName,SectionText),
+  ChordLine(Chord,Chord,Chord),
+  Lyrics(Lyric),
+  ChordLine(Chord,Chord,Chord,Chord,Chord,Chord,Chord,Chord,Chord),
+  Lyrics(Lyric,Separator,Lyric))
+
+# No meta
+
+Intro (5x)
+Eb(no3) / / / | / / / / |
+
+Verse 1
+Eb                   Ebsus         Eb      
+Saturday was silent, surely it was through
+Cm                         Bb        Ab2  Eb/G    Eb  / / / / 
+   But since when has im - possible\ ever stopped You
+
+==>
+
+Song(
+  Section(SectionName,SectionText),
+  ChordLine(Chord,Chord,Chord,Chord,Chord,Chord,Chord,Chord,Chord,Chord),
+  Section(SectionName,SectionText),
+  ChordLine(Chord,Chord,Chord),
+  Lyrics(Lyric),
+  ChordLine(Chord,Chord,Chord,Chord,Chord,Chord,Chord,Chord,Chord),
+  Lyrics(Lyric,Separator,Lyric))
+
+# Directive mid-section
+
+Verse 1
+Eb                   Ebsus         Eb      
+Saturday was silent, surely it was through
+transpose: 2
+Cm                         Bb        Ab2  Eb/G    Eb  / / / / 
+   But since when has im - possible\ ever stopped You
+
+==>
+
+Song(
+  Section(SectionName,SectionText),
+  ChordLine(Chord,Chord,Chord),
+  Lyrics(Lyric),
+  Directive(DirectiveName,":",DirectiveValue),
+  ChordLine(Chord,Chord,Chord,Chord,Chord,Chord,Chord,Chord,Chord),
+  Lyrics(Lyric,Separator,Lyric))
+
+# Space Mid-Section
+
+Chorus 1:
+Eb5                                     /Bb - /Ab Eb5 
+This is the sound\ of dry bones rattling
+Eb5                                           /Bb - /Ab Eb5 
+This is the praise\ make a dead man walk again
+
+         Cm                Bb  
+Open the grave, I'm coming out
+          Ab                   Eb   
+I'm gonna live, gonna live a - gain
+Eb5                                     Ab - Eb/G Eb5 
+This is the sound\ of dry bones rattling
+Ab - Eb/G Eb5 / | Ab - Eb/G Eb5 /
+
+==>
+
+Song(
+  Section(SectionName,SectionText,":"),
+  ChordLine(Chord,Chord,Chord,Chord,Chord),
+  Lyrics(Lyric,Separator,Lyric),
+  ChordLine(Chord,Chord,Chord,Chord,Chord),
+  Lyrics(Lyric,Separator,Lyric),
+  ChordLine(Chord,Chord),
+  Lyrics(Lyric),
+  ChordLine(Chord,Chord),
+  Lyrics(Lyric),
+  ChordLine(Chord,Chord,Chord,Chord,Chord),
+  Lyrics(Lyric,Separator,Lyric),
+  ChordLine(Chord,Chord,Chord,Chord,Chord,Chord,Chord,Chord,Chord,Chord,Chord))
+
+# Lyrics Only Section
+
+Chorus 2:
+This is the sound of dry bones rattling
+This is the praise make a dead man walk again
+Open the grave, I'm coming out
+I'm gonna live, gonna live a - gain
+This is the sound of dry bones rattling
+
+==>
+
+Song(
+  Section(SectionName,SectionText,":"),
+  Lyrics(Lyric),
+  Lyrics(Lyric),
+  Lyrics(Lyric),
+  Lyrics(Lyric),
+  Lyrics(Lyric))
+
+# Lyrics Only Section with space mid section
+
+Chorus 2:
+This is the sound of dry bones rattling
+This is the praise make a dead man walk again
+
+Open the grave, I'm coming out
+I'm gonna live, gonna live a - gain
+This is the sound of dry bones rattling
+
+==>
+
+Song(
+  Section(SectionName,SectionText,":"),
+  Lyrics(Lyric),
+  Lyrics(Lyric),
+  Lyrics(Lyric),
+  Lyrics(Lyric),
+  Lyrics(Lyric))
+
+# Chords Only Section
+
+Instrumental 2
+Db / / Db/C | Bbm7 / / Absus | Gb / / Db/F | Gb / / Absus |
+Db / / Fm7 | Bbm9 / / Absus/C | Gb / / Db/F | Gb / / Absus |
+
+==>
+
+Song(
+  Section(SectionName,SectionText),
+  ChordLine(Chord,Chord,Chord,Chord,Chord,Chord,Chord,Chord,Chord,Chord,Chord,Chord,Chord,Chord,Chord,Chord,Chord,Chord,Chord,Chord),
+  ChordLine(Chord,Chord,Chord,Chord,Chord,Chord,Chord,Chord,Chord,Chord,Chord,Chord,Chord,Chord,Chord,Chord,Chord,Chord,Chord,Chord))
+
+# Section Name with no content
+
+Chorus 2 *4b
+         Dm7/A         G13      G13(#5) Gm7/C     F
+We’ll be singing for - ever and ever,         a - men
+
+Interlude 1 (4x) *5
+
+Bridge (3x) *6-7
+Dm7           C/E          F      Bb2
+    If you've ever wondered  What Heaven looks like
+
+==>
+
+Song(
+  Section(SectionName,SectionText),
+  ChordLine(Chord,Chord,Chord,Chord,Chord),
+  Lyrics(Lyric),
+  Section(SectionName,SectionText),
+  Section(SectionName,SectionText),
+  ChordLine(Chord,Chord,Chord,Chord),
+  Lyrics(Lyric))
+
+# Lowercase or UpperCase Section Names
+
+Chorus 1
+       Am         C/A C/G#        F          C
+Let it be, let it     be,  let it be, let it be
+
+chorus 2
+       Am         C/A C/G#        F          C
+Let it be, let it     be,  let it be, let it b
+
+CHORUS 3
+       Am         C/A C/G#        F          C
+Let it be, let it     be,  let it be, let it be
+
+Not a Section Heading
+       Am         C/A C/G#        F          C
+Let it be, let it     be,  let it be, let it be
+
+==>
+
+Song(
+  Section(SectionName,SectionText),
+  ChordLine(Chord,Chord,Chord,Chord,Chord),
+  Lyrics(Lyric),
+  Section(SectionName,SectionText),
+  ChordLine(Chord,Chord,Chord,Chord,Chord),
+  Lyrics(Lyric),
+  Section(SectionName,SectionText),
+  ChordLine(Chord,Chord,Chord,Chord,Chord),
+  Lyrics(Lyric),
+  Lyrics(Lyric),
+  ChordLine(Chord,Chord,Chord,Chord,Chord),
+  Lyrics(Lyric))

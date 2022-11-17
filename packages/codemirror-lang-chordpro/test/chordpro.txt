@@ -1,0 +1,122 @@
+# Lyrics {"dialect": "noTitle"}
+
+My [Dm7]heart has always [C/E]longed for something[F] more
+
+==>
+
+Song(
+  Lyrics(Lyric,InlineChord(Chord),Lyric,InlineChord(Chord),Lyric,InlineChord(Chord),Lyric))
+
+# Allows dangling ] {"dialect": "noTitle"}
+
+Let it [Am]be
+[C]Whisper wor]ds of [F]wis[G]dom
+
+==>
+
+Song(
+  Lyrics(Lyric,InlineChord(Chord),Lyric),
+  Lyrics(InlineChord(Chord),Lyric,InlineChord(Chord),Lyric,InlineChord(Chord),Lyric))
+
+# Allows dangling } {"dialect": "noTitle"}
+
+Let it [Am]be
+[C]Whisper wor}ds of [F]wis[G]dom
+
+==>
+
+Song(
+  Lyrics(Lyric,InlineChord(Chord),Lyric),
+  Lyrics(InlineChord(Chord),Lyric,InlineChord(Chord),Lyric,InlineChord(Chord),Lyric))
+
+# Inline directives {"dialect": "noTitle"}
+
+{start_of_chorus}
+{c:Chorus 1}
+[Eb5]This is the sound\ of dry{directive} bones rattling[/Bb][-][/Ab][Eb5]
+[Eb5]This is the praise\ make a dead man walk again[/Bb][-][/Ab][Eb5]
+{end_of_chorus}
+
+==>
+
+Song(
+  Directive(DirectiveName),
+  Directive(DirectiveName,DirectiveValue),
+  Lyrics(
+    InlineChord(Chord),Lyric,Separator,Lyric,Directive(DirectiveName),Lyric,InlineChord(Chord),
+    InlineChord(Chord),InlineChord(Chord),InlineChord(Chord)),
+  Lyrics(
+    InlineChord(Chord),Lyric,Separator,Lyric,InlineChord(Chord),InlineChord(Chord),InlineChord(Chord),
+    InlineChord(Chord)),
+  Directive(DirectiveName))
+
+# Directive mid-verse {"dialect": "noTitle"}
+
+{c:Chorus}
+And [Bb]I,[F/A][Gm][Bbma7/D]\ I'm desperate [Eb]for You[Gm7][Fsus][F]
+And [Bb]I,[F/A][Gm][Bbma7/D]\ I'm lost with - [Eb]out You[Gm7][Fsus][F]
+{new_key: C}
+[C] This is the [Csus]air I breathe,[C] this is the [Csus]air I breath
+[C] Your [G/B]Holy  [Am7]presence,[Cma7/G]\ [F]living[Am7] in [Gsus]me[G]
+
+==>
+
+Song(
+  Directive(DirectiveName,DirectiveValue),
+  Lyrics(
+    Lyric,InlineChord(Chord),Lyric,InlineChord(Chord),InlineChord(Chord),InlineChord(Chord),
+    Separator,Lyric,InlineChord(Chord),Lyric,InlineChord(Chord),InlineChord(Chord),InlineChord(Chord)),
+  Lyrics(
+    Lyric,InlineChord(Chord),Lyric,InlineChord(Chord),InlineChord(Chord),InlineChord(Chord),
+    Separator,Lyric,InlineChord(Chord),Lyric,InlineChord(Chord),InlineChord(Chord),InlineChord(Chord)),
+  Directive(DirectiveName,DirectiveValue),
+  Lyrics(
+    InlineChord(Chord),Lyric,InlineChord(Chord),Lyric,InlineChord(Chord),Lyric,InlineChord(Chord),Lyric),
+  Lyrics(
+    InlineChord(Chord),Lyric,InlineChord(Chord),Lyric,InlineChord(Chord),Lyric,InlineChord(Chord),
+    Separator,Lyric,InlineChord(Chord),Lyric,InlineChord(Chord),Lyric,InlineChord(Chord),Lyric,
+    InlineChord(Chord)))
+
+# Meta with multiple sections {"dialect": "noTitle"}
+
+{t: Rattle}
+{key: Eb}
+
+{c:Intro (5x)}
+[(Eb)][/][/][/][|][/][/][/][/][|][/][/][/][/][|]
+[Eb5][/][/][/][|][/][/][/][/][|][/][/][/]
+
+{c:Verse 1}
+[Eb]Saturday was silent, [Ebsus]surely it was [Eb]through
+[Cm] But since when has im - [Bb]possible\ [Ab2]ever [Eb/G]stopped [Eb]You[/][/][/][/]
+[Eb]Friday’s disappointment\ is Sun - [Ebsus]day’s empty [Eb]tomb
+[Cm] Since when has im - [Bb]possible\ [Ab2]ever [Eb/G]stopped [Eb]You
+[Ab2][-][Eb/G][Eb][/]
+
+==>
+
+Song(
+  Directive(DirectiveName,DirectiveValue),
+  Directive(DirectiveName,DirectiveValue),
+  Directive(DirectiveName,DirectiveValue),
+  Lyrics(
+    InlineChord(Chord),InlineChord(Chord),InlineChord(Chord),InlineChord(Chord),InlineChord(Chord),
+    InlineChord(Chord),InlineChord(Chord),InlineChord(Chord),InlineChord(Chord),InlineChord(Chord),
+    InlineChord(Chord),InlineChord(Chord),InlineChord(Chord),InlineChord(Chord),InlineChord(Chord)),
+  Lyrics(
+    InlineChord(Chord),InlineChord(Chord),InlineChord(Chord),InlineChord(Chord),InlineChord(Chord),
+    InlineChord(Chord),InlineChord(Chord),InlineChord(Chord),InlineChord(Chord),InlineChord(Chord),
+    InlineChord(Chord),InlineChord(Chord),InlineChord(Chord)),
+  Directive(DirectiveName,DirectiveValue),
+  Lyrics(
+    InlineChord(Chord),Lyric,InlineChord(Chord),Lyric,InlineChord(Chord),Lyric),
+  Lyrics(
+    InlineChord(Chord),Lyric,InlineChord(Chord),Lyric,Separator,Lyric,InlineChord(Chord),Lyric,InlineChord(Chord),
+    Lyric,InlineChord(Chord),Lyric,InlineChord(Chord),InlineChord(Chord),InlineChord(Chord),InlineChord(Chord)),
+  Lyrics(
+    InlineChord(Chord),Lyric,Separator,Lyric,InlineChord(Chord),Lyric,InlineChord(Chord),Lyric),
+  Lyrics(
+    InlineChord(Chord),Lyric,InlineChord(Chord),Lyric,Separator,Lyric,InlineChord(Chord),Lyric,InlineChord(Chord),
+    Lyric,InlineChord(Chord),Lyric),
+  Lyrics(
+    InlineChord(Chord),InlineChord(Chord),InlineChord(Chord),InlineChord(Chord),InlineChord(Chord)))
