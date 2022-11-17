@@ -194,7 +194,7 @@ function hasDirectiveName(input: InputStream) {
   return !endOfLine(input.peek(off))
 }
 
-let sectionHeaders = ["verse", "chorus", "bridge", "tag", "interlude", "instrumental", "intro"]
+let sectionHeaders = ["verse", "chorus", "bridge", "tag", "interlude", "instrumental", "inst", "intro"]
 let sectionHeadersUpper = sectionHeaders.map(h => h.toUpperCase())
 
 function readSectionHeader(input: InputStream) {

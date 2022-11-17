@@ -20,7 +20,8 @@ export const ChordProLanguage = LRLanguage.define({
         ":": t.punctuation,
         Separator: t.separator
       })
-    ]
+    ],
+    dialect: "noTitle"
   }),
   languageData: {
     commentTokens: {line: "#"}
