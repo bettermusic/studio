@@ -224,7 +224,7 @@ export const line = new ExternalTokenizer((input, stack) => {
     input.advance()
   let maybeComment = input.next == Ch.Hash
 
-  if (endOfLine(input.next)) {
+  if (input.next == Ch.Newline || input.next == Ch.Return) {
     input.acceptToken(blankLine)
     return
   } else if (readSectionHeader(input)) {
