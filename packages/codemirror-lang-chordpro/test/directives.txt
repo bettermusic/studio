@@ -1,12 +1,24 @@
-# meta
+# meta {"dialect": "chordpro"}
 {capo: 2}
 {artist: Maverick City Music}
-==> Program(Directive(DirectiveName, DirectiveValue), Directive(DirectiveName, DirectiveValue))
+==> Song(Directive(DirectiveName, DirectiveValue), Directive(DirectiveName, DirectiveValue))
 
-# alias
+# alias {"dialect": "chordpro"}
 {t: Get Back}
-==> Program(Directive(DirectiveName, DirectiveValue))
+==> Song(Directive(DirectiveName, DirectiveValue))
 
-# inline
+# escapes special characters {"dialect": "chordpro"}
+{title: my \{title\}}
+==> Song(Directive(DirectiveName, DirectiveValue))
+
+# inline {"dialect": "chordpro"}
 {start_of_verse}
-==> Program(Directive(DirectiveName))
+==> Song(Directive("{", DirectiveName, "}"))
+
+# meta - chordsOverWords {"dialect": "chordsOverWords"}
+title: Song Title
+==> Song(Directive(DirectiveName, DirectiveValue))
+
+# meta - chordsOverWords (optional brackets) {"dialect": "chordsOverWords"}
+{title: Song Title}
+==> Song(Directive(DirectiveName, DirectiveValue))
