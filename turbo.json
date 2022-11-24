@@ -7,7 +7,8 @@
       ],
       "dependsOn": [
         "^build"
-      ]
+      ],
+      "cache": false
     },
     "test": {
       "outputs": [
@@ -69,9 +70,9 @@
       ],
       "dependsOn": [
         "codemirror-lang-chordpro#prepare",
-        "@bettermusic/ui#build",
         "@bettermusic/chordsheetjs#build"
-      ]
+      ],
+      "cache": false
     },
     "@bettermusic/studio-docs#dev": {
       "dependsOn": [
@@ -88,14 +89,6 @@
         "codemirror-lang-chordpro#prepare"
       ],
       "cache": false
-    },
-    "@bettermusic/ui-angular#build": {
-      "outputs": [
-        "dist/**"
-      ],
-      "dependsOn": [
-        "@bettermusic/ui#build"
-      ]
     },
     "@bettermusic/studio-angular#build": {
       "outputs": [

@@ -5,13 +5,20 @@ import {
   angularOutputTarget,
   ValueAccessorConfig,
 } from '@stencil/angular-output-target';
+import {postcss} from '@stencil/postcss';
+import autoprefixer from 'autoprefixer';
+import tailwind, { tailwindGlobal, tailwindHMR } from 'stencil-tailwind-plugin';
+import tailwindConfig from './tailwind.config';
+
+
+
 
 const angularValueAccessorBindings: ValueAccessorConfig[] = [];
 
 export const config: Config = {
+  autoprefixCss: true,
   namespace: 'studio',
   taskQueue: 'async',
-  globalScript: 'src/global/app.ts',
   preamble: 'Built with Stencil\nCopyright (c) Sonreign Media Inc.',
   sourceMap: true,
   devServer: {
@@ -53,7 +60,12 @@ export const config: Config = {
     },
   ],
   plugins: [
-    sass()
+    sass(),
+    tailwind({
+      tailwindCssPath: './src/styles/tailwind.css',
+      tailwindConf: tailwindConfig,
+    }),
+    tailwindHMR(),
   ],
   rollupPlugins: {
     before: [

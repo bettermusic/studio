@@ -1,0 +1,37 @@
+:host {
+  @apply flex flex-col h-screen pb-4;
+  background-color: #2b2b2b;
+  height: calc(1000vh - 3rem);
+}
+
+.gutter {
+  background-color: #2b2b2b;
+  transition: all .1s;
+}
+
+.gutter:hover, .gutter:active {
+  background-color: #007ed7;
+  cursor:col-resize;
+}
+
+.gutter.gutter-horizontal {
+  background-image: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAUAAAAeCAYAAADkftS9AAAAIklEQVQoU2M4c+bMfxAGAgYYmwGrIIiDjrELjpo5aiZeMwF+yNnOs5KSvgAAAABJRU5ErkJggg==');
+  background-repeat: no-repeat;
+  background-position: center;
+}
+
+.controls {
+  --gap: 1rem;
+  display: inline-flex;
+  padding-bottom: var(--gap);
+  padding-top: var(--gap);
+  height: 4rem;
+
+  width: 100%;
+  overflow-x: scroll;
+  display: flex;
+}
+
+bm-dropdown {
+  width: 160px;
+}

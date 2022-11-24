@@ -1,9 +1,11 @@
 {
   "extends": "@bettermusic/tsconfig/stencil-library.json",
-  "include": [
-    "src"
-  ],
+  "compilerOptions": {
+    "rootDir": ".", 
+    "resolveJsonModule": true
+  },
+  "include": [ "src" ],
   "exclude": [
     "node_modules", "./src/components/**/*.stories.ts"
-  ]
+  ],
 }

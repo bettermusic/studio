@@ -4,7 +4,7 @@ import { ModuleWithProviders, APP_INITIALIZER, NgModule, NgZone } from '@angular
 import { 
     BmEditorSplitView,
     BmEditor,
-    BmRenderer
+    BmView
 } from './lib/stencil-generated/components';
 
 
@@ -12,7 +12,7 @@ import {
 const DECLARATIONS = [
     BmEditorSplitView,
     BmEditor,
-    BmRenderer
+    BmView
 ];
 
 @NgModule({

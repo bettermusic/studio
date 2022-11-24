@@ -8,7 +8,7 @@ import {showPanel} from "@codemirror/view"
 export const myTheme = EditorView.theme({
     "&": {
       color: "#c1c1c1",
-      backgroundColor: "#2b2b2b"
+      backgroundColor: "#212121"
     },
     ".cm-content": {
       caretColor: "#aeafad"
@@ -23,7 +23,7 @@ export const myTheme = EditorView.theme({
       backgroundColor: "#224e7a"
     },
     ".cm-gutters": {
-      backgroundColor: "#2b2b2b",
+      backgroundColor: "#212121",
       color: "#8a8c8d",
       border: "none"
     }

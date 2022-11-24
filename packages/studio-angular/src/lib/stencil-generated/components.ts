@@ -12,8 +12,7 @@ export declare interface BmEditor extends Components.BmEditor {}
 
 @ProxyCmp({
   defineCustomElementFn: undefined,
-  inputs: ['initialValue'],
-  methods: ['setCapo']
+  inputs: ['initialValue']
 })
 @Component({
   selector: 'bm-editor',
@@ -106,19 +105,41 @@ export class BmEditorSplitView {
 }
 
 
-export declare interface BmRenderer extends Components.BmRenderer {}
+export declare interface BmTextEditor extends Components.BmTextEditor {}
+
+@ProxyCmp({
+  defineCustomElementFn: undefined,
+  inputs: ['initialValue'],
+  methods: ['setCapo']
+})
+@Component({
+  selector: 'bm-text-editor',
+  changeDetection: ChangeDetectionStrategy.OnPush,
+  template: '<ng-content></ng-content>',
+  inputs: ['initialValue']
+})
+export class BmTextEditor {
+  protected el: HTMLElement;
+  constructor(c: ChangeDetectorRef, r: ElementRef, protected z: NgZone) {
+    c.detach();
+    this.el = r.nativeElement;
+  }
+}
+
+
+export declare interface BmView extends Components.BmView {}
 
 @ProxyCmp({
   defineCustomElementFn: undefined,
   inputs: ['html', 'mode']
 })
 @Component({
-  selector: 'bm-renderer',
+  selector: 'bm-view',
   changeDetection: ChangeDetectionStrategy.OnPush,
   template: '<ng-content></ng-content>',
   inputs: ['html', 'mode']
 })
-export class BmRenderer {
+export class BmView {
   protected el: HTMLElement;
   constructor(c: ChangeDetectorRef, r: ElementRef, protected z: NgZone) {
     c.detach();

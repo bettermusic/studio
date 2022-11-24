@@ -7,5 +7,6 @@ export const DIRECTIVES = [
   d.BmEditorKeyDropdown,
   d.BmEditorModeDropdown,
   d.BmEditorSplitView,
-  d.BmRenderer
+  d.BmTextEditor,
+  d.BmView
 ];

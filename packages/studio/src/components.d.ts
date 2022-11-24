@@ -6,11 +6,86 @@
  */
 import { HTMLStencilElement, JSXBase } from "@stencil/core/internal";
 export namespace Components {
+    interface BmButton {
+        "color": "primary" | "secondary" | "minimal" | "destructive";
+        "disabled"?: boolean;
+        "loading"?: boolean;
+        "size": "sm" | "base" | "lg" | "icon";
+        "startIcon"?: HTMLElement;
+        "text"?: string;
+    }
+    interface BmDropdown {
+        /**
+          * Where to append element
+         */
+        "appendTo": 'body' | 'current';
+        /**
+          * Should dropdown autoclose on changeValue
+         */
+        "autoClose": boolean;
+        "autoFocus": boolean;
+        "autocomplete": boolean;
+        /**
+          * Filter value
+         */
+        "currentFilter": any;
+        /**
+          * Define object mapping for id/value
+         */
+        "dataId": string;
+        /**
+          * Define object mapping for labels
+         */
+        "dataLabel": string;
+        /**
+          * Change value
+         */
+        "doChange": (val: any, originalEvent?: MouseEvent) => Promise<void>;
+        /**
+          * Close dropdown
+         */
+        "doClose": (isDisconnected?: boolean) => Promise<void>;
+        /**
+          * Open dropdown
+         */
+        "doOpen": () => Promise<void>;
+        /**
+          * Filter criteria
+         */
+        "filter": 'contains' | 'start';
+        "hasFilter": boolean;
+        "maxHeight": number;
+        /**
+          * Placeholder text
+         */
+        "placeholder": string;
+        /**
+          * Define object mapping for id/value
+         */
+        "source": any[];
+        /**
+          * Selected value
+         */
+        "value": any;
+    }
+    interface BmDropdownListItem {
+        /**
+          * Define object mapping for labels
+         */
+        "dataLabel": string;
+        "isFocused": boolean;
+        "refresh": (source: any[]) => Promise<void>;
+        /**
+          * Define object mapping for id/value
+         */
+        "sourceItems": any[];
+    }
     interface BmEditor {
         "initialValue": string;
-        "setCapo": (capoPosition: number) => Promise<void>;
     }
     interface BmEditorCapoDropdown {
+    }
+    interface BmEditorHeader {
     }
     interface BmEditorKeyDropdown {
     }
@@ -18,12 +93,45 @@ export namespace Components {
     }
     interface BmEditorSplitView {
     }
-    interface BmRenderer {
+    interface BmIcon {
+        "name": string;
+    }
+    interface BmTextEditor {
+        "initialValue": string;
+        "setCapo": (capoPosition: number) => Promise<void>;
+    }
+    interface BmView {
         "html": string;
         "mode": string;
     }
 }
+export interface BmDropdownCustomEvent<T> extends CustomEvent<T> {
+    detail: T;
+    target: HTMLBmDropdownElement;
+}
+export interface BmDropdownListItemCustomEvent<T> extends CustomEvent<T> {
+    detail: T;
+    target: HTMLBmDropdownListItemElement;
+}
 declare global {
+    interface HTMLBmButtonElement extends Components.BmButton, HTMLStencilElement {
+    }
+    var HTMLBmButtonElement: {
+        prototype: HTMLBmButtonElement;
+        new (): HTMLBmButtonElement;
+    };
+    interface HTMLBmDropdownElement extends Components.BmDropdown, HTMLStencilElement {
+    }
+    var HTMLBmDropdownElement: {
+        prototype: HTMLBmDropdownElement;
+        new (): HTMLBmDropdownElement;
+    };
+    interface HTMLBmDropdownListItemElement extends Components.BmDropdownListItem, HTMLStencilElement {
+    }
+    var HTMLBmDropdownListItemElement: {
+        prototype: HTMLBmDropdownListItemElement;
+        new (): HTMLBmDropdownListItemElement;
+    };
     interface HTMLBmEditorElement extends Components.BmEditor, HTMLStencilElement {
     }
     var HTMLBmEditorElement: {
@@ -35,6 +143,12 @@ declare global {
     var HTMLBmEditorCapoDropdownElement: {
         prototype: HTMLBmEditorCapoDropdownElement;
         new (): HTMLBmEditorCapoDropdownElement;
+    };
+    interface HTMLBmEditorHeaderElement extends Components.BmEditorHeader, HTMLStencilElement {
+    }
+    var HTMLBmEditorHeaderElement: {
+        prototype: HTMLBmEditorHeaderElement;
+        new (): HTMLBmEditorHeaderElement;
     };
     interface HTMLBmEditorKeyDropdownElement extends Components.BmEditorKeyDropdown, HTMLStencilElement {
     }
@@ -54,26 +168,120 @@ declare global {
         prototype: HTMLBmEditorSplitViewElement;
         new (): HTMLBmEditorSplitViewElement;
     };
-    interface HTMLBmRendererElement extends Components.BmRenderer, HTMLStencilElement {
+    interface HTMLBmIconElement extends Components.BmIcon, HTMLStencilElement {
     }
-    var HTMLBmRendererElement: {
-        prototype: HTMLBmRendererElement;
-        new (): HTMLBmRendererElement;
+    var HTMLBmIconElement: {
+        prototype: HTMLBmIconElement;
+        new (): HTMLBmIconElement;
+    };
+    interface HTMLBmTextEditorElement extends Components.BmTextEditor, HTMLStencilElement {
+    }
+    var HTMLBmTextEditorElement: {
+        prototype: HTMLBmTextEditorElement;
+        new (): HTMLBmTextEditorElement;
+    };
+    interface HTMLBmViewElement extends Components.BmView, HTMLStencilElement {
+    }
+    var HTMLBmViewElement: {
+        prototype: HTMLBmViewElement;
+        new (): HTMLBmViewElement;
     };
     interface HTMLElementTagNameMap {
+        "bm-button": HTMLBmButtonElement;
+        "bm-dropdown": HTMLBmDropdownElement;
+        "bm-dropdown-list-item": HTMLBmDropdownListItemElement;
         "bm-editor": HTMLBmEditorElement;
         "bm-editor-capo-dropdown": HTMLBmEditorCapoDropdownElement;
+        "bm-editor-header": HTMLBmEditorHeaderElement;
         "bm-editor-key-dropdown": HTMLBmEditorKeyDropdownElement;
         "bm-editor-mode-dropdown": HTMLBmEditorModeDropdownElement;
         "bm-editor-split-view": HTMLBmEditorSplitViewElement;
-        "bm-renderer": HTMLBmRendererElement;
+        "bm-icon": HTMLBmIconElement;
+        "bm-text-editor": HTMLBmTextEditorElement;
+        "bm-view": HTMLBmViewElement;
     }
 }
 declare namespace LocalJSX {
+    interface BmButton {
+        "color"?: "primary" | "secondary" | "minimal" | "destructive";
+        "disabled"?: boolean;
+        "loading"?: boolean;
+        "size"?: "sm" | "base" | "lg" | "icon";
+        "startIcon"?: HTMLElement;
+        "text"?: string;
+    }
+    interface BmDropdown {
+        /**
+          * Where to append element
+         */
+        "appendTo"?: 'body' | 'current';
+        /**
+          * Should dropdown autoclose on changeValue
+         */
+        "autoClose"?: boolean;
+        "autoFocus"?: boolean;
+        "autocomplete"?: boolean;
+        /**
+          * Filter value
+         */
+        "currentFilter"?: any;
+        /**
+          * Define object mapping for id/value
+         */
+        "dataId"?: string;
+        /**
+          * Define object mapping for labels
+         */
+        "dataLabel"?: string;
+        /**
+          * Filter criteria
+         */
+        "filter"?: 'contains' | 'start';
+        "hasFilter"?: boolean;
+        "maxHeight"?: number;
+        /**
+          * When value changed
+         */
+        "onChanged"?: (event: BmDropdownCustomEvent<{ val: any; originalEvent?: MouseEvent }>) => void;
+        /**
+          * Before element close, can be prevented
+         */
+        "onClose"?: (event: BmDropdownCustomEvent<any>) => void;
+        /**
+          * Before element open, can be prevented
+         */
+        "onOpen"?: (event: BmDropdownCustomEvent<any>) => void;
+        /**
+          * Placeholder text
+         */
+        "placeholder"?: string;
+        /**
+          * Define object mapping for id/value
+         */
+        "source"?: any[];
+        /**
+          * Selected value
+         */
+        "value"?: any;
+    }
+    interface BmDropdownListItem {
+        /**
+          * Define object mapping for labels
+         */
+        "dataLabel"?: string;
+        "isFocused"?: boolean;
+        "onChanged"?: (event: BmDropdownListItemCustomEvent<{ item: any; e: any }>) => void;
+        /**
+          * Define object mapping for id/value
+         */
+        "sourceItems"?: any[];
+    }
     interface BmEditor {
         "initialValue"?: string;
     }
     interface BmEditorCapoDropdown {
+    }
+    interface BmEditorHeader {
     }
     interface BmEditorKeyDropdown {
     }
@@ -81,29 +289,47 @@ declare namespace LocalJSX {
     }
     interface BmEditorSplitView {
     }
-    interface BmRenderer {
+    interface BmIcon {
+        "name"?: string;
+    }
+    interface BmTextEditor {
+        "initialValue"?: string;
+    }
+    interface BmView {
         "html"?: string;
         "mode"?: string;
     }
     interface IntrinsicElements {
+        "bm-button": BmButton;
+        "bm-dropdown": BmDropdown;
+        "bm-dropdown-list-item": BmDropdownListItem;
         "bm-editor": BmEditor;
         "bm-editor-capo-dropdown": BmEditorCapoDropdown;
+        "bm-editor-header": BmEditorHeader;
         "bm-editor-key-dropdown": BmEditorKeyDropdown;
         "bm-editor-mode-dropdown": BmEditorModeDropdown;
         "bm-editor-split-view": BmEditorSplitView;
-        "bm-renderer": BmRenderer;
+        "bm-icon": BmIcon;
+        "bm-text-editor": BmTextEditor;
+        "bm-view": BmView;
     }
 }
 export { LocalJSX as JSX };
 declare module "@stencil/core" {
     export namespace JSX {
         interface IntrinsicElements {
+            "bm-button": LocalJSX.BmButton & JSXBase.HTMLAttributes<HTMLBmButtonElement>;
+            "bm-dropdown": LocalJSX.BmDropdown & JSXBase.HTMLAttributes<HTMLBmDropdownElement>;
+            "bm-dropdown-list-item": LocalJSX.BmDropdownListItem & JSXBase.HTMLAttributes<HTMLBmDropdownListItemElement>;
             "bm-editor": LocalJSX.BmEditor & JSXBase.HTMLAttributes<HTMLBmEditorElement>;
             "bm-editor-capo-dropdown": LocalJSX.BmEditorCapoDropdown & JSXBase.HTMLAttributes<HTMLBmEditorCapoDropdownElement>;
+            "bm-editor-header": LocalJSX.BmEditorHeader & JSXBase.HTMLAttributes<HTMLBmEditorHeaderElement>;
             "bm-editor-key-dropdown": LocalJSX.BmEditorKeyDropdown & JSXBase.HTMLAttributes<HTMLBmEditorKeyDropdownElement>;
             "bm-editor-mode-dropdown": LocalJSX.BmEditorModeDropdown & JSXBase.HTMLAttributes<HTMLBmEditorModeDropdownElement>;
             "bm-editor-split-view": LocalJSX.BmEditorSplitView & JSXBase.HTMLAttributes<HTMLBmEditorSplitViewElement>;
-            "bm-renderer": LocalJSX.BmRenderer & JSXBase.HTMLAttributes<HTMLBmRendererElement>;
+            "bm-icon": LocalJSX.BmIcon & JSXBase.HTMLAttributes<HTMLBmIconElement>;
+            "bm-text-editor": LocalJSX.BmTextEditor & JSXBase.HTMLAttributes<HTMLBmTextEditorElement>;
+            "bm-view": LocalJSX.BmView & JSXBase.HTMLAttributes<HTMLBmViewElement>;
         }
     }
 }

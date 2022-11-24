@@ -6,5 +6,5 @@ import PraiseChartsTheme from './PraiseChartsTheme';
 
 
 addons.setConfig({
-  theme: BetterMusicTheme,
+  theme: PraiseChartsTheme,
 });
