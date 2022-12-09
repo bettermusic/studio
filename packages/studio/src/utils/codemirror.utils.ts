@@ -8,22 +8,22 @@ import {showPanel} from "@codemirror/view"
 export const myTheme = EditorView.theme({
     "&": {
       color: "#c1c1c1",
-      backgroundColor: "#212121"
+      backgroundColor: "var(--bm-gray-200)"
     },
     ".cm-content": {
-      caretColor: "#aeafad"
+      caretColor: "var(--bm-gray-900)"
     },
     ".cm-activeLine": {
-      backgroundColor: "#323232"
+      backgroundColor: "var(--bm-gray-300)"
     },
     "&.cm-focused .cm-cursor": {
-      borderLeftColor: "#ff6663"
+      borderLeftColor: "var(--bm-gray-800)"
     },
     "&.cm-focused .cm-selectionBackground, ::selection": {
-      backgroundColor: "#224e7a"
+      backgroundColor: "var(--bm-gray-300)"
     },
     ".cm-gutters": {
-      backgroundColor: "#212121",
+      backgroundColor: "var(--bm-gray-200)",
       color: "#8a8c8d",
       border: "none"
     }
@@ -33,17 +33,17 @@ export const language = new Compartment
 
 export const myHighlightStyle = HighlightStyle.define([
   {tag: tags.keyword, color: "#0481aa"},
-  {tag: tags.attributeName, color: "#8a8c8d"},
-  {tag: tags.attributeValue, color: "#fa7c6c"},
-  {tag: tags.heading1, color: "#fa7c6c"},
-  {tag: tags.name, color: "#fa7c6c"},
-  {tag: tags.heading2, color: "#fa7c6c"},
-  {tag: tags.attributeValue, color: "#fa7c6c"},
-  {tag: tags.separator, color: "#fa7c6c"},
-  {tag: tags.lineComment, color: "#5d6063"},
-  {tag: tags.content, color: '#c1c1c1'},
-  {tag: tags.brace, color: "#5c5d5e"},
-  {tag: tags.squareBracket, color: '#025671'},
+  {tag: tags.attributeName, color: "var(--bm-gray-500)"},
+  {tag: tags.attributeValue, color: "var(--bm-color-chord)"},
+  {tag: tags.heading1, color: "var(--bm-color-chord)"},
+  {tag: tags.name, color: "var(--bm-color-chord)"},
+  {tag: tags.heading2, color: "var(--bm-color-chord)"},
+  {tag: tags.attributeValue, color: "var(--bm-color-chord)"},
+  {tag: tags.separator, color: "var(--bm-green-500)"},
+  {tag: tags.lineComment, color: "var(--bm-gray-400)"},
+  {tag: tags.content, color: 'var(--bm-gray-700)'},
+  {tag: tags.brace, color: "var(--bm-gray-500)"},
+  {tag: tags.squareBracket, color: 'var(--bm-blue-700)'},
 ])
 
 export const wordHover = hoverTooltip((view, pos, side) => {

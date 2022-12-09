@@ -22,17 +22,15 @@ export class EditorSplitView {
 
   render() {
     return (
-      <Host class="flex flex-col h-screen pb-4">
-        <div class="flex-initial flex space-x-6 my-6">
-          <bm-editor-mode-dropdown></bm-editor-mode-dropdown>
-          <bm-editor-key-dropdown></bm-editor-key-dropdown>
-          <bm-editor-capo-dropdown></bm-editor-capo-dropdown>
-          <bm-button>Hello</bm-button>
-        </div>
-        <div class="flex-1 flex">
+      <Host>
+        <bm-editor-header></bm-editor-header>
+        <div class="editor-height flex-1 flex">
           <bm-editor ref={el => this.editor = el as HTMLElement}></bm-editor>
           <bm-view ref={el => this.view = el as HTMLElement} html={state.html}></bm-view>
         </div>
+        <bm-editor-mode-dropdown></bm-editor-mode-dropdown>
+          <bm-editor-key-dropdown></bm-editor-key-dropdown>
+          <bm-editor-capo-dropdown></bm-editor-capo-dropdown>
       </Host>
     );
   }

@@ -9,9 +9,10 @@ export namespace Components {
     interface BmButton {
         "color": "primary" | "secondary" | "minimal" | "destructive";
         "disabled"?: boolean;
+        "endIcon"?: string;
         "loading"?: boolean;
         "size": "sm" | "base" | "lg" | "icon";
-        "startIcon"?: HTMLElement;
+        "startIcon"?: string;
         "text"?: string;
     }
     interface BmDropdown {
@@ -93,9 +94,6 @@ export namespace Components {
     }
     interface BmEditorSplitView {
     }
-    interface BmIcon {
-        "name": string;
-    }
     interface BmTextEditor {
         "initialValue": string;
         "setCapo": (capoPosition: number) => Promise<void>;
@@ -168,12 +166,6 @@ declare global {
         prototype: HTMLBmEditorSplitViewElement;
         new (): HTMLBmEditorSplitViewElement;
     };
-    interface HTMLBmIconElement extends Components.BmIcon, HTMLStencilElement {
-    }
-    var HTMLBmIconElement: {
-        prototype: HTMLBmIconElement;
-        new (): HTMLBmIconElement;
-    };
     interface HTMLBmTextEditorElement extends Components.BmTextEditor, HTMLStencilElement {
     }
     var HTMLBmTextEditorElement: {
@@ -196,7 +188,6 @@ declare global {
         "bm-editor-key-dropdown": HTMLBmEditorKeyDropdownElement;
         "bm-editor-mode-dropdown": HTMLBmEditorModeDropdownElement;
         "bm-editor-split-view": HTMLBmEditorSplitViewElement;
-        "bm-icon": HTMLBmIconElement;
         "bm-text-editor": HTMLBmTextEditorElement;
         "bm-view": HTMLBmViewElement;
     }
@@ -205,9 +196,10 @@ declare namespace LocalJSX {
     interface BmButton {
         "color"?: "primary" | "secondary" | "minimal" | "destructive";
         "disabled"?: boolean;
+        "endIcon"?: string;
         "loading"?: boolean;
         "size"?: "sm" | "base" | "lg" | "icon";
-        "startIcon"?: HTMLElement;
+        "startIcon"?: string;
         "text"?: string;
     }
     interface BmDropdown {
@@ -289,9 +281,6 @@ declare namespace LocalJSX {
     }
     interface BmEditorSplitView {
     }
-    interface BmIcon {
-        "name"?: string;
-    }
     interface BmTextEditor {
         "initialValue"?: string;
     }
@@ -309,7 +298,6 @@ declare namespace LocalJSX {
         "bm-editor-key-dropdown": BmEditorKeyDropdown;
         "bm-editor-mode-dropdown": BmEditorModeDropdown;
         "bm-editor-split-view": BmEditorSplitView;
-        "bm-icon": BmIcon;
         "bm-text-editor": BmTextEditor;
         "bm-view": BmView;
     }
@@ -327,7 +315,6 @@ declare module "@stencil/core" {
             "bm-editor-key-dropdown": LocalJSX.BmEditorKeyDropdown & JSXBase.HTMLAttributes<HTMLBmEditorKeyDropdownElement>;
             "bm-editor-mode-dropdown": LocalJSX.BmEditorModeDropdown & JSXBase.HTMLAttributes<HTMLBmEditorModeDropdownElement>;
             "bm-editor-split-view": LocalJSX.BmEditorSplitView & JSXBase.HTMLAttributes<HTMLBmEditorSplitViewElement>;
-            "bm-icon": LocalJSX.BmIcon & JSXBase.HTMLAttributes<HTMLBmIconElement>;
             "bm-text-editor": LocalJSX.BmTextEditor & JSXBase.HTMLAttributes<HTMLBmTextEditorElement>;
             "bm-view": LocalJSX.BmView & JSXBase.HTMLAttributes<HTMLBmViewElement>;
         }

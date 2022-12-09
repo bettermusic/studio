@@ -18,7 +18,7 @@ interface IStore {
     editorExtensions: any[];
     editorMode: "chordpro" | "chords_over_words";
     editorModes: any;
-    editorView: EditorView;
+    editorView: EditorView | null;
     formatter: ChordProFormatter | HtmlDivFormatter | HtmlTableFormatter | ChordsOverWordsFormatter;
     html: string;
     input: string;
@@ -50,7 +50,12 @@ onChange('input', value => {
 });
 
 onChange('capo', value => {
-  const formatter = new ChordProFormatter();
+  let formatter;
+  if (state.editorMode === 'chordpro') {
+     formatter = new ChordProFormatter();
+  } else {
+     formatter = new ChordsOverWordsFormatter();
+  }
   state.song = state.song.setCapo(value);
   let input = formatter.format(state.song);
   let docLength = state.editorView.state.doc.length;
@@ -60,7 +65,12 @@ onChange('capo', value => {
 });
 
 onChange('currentKey', value => {
-  const formatter = new ChordProFormatter();
+  let formatter;
+  if (state.editorMode === 'chordpro') {
+     formatter = new ChordProFormatter();
+  } else {
+     formatter = new ChordsOverWordsFormatter();
+  }
   state.song = state.song.changeKey(value);
   state.capos = getAvaliableCaposFromKey(value);
   let input = formatter.format(state.song);
@@ -88,7 +98,7 @@ onChange('editorMode', value => {
 });
 
 function initialState() {
-  let song = parseInput(exampleChordPro, new ChordProParser() )
+  let song = parseInput(exampleChordPro, new ChordsOverWordsParser() )
   let capo = 0;
   let currentKey = {
     name: song.key
@@ -107,7 +117,7 @@ function initialState() {
     keys: keys,
     capos: capos,
     minor: false,
-    editorMode: "chordpro",
+    editorMode: "chords_over_words",
     editorModes: [
       {
         label: 'ChordPro', 
@@ -118,13 +128,13 @@ function initialState() {
         mode: 'chords_over_words',
       }
     ],
-    // metadata: {
-    //   title: "Test Song",
-    //   key: currentKey,
-    //   capo: capo,
-    //   artist: "test Artist"
-    // },
-    parser: new ChordProParser(),
+    metadata: {
+      title: "Test Song",
+      key: currentKey,
+      capo: capo,
+      artist: "test Artist"
+    },
+    parser: new ChordsOverWordsParser(),
     formatter: new HtmlDivFormatter(),
     rendererMode: "pdf",
     rendererZoom: "100%",

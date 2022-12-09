@@ -29,14 +29,23 @@ export const config: Config = {
     browser: true,
     preferBuiltins: true
   },
+  globalStyle: 'src/styles/global.css',
   outputTargets: [
     {
       type: 'www',
       serviceWorker: null // disable service workers
+  
     },
     {
       type: 'dist-custom-elements',
       generateTypeDeclarations: true,
+      copy: [
+        {
+          src: '**/*.{svg}',
+          dest: 'dist/components/assets',
+          warn: true,
+        }
+      ]
     },
     {
       type: 'docs-readme',
@@ -65,7 +74,7 @@ export const config: Config = {
       tailwindCssPath: './src/styles/tailwind.css',
       tailwindConf: tailwindConfig,
     }),
-    tailwindHMR(),
+    tailwindHMR()
   ],
   rollupPlugins: {
     before: [

@@ -1,4 +1,4 @@
 :host {
-    @apply flex flex-col bg-[#212121] rounded-lg border border-neutral-700 h-full mr-2 !important;
-    height: calc(100vh - 7rem);
+    @apply flex flex-col bg-gray-200 border-x border-b rounded-bl-lg border-gray-300 h-full !important;
+    height: calc(100vh - 14rem);
 }

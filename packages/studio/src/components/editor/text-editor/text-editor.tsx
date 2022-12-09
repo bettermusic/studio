@@ -6,7 +6,6 @@ import state from "../../../stores/editor_store";
 @Component({
   tag: 'bm-text-editor',
   styleUrl: 'text-editor.css',
-  shadow: true,
 })
 export class Editor {
   
@@ -21,17 +20,22 @@ export class Editor {
     state.capo = capoPosition;
   }
   
-  connectedCallback() {
+  componentWillLoad() {
     if (!state.editorView) {
       state.editorView = new EditorView({
           state: EditorState.create({
             doc: state.input,
             extensions: state.editorExtensions
           }),
-          parent:  this.host.shadowRoot,
+          parent:  this.host,
         })
       }
-    }
+  }
+
+  disconnectedCallback() {
+    state.editorView.destroy();
+    state.editorView = null;
+  }
 
   render() {
     return (

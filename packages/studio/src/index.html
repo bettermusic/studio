@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html dir="ltr" lang="en">
+<html dir="ltr" lang="en" class="dark">
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=5.0" />
@@ -10,13 +10,15 @@
     <style>
       body {
         margin: 0;
-        padding: 0 1rem;
+        padding: 1rem;
         overscroll-behavior: none;
-        background-color: #2b2b2b;
+        background-color: var(--bm-gray-100);
       }
     </style>
+    <link rel="stylesheet" href="/build/studio.css" />
   </head>
-  <body >
+  <body class="dark">
     <bm-editor-split-view></bm-editor-split-view>
+    <script src="https://unpkg.com/ionicons@latest/dist/ionicons.js"></script>
   </body>
 </html>

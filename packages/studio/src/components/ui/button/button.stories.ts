@@ -3,13 +3,21 @@ export default {
   // this creates a ‘Components’ folder and a ‘MyComponent’ subfolder
   title: 'ui/Button',
   argTypes: {
-    html: { control: 'text' }, // always shows
+    text: { control: 'text' }, // always shows
+    color: { control: 'select', options: ['primary', 'minimal'] },
   },
 };
 
-const Template = (args) => `<bm-button>${args.html}</bm-button>`;
+const Template = (args) => `<bm-button text="${args.text}" color="${args.color}"></bm-button>`;
 
-export const Example = Template.bind({});
-Example.args = {
-  html: `Hey`
+export const Primary = Template.bind({});
+Primary.args = {
+  text: `Hey`,
+  color: 'primary'
+}
+
+export const Minimal = Template.bind({});
+Minimal.args = {
+  text: `Hey`,
+  color: 'minimal'
 }

@@ -12,7 +12,6 @@ export class Editor {
   render() {
     return (
       <Host>
-          <bm-editor-header></bm-editor-header>
           <bm-text-editor initialValue={state.input}></bm-text-editor>
       </Host>
     );

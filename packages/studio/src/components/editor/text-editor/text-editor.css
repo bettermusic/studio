@@ -1,5 +1,5 @@
 :host {
-  @apply rounded-b-lg;
+  @apply rounded-bl-lg;
   display: block;
   overflow: auto;
   height: calc(100vh - 16rem);
@@ -7,6 +7,10 @@
 
 .cm-gutter {
   width: 20px;
+}
+
+.ͼ1.cm-editor.cm-focused {
+  outline: unset !important;
 }
 
 .cm-editor {

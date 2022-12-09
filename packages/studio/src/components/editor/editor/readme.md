@@ -20,12 +20,15 @@
 
 ### Depends on
 
+- [bm-editor-header](../editor-header)
 - [bm-text-editor](../text-editor)
 
 ### Graph
 ```mermaid
 graph TD;
+  bm-editor --> bm-editor-header
   bm-editor --> bm-text-editor
+  bm-editor-header --> bm-button
   bm-editor-split-view --> bm-editor
   style bm-editor fill:#f9f,stroke:#333,stroke-width:4px
 ```

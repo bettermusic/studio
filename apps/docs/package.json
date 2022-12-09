@@ -9,15 +9,15 @@
   },
   "dependencies": {},
   "devDependencies": {
-    "@bettermusic/tsconfig": "*",
     "@bettermusic/studio": "*",
+    "@bettermusic/tsconfig": "*",
     "@storybook/addon-essentials": "^6.5",
     "@storybook/addon-links": "^6.5",
     "@storybook/addons": "^6.5",
     "@storybook/html": "^6.5",
     "@storybook/theming": "^6.5",
-    "@bettermusic/eslint-config": "*",
     "serve": "^14.0.1",
+    "storybook-dark-mode": "^1.1.2",
     "typescript": "^4.5.4"
   }
 }

@@ -1,10 +1,9 @@
 // .storybook/manager.js
 
 import { addons } from '@storybook/addons';
-import { themes } from '@storybook/theming';
-import PraiseChartsTheme from './PraiseChartsTheme';
+import BetterMusicTheme from './BetterMusicTheme';
 
 
 addons.setConfig({
-  theme: PraiseChartsTheme,
+  theme: BetterMusicTheme,
 });

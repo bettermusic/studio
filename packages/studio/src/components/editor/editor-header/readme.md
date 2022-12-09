@@ -5,29 +5,22 @@
 <!-- Auto Generated Below -->
 
 
-## Properties
-
-| Property       | Attribute       | Description | Type     | Default     |
-| -------------- | --------------- | ----------- | -------- | ----------- |
-| `initialValue` | `initial-value` |             | `string` | `undefined` |
-
-
 ## Dependencies
 
 ### Used by
 
- - [bm-editor-split-view](../editor-split-view)
+ - [bm-editor](../editor)
 
 ### Depends on
 
-- [bm-text-editor](../text-editor)
+- [bm-button](../../ui/button)
 
 ### Graph
 ```mermaid
 graph TD;
-  bm-editor --> bm-text-editor
-  bm-editor-split-view --> bm-editor
-  style bm-editor fill:#f9f,stroke:#333,stroke-width:4px
+  bm-editor-header --> bm-button
+  bm-editor --> bm-editor-header
+  style bm-editor-header fill:#f9f,stroke:#333,stroke-width:4px
 ```
 
 ----------------------------------------------

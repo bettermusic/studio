@@ -1,7 +1,7 @@
 // eslint-disable-next-line import/no-anonymous-default-export
 export default {
   // this creates a ‘Components’ folder and a ‘MyComponent’ subfolder
-  title: 'Components/Editor',
+  title: 'Components/TextEditor',
   argTypes: {
     initialValue: { control: 'text' },
   },

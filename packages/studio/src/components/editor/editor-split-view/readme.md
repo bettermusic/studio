@@ -27,7 +27,9 @@ graph TD;
   bm-dropdown --> bm-dropdown-list-item
   bm-editor-key-dropdown --> bm-dropdown
   bm-editor-capo-dropdown --> bm-dropdown
+  bm-editor --> bm-editor-header
   bm-editor --> bm-text-editor
+  bm-editor-header --> bm-button
   style bm-editor-split-view fill:#f9f,stroke:#333,stroke-width:4px
 ```
 
