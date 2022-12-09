@@ -7,7 +7,7 @@
 }
 
 $border-color: var(--bm-gray-900);
-$font-color: #fff;
+$font-color: var(--bm-gray-900);
 $border-size: 1px;
 
 $padding: 10px;
@@ -55,7 +55,7 @@ $font-size: 14px;
     box-sizing: content-box;
     letter-spacing: inherit;
     animation-duration: 10ms;
-    color: $font-color;
+    color: var(--bm-gray-900);
 
     &:focus {
       outline: none;
@@ -70,7 +70,7 @@ $font-size: 14px;
 
   label {
     $time: 200ms;
-    color: $font-color;
+    color: var(--bm-gray-900);
     font-size: 1rem;
     z-index: 100;
     top: 0;
@@ -205,6 +205,7 @@ $font-size: 14px;
       line-height: 30px;
       margin: 10px;
       border-radius: 6px;
+      background-color: var(--bm-gray-300);
 
       &:focus {
         outline: none;

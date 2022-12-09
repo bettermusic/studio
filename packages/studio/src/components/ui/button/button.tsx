@@ -5,6 +5,7 @@ import { applyStyleToMultipleVariants } from "../../../utils/cva";
 @Component({
   tag: 'bm-button',
   styleUrl: 'button.css',
+  shadow: false,
 })
 export class BmButton {
  
@@ -21,6 +22,8 @@ export class BmButton {
   @Prop() loading?: boolean;
 
   @Prop() disabled?: boolean;
+
+  @Prop() active?: boolean;
 
   buttonClasses = cva(
     "inline-flex items-center text-sm font-medium relative rounded-md transition-colors",
@@ -44,6 +47,9 @@ export class BmButton {
         disabled: {
           true: "cursor-not-allowed",
         },
+        active: {
+          true: "text-gray-800 bg-gray-100",
+        }
       },
       compoundVariants: [
         // Primary variants
@@ -61,14 +67,14 @@ export class BmButton {
           disabled: [undefined, false],
           color: "primary",
           className:
-            "bg-gray-500 hover:bg-gray-400 focus:border focus:border-white focus:outline-none focus:ring-2 focus:ring-offset focus:ring-brand-500",
+            "bg-gray-500 hover:bg-gray-400 focus:border focus:border-gray-300 focus:outline-none focus:ring-2 focus:ring-offset focus:ring-gray-500",
         }),
         // Secondary variants
         {
           disabled: true,
           color: "secondary",
           className:
-            "border border-gray-200 bg-opacity-30 text-gray-900/30 bg-white",
+            "border border-gray-400 bg-opacity-30 text-gray-900/30 bg-gray-200",
         },
         {
           loading: true,
@@ -80,7 +86,7 @@ export class BmButton {
           disabled: [undefined, false],
           color: "secondary",
           className:
-            "border border-gray-300 hover:bg-gray-200 hover:border-gray-400 focus:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-offset focus:ring-gray-900",
+            "border border-gray-300 hover:bg-gray-200 hover:border-gray-400 focus:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-offset focus:ring-gray-400",
         }),
         // Minimal variants
         {
@@ -99,7 +105,7 @@ export class BmButton {
           disabled: [undefined, false],
           color: "minimal",
           className:
-            "hover:bg-gray-100 focus:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-offset focus:ring-gray-900 ",
+            "hover:bg-gray-100 focus:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-offset focus:ring-gray-400 ",
         }),
         // Destructive variants
         {
@@ -133,13 +139,16 @@ export class BmButton {
     const endIconSrc = this.endIcon ? `/assets/icons/${this.endIcon}.svg` : null;
     return (
       <Host>
-        <button class={
-          this.buttonClasses({
-            color: this.color,
-            size: this.size,
-            loading: false,
-            disabled: false,
-          })}>
+        <button 
+          part="button" 
+          class={
+            this.buttonClasses({
+              color: this.color,
+              size: this.size,
+              loading: this.loading,
+              disabled: this.disabled,
+              active: this.active,
+            })}>
           { this.startIcon ? <ion-icon className={`${this.text ? 'pr-1.5': null }`} src={startIconSrc}></ion-icon> : null }
           {this.text}
           { this.endIcon ? <ion-icon className={`${this.text ? 'pl-1.5': null }`} name={endIconSrc}></ion-icon> : null }

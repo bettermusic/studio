@@ -23,7 +23,7 @@ export function getAvaliableCaposFromKey(songKey: any) {
     return {
       position: capo,
       key: keysConfig['capos'][`${songKey}`][`${capo}`],
-      label: `${capo} (Key of ${keysConfig['capos'][`${songKey}`][`${capo}`]})`
+      label: `Capo ${capo} (${keysConfig['capos'][`${songKey}`][`${capo}`]})`
     }
   });
   capos.unshift({

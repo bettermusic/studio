@@ -3,12 +3,11 @@ import '../../../utils/closestPolifill';
 import { UUID } from '../../../utils/consts';
 import { getItemLabel, getItemValue } from '../../../utils/dropdown-list-item.helpers';
 import { DropdownListFilter } from '../dropdown-list-item/dropdown-list-filter';
-import { ArrowRenderer } from './arrow';
 
 @Component({
-  tag: 'bm-dropdown',
-  styleUrl: 'bm-dropdown.style.scss',
-  shadow: true
+  tag: 'bm-button-dropdown',
+  styleUrl: 'bm-button-dropdown.style.scss',
+  shadow: false
 })
 export class BmDropdown {
   private element: Element;
@@ -150,7 +149,9 @@ export class BmDropdown {
   @Listen('mousedown', { target: 'document' })
   onMouseUp(e: MouseEvent): void {
     if (this.isVisible && !e.defaultPrevented) {
+      // using event coridinates to check if click was outside of dropdown
       const isOutside = !this.isMouseEventInDOMRect(e, this.dropdownInner.getBoundingClientRect());
+      
       if (isOutside) {
         this.doClose();
       }
@@ -189,7 +190,7 @@ export class BmDropdown {
 
   componentDidRender() {
     if (this.dropdown) {
-      this.host.shadowRoot.appendChild(this.dropdown);
+      this.host.appendChild(this.dropdown);
     }
     if (this.isVisible) {
       this.updateStyles();
@@ -210,7 +211,7 @@ export class BmDropdown {
     }
     return (
       <div class="bm-dropdown-list" ref={e => (this.dropdown = e)}>
-        <div {...{ [UUID]: this.uuid }} class="dropdown-inner flex max-h-full absolute box-border rounded overflow-hidden bg-gray-200 min-h-[1rem] min-w-[1rem] py-2" ref={e => (this.dropdownInner = e)}>
+        <div {...{ [UUID]: this.uuid }} class="dropdown-inner flex max-h-full absolute box-border rounded overflow-hidden bg-white min-h-[1rem] min-w-[1rem] py-2" ref={e => (this.dropdownInner = e)}>
           {this.hasFilter && !this.autocomplete ? (
             <DropdownListFilter
               ref={e => (this.dropdownInput = e)}
@@ -293,25 +294,15 @@ export class BmDropdown {
       props['autocomplete'] = true;
     }
     return (
-      <Host>
-        <div {...props} class={{
-          'bm-dropdown' : true,
-          'active': this.isVisible,
-          'shrink': this.isVisible || !!this.currentItem || !!this.autocompleteInput?.value,
-        }}
-        ref={el => this.element = el as HTMLElement}>
-          <label class="dr-label">{this.placeholder}</label>
-          <div class="bm-dr-root">
-            {this.autocomplete ? this.renderAutocomplete() : this.renderSelect()}
-            <span class="actions"><ArrowRenderer/></span>
-            <fieldset class="fieldset">
-              <legend class="legend">
-                <span>{this.placeholder}</span>
-              </legend>
-            </fieldset>
-          </div>
-          {list}
-        </div>
+      <Host ref={el => this.element = el as HTMLElement}>
+        <bm-button 
+              {...props}
+              size='base'
+              color='secondary'
+              text={this.value ? getItemLabel(this.currentItem, this.dataLabel) : this.placeholder}
+              >
+        </bm-button>
+        {list}
       </Host>
     );
   }
@@ -324,12 +315,16 @@ export class BmDropdown {
   }
 
   private getValue(newVal: any) {
+    console.log('gettin source', this.source, newVal)
     for (let index in this.source) {
       const item = this.source[index];
+      console.log(getItemValue(item, this.dataId))
+
       if (newVal == getItemValue(item, this.dataId)) {
         return item;
       }
     }
+    console.log('gotcha')
     return null;
   }
 

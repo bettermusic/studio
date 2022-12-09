@@ -17,6 +17,7 @@ export class EditorSplitView {
     Split([this.editor, this.view], {
       sizes: [50, 50],
       minSize: 0,
+      gutterSize: 8,
     })
   }
 
@@ -28,9 +29,6 @@ export class EditorSplitView {
           <bm-editor ref={el => this.editor = el as HTMLElement}></bm-editor>
           <bm-view ref={el => this.view = el as HTMLElement} html={state.html}></bm-view>
         </div>
-        <bm-editor-mode-dropdown></bm-editor-mode-dropdown>
-          <bm-editor-key-dropdown></bm-editor-key-dropdown>
-          <bm-editor-capo-dropdown></bm-editor-capo-dropdown>
       </Host>
     );
   }

@@ -10,6 +10,7 @@ bm-editor-split-view {
 .gutter {
   background-color: var(--bm-gray-200);
   transition: all .1s;
+  border-bottom: 1px solid var(--bm-gray-300);
 }
 
 .gutter:hover, .gutter:active {
@@ -18,7 +19,6 @@ bm-editor-split-view {
 }
 
 .gutter.gutter-horizontal {
-  background-image: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAUAAAAeCAYAAADkftS9AAAAIklEQVQoU2M4c+bMfxAGAgYYmwGrIIiDjrELjpo5aiZeMwF+yNnOs5KSvgAAAABJRU5ErkJggg==');
   background-repeat: no-repeat;
   background-position: center;
 }

@@ -3,8 +3,7 @@ import { getItemLabel } from '../../../utils/dropdown-list-item.helpers';
 
 @Component({ 
   tag: 'bm-dropdown-list-item', 
-  styleUrl: 'dropdown-list-item.style.scss',
-  shadow: false
+  styleUrl: 'dropdown-list-item.style.scss'
 })
 export class BmDropdownListItem {
   @State() currentItem = 0;
@@ -19,7 +18,7 @@ export class BmDropdownListItem {
    */
   @Prop() dataLabel: string;
 
-  @Event({ bubbles: false }) changed: EventEmitter<{ item: any; e: any }>;
+  @Event({ bubbles: false }) itemChanged: EventEmitter<{ item: any; e: any }>;
 
   /** Recived keyboard down from element */
   @Listen('keydown', { target: 'document' }) onKey(e: KeyboardEvent) {
@@ -45,14 +44,14 @@ export class BmDropdownListItem {
         e.preventDefault();
         item = this.sourceItems[this.currentItem];
         if (item) {
-          this.changed.emit({ item, e });
+          this.itemChanged.emit({ item, e });
         }
         break;
       case 'Enter':
         e.preventDefault();
         item = this.sourceItems[this.currentItem];
         if (item) {
-          this.changed.emit({ item, e });
+          this.itemChanged.emit({ item, e });
         }
         break;
     }
@@ -82,7 +81,9 @@ export class BmDropdownListItem {
             this.selectedEl = e;
           }
         },
-        onClick: e => this.changed.emit({ item, e })
+        onClick: e => {
+          this.itemChanged.emit({ item, e })
+        }
       };
       const li = <li {...props}>{getItemLabel(item, this.dataLabel)}</li>;
       items.push(li);

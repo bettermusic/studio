@@ -1,4 +1,5 @@
 export function getItemLabel<T>(item: T, dataLabel?: string): T|string {
+  console.log(item, dataLabel); 
   if (!item) {
     return '';
   }

@@ -32,6 +32,7 @@ bm-dropdown-list-item {
     justify-content: flex-start;
     text-decoration: none;
     cursor: pointer;
+    color: var(--bm-gray-700);
 
     &.selected {
       background-color: $hv-color;

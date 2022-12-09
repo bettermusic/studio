@@ -1,0 +1,7 @@
+:host {
+    @apply rounded-lg !important;
+}
+
+bm-button::part(button) {
+    color: red;
+}

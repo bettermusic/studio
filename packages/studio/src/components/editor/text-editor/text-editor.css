@@ -22,3 +22,7 @@
 .cm-content {
   padding: 0 !important;
 }
+
+.cm-activeLine {
+  border-radius: 0.25rem;
+}
