@@ -1,12 +1,12 @@
-import { Component, Prop, h, VNode, State, Listen, Event, EventEmitter, Method, Watch, Host, Element } from '@stencil/core';
+import { Component, Prop, h, State, Listen, Event, EventEmitter, Method, Watch, Host, Element } from '@stencil/core';
 import '../../../utils/closestPolifill';
 import { UUID } from '../../../utils/consts';
 import { getItemLabel, getItemValue } from '../../../utils/dropdown-list-item.helpers';
 import { DropdownListFilter } from '../dropdown-list-item/dropdown-list-filter';
 
 @Component({
-  tag: 'bm-button-dropdown',
-  styleUrl: 'bm-button-dropdown.style.scss',
+  tag: 'bm-dropdown-shell',
+  styleUrl: 'bm-dropdown-shell.style.scss',
   shadow: false
 })
 export class BmDropdown {
@@ -40,7 +40,7 @@ export class BmDropdown {
   /**
    * Define object mapping for labels
    */
-  @Prop() buttonLabel: string;
+  @Prop() buttonLabel?: string;
   /**
    * Selected value
    */
@@ -154,7 +154,7 @@ export class BmDropdown {
   onMouseUp(e: MouseEvent): void {
     if (this.isVisible && !e.defaultPrevented) {
       // using event coridinates to check if click was outside of dropdown
-      const isOutside = !this.isMouseEventInDOMRect(e, this.dropdownInner.getBoundingClientRect());
+      const isOutside = !this.isMouseEventInDOMRect(e, this.dropdown.getBoundingClientRect());
       
       if (isOutside) {
         this.doClose();
@@ -209,113 +209,28 @@ export class BmDropdown {
     }
   }
 
-  private renderDropdown() {
-    if (!this.hasFilter) {
-      this.currentSource = this.source;
-    }
-    return (
-      <div class="bm-dropdown-list" ref={e => (this.dropdown = e)}>
-        <div {...{ [UUID]: this.uuid }} class="dropdown-inner flex max-h-full absolute box-border rounded overflow-hidden min-h-[1rem] min-w-[1rem] py-2 border border-gray-400" ref={e => (this.dropdownInner = e)}>
-          {this.hasFilter && !this.autocomplete ? (
-            <DropdownListFilter
-              ref={e => (this.dropdownInput = e)}
-              source={this.source}
-              filter={this.filter}
-              dataLabel={this.dataLabel}
-              value={this.currentFilter || ''}
-              filterValue={this.currentFilter || ''}
-              onFilterChange={e => {
-                this.currentFilter = e.value;
-                this.currentSource = e.items;
-                this.bmList?.refresh(this.currentSource);
-              }}
-            />
-          ) : undefined}
-          <bm-dropdown-list-item
-            ref={e => (this.bmList = e)}
-            isFocused={true}
-            sourceItems={this.currentSource}
-            dataLabel={this.dataLabel}
-            onItemChanged={e => {
-              this.doChange(e.detail.item, e.detail.e)
-            }}
-          />
-        </div>
-      </div>
-    );
-  }
-
-  renderSelect() {
-    const val = this.currentItem && getItemLabel(this.currentItem, this.dataLabel) || '';
-    return <input type="text" disabled class="filter-box" value={val} />;
-  }
-
-  renderAutocomplete() {
-    const val = this.currentItem ? getItemLabel(this.currentItem, this.dataLabel) : '';
-    return (
-      <DropdownListFilter
-        ref={e => (this.autocompleteInput = e)}
-        autocomplete='true'
-        source={this.source}
-        filter={this.filter}
-        dataLabel={this.dataLabel}
-        value={val}
-        filterValue={this.currentFilter}
-        onKeyDown={e => {
-          if (this.isVisible) {
-            return;
-          }
-          switch (e.code) {
-            case 'ArrowUp':
-            case 'ArrowDown':
-              e.preventDefault();
-              this.showAutoComplete();
-              break;
-          }
-        }}
-        onInput={() => this.showAutoComplete()}
-        onFocus={() => this.showAutoComplete()}
-        onClick={() => this.showAutoComplete()}
-        onFilterChange={e => {
-          this.currentFilter = e.value;
-          this.currentSource = e.items;
-          this.bmList?.refresh(this.currentSource);
-        }}
-      />
-    );
-  }
-
   render() {
-    let list: VNode;
-    if (this.isVisible) {
-      list = this.renderDropdown();
-    }
-    const props = {
+    const buttonProps = {
       [UUID]: this.uuid,
       onClick: e => this.selectClick(e)
     };
-    if (this.autocomplete) {
-      props['autocomplete'] = true;
-    }
+    const dropdownProps = {
+      [UUID]: this.uuid,
+      ref: e => (this.dropdown = e)
+    };
+    
     return (
       <Host ref={el => this.element = el as HTMLElement}>
-        <bm-button 
-              {...props}
-              size='base'
-              color='secondary'
-              text={this.value ? getItemLabel(this.currentItem, this.dataLabel, this.buttonLabel) : this.placeholder}
+        <div {...buttonProps} >
+          <slot name="dropdown-button" />
+        </div> 
+        <div {...{ [UUID]: this.uuid }} ref={e => (this.dropdown = e)}
+              class={`${this.isVisible ? 'flex' : 'hidden'} mt-2 z-10 max-h-full absolute box-border overflow-hidden min-h-[1rem] min-w-[1rem] shadow-lg shadow-gray-100`}
               >
-        </bm-button>
-        {list}
+          <slot name="dropdown-content" />
+        </div> 
       </Host>
     );
-  }
-
-  private showAutoComplete() {
-    if (!this.isVisible && !this.isClosing) {
-      this.isVisible = true;
-    }
-    this.isClosing = false;
   }
 
   private getValue(newVal: any) {

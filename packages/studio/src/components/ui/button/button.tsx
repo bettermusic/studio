@@ -86,7 +86,7 @@ export class BmButton {
           disabled: [undefined, false],
           color: "secondary",
           className:
-            "border border-gray-300 hover:bg-gray-200 hover:border-gray-400 focus:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-offset focus:ring-gray-400",
+            "border border-gray-300 hover:bg-gray-200 hover:border-gray-400 focus:bg-gray-100 focus:outline-none focus:ring-1 focus:ring-offset focus:ring-gray-600",
         }),
         // Minimal variants
         {
@@ -105,7 +105,7 @@ export class BmButton {
           disabled: [undefined, false],
           color: "minimal",
           className:
-            "hover:bg-gray-100 focus:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-offset focus:ring-gray-400 ",
+            "hover:bg-gray-100 focus:bg-gray-100 focus:outline-none focus:ring-1 focus:ring-offset-0 focus:ring-gray-400 ",
         }),
         // Destructive variants
         {
@@ -124,7 +124,7 @@ export class BmButton {
           disabled: [false, undefined],
           color: "destructive",
           className:
-            "border text-gray-900 hover:text-red-700 focus:text-red-700 hover:border-red-100 focus:border-red-100 hover:bg-red-100  focus:bg-red-100 focus:outline-none focus:ring-2 focus:ring-offset focus:ring-red-700",
+            "border text-gray-900 hover:text-red-700 focus:text-red-700 hover:border-red-100 focus:border-red-100 hover:bg-red-100  focus:bg-red-100 focus:outline-none focus:ring-1 focus:ring-offset-0 focus:ring-red-700",
         }),
       ],
       defaultVariants: {

@@ -23,13 +23,15 @@ export function getAvaliableCaposFromKey(songKey: any) {
     return {
       position: capo,
       key: keysConfig['capos'][`${songKey}`][`${capo}`],
-      label: `Capo ${capo} (${keysConfig['capos'][`${songKey}`][`${capo}`]})`
+      buttonLabel: `Capo ${capo} (${keysConfig['capos'][`${songKey}`][`${capo}`]})`,
+      itemText: `${capo} (Key of ${keysConfig['capos'][`${songKey}`][`${capo}`]})`
     }
   });
   capos.unshift({
     position: null,
     key: null,
-    label: "None"
+    buttonLabel: "Capo",
+    itemText: "None"
   }
   );
   return capos;

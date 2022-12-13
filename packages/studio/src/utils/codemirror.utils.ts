@@ -20,7 +20,7 @@ export const myTheme = EditorView.theme({
       borderLeftColor: "var(--bm-gray-800)"
     },
     "&.cm-focused .cm-selectionBackground, ::selection": {
-      backgroundColor: "var(--bm-gray-300)"
+      backgroundColor: "var(--bm-blue-800)"
     },
     ".cm-gutters": {
       backgroundColor: "var(--bm-gray-200)",

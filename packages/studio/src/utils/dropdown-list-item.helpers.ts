@@ -1,13 +1,17 @@
-export function getItemLabel<T>(item: T, dataLabel?: string): T|string {
-  console.log(item, dataLabel); 
+export function getItemLabel<T>(item: T, dataLabel?: string, buttonLabel?: string): T|string {
   if (!item) {
     return '';
   }
-  return dataLabel ? item[dataLabel] : item;
+  if (buttonLabel) {
+    return item[buttonLabel]
+  }
+  if (dataLabel) {
+    return item[dataLabel]
+  }
+  return item;
 }
 
 export function getItemLabelFromSource(source, item: string, dataLabel: string, dataId: string) {
-  console.log(source);
   if (!source) {
     return '';
   }

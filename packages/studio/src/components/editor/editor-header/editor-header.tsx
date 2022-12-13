@@ -7,19 +7,16 @@ import state from '../../../stores/editor_store';
   shadow: true,
 })
 export class EditorHeader {
-
   @Listen('changed')
   dropDownChangedHandler(event: CustomEvent) {
     switch (event.detail.id) {
       case 'key':
-        console.log('key changed');
         state.currentKey = event.detail.val;
         this.currentCapo = state.capos[0];
         break;
       case 'capo':
-        console.log('capo changed', event.detail.val)
-        state.capo = event.detail.val;
-        this.currentCapo = state.capos[event.detail.val]
+        state.capo = event.detail.val.position;
+        this.currentCapo = state.capos[event.detail.val];
         break;
     }
   }
@@ -27,15 +24,14 @@ export class EditorHeader {
   editorMode: string;
   currentCapo: any;
 
-  componentWillRender() { 
+  componentWillRender() {
     const capoIndex = state.capos.findIndex(capo => capo.position === state.capo);
     if (capoIndex > 0) {
-      this.currentCapo = state.capos[capoIndex]; 
+      this.currentCapo = state.capos[capoIndex];
     } else {
       this.currentCapo = state.capos[0];
     }
   }
-
 
   render() {
     return (
@@ -47,54 +43,45 @@ export class EditorHeader {
             <h6 class="text-xs text-gray-500">Elevation Worship</h6>
           </div>
           <bm-button-group combined={true}>
-            <bm-button-dropdown 
-              id="key" 
-              dataLabel="name" 
-              dataId="name" 
-              source={state.keys} 
-              value={state.currentKey} 
-              placeholder="Key" 
-              maxHeight={400}>
-            </bm-button-dropdown>
-            <bm-button-dropdown 
-              id="capo" 
-              dataLabel="label" 
-              source={state.capos} 
-              value={this.currentCapo} 
-              placeholder="Capo" 
-              maxHeight={400}>
-            </bm-button-dropdown>
+            <bm-button-dropdown id="key" dataLabel="name" dataId="name" source={state.keys} value={state.currentKey} placeholder="Key" maxHeight={400}></bm-button-dropdown>
+            <bm-button-dropdown
+              id="capo"
+              buttonLabel="buttonLabel"
+              dataLabel="itemText"
+              source={state.capos}
+              value={this.currentCapo}
+              placeholder="Capo"
+              maxHeight={400}
+            ></bm-button-dropdown>
           </bm-button-group>
+          <bm-dropdown-shell>
+            <bm-button
+              slot="dropdown-button"
+              size="base"
+              color="secondary"
+              text={`${this.currentCapo.position ? `Capo ${this.currentCapo.position} - ${this.currentCapo.key}` : 'Capo'}`}
+            ></bm-button>
+            <div slot="dropdown-content" class="p-4 bg-gray-100 border border-gray-400 rounded ">
+              dropdown content!
+            </div>
+          </bm-dropdown-shell>
         </div>
         <div class="flex-1 flex justify-end space-x-2 text-gray-700 w-100">
+          <bm-dropdown-shell>
+            <bm-button-group combined={true} slot="dropdown-button">
+              <bm-button size="base" color="secondary" text="4/4"></bm-button>
+              <bm-button size="base" color="secondary" startIcon="settings" text="98"></bm-button>
+            </bm-button-group>
+            <div slot="dropdown-content" class="p-4 bg-gray-100 border border-gray-400 rounded">
+              dropdown content!
+            </div>
+          </bm-dropdown-shell>
           <bm-button-group combined={true}>
-            <bm-button 
-              size='base'
-              color='secondary'
-              text="4/4">
-            </bm-button>
-            <bm-button 
-              size='base'
-              color='secondary'
-              startIcon='settings'
-              text='98'>
-            </bm-button>
-          </bm-button-group>
-          <bm-button-group combined={true}>
-            <bm-button 
-              size='icon'
-              color='secondary'
-              startIcon='edit'>
-            </bm-button>
-            <bm-button 
-              size='icon'
-              color='secondary'
-              startIcon='settings'>
-            </bm-button>
+            <bm-button size="icon" color="secondary" startIcon="edit"></bm-button>
+            <bm-button size="icon" color="secondary" startIcon="settings"></bm-button>
           </bm-button-group>
         </div>
       </Host>
     );
   }
 }
-

@@ -24,6 +24,10 @@ export namespace Components {
         "autoFocus": boolean;
         "autocomplete": boolean;
         /**
+          * Define object mapping for labels
+         */
+        "buttonLabel": string;
+        /**
           * Filter value
          */
         "currentFilter": any;
@@ -140,6 +144,64 @@ export namespace Components {
          */
         "sourceItems": any[];
     }
+    interface BmDropdownShell {
+        /**
+          * Should dropdown autoclose on changeValue
+         */
+        "autoClose": boolean;
+        "autoFocus": boolean;
+        "autocomplete": boolean;
+        /**
+          * Define object mapping for labels
+         */
+        "buttonLabel"?: string;
+        /**
+          * Filter value
+         */
+        "currentFilter": any;
+        /**
+          * Define object mapping for id/value
+         */
+        "dataId": string;
+        /**
+          * Define object mapping for labels
+         */
+        "dataLabel": string;
+        /**
+          * Change value
+         */
+        "doChange": (val: any, originalEvent?: MouseEvent) => Promise<void>;
+        /**
+          * Close dropdown
+         */
+        "doClose": (isDisconnected?: boolean) => Promise<void>;
+        /**
+          * Open dropdown
+         */
+        "doOpen": () => Promise<void>;
+        /**
+          * Filter criteria
+         */
+        "filter": 'contains' | 'start';
+        "hasFilter": boolean;
+        /**
+          * Optional ID for dropdown changed events
+         */
+        "id": string;
+        "maxHeight": number;
+        /**
+          * Placeholder text
+         */
+        "placeholder": string;
+        /**
+          * Define object mapping for id/value
+         */
+        "source": any[];
+        /**
+          * Selected value
+         */
+        "value": any;
+    }
     interface BmEditor {
         "initialValue": string;
     }
@@ -167,6 +229,10 @@ export interface BmDropdownCustomEvent<T> extends CustomEvent<T> {
 export interface BmDropdownListItemCustomEvent<T> extends CustomEvent<T> {
     detail: T;
     target: HTMLBmDropdownListItemElement;
+}
+export interface BmDropdownShellCustomEvent<T> extends CustomEvent<T> {
+    detail: T;
+    target: HTMLBmDropdownShellElement;
 }
 declare global {
     interface HTMLBmButtonElement extends Components.BmButton, HTMLStencilElement {
@@ -198,6 +264,12 @@ declare global {
     var HTMLBmDropdownListItemElement: {
         prototype: HTMLBmDropdownListItemElement;
         new (): HTMLBmDropdownListItemElement;
+    };
+    interface HTMLBmDropdownShellElement extends Components.BmDropdownShell, HTMLStencilElement {
+    }
+    var HTMLBmDropdownShellElement: {
+        prototype: HTMLBmDropdownShellElement;
+        new (): HTMLBmDropdownShellElement;
     };
     interface HTMLBmEditorElement extends Components.BmEditor, HTMLStencilElement {
     }
@@ -235,6 +307,7 @@ declare global {
         "bm-button-group": HTMLBmButtonGroupElement;
         "bm-dropdown": HTMLBmDropdownElement;
         "bm-dropdown-list-item": HTMLBmDropdownListItemElement;
+        "bm-dropdown-shell": HTMLBmDropdownShellElement;
         "bm-editor": HTMLBmEditorElement;
         "bm-editor-header": HTMLBmEditorHeaderElement;
         "bm-editor-split-view": HTMLBmEditorSplitViewElement;
@@ -260,6 +333,10 @@ declare namespace LocalJSX {
         "autoClose"?: boolean;
         "autoFocus"?: boolean;
         "autocomplete"?: boolean;
+        /**
+          * Define object mapping for labels
+         */
+        "buttonLabel"?: string;
         /**
           * Filter value
          */
@@ -377,6 +454,64 @@ declare namespace LocalJSX {
          */
         "sourceItems"?: any[];
     }
+    interface BmDropdownShell {
+        /**
+          * Should dropdown autoclose on changeValue
+         */
+        "autoClose"?: boolean;
+        "autoFocus"?: boolean;
+        "autocomplete"?: boolean;
+        /**
+          * Define object mapping for labels
+         */
+        "buttonLabel"?: string;
+        /**
+          * Filter value
+         */
+        "currentFilter"?: any;
+        /**
+          * Define object mapping for id/value
+         */
+        "dataId"?: string;
+        /**
+          * Define object mapping for labels
+         */
+        "dataLabel"?: string;
+        /**
+          * Filter criteria
+         */
+        "filter"?: 'contains' | 'start';
+        "hasFilter"?: boolean;
+        /**
+          * Optional ID for dropdown changed events
+         */
+        "id"?: string;
+        "maxHeight"?: number;
+        /**
+          * When value changed
+         */
+        "onChanged"?: (event: BmDropdownShellCustomEvent<{ val: any; id: string; originalEvent?: MouseEvent }>) => void;
+        /**
+          * Before element close, can be prevented
+         */
+        "onClose"?: (event: BmDropdownShellCustomEvent<any>) => void;
+        /**
+          * Before element open, can be prevented
+         */
+        "onOpen"?: (event: BmDropdownShellCustomEvent<any>) => void;
+        /**
+          * Placeholder text
+         */
+        "placeholder"?: string;
+        /**
+          * Define object mapping for id/value
+         */
+        "source"?: any[];
+        /**
+          * Selected value
+         */
+        "value"?: any;
+    }
     interface BmEditor {
         "initialValue"?: string;
     }
@@ -397,6 +532,7 @@ declare namespace LocalJSX {
         "bm-button-group": BmButtonGroup;
         "bm-dropdown": BmDropdown;
         "bm-dropdown-list-item": BmDropdownListItem;
+        "bm-dropdown-shell": BmDropdownShell;
         "bm-editor": BmEditor;
         "bm-editor-header": BmEditorHeader;
         "bm-editor-split-view": BmEditorSplitView;
@@ -413,6 +549,7 @@ declare module "@stencil/core" {
             "bm-button-group": LocalJSX.BmButtonGroup & JSXBase.HTMLAttributes<HTMLBmButtonGroupElement>;
             "bm-dropdown": LocalJSX.BmDropdown & JSXBase.HTMLAttributes<HTMLBmDropdownElement>;
             "bm-dropdown-list-item": LocalJSX.BmDropdownListItem & JSXBase.HTMLAttributes<HTMLBmDropdownListItemElement>;
+            "bm-dropdown-shell": LocalJSX.BmDropdownShell & JSXBase.HTMLAttributes<HTMLBmDropdownShellElement>;
             "bm-editor": LocalJSX.BmEditor & JSXBase.HTMLAttributes<HTMLBmEditorElement>;
             "bm-editor-header": LocalJSX.BmEditorHeader & JSXBase.HTMLAttributes<HTMLBmEditorHeaderElement>;
             "bm-editor-split-view": LocalJSX.BmEditorSplitView & JSXBase.HTMLAttributes<HTMLBmEditorSplitViewElement>;
