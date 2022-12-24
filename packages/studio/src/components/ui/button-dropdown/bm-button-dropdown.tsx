@@ -339,7 +339,7 @@ export class BmDropdown {
     }
   }
 
-  private updateStyles() {
+ private updateStyles() {
     if (!this.dropdown) {
       return;
     }
@@ -358,7 +358,8 @@ export class BmDropdown {
       opacity: 1,
       display: 'block'
     };
-
+    this.dropdown.style.display = 'block';
+    
     // top
     if (currentTop > visibleRect.centerY) {
       style.top = `${currentTop - 48}px`;
@@ -374,9 +375,12 @@ export class BmDropdown {
 
     // left
     let currentLeft = left + visibleRect.left;
-    const rightSpace = visibleRect.right - (currentLeft + this.dropdown.clientWidth);    
-    if (rightSpace < 0) {
-      currentLeft += rightSpace;
+    let dropdownWidth = this.dropdownInner.clientWidth;
+    const rightSpace = visibleRect.right - (currentLeft + dropdownWidth);    
+    if (rightSpace < 16) {
+      this.dropdown.style.left = `0px`;
+
+      currentLeft = currentLeft - (this.dropdownInner.clientWidth - this.element.clientWidth);
     }
     style.left = `${currentLeft}px`;
     this.dropdownInner.style.maxHeight = `${Math.min(style.maxHeight, this.maxHeight || style.maxHeight)}px`;

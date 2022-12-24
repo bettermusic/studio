@@ -5,7 +5,7 @@ import { applyStyleToMultipleVariants } from "../../../utils/cva";
 @Component({
   tag: 'bm-button',
   styleUrl: 'button.css',
-  shadow: false,
+  scoped: false,
 })
 export class BmButton {
  

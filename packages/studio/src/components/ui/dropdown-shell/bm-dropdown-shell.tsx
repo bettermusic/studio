@@ -7,12 +7,12 @@ import { DropdownListFilter } from '../dropdown-list-item/dropdown-list-filter';
 @Component({
   tag: 'bm-dropdown-shell',
   styleUrl: 'bm-dropdown-shell.style.scss',
-  shadow: false
+  scoped: true
 })
 export class BmDropdown {
   private element: Element;
   private dropdown: HTMLElement;
-  private dropdownInner: HTMLElement;
+  private dropdownButton: HTMLElement;
   private dropdownInput: HTMLInputElement;
   private autocompleteInput: HTMLInputElement;
   private bmList: HTMLBmDropdownListItemElement;
@@ -221,12 +221,15 @@ export class BmDropdown {
     
     return (
       <Host ref={el => this.element = el as HTMLElement}>
-        <div {...buttonProps} >
+        <div {...buttonProps} ref={el => this.dropdownButton= el as HTMLElement} >
           <slot name="dropdown-button" />
         </div> 
-        <div {...{ [UUID]: this.uuid }} ref={e => (this.dropdown = e)}
-              class={`${this.isVisible ? 'flex' : 'hidden'} mt-2 z-10 max-h-full absolute box-border overflow-hidden min-h-[1rem] min-w-[1rem] shadow-lg shadow-gray-100`}
-              >
+        <div  
+          {...{ [UUID]: this.uuid }}
+          ref={e => (this.dropdown = e)}
+          class={`mt-[0.2rem] z-10 max-h-full absolute box-border overflow-hidden min-h-[1rem] min-w-[1rem] shadow-lg shadow-black`}
+          style={{display: `${this.isVisible ? 'flex' : 'none'}`}}
+          >
           <slot name="dropdown-content" />
         </div> 
       </Host>
@@ -258,7 +261,7 @@ export class BmDropdown {
     if (!this.dropdown) {
       return;
     }
-    const { top, left, height } = this.element.getBoundingClientRect();
+    const { top, left, height } = this.dropdownButton.getBoundingClientRect();
     const visibleRect = this.clientRectangle();
     let currentTop = top + height + visibleRect.top;
 
@@ -271,8 +274,9 @@ export class BmDropdown {
       display: string;
     } = {
       opacity: 1,
-      display: 'block'
+      display: 'flex'
     };
+    this.dropdown.style.display = 'flex';
 
     // top
     if (currentTop > visibleRect.centerY) {
@@ -289,13 +293,16 @@ export class BmDropdown {
 
     // left
     let currentLeft = left + visibleRect.left;
-    const rightSpace = visibleRect.right - (currentLeft + this.dropdown.clientWidth);    
-    if (rightSpace < 0) {
-      currentLeft += rightSpace;
+    let dropdownWidth = this.dropdown.clientWidth;
+    const rightSpace = visibleRect.right - (currentLeft + dropdownWidth);    
+    if (rightSpace < 16) {
+      this.dropdown.style.left = `0px`;
+
+      currentLeft = currentLeft - (this.dropdown.clientWidth - this.dropdownButton.clientWidth);
     }
     style.left = `${currentLeft}px`;
-    this.dropdownInner.style.maxHeight = `${Math.min(style.maxHeight, this.maxHeight || style.maxHeight)}px`;
-    this.dropdownInner.style.maxWidth = style.maxWidth;
+    this.dropdown.style.maxHeight = `${Math.min(style.maxHeight, this.maxHeight || style.maxHeight)}px`;
+    this.dropdown.style.maxWidth = style.maxWidth;
 
     for (let s in style) {
       this.dropdown.style[s] = style[s];
@@ -338,7 +345,7 @@ export class BmDropdown {
       // The mouse event occurred within the DOMRect
       return true;
     }
-  
+
     // The mouse event did not occur within the DOMRect
     return false;
   }

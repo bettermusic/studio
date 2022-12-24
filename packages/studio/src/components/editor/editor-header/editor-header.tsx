@@ -4,7 +4,7 @@ import state from '../../../stores/editor_store';
 @Component({
   tag: 'bm-editor-header',
   styleUrl: 'editor-header.css',
-  shadow: true,
+  scoped: true,
 })
 export class EditorHeader {
   @Listen('changed')
@@ -54,32 +54,35 @@ export class EditorHeader {
               maxHeight={400}
             ></bm-button-dropdown>
           </bm-button-group>
-          <bm-dropdown-shell>
-            <bm-button
-              slot="dropdown-button"
-              size="base"
-              color="secondary"
-              text={`${this.currentCapo.position ? `Capo ${this.currentCapo.position} - ${this.currentCapo.key}` : 'Capo'}`}
-            ></bm-button>
-            <div slot="dropdown-content" class="p-4 bg-gray-100 border border-gray-400 rounded ">
-              dropdown content!
-            </div>
-          </bm-dropdown-shell>
         </div>
         <div class="flex-1 flex justify-end space-x-2 text-gray-700 w-100">
-          <bm-dropdown-shell>
-            <bm-button-group combined={true} slot="dropdown-button">
-              <bm-button size="base" color="secondary" text="4/4"></bm-button>
-              <bm-button size="base" color="secondary" startIcon="settings" text="98"></bm-button>
-            </bm-button-group>
-            <div slot="dropdown-content" class="p-4 bg-gray-100 border border-gray-400 rounded">
-              dropdown content!
-            </div>
-          </bm-dropdown-shell>
           <bm-button-group combined={true}>
             <bm-button size="icon" color="secondary" startIcon="edit"></bm-button>
             <bm-button size="icon" color="secondary" startIcon="settings"></bm-button>
           </bm-button-group>
+          <bm-button-group combined={true} slot="dropdown-button">
+            <bm-dropdown-shell>
+              <bm-button slot="dropdown-button" size="base" color="secondary" text="4/4"></bm-button>
+              <div slot="dropdown-content" class="p-4 bg-gray-100 border border-gray-300 rounded">
+                dropdown content!
+              </div>
+            </bm-dropdown-shell>
+            <bm-dropdown-shell>
+              <bm-button slot="dropdown-button" size="base" color="secondary" startIcon="settings" text="98"></bm-button>
+              <div slot="dropdown-content" class="p-4 bg-gray-100 border border-gray-300 rounded">
+                dropdown content!
+              </div>
+            </bm-dropdown-shell>
+            </bm-button-group>
+            <bm-button-dropdown
+              id="capo"
+              buttonLabel="buttonLabel"
+              dataLabel="itemText"
+              source={state.capos}
+              value={this.currentCapo}
+              placeholder="Capo"
+              maxHeight={400}
+            ></bm-button-dropdown>
         </div>
       </Host>
     );
