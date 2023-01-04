@@ -31,6 +31,7 @@ interface IStore {
     rendererZoom: string;
     song: Song;
     songMap: boolean;
+    edit: boolean;
 }
 
 const updateListener = EditorView.updateListener.of((v) => {
@@ -109,6 +110,7 @@ function initialState() {
   let html = formatSong(song, new HtmlDivFormatter());
   
   return <IStore> {
+    edit: true,
     input: exampleChordPro,
     song: song,
     html: html,

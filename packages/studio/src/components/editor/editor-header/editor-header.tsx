@@ -57,7 +57,7 @@ export class EditorHeader {
         </div>
         <div class="flex-1 flex justify-end space-x-2 text-gray-700 w-100">
           <bm-button-group combined={true}>
-            <bm-button size="icon" color="secondary" startIcon="edit"></bm-button>
+            <bm-button size="icon" color="secondary" startIcon="edit" onClick={ () => state.edit = !state.edit}></bm-button>
             <bm-button size="icon" color="secondary" startIcon="settings"></bm-button>
           </bm-button-group>
           <bm-button-group combined={true} slot="dropdown-button">
@@ -74,15 +74,6 @@ export class EditorHeader {
               </div>
             </bm-dropdown-shell>
             </bm-button-group>
-            <bm-button-dropdown
-              id="capo"
-              buttonLabel="buttonLabel"
-              dataLabel="itemText"
-              source={state.capos}
-              value={this.currentCapo}
-              placeholder="Capo"
-              maxHeight={400}
-            ></bm-button-dropdown>
         </div>
       </Host>
     );
