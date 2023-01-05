@@ -4,7 +4,7 @@ import state from '../../../stores/editor_store';
 @Component({
   tag: 'bm-editor-header',
   styleUrl: 'editor-header.css',
-  scoped: true,
+  shadow: false
 })
 export class EditorHeader {
   @Listen('changed')
@@ -35,7 +35,7 @@ export class EditorHeader {
 
   render() {
     return (
-      <Host>
+      <Host class="bg-gray-50 border rounded-t-lg rounded-b-none p-4 flex border-gray-300 items-center">
         <div class="flex-initial flex items-center">
           <img class="rounded shadow-sm h-auto w-8" src="https://cdn-assets.praisecharts.com/content/albums/600x600/album_10701.jpg"></img>
           <div class="flex-col ml-2 text-sm text-primary pr-4">
@@ -43,9 +43,9 @@ export class EditorHeader {
             <h6 class="text-xs text-gray-500">Elevation Worship</h6>
           </div>
           <bm-button-group combined={true}>
-            <bm-button-dropdown id="key" dataLabel="name" dataId="name" source={state.keys} value={state.currentKey} placeholder="Key" maxHeight={400}></bm-button-dropdown>
+            <bm-button-dropdown dropdownId="key" dataLabel="name" dataId="name" source={state.keys} value={state.currentKey} placeholder="Key" maxHeight={400}></bm-button-dropdown>
             <bm-button-dropdown
-              id="capo"
+              dropdownId="capo"
               buttonLabel="buttonLabel"
               dataLabel="itemText"
               source={state.capos}

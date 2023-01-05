@@ -2,23 +2,18 @@ import { Component, Prop, h, State, Listen, Event, EventEmitter, Method, Watch, 
 import '../../../utils/closestPolifill';
 import { UUID } from '../../../utils/consts';
 import { getItemLabel, getItemValue } from '../../../utils/dropdown-list-item.helpers';
-import { DropdownListFilter } from '../dropdown-list-item/dropdown-list-filter';
 
 @Component({
   tag: 'bm-dropdown-shell',
   styleUrl: 'bm-dropdown-shell.style.scss',
-  scoped: true
 })
 export class BmDropdown {
-  private element: Element;
+  element: HTMLElement;
   private dropdown: HTMLElement;
   private dropdownButton: HTMLElement;
   private dropdownInput: HTMLInputElement;
   private autocompleteInput: HTMLInputElement;
-  private bmList: HTMLBmDropdownListItemElement;
   private uuid: string = '';
-  private currentSource?: any[];
-  private isClosing = false;
 
   @State() currentItem: any = null;
   @State() isVisible = false;
@@ -32,7 +27,7 @@ export class BmDropdown {
   /**
    * Optional ID for dropdown changed events
    */
-  @Prop() id: string;
+  @Prop() dropdownId: string;
   /**
    * Define object mapping for labels
    */
@@ -115,7 +110,6 @@ export class BmDropdown {
         return;
       }
     }
-    this.isClosing = true;
     this.isVisible = false;
   }
   /**
@@ -134,7 +128,7 @@ export class BmDropdown {
    */
   @Method() async doChange(val: any, originalEvent?: MouseEvent): Promise<void> {
     this.value = getItemValue(val, this.dataId);
-    this.changeValue.emit({ val: this.value, id: this.id, originalEvent });
+    this.changeValue.emit({ val: this.value, id: this.dropdownId, originalEvent });
     if (this.autocompleteInput) {
       this.autocompleteInput.value = getItemLabel(this.currentItem, this.dataLabel);
     }
@@ -213,10 +207,6 @@ export class BmDropdown {
     const buttonProps = {
       [UUID]: this.uuid,
       onClick: e => this.selectClick(e)
-    };
-    const dropdownProps = {
-      [UUID]: this.uuid,
-      ref: e => (this.dropdown = e)
     };
     
     return (

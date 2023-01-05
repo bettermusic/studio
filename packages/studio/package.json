@@ -42,14 +42,13 @@
     "split.js": "^1.6.5"
   },
   "devDependencies": {
-    "stencil-tailwind-plugin": "^1.6.0",
     "@bettermusic/eslint-config": "*",
     "@mertasan/tailwindcss-variables": "^2.5.1",
     "@rollup/plugin-typescript": "^9.0.2",
     "@stencil/postcss": "^2.1.0",
     "@stencil/sass": "^2.0",
     "@stencil/store": "^2.0",
-    "@types/jest": "^27.4.5",
+    "@types/jest": "27.0.3",
     "autoprefixer": "^10.4.13",
     "eslint": "^8.23.1",
     "jest": "^27.4.5",
@@ -61,6 +60,7 @@
     "postcss-simple-vars": "^7.0.1",
     "puppeteer": "^17.1.3",
     "rollup-plugin-node-polyfills": "^0.2.1",
+    "stencil-tailwind-plugin": "^1.7.0",
     "tailwindcss": "^3.2.4"
   },
   "license": "MIT"

@@ -52,14 +52,14 @@ export namespace Components {
          */
         "doOpen": () => Promise<void>;
         /**
+          * Optional ID for dropdown changed events
+         */
+        "dropdownId": string;
+        /**
           * Filter criteria
          */
         "filter": 'contains' | 'start';
         "hasFilter": boolean;
-        /**
-          * Optional ID for dropdown changed events
-         */
-        "id": string;
         "maxHeight": number;
         /**
           * Placeholder text
@@ -110,14 +110,14 @@ export namespace Components {
          */
         "doOpen": () => Promise<void>;
         /**
+          * Optional ID for dropdown changed events
+         */
+        "dropdownId": string;
+        /**
           * Filter criteria
          */
         "filter": 'contains' | 'start';
         "hasFilter": boolean;
-        /**
-          * Optional ID for dropdown changed events
-         */
-        "id": string;
         "maxHeight": number;
         /**
           * Placeholder text
@@ -180,14 +180,14 @@ export namespace Components {
          */
         "doOpen": () => Promise<void>;
         /**
+          * Optional ID for dropdown changed events
+         */
+        "dropdownId": string;
+        /**
           * Filter criteria
          */
         "filter": 'contains' | 'start';
         "hasFilter": boolean;
-        /**
-          * Optional ID for dropdown changed events
-         */
-        "id": string;
         "maxHeight": number;
         /**
           * Placeholder text
@@ -350,14 +350,14 @@ declare namespace LocalJSX {
          */
         "dataLabel"?: string;
         /**
+          * Optional ID for dropdown changed events
+         */
+        "dropdownId"?: string;
+        /**
           * Filter criteria
          */
         "filter"?: 'contains' | 'start';
         "hasFilter"?: boolean;
-        /**
-          * Optional ID for dropdown changed events
-         */
-        "id"?: string;
         "maxHeight"?: number;
         /**
           * When value changed
@@ -408,14 +408,14 @@ declare namespace LocalJSX {
          */
         "dataLabel"?: string;
         /**
+          * Optional ID for dropdown changed events
+         */
+        "dropdownId"?: string;
+        /**
           * Filter criteria
          */
         "filter"?: 'contains' | 'start';
         "hasFilter"?: boolean;
-        /**
-          * Optional ID for dropdown changed events
-         */
-        "id"?: string;
         "maxHeight"?: number;
         /**
           * When value changed
@@ -478,14 +478,14 @@ declare namespace LocalJSX {
          */
         "dataLabel"?: string;
         /**
+          * Optional ID for dropdown changed events
+         */
+        "dropdownId"?: string;
+        /**
           * Filter criteria
          */
         "filter"?: 'contains' | 'start';
         "hasFilter"?: boolean;
-        /**
-          * Optional ID for dropdown changed events
-         */
-        "id"?: string;
         "maxHeight"?: number;
         /**
           * When value changed

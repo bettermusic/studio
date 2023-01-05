@@ -32,7 +32,7 @@ export class BmDropdown {
   /**
    * Optional ID for dropdown changed events
    */
-  @Prop() id: string;
+  @Prop() dropdownId: string;
   /**
    * Define object mapping for labels
    */
@@ -134,7 +134,7 @@ export class BmDropdown {
    */
   @Method() async doChange(val: any, originalEvent?: MouseEvent): Promise<void> {
     this.value = getItemValue(val, this.dataId);
-    this.changeValue.emit({ val: this.value, id: this.id, originalEvent });
+    this.changeValue.emit({ val: this.value, id: this.dropdownId, originalEvent });
     if (this.autocompleteInput) {
       this.autocompleteInput.value = getItemLabel(this.currentItem, this.dataLabel);
     }
