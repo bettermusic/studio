@@ -15,8 +15,6 @@ Packages:
 |@bettermusic/chordsheetjs|chordsheet Parsing Library|
 |@bettermusic/studio|Web components for a suite of editor tools|
 |@bettermusic/studio-angular|Angular build for @bettermusic/studio|
-|@bettermusic/ui|UI Library|
-|@bettermusic/ui-angular|Angular build for @prasiecharts/ui|
 |codemirror-lang-chordpro|ChordPro Languagae Support for codemirror|
 
 Project Structure:
