@@ -9,27 +9,25 @@
 
 ### Depends on
 
-- [bm-editor-mode-dropdown](../editor-mode-dropdown)
-- [bm-editor-key-dropdown](../editor-key-dropdown)
-- [bm-editor-capo-dropdown](../editor-capo-dropdown)
+- [bm-editor-header](../editor-header)
 - [bm-editor](../editor)
 - [bm-view](../../view)
 
 ### Graph
 ```mermaid
 graph TD;
-  bm-editor-split-view --> bm-editor-mode-dropdown
-  bm-editor-split-view --> bm-editor-key-dropdown
-  bm-editor-split-view --> bm-editor-capo-dropdown
+  bm-editor-split-view --> bm-editor-header
   bm-editor-split-view --> bm-editor
   bm-editor-split-view --> bm-view
-  bm-editor-mode-dropdown --> bm-dropdown
-  bm-dropdown --> bm-dropdown-list-item
-  bm-editor-key-dropdown --> bm-dropdown
-  bm-editor-capo-dropdown --> bm-dropdown
-  bm-editor --> bm-editor-header
-  bm-editor --> bm-text-editor
+  bm-editor-header --> bm-button-group
+  bm-editor-header --> bm-button-dropdown
   bm-editor-header --> bm-button
+  bm-editor-header --> bm-dropdown-shell
+  bm-button-dropdown --> bm-dropdown-list-item
+  bm-button-dropdown --> bm-button
+  bm-editor --> bm-button-group
+  bm-editor --> bm-button
+  bm-editor --> bm-text-editor
   style bm-editor-split-view fill:#f9f,stroke:#333,stroke-width:4px
 ```
 

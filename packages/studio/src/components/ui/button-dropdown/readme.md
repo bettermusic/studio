@@ -7,13 +7,14 @@
 
 | Property        | Attribute        | Description                              | Type                    | Default     |
 | --------------- | ---------------- | ---------------------------------------- | ----------------------- | ----------- |
-| `appendTo`      | `append-to`      | Where to append element                  | `"body" \| "current"`   | `'body'`    |
 | `autoClose`     | `auto-close`     | Should dropdown autoclose on changeValue | `boolean`               | `true`      |
 | `autoFocus`     | `auto-focus`     |                                          | `boolean`               | `false`     |
 | `autocomplete`  | `autocomplete`   |                                          | `boolean`               | `false`     |
+| `buttonLabel`   | `button-label`   | Define object mapping for labels         | `string`                | `undefined` |
 | `currentFilter` | `current-filter` | Filter value                             | `any`                   | `undefined` |
 | `dataId`        | `data-id`        | Define object mapping for id/value       | `string`                | `undefined` |
 | `dataLabel`     | `data-label`     | Define object mapping for labels         | `string`                | `undefined` |
+| `dropdownId`    | `dropdown-id`    | Optional ID for dropdown changed events  | `string`                | `undefined` |
 | `filter`        | `filter`         | Filter criteria                          | `"contains" \| "start"` | `undefined` |
 | `hasFilter`     | `has-filter`     |                                          | `boolean`               | `true`      |
 | `maxHeight`     | `max-height`     |                                          | `number`                | `undefined` |
@@ -24,11 +25,11 @@
 
 ## Events
 
-| Event     | Description                            | Type                                                     |
-| --------- | -------------------------------------- | -------------------------------------------------------- |
-| `changed` | When value changed                     | `CustomEvent<{ val: any; originalEvent?: MouseEvent; }>` |
-| `close`   | Before element close, can be prevented | `CustomEvent<any>`                                       |
-| `open`    | Before element open, can be prevented  | `CustomEvent<any>`                                       |
+| Event     | Description                            | Type                                                                 |
+| --------- | -------------------------------------- | -------------------------------------------------------------------- |
+| `changed` | When value changed                     | `CustomEvent<{ val: any; id: string; originalEvent?: MouseEvent; }>` |
+| `close`   | Before element close, can be prevented | `CustomEvent<any>`                                                   |
+| `open`    | Before element open, can be prevented  | `CustomEvent<any>`                                                   |
 
 
 ## Methods
@@ -68,22 +69,20 @@ Type: `Promise<void>`
 
 ### Used by
 
- - [bm-editor-capo-dropdown](../../editor/editor-capo-dropdown)
- - [bm-editor-key-dropdown](../../editor/editor-key-dropdown)
- - [bm-editor-mode-dropdown](../../editor/editor-mode-dropdown)
+ - [bm-editor-header](../../editor/editor-header)
 
 ### Depends on
 
 - [bm-dropdown-list-item](../dropdown-list-item)
+- [bm-button](../button)
 
 ### Graph
 ```mermaid
 graph TD;
-  bm-dropdown --> bm-dropdown-list-item
-  bm-editor-capo-dropdown --> bm-dropdown
-  bm-editor-key-dropdown --> bm-dropdown
-  bm-editor-mode-dropdown --> bm-dropdown
-  style bm-dropdown fill:#f9f,stroke:#333,stroke-width:4px
+  bm-button-dropdown --> bm-dropdown-list-item
+  bm-button-dropdown --> bm-button
+  bm-editor-header --> bm-button-dropdown
+  style bm-button-dropdown fill:#f9f,stroke:#333,stroke-width:4px
 ```
 
 ----------------------------------------------

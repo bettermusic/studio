@@ -14,9 +14,9 @@
 
 ## Events
 
-| Event     | Description | Type                                  |
-| --------- | ----------- | ------------------------------------- |
-| `changed` |             | `CustomEvent<{ item: any; e: any; }>` |
+| Event         | Description | Type                                  |
+| ------------- | ----------- | ------------------------------------- |
+| `itemChanged` |             | `CustomEvent<{ item: any; e: any; }>` |
 
 
 ## Methods
@@ -36,11 +36,13 @@ Type: `Promise<void>`
 
 ### Used by
 
+ - [bm-button-dropdown](../button-dropdown)
  - [bm-dropdown](../dropdown)
 
 ### Graph
 ```mermaid
 graph TD;
+  bm-button-dropdown --> bm-dropdown-list-item
   bm-dropdown --> bm-dropdown-list-item
   style bm-dropdown-list-item fill:#f9f,stroke:#333,stroke-width:4px
 ```

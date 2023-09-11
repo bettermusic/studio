@@ -1,10 +1,13 @@
 {
   "private": true,
-  "workspaces": [
-    "packages/*",
-    "apps/*",
-    "demos/*"
-  ],
+  "workspaces": {
+    "nohoist": ["packages/chordsheetjs"], 
+    "packages": [
+      "packages/*",
+      "apps/*",
+      "demos/*"
+    ]
+  },
   "scripts": {
     "build": "turbo run build --filter=!./demos/*",
     "dev": "turbo run dev --filter=!./apps/docs --filter=!./demos/* --no-cache --continue",

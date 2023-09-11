@@ -9,6 +9,7 @@
 
 | Property    | Attribute    | Description | Type                                                     | Default     |
 | ----------- | ------------ | ----------- | -------------------------------------------------------- | ----------- |
+| `active`    | `active`     |             | `boolean`                                                | `undefined` |
 | `color`     | `color`      |             | `"destructive" \| "minimal" \| "primary" \| "secondary"` | `"primary"` |
 | `disabled`  | `disabled`   |             | `boolean`                                                | `undefined` |
 | `endIcon`   | `end-icon`   |             | `string`                                                 | `undefined` |
@@ -18,15 +19,26 @@
 | `text`      | `text`       |             | `string`                                                 | `undefined` |
 
 
+## Shadow Parts
+
+| Part       | Description |
+| ---------- | ----------- |
+| `"button"` |             |
+
+
 ## Dependencies
 
 ### Used by
 
+ - [bm-button-dropdown](../button-dropdown)
+ - [bm-editor](../../editor/editor)
  - [bm-editor-header](../../editor/editor-header)
 
 ### Graph
 ```mermaid
 graph TD;
+  bm-button-dropdown --> bm-button
+  bm-editor --> bm-button
   bm-editor-header --> bm-button
   style bm-button fill:#f9f,stroke:#333,stroke-width:4px
 ```
