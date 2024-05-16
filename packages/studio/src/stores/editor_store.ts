@@ -1,5 +1,5 @@
 import { createStore } from "@stencil/store";
-import { ChordProFormatter, HtmlDivFormatter, HtmlTableFormatter, Song, ChordProParser, ChordsOverWordsParser, ChordsOverWordsFormatter  } from '@bettermusic/chordsheetjs';
+import { ChordProFormatter, HtmlDivFormatter, Song, ChordProParser, ChordsOverWordsParser, ChordsOverWordsFormatter, PdfFormatter, HtmlFormatter  } from '@bettermusic/chordsheetjs';
 import exampleChordPro from '../utils/example-chordpro'
 import {EditorView, highlightActiveLine, keymap, lineNumbers} from "@codemirror/view"
 import {defaultKeymap, history} from "@codemirror/commands"
@@ -8,6 +8,9 @@ import {ChordPro, exampleStringLinter} from "codemirror-lang-chordpro"
 import {lintGutter} from "@codemirror/lint"
 import { formatSong, getAvaliableCaposFromKey, getKeys, parseInput } from "../utils/chordsheetjs.helpers";
 import { language, myHighlightStyle, myTheme, wordHover } from "../utils/codemirror.utils";
+import { createMuPdf } from "mupdf-js";
+import pdfConfig from "../utils/pdf-config";
+
 interface IStore {
     capo: number;
     capos: any[]
@@ -19,14 +22,17 @@ interface IStore {
     editorMode: "chordpro" | "chords_over_words";
     editorModes: any;
     editorView: EditorView | null;
-    formatter: ChordProFormatter | HtmlDivFormatter | HtmlTableFormatter | ChordsOverWordsFormatter;
+    formatter: any;
     html: string;
+    svgContent: null|string;
     input: string;
     keys: any[];
     mdNotes: boolean;
     metadata: any;
     minor: boolean;
+    pdfConfig: any;
     parser: ChordProParser | ChordsOverWordsParser;
+    rendering: boolean;
     rendererMode: "pdf" | "html";
     rendererZoom: string;
     song: Song;
@@ -44,11 +50,23 @@ const { state, onChange } = createStore<IStore>({
   ...initialState()
 });
 
-onChange('input', value => {
+onChange('input', async (value) => {
   let song = parseInput(value, state.parser, state.metadata);
-  state.html = formatSong(song, state.formatter);
+  state.html = formatSong(song, state.formatter, state.pdfConfig);
+  if (state.rendererMode === 'pdf') {
+    await generatePdf(state.formatter);
+  }
   state.song = song;
 });
+
+onChange('rendering', async (value) => {
+  if (state.rendererMode === 'pdf') {
+    parseInput(state.input, state.parser, state.metadata);
+    formatSong(state.song, state.formatter, state.pdfConfig);
+    await generatePdf(state.formatter);
+  }
+  return value;
+})
 
 onChange('capo', value => {
   let formatter;
@@ -98,8 +116,17 @@ onChange('editorMode', value => {
   state.input = input;
 });
 
+async function generatePdf(formatter) {
+  const pdfBlob = await formatter.generatePDF();
+  const mupdf = await createMuPdf();
+  const buf = await pdfBlob.arrayBuffer();
+  const arrayBuf = new Uint8Array(buf);
+  const doc = mupdf.load(arrayBuf);
+  state.svgContent = await mupdf.drawPageAsSVG(doc, 1);
+} 
+
 function initialState() {
-  let song = parseInput(exampleChordPro, new ChordsOverWordsParser() )
+  let song = parseInput(exampleChordPro, new ChordsOverWordsParser(), { softLineBreaks: true } )
   let capo = 0;
   let currentKey = {
     name: song.key
@@ -114,6 +141,7 @@ function initialState() {
     input: exampleChordPro,
     song: song,
     html: html,
+    svgContent: null,
     capo: capo,
     currentKey: currentKey,
     keys: keys,
@@ -131,15 +159,15 @@ function initialState() {
       }
     ],
     metadata: {
-      title: "Test Song",
-      key: currentKey,
-      capo: capo,
-      artist: "test Artist"
+      title: 'Rattle',
+      softLineBreaks: true
     },
     parser: new ChordsOverWordsParser(),
-    formatter: new HtmlDivFormatter(),
+    formatter: new PdfFormatter(),
+    pdfConfig: pdfConfig,
     rendererMode: "pdf",
     rendererZoom: "100%",
+    rendering: true,
     editorView: null,
     editorExtensions: [
       language.of(ChordPro()),

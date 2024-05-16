@@ -2,7 +2,8 @@
   "extends": "@bettermusic/tsconfig/stencil-library.json",
   "compilerOptions": {
     "rootDir": ".", 
-    "resolveJsonModule": true
+    "resolveJsonModule": true,
+    "skipLibCheck": true,  // This can help bypass declaration errors in library types
   },
   "include": [ "src" ],
   "exclude": [

@@ -33,8 +33,15 @@ export const config: Config = {
   outputTargets: [
     {
       type: 'www',
-      serviceWorker: null // disable service workers
-  
+      serviceWorker: null, // disable service workers
+      copy: [
+        {
+          src: '**/*.wasm',
+          dest: 'wasm',
+          warn: true,
+        }
+      ],
+      
     },
     {
       type: 'dist-custom-elements',

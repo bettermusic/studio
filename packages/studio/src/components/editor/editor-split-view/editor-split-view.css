@@ -38,3 +38,17 @@ bm-editor-split-view {
 bm-dropdown {
   width: 160px;
 }
+
+.split-grid {
+  display: grid;
+  grid-template-columns: 1fr 10px 1fr;
+}
+
+.split-gutter-col {
+  grid-row: 1/-1;
+  cursor: col-resize;
+}
+
+.split-gutter-col-1 {
+  grid-column: 2;
+}

@@ -1,8 +1,13 @@
 :host {
   @apply rounded-bl-lg;
-  display: block;
-  overflow: auto;
-  height: calc(100vh - 16rem);
+  overflow: scroll;
+  flex-grow: 1;
+  /* height: calc(100vh - 16rem); */
+
+}
+
+:host::-webkit-scrollbar {
+  display: none;
 }
 
 .cm-gutter {
@@ -16,7 +21,6 @@
 .cm-editor {
   width: 100%;
   height: 100%;
-  padding: 16px 0px 16px 8px;
 }
 
 .cm-content {

@@ -1,0 +1,32 @@
+:host {
+    padding: 0;
+    margin: 0;
+    display:flex;
+    justify-content: center;
+    align-items: center;
+    border-bottom-right-radius: 0.5rem/* 8px */;
+    border-bottom-width: 1px;
+    border-color: var(--bm-gray-300);
+    border-right-width: 1px;
+    border-right-width: 1px;
+    border-right: 1px solid var(--bm-gray-300);
+}
+
+:host::-webkit-scrollbar {
+    display: none;
+}
+
+.pdf-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+
+}
+
+.pdf-container svg {
+    box-shadow: 0 2px 40px rgba(0, 0, 0, 0.4);
+    background-color: white;
+    width: 100%;
+    height: auto;
+}

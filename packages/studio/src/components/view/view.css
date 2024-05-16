@@ -13,6 +13,13 @@
     border-right-width: 1px;
     display: flex;
     flex-direction: column;
+    -webkit-scrollbar {
+        display: none;
+    }
+}
+
+:host::-webkit-scrollbar {
+    display: none;
 }
 
 .comment {

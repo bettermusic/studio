@@ -1,4 +1,11 @@
 :host {
     @apply flex flex-col bg-gray-200 border-l border-b rounded-tl-none rounded-tr-none rounded-br-none rounded-bl-lg border-gray-300 h-full relative;
     height: 100%;
+    -webkit-scrollbar {
+        display: none;
+    }
+}
+
+:host::-webkit-scrollbar {
+    display: none;
 }

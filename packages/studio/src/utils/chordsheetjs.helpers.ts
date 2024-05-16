@@ -5,7 +5,10 @@ export function parseInput(chordpro, parser, metadata?) {
   return parser.parse(chordpro, metadata);
 }
 
-export function formatSong(song, formatter) {
+export function formatSong(song, formatter, config?) {
+  if (config) {
+    return formatter.format(song, config);
+  }
   return formatter.format(song);
 }
 

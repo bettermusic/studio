@@ -15,9 +15,9 @@ export class Renderer {
   @Element() host: HTMLElement;
 
   render() {
-    this.host.shadowRoot.innerHTML = state.html
-    return (
-      <Host data-mode="dark"></Host>
-    );
+    this.host.shadowRoot.innerHTML = state.html;
+      return (
+        <Host data-mode="dark"></Host>
+      );
   }
 }

@@ -15,8 +15,8 @@ export class Editor {
 
   render() {
     return (
-      <Host class="flex flex-col bg-gray-200 border-l border-b rounded-tl-none rounded-tr-none rounded-br-none rounded-bl-lg border-gray-300 h-full relative">
-          <div class="absolute z-10 top-0 right-0 bg-gray-200 pr-0 pt-2 rounded-bl-lg">
+      <Host class="h-[92vh] flex flex-col bg-gray-200 border-l border-b rounded-tl-none rounded-tr-none rounded-br-none rounded-bl-lg border-gray-300 relative overflow-hidden">
+          <div class="absolute z-10 top-0 right-2 bg-gray-200 pr-0 pt-2 rounded-bl-lg">
             <bm-button-group combined={true}>
               <bm-button 
                 size='icon'

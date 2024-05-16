@@ -39,7 +39,14 @@ export class Editor {
 
   render() {
     return (
-      <Host>
+      <Host style={{height: '100%', padding: '16px 0px 16px 8px'}}>
+      <style>
+        {`
+        ::-webkit-scrollbar {
+          display: none;
+        }
+        `}
+      </style>
       </Host>
     );
   }

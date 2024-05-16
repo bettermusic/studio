@@ -209,6 +209,9 @@ export namespace Components {
     }
     interface BmEditorSplitView {
     }
+    interface BmPdfView {
+        "svgContent": string;
+    }
     interface BmTextEditor {
         "initialValue": string;
         "setCapo": (capoPosition: number) => Promise<void>;
@@ -289,6 +292,12 @@ declare global {
         prototype: HTMLBmEditorSplitViewElement;
         new (): HTMLBmEditorSplitViewElement;
     };
+    interface HTMLBmPdfViewElement extends Components.BmPdfView, HTMLStencilElement {
+    }
+    var HTMLBmPdfViewElement: {
+        prototype: HTMLBmPdfViewElement;
+        new (): HTMLBmPdfViewElement;
+    };
     interface HTMLBmTextEditorElement extends Components.BmTextEditor, HTMLStencilElement {
     }
     var HTMLBmTextEditorElement: {
@@ -311,6 +320,7 @@ declare global {
         "bm-editor": HTMLBmEditorElement;
         "bm-editor-header": HTMLBmEditorHeaderElement;
         "bm-editor-split-view": HTMLBmEditorSplitViewElement;
+        "bm-pdf-view": HTMLBmPdfViewElement;
         "bm-text-editor": HTMLBmTextEditorElement;
         "bm-view": HTMLBmViewElement;
     }
@@ -519,6 +529,9 @@ declare namespace LocalJSX {
     }
     interface BmEditorSplitView {
     }
+    interface BmPdfView {
+        "svgContent"?: string;
+    }
     interface BmTextEditor {
         "initialValue"?: string;
     }
@@ -536,6 +549,7 @@ declare namespace LocalJSX {
         "bm-editor": BmEditor;
         "bm-editor-header": BmEditorHeader;
         "bm-editor-split-view": BmEditorSplitView;
+        "bm-pdf-view": BmPdfView;
         "bm-text-editor": BmTextEditor;
         "bm-view": BmView;
     }
@@ -553,6 +567,7 @@ declare module "@stencil/core" {
             "bm-editor": LocalJSX.BmEditor & JSXBase.HTMLAttributes<HTMLBmEditorElement>;
             "bm-editor-header": LocalJSX.BmEditorHeader & JSXBase.HTMLAttributes<HTMLBmEditorHeaderElement>;
             "bm-editor-split-view": LocalJSX.BmEditorSplitView & JSXBase.HTMLAttributes<HTMLBmEditorSplitViewElement>;
+            "bm-pdf-view": LocalJSX.BmPdfView & JSXBase.HTMLAttributes<HTMLBmPdfViewElement>;
             "bm-text-editor": LocalJSX.BmTextEditor & JSXBase.HTMLAttributes<HTMLBmTextEditorElement>;
             "bm-view": LocalJSX.BmView & JSXBase.HTMLAttributes<HTMLBmViewElement>;
         }
