@@ -1,5 +1,16 @@
 # @bettermusic/studio-angular
 
+## 1.0.0
+
+### Minor Changes
+
+- 40df3a3: project restructure
+
+### Patch Changes
+
+- Updated dependencies [40df3a3]
+  - @bettermusic/studio@0.1.0
+
 ## 0.0.6
 
 ### Patch Changes

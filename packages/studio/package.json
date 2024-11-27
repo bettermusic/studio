@@ -1,6 +1,6 @@
 {
   "name": "@bettermusic/studio",
-  "version": "0.0.6",
+  "version": "0.1.0",
   "description": "Stencil Component Starter",
   "main": "dist/index.cjs.js",
   "module": "dist/index.js",
