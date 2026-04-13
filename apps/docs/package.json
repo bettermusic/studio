@@ -13,7 +13,7 @@
     "@bettermusic/studio": "*",
     "@storybook/addon-essentials": "^6.5",
     "@storybook/addon-links": "^6.5",
-    "@storybook/addons": "^6.5",
+    "@storybook/addons": "^7.6",
     "@storybook/html": "^6.5",
     "@storybook/theming": "^6.5",
     "@bettermusic/eslint-config": "*",
