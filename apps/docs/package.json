@@ -14,7 +14,7 @@
     "@storybook/addon-essentials": "^6.5",
     "@storybook/addon-links": "^6.5",
     "@storybook/addons": "^6.5",
-    "@storybook/html": "^6.5",
+    "@storybook/html": "^8.1",
     "@storybook/theming": "^6.5",
     "@bettermusic/eslint-config": "*",
     "serve": "^14.0.1",
