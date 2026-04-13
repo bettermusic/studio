@@ -11,7 +11,7 @@
   "devDependencies": {
     "@bettermusic/tsconfig": "*",
     "@bettermusic/studio": "*",
-    "@storybook/addon-essentials": "^6.5",
+    "@storybook/addon-essentials": "^8.1",
     "@storybook/addon-links": "^6.5",
     "@storybook/addons": "^6.5",
     "@storybook/html": "^6.5",
