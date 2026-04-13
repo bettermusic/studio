@@ -35,7 +35,7 @@
     "@bettermusic/eslint-config": "*",
     "@bettermusic/tsconfig": "*",
     "@stencil/sass": "^2.0.0",
-    "@stencil/store": "^2.0.1",
+    "@stencil/store": "^2.2.2",
     "@types/jest": "27.0.3",
     "eslint": "^8.23.1",
     "jest": "^27.4.5",
