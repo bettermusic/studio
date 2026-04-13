@@ -2280,10 +2280,17 @@
   dependencies:
     "@lezer/common" "^0.15.0"
 
-"@lezer/lr@^1.0.0", "@lezer/lr@^1.2":
+"@lezer/lr@^1.0.0":
   version "1.2.4"
   resolved "https://registry.yarnpkg.com/@lezer/lr/-/lr-1.2.4.tgz#380b8586c5578ca5d1187afd2284d51af103951e"
   integrity sha512-L/52/oMJBFXXx8qBYF4UgktLP2geQ/qn5Fd8+5L/mqlLLCB9+qdKktFAtejd9FdFMaFx6lrP5rmLz4sN3Kplcg==
+  dependencies:
+    "@lezer/common" "^1.0.0"
+
+"@lezer/lr@^1.2.5":
+  version "1.4.8"
+  resolved "https://registry.yarnpkg.com/@lezer/lr/-/lr-1.4.8.tgz#333de9bc9346057323ff09beb4cda47ccc38a498"
+  integrity sha512-bPWa0Pgx69ylNlMlPvBPryqeLYQjyJjqPx+Aupm5zydLIF3NE+6MMLT8Yi23Bd9cif9VS00aUebn+6fDIGBcDA==
   dependencies:
     "@lezer/common" "^1.0.0"
 
@@ -14276,10 +14283,15 @@ prelude-ls@~1.1.2:
   resolved "https://registry.yarnpkg.com/prettier/-/prettier-2.3.0.tgz#b6a5bf1284026ae640f17f7ff5658a7567fc0d18"
   integrity sha512-kXtO4s0Lz/DW/IJ9QdWhAf7/NmPWQXkFr/r/WkR3vyI+0v8amTDxiaQSLzs8NBlytfLWX/7uQUMIW677yLKl4w==
 
-prettier@^2.5.1, prettier@^2.7.1:
+prettier@^2.7.1:
   version "2.7.1"
   resolved "https://registry.yarnpkg.com/prettier/-/prettier-2.7.1.tgz#e235806850d057f97bb08368a4f7d899f7760c64"
   integrity sha512-ujppO+MkdPqoVINuDFDRLClm7D78qbDt0/NR+wp5FqEZOoTNAjPHWj17QRhu7geIHJfcNhRk1XVQmF8Bp3ye+g==
+
+prettier@^3.8.2:
+  version "3.8.2"
+  resolved "https://registry.yarnpkg.com/prettier/-/prettier-3.8.2.tgz#4f52e502193c9aa5b384c3d00852003e551bbd9f"
+  integrity sha512-8c3mgTe0ASwWAJK+78dpviD+A8EqhndQPUBpNUIPt6+xWlIigCwfN01lWr9MAede4uqXGTEKeQWTvzb3vjia0Q==
 
 pretty-bytes@^5.3.0:
   version "5.6.0"

@@ -22,7 +22,7 @@
     "@changesets/cli": "^2.24.4",
     "eslint": "^8.23.1",
     "@bettermusic/eslint-config": "*",
-    "prettier": "^2.5.1",
+    "prettier": "^3.8.2",
     "turbo": "latest"
   }
 }
