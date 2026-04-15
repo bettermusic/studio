@@ -202,10 +202,10 @@
   dependencies:
     tslib "^2.3.0"
 
-"@angular/platform-browser-dynamic@~13.3.0":
-  version "13.3.11"
-  resolved "https://registry.yarnpkg.com/@angular/platform-browser-dynamic/-/platform-browser-dynamic-13.3.11.tgz#779b4042d009c6eb3f16410bdfcba1909bbb2b83"
-  integrity sha512-xM0VRC1Nw//SHO3gkghUHyjCaaQbk1UYMq4vIu3iKVq9KLqOSZgccv0NcOKHzXXN3S5RgX2auuyOUOCD6ny1Pg==
+"@angular/platform-browser-dynamic@~21.2.9":
+  version "21.2.9"
+  resolved "https://registry.yarnpkg.com/@angular/platform-browser-dynamic/-/platform-browser-dynamic-21.2.9.tgz#178c808d4329e29860b08d8fd65a9bbcb639ae21"
+  integrity sha512-Z+2vefW4GUSuTC4BOKNiyftqecLSjxOKwe1ZNljBsjesLzywIXi+v+tyEm8ODHHlf7bz/0HwXvc9OYZmfjt95A==
   dependencies:
     tslib "^2.3.0"
 
@@ -2280,10 +2280,17 @@
   dependencies:
     "@lezer/common" "^0.15.0"
 
-"@lezer/lr@^1.0.0", "@lezer/lr@^1.2":
+"@lezer/lr@^1.0.0":
   version "1.2.4"
   resolved "https://registry.yarnpkg.com/@lezer/lr/-/lr-1.2.4.tgz#380b8586c5578ca5d1187afd2284d51af103951e"
   integrity sha512-L/52/oMJBFXXx8qBYF4UgktLP2geQ/qn5Fd8+5L/mqlLLCB9+qdKktFAtejd9FdFMaFx6lrP5rmLz4sN3Kplcg==
+  dependencies:
+    "@lezer/common" "^1.0.0"
+
+"@lezer/lr@^1.2.5":
+  version "1.4.8"
+  resolved "https://registry.yarnpkg.com/@lezer/lr/-/lr-1.4.8.tgz#333de9bc9346057323ff09beb4cda47ccc38a498"
+  integrity sha512-bPWa0Pgx69ylNlMlPvBPryqeLYQjyJjqPx+Aupm5zydLIF3NE+6MMLT8Yi23Bd9cif9VS00aUebn+6fDIGBcDA==
   dependencies:
     "@lezer/common" "^1.0.0"
 
