@@ -2280,10 +2280,10 @@
   dependencies:
     "@lezer/common" "^0.15.0"
 
-"@lezer/lr@^1.0.0", "@lezer/lr@^1.2":
-  version "1.2.4"
-  resolved "https://registry.yarnpkg.com/@lezer/lr/-/lr-1.2.4.tgz#380b8586c5578ca5d1187afd2284d51af103951e"
-  integrity sha512-L/52/oMJBFXXx8qBYF4UgktLP2geQ/qn5Fd8+5L/mqlLLCB9+qdKktFAtejd9FdFMaFx6lrP5rmLz4sN3Kplcg==
+"@lezer/lr@^1.0.0", "@lezer/lr@^1.4.9":
+  version "1.4.9"
+  resolved "https://registry.yarnpkg.com/@lezer/lr/-/lr-1.4.9.tgz#47bd289b55e0e94616d568e476f55a8d3ca0dcd3"
+  integrity sha512-mF6irshW4nRJEhdR0HOAxxTDGss+rQFqA0nLRlZsPh14q+DB9Fqp0YbOvyRSOeKPLfUL/w5wPQAcETvkQ1VApg==
   dependencies:
     "@lezer/common" "^1.0.0"
 
