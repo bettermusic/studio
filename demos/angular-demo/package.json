@@ -19,7 +19,7 @@
     "@angular/forms": "~13.3.0",
     "@angular/platform-browser": "~13.3.0",
     "@angular/platform-browser-dynamic": "~13.3.0",
-    "@angular/router": "~13.3.0",
+    "@angular/router": "~21.2.12",
     "@bettermusic/studio-angular": "*",
     "@bettermusic/studio": "*",
     "rxjs": "~7.5.6",
