@@ -21,7 +21,7 @@
   "sideEffects": false,
   "dependencies": {
     "@codemirror/language": "^6.2",
-    "@codemirror/lint": "^6.0",
+    "@codemirror/lint": "^6.9",
     "@lezer/highlight": "^1.0",
     "@lezer/lr": "^1.2.5"
   },
