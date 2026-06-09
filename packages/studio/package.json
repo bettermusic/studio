@@ -29,7 +29,7 @@
   "dependencies": {
     "@codemirror/commands": "^6.1",
     "@codemirror/lang-javascript": "^6.0",
-    "@codemirror/lint": "^6.0",
+    "@codemirror/lint": "^6.9",
     "@codemirror/state": "^6.1",
     "@codemirror/view": "^6.2",
     "@bettermusic/chordsheetjs": "*",
