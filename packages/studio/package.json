@@ -41,7 +41,7 @@
   },
   "devDependencies": {
     "@bettermusic/eslint-config": "*",
-    "@stencil/sass": "^2.0",
+    "@stencil/sass": "^3.3",
     "@stencil/store": "^2.0",
     "@types/jest": "^27.4.5",
     "eslint": "^8.23.1",
